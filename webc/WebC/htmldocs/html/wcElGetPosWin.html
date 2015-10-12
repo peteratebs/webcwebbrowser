@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>wcBOOL <A HREF="#DOC.DOCU">wcElGetPosWin</A></H2></TD><TD><H2>(wcEL element,  int* top,  int* left,<BR>&nbsp; int* width,  int* height)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Get the displayed position of an element. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Get the current position of an element. The values returned make up the actual bounding rectangle surrounding
+the element the last time it was displayed.
+Note: wcElGetPosWin is useful for obtaining the coordinates of elements that were automatically sized or
+positioned by webC. It returns the coordinates the last time an element was drawn.
+The routine can not be used in screen constructors on elements that have not been drawn yet.
+If an element is manually positioned it's coordinates can be optained before it is drawn by calling wcElGetPosStyle.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcEL</B> -           		Element     -   The element.
+<BR><B>int</B> - *          		top      	-   top goes here. If NULL no result is returned for top.
+<BR><B>int</B> - *          		left      	-   left goes here. If NULL no result is returned for leftl.
+<BR><B>int</B> - *          		height     	-   height goes here. If NULL no result is returned for height.
+<BR><B>int</B> - *          		width     	-   width goes here. If NULL no result is returned for width.
+<PRE>
+Example:
+The following event handler fragment handles the HTML_EVENT_WINDOW_REFRESHED event on an auto positioned element.
+It updates the element's style attributes from the auto positioned values of top, left, height, width.
+This operation is important because, to operate properly, operations like drag, resize, and window manager functions require
+style based positioning. This technique may be used to allow auto formatting (like center, left right etc) to
+initially position certain elements and still use algorithms that rely on absolute positioning.
+if (event->type == HTML_EVENT_WINDOW_REFRESHED)
+{
+char ascii_buff[256];
+int top,left,width,height;
+<!1><A HREF="wcElGetPosWin.html">wcElGetPosWin</A>(element, &top,&left,&width,&height);
+rtp_sprintf(ascii_buff, "position:absolute;left:%dpx;top:%dpx;height:%dpx;width:%dpx;", left, top, height, width);
+== Set the style but don't trigger a redraw
+<!1><A HREF="wcElSetStyle.html">wcElSetStyle</A>(element, ascii_buff,wcFALSE);
+}
+</PRE>
+<BR><DT><B>Returns:</B><DD>  wcTRUE if the arguments are valid and the element has been drawn.
+<BR>  wcFALSE if the element has not yet been drawn or it does not have a display element associated with it.
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcElGetPosStyle.html">wcElGetPosStyle</A>,wcElSetPosStyle<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

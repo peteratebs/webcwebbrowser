@@ -1,0 +1,113 @@
+﻿Build started 12/29/2014 4:48:28 PM.
+     1>Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\libjpeg\libjpeg.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\libjpeg___Win32_Debug_JavaScript_Unicode\libjpeg.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\lib\libjpeg /I..\..\..\..\..\rtpport\win32 /I..\..\..\..\..\rtpcore /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\libjpeg___Win32_Debug_JavaScript_Unicode/" /Fd".\libjpeg___Win32_Debug_JavaScript_Unicode/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\libjpeg\jcapimin.c ..\..\..\lib\libjpeg\jcapistd.c ..\..\..\lib\libjpeg\jccoefct.c ..\..\..\lib\libjpeg\jccolor.c ..\..\..\lib\libjpeg\jcdctmgr.c ..\..\..\lib\libjpeg\jchuff.c ..\..\..\lib\libjpeg\jcinit.c ..\..\..\lib\libjpeg\jcmainct.c ..\..\..\lib\libjpeg\jcmarker.c ..\..\..\lib\libjpeg\jcmaster.c ..\..\..\lib\libjpeg\jcomapi.c ..\..\..\lib\libjpeg\jcparam.c ..\..\..\lib\libjpeg\jcphuff.c ..\..\..\lib\libjpeg\jcprepct.c ..\..\..\lib\libjpeg\jcsample.c ..\..\..\lib\libjpeg\jctrans.c ..\..\..\lib\libjpeg\jdapimin.c ..\..\..\lib\libjpeg\jdapistd.c ..\..\..\lib\libjpeg\jdatadst.c ..\..\..\lib\libjpeg\jdatasrc.c ..\..\..\lib\libjpeg\jdcoefct.c ..\..\..\lib\libjpeg\jdcolor.c ..\..\..\lib\libjpeg\jddctmgr.c ..\..\..\lib\libjpeg\jdhuff.c ..\..\..\lib\libjpeg\jdinput.c ..\..\..\lib\libjpeg\jdmainct.c ..\..\..\lib\libjpeg\jdmarker.c ..\..\..\lib\libjpeg\jdmaster.c ..\..\..\lib\libjpeg\jdmerge.c ..\..\..\lib\libjpeg\jdphuff.c ..\..\..\lib\libjpeg\jdpostct.c ..\..\..\lib\libjpeg\jdsample.c ..\..\..\lib\libjpeg\jdtrans.c ..\..\..\lib\libjpeg\jerror.c ..\..\..\lib\libjpeg\jfdctflt.c ..\..\..\lib\libjpeg\jfdctfst.c ..\..\..\lib\libjpeg\jfdctint.c ..\..\..\lib\libjpeg\jidctflt.c ..\..\..\lib\libjpeg\jidctfst.c ..\..\..\lib\libjpeg\jidctint.c ..\..\..\lib\libjpeg\jidctred.c ..\..\..\lib\libjpeg\jmemmgr.c ..\..\..\lib\libjpeg\jmemnobs.c ..\..\..\lib\libjpeg\jquant1.c ..\..\..\lib\libjpeg\jquant2.c ..\..\..\lib\libjpeg\jutils.c
+         jcapimin.c
+         jcapistd.c
+         jccoefct.c
+         jccolor.c
+         jcdctmgr.c
+         jchuff.c
+         jcinit.c
+         jcmainct.c
+         jcmarker.c
+         jcmaster.c
+         jcomapi.c
+         jcparam.c
+         jcphuff.c
+         jcprepct.c
+         jcsample.c
+         jctrans.c
+         jdapimin.c
+         jdapistd.c
+         jdatadst.c
+         jdatasrc.c
+         Generating Code...
+         Compiling...
+         jdcoefct.c
+         jdcolor.c
+         jddctmgr.c
+         jdhuff.c
+         jdinput.c
+         jdmainct.c
+         jdmarker.c
+         jdmaster.c
+         jdmerge.c
+         jdphuff.c
+         jdpostct.c
+         jdsample.c
+         jdtrans.c
+         jerror.c
+         jfdctflt.c
+         jfdctfst.c
+         jfdctint.c
+         jidctflt.c
+         jidctfst.c
+         jidctint.c
+         Generating Code...
+         Compiling...
+         jidctred.c
+         jmemmgr.c
+         jmemnobs.c
+         jquant1.c
+         jquant2.c
+         jutils.c
+         Generating Code...
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\libjpeg___Win32_Debug_JavaScript_Unicode\libjpeg.lib" /NOLOGO .\libjpeg___Win32_Debug_JavaScript_Unicode/jcapimin.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcapistd.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jccoefct.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jccolor.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcdctmgr.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jchuff.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcinit.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcmainct.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcmarker.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcmaster.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcomapi.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcparam.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcphuff.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcprepct.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jcsample.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jctrans.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdapimin.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdapistd.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdatadst.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdatasrc.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdcoefct.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdcolor.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jddctmgr.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdhuff.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdinput.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdmainct.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdmarker.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdmaster.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdmerge.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdphuff.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdpostct.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdsample.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jdtrans.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jerror.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jfdctflt.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jfdctfst.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jfdctint.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jidctflt.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jidctfst.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jidctint.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jidctred.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jmemmgr.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jmemnobs.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jquant1.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jquant2.obj
+         .\libjpeg___Win32_Debug_JavaScript_Unicode/jutils.obj
+         libjpeg.vcxproj -> C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\libjpeg\.\libjpeg___Win32_Debug_JavaScript_Unicode\libjpeg.lib
+       FinalizeBuildStatus:
+         Deleting file ".\libjpeg___Win32_Debug_JavaScript_Unicode\libjpeg.unsuccessfulbuild".
+         Touching ".\libjpeg___Win32_Debug_JavaScript_Unicode\libjpeg.lastbuildstate".
+     1>Done Building Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\libjpeg\libjpeg.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.19

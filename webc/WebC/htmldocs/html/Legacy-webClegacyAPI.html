@@ -1,0 +1,445 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> Legacy - webC legacy API</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2> <A HREF="#DOC.DOCU">Legacy - webC legacy API</A></H2></H2><BLOCKQUOTE>webC legacy API </BLOCKQUOTE>
+
+<HR>
+<DL>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_Init"></A>
+<A HREF=webc_Init.html><B>webc_Init</B></A><DD><I>Initialize webC. This function must be called first before any other webC API calls are made. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_TriggerEvent"></A>
+<A HREF=webc_TriggerEvent.html><B>webc_TriggerEvent</B></A><DD><I>Manually trigger an HTMLEvent </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="wcache_stats_clear"></A>
+<A HREF=wcache_stats_clear.html><B>wcache_stats_clear</B></A><DD><I>Release all cached pages and images. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_Exit"></A>
+<A HREF=webc_Exit.html><B>webc_Exit</B></A><DD><I>Free resources used by the Web Client </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CreateBrowserPlus"></A>
+<A HREF=webc_CreateBrowserPlus.html><B>webc_CreateBrowserPlus</B></A><DD><I>Create a new HTML Browser window </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DestroyBrowser"></A>
+<A HREF=webc_DestroyBrowser.html><B>webc_DestroyBrowser</B></A><DD><I>Close an HTML Browser window and free all its resources </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserBack"></A>
+<A HREF=webc_BrowserBack.html><B>webc_BrowserBack</B></A><DD><I>Load the previous location in the history </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserForward"></A>
+<A HREF=webc_BrowserForward.html><B>webc_BrowserForward</B></A><DD><I>Load the next location in the history </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserHome"></A>
+<A HREF=webc_BrowserHome.html><B>webc_BrowserHome</B></A><DD><I>Reload the home page </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserLoadUrl"></A>
+<A HREF=webc_BrowserLoadUrl.html><B>webc_BrowserLoadUrl</B></A><DD><I>Load a location </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserStop"></A>
+<A HREF=webc_BrowserStop.html><B>webc_BrowserStop</B></A><DD><I>Abort all pending load jobs in an HTML Browser </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserRefresh"></A>
+<A HREF=webc_BrowserRefresh.html><B>webc_BrowserRefresh</B></A><DD><I>Reload the current page </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserGetConfig"></A>
+<A HREF=webc_BrowserGetConfig.html><B>webc_BrowserGetConfig</B></A><DD><I>Retrieve the current browser configuration </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserAddToHistory"></A>
+<A HREF=webc_BrowserAddToHistory.html><B>webc_BrowserAddToHistory</B></A><DD><I>Add a location to the HTML Browser history </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserExecute"></A>
+<A HREF=webc_BrowserExecute.html><B>webc_BrowserExecute</B></A><DD><I>Process the input queue until this Browser is destroyed. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserSetPrivateData"></A>
+<A HREF=webc_BrowserSetPrivateData.html><B>webc_BrowserSetPrivateData</B></A><DD><I>Associate a data pointer with an HTML Browser </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserGetPrivateData"></A>
+<A HREF=webc_BrowserGetPrivateData.html><B>webc_BrowserGetPrivateData</B></A><DD><I>Retrieve the user-specified data pointer associated with an HTML Browser </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserGetDocument"></A>
+<A HREF=webc_BrowserGetDocument.html><B>webc_BrowserGetDocument</B></A><DD><I>Get an HTML browser's root document handle </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserGetDocFocus"></A>
+<A HREF=webc_BrowserGetDocFocus.html><B>webc_BrowserGetDocFocus</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocFocus"></A>
+<A HREF=webc_DocFocus.html><B>webc_DocFocus</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserSetTagEventHandler"></A>
+<A HREF=webc_BrowserSetTagEventHandler.html><B>webc_BrowserSetTagEventHandler</B></A><DD><I>Set the default event handler for an HTML tag type </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserSuspendDraw"></A>
+<A HREF=webc_BrowserSuspendDraw.html><B>webc_BrowserSuspendDraw</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserResumeDraw"></A>
+<A HREF=webc_BrowserResumeDraw.html><B>webc_BrowserResumeDraw</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserGetDrawState"></A>
+<A HREF=webc_BrowserGetDrawState.html><B>webc_BrowserGetDrawState</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserInvalidate"></A>
+<A HREF=webc_BrowserInvalidate.html><B>webc_BrowserInvalidate</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserDraw"></A>
+<A HREF=webc_BrowserDraw.html><B>webc_BrowserDraw</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserDispatchEvent"></A>
+<A HREF=webc_BrowserDispatchEvent.html><B>webc_BrowserDispatchEvent</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserProcessLoadQueueAll"></A>
+<A HREF=webc_BrowserProcessLoadQueueAll.html><B>webc_BrowserProcessLoadQueueAll</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserProcessTimers"></A>
+<A HREF=webc_BrowserProcessTimers.html><B>webc_BrowserProcessTimers</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserResetDrawDone"></A>
+<A HREF=webc_BrowserResetDrawDone.html><B>webc_BrowserResetDrawDone</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserWasDrawDone"></A>
+<A HREF=webc_BrowserWasDrawDone.html><B>webc_BrowserWasDrawDone</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_FindFocusElement"></A>
+<A HREF=webc_FindFocusElement.html><B>webc_FindFocusElement</B></A><DD><I>Search for the element with focus. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_BrowserQueueTimedEvent"></A>
+<A HREF=webc_BrowserQueueTimedEvent.html><B>webc_BrowserQueueTimedEvent</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocFindElement"></A>
+<A HREF=webc_DocFindElement.html><B>webc_DocFindElement</B></A><DD><I>Search for an element by id, name, type, and/or index </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocSetUrl"></A>
+<A HREF=webc_DocSetUrl.html><B>webc_DocSetUrl</B></A><DD><I>Set the URL of a document </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocRefresh"></A>
+<A HREF=webc_DocRefresh.html><B>webc_DocRefresh</B></A><DD><I>Update the document and refresh the display </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocReload"></A>
+<A HREF=webc_DocReload.html><B>webc_DocReload</B></A><DD><I>Reloads the current URL </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocClear"></A>
+<A HREF=webc_DocClear.html><B>webc_DocClear</B></A><DD><I>Clear all document content </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocWriteHtml"></A>
+<A HREF=webc_DocWriteHtml.html><B>webc_DocWriteHtml</B></A><DD><I>Write html code directly to a document </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocWriteString"></A>
+<A HREF=webc_DocWriteString.html><B>webc_DocWriteString</B></A><DD><I>Write string directly to a document as is </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocOpen"></A>
+<A HREF=webc_DocOpen.html><B>webc_DocOpen</B></A><DD><I>Open an HTML Document for writing </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocClose"></A>
+<A HREF=webc_DocClose.html><B>webc_DocClose</B></A><DD><I>Close an HTML Document after writing content </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocGetBrowser"></A>
+<A HREF=webc_DocGetBrowser.html><B>webc_DocGetBrowser</B></A><DD><I>Retrieve an HTML Document's parent HTML Browser </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocGetTitleASCII"></A>
+<A HREF=webc_DocGetTitleASCII.html><B>webc_DocGetTitleASCII</B></A><DD><I>tbd </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocSaveForOffline"></A>
+<A HREF=webc_DocSaveForOffline.html><B>webc_DocSaveForOffline</B></A><DD><I>Retrieve an HTML Document's parent HTML Browser </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetType"></A>
+<A HREF=webc_ElementGetType.html><B>webc_ElementGetType</B></A><DD><I>Get element type </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetDocument"></A>
+<A HREF=webc_ElementGetDocument.html><B>webc_ElementGetDocument</B></A><DD><I>Get the handle of the document containing a given element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementNext"></A>
+<A HREF=webc_ElementNext.html><B>webc_ElementNext</B></A><DD><I>Find next element in document </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementPrev"></A>
+<A HREF=webc_ElementPrev.html><B>webc_ElementPrev</B></A><DD><I>Find prev element in document </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetChild"></A>
+<A HREF=webc_ElementGetChild.html><B>webc_ElementGetChild</B></A><DD><I>Search for a child of an element by id, name, type, and/or index </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetParent"></A>
+<A HREF=webc_ElementGetParent.html><B>webc_ElementGetParent</B></A><DD><I>Get the immediate parent of an element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetFirstChild"></A>
+<A HREF=webc_ElementGetFirstChild.html><B>webc_ElementGetFirstChild</B></A><DD><I>Get the first child of an element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetLastChild"></A>
+<A HREF=webc_ElementGetLastChild.html><B>webc_ElementGetLastChild</B></A><DD><I>Get the last child of an element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetNextSibling"></A>
+<A HREF=webc_ElementGetNextSibling.html><B>webc_ElementGetNextSibling</B></A><DD><I>Get the next sibling of an element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetPrevSibling"></A>
+<A HREF=webc_ElementGetPrevSibling.html><B>webc_ElementGetPrevSibling</B></A><DD><I>Get the prev sibling of an element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetNameASCII"></A>
+<A HREF=webc_ElementGetNameASCII.html><B>webc_ElementGetNameASCII</B></A><DD><I>Get an element's name </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetIdASCII"></A>
+<A HREF=webc_ElementGetIdASCII.html><B>webc_ElementGetIdASCII</B></A><DD><I>Get an element's unique id </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetValueASCII"></A>
+<A HREF=webc_ElementGetValueASCII.html><B>webc_ElementGetValueASCII</B></A><DD><I>Get the value of an input widget </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetValueUC"></A>
+<A HREF=webc_ElementGetValueUC.html><B>webc_ElementGetValueUC</B></A><DD><I>Get the value of an input widget </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetChecked"></A>
+<A HREF=webc_ElementGetChecked.html><B>webc_ElementGetChecked</B></A><DD><I>Get the status of a checkbox or radio button </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetSrcASCII"></A>
+<A HREF=webc_ElementGetSrcASCII.html><B>webc_ElementGetSrcASCII</B></A><DD><I>Get the source url for an image or frame element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetColor"></A>
+<A HREF=webc_ElementGetColor.html><B>webc_ElementGetColor</B></A><DD><I>Get an element's foreground color </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetBgColor"></A>
+<A HREF=webc_ElementGetBgColor.html><B>webc_ElementGetBgColor</B></A><DD><I>Get an element's background color </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetBgImageASCII"></A>
+<A HREF=webc_ElementGetBgImageASCII.html><B>webc_ElementGetBgImageASCII</B></A><DD><I>Get an element's background image url </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetWidth"></A>
+<A HREF=webc_ElementGetWidth.html><B>webc_ElementGetWidth</B></A><DD><I>Get an element's width in pixels </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetHeight"></A>
+<A HREF=webc_ElementGetHeight.html><B>webc_ElementGetHeight</B></A><DD><I>Get an element's height in pixels </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetFrameDocument"></A>
+<A HREF=webc_ElementGetFrameDocument.html><B>webc_ElementGetFrameDocument</B></A><DD><I>Get a frame's child document </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetInnerHTML"></A>
+<A HREF=webc_ElementGetInnerHTML.html><B>webc_ElementGetInnerHTML</B></A><DD><I>Get an element's inner HTML </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetOuterHTML"></A>
+<A HREF=webc_ElementGetOuterHTML.html><B>webc_ElementGetOuterHTML</B></A><DD><I>Get an element's outer HTML </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetValueASCII"></A>
+<A HREF=webc_ElementSetValueASCII.html><B>webc_ElementSetValueASCII</B></A><DD><I>Set the current value for an input widget </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetValueUC"></A>
+<A HREF=webc_ElementSetValueUC.html><B>webc_ElementSetValueUC</B></A><DD><I>Set the current value for an input widget </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetChecked"></A>
+<A HREF=webc_ElementSetChecked.html><B>webc_ElementSetChecked</B></A><DD><I>Set checked status for checkbox or radio button </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetName"></A>
+<A HREF=webc_ElementSetName.html><B>webc_ElementSetName</B></A><DD><I>Set an element's name </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetSrcASCII"></A>
+<A HREF=webc_ElementSetSrcASCII.html><B>webc_ElementSetSrcASCII</B></A><DD><I>Set the source url for an image or frame element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetColor"></A>
+<A HREF=webc_ElementSetColor.html><B>webc_ElementSetColor</B></A><DD><I>Set an element's foreground color </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetBgColor"></A>
+<A HREF=webc_ElementSetBgColor.html><B>webc_ElementSetBgColor</B></A><DD><I>Set an element's background color </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetBgImageASCII"></A>
+<A HREF=webc_ElementSetBgImageASCII.html><B>webc_ElementSetBgImageASCII</B></A><DD><I>Set an element's background image url </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementEnable"></A>
+<A HREF=webc_ElementEnable.html><B>webc_ElementEnable</B></A><DD><I>Set an element to be selectable </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementDisable"></A>
+<A HREF=webc_ElementDisable.html><B>webc_ElementDisable</B></A><DD><I>Set an element to not be selectable </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementFocus"></A>
+<A HREF=webc_ElementFocus.html><B>webc_ElementFocus</B></A><DD><I>Set the current input focus to an element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DocGetElementFocus"></A>
+<A HREF=Legacy-webClegacyAPI.html><B>webc_DocGetElementFocus</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetPrivateData"></A>
+<A HREF=Legacy-webClegacyAPI.html><B>webc_ElementSetPrivateData</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetPrivateData"></A>
+<A HREF=Legacy-webClegacyAPI.html><B>webc_ElementGetPrivateData</B></A><DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetWidthINT"></A>
+<A HREF=webc_ElementSetWidthINT.html><B>webc_ElementSetWidthINT</B></A><DD><I>Set an element's width (Deprecated) </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetHeightINT"></A>
+<A HREF=webc_ElementSetHeightINT.html><B>webc_ElementSetHeightINT</B></A><DD><I>Set an element's height (Deprecated) </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetStyleASCII"></A>
+<A HREF=webc_ElementSetStyleASCII.html><B>webc_ElementSetStyleASCII</B></A><DD><I>Set style properties for an element </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetSelected"></A>
+<A HREF=webc_ElementSetSelected.html><B>webc_ElementSetSelected</B></A><DD><I>Set the selected option in a combo box </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetAttribute"></A>
+<A HREF=Legacy-webClegacyAPI.html><B>webc_ElementGetAttribute</B></A><DD><I>Get an HTML element attribute </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetAttributeASCII"></A>
+<A HREF=Legacy-webClegacyAPI.html><B>webc_ElementSetAttributeASCII</B></A><DD><I>Set an HTML element attribute </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementGetInnerHtmlASCII"></A>
+<A HREF=Legacy-webClegacyAPI.html><B>webc_ElementGetInnerHtmlASCII</B></A><DD><I>Set an HTML element's inner html char *webc_ElementGetInnerHtmlASCII ( HELEMENT_HANDLE element) </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_ElementSetInnerHtmlASCII"></A>
+<A HREF=Legacy-webClegacyAPI.html><B>webc_ElementSetInnerHtmlASCII</B></A><DD><I>Set an HTML element's inner html void webc_ElementSetInnerHtmlASCII ( HELEMENT_HANDLE element,	char * newhtml) </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_RegisterEventCallback"></A>
+<A HREF=webc_RegisterEventCallback.html><B>webc_RegisterEventCallback</B></A><DD><I>Set a function to use as a custom event handler </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_JScriptExecuteSource"></A>
+<A HREF=webc_JScriptExecuteSource.html><B>webc_JScriptExecuteSource</B></A><DD><I>Call Javascript from native 'C' and execute the provided javascript source code </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_JScriptDestroyScript"></A>
+<A HREF=webc_JScriptDestroyScript.html><B>webc_JScriptDestroyScript</B></A><DD><I>Destroy a and free reources of a script that was created by webc_JScriptExecuteSource </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_JScriptDefineFunction"></A>
+<A HREF=webc_JScriptDefineFunction.html><B>webc_JScriptDefineFunction</B></A><DD><I>Call a native C function from Javascript </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_JScriptGetDoc"></A>
+<A HREF=webc_JScriptGetDoc.html><B>webc_JScriptGetDoc</B></A><DD><I>Get the HTMLDocument handle from a JSFunction </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CreateCookie"></A>
+<A HREF=webc_CreateCookie.html><B>webc_CreateCookie</B></A><DD><I>Create a cookie with the specified parameters </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_DestroyCookie"></A>
+<A HREF=webc_DestroyCookie.html><B>webc_DestroyCookie</B></A><DD><I>Destroys a cookie previously created with webc_CreateCookie </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_FindCookie"></A>
+<A HREF=webc_FindCookie.html><B>webc_FindCookie</B></A><DD><I>Find a cookie that has the specified attributes </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CookieGetName"></A>
+<A HREF=webc_CookieGetName.html><B>webc_CookieGetName</B></A><DD><I>Retrieve the name of a cookie </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CookieGetValue"></A>
+<A HREF=webc_CookieGetValue.html><B>webc_CookieGetValue</B></A><DD><I>Retrieve a cookie's value </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CookieGetHost"></A>
+<A HREF=webc_CookieGetHost.html><B>webc_CookieGetHost</B></A><DD><I>Get the host that a cookie was received from </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CookieGetPath"></A>
+<A HREF=webc_CookieGetPath.html><B>webc_CookieGetPath</B></A><DD><I>Get the path of a cookie </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CookieSetName"></A>
+<A HREF=webc_CookieSetName.html><B>webc_CookieSetName</B></A><DD><I>Set the name of a cookie </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CookieSetValue"></A>
+<A HREF=webc_CookieSetValue.html><B>webc_CookieSetValue</B></A><DD><I>Set the value of a cookie </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CookieSetHost"></A>
+<A HREF=webc_CookieSetHost.html><B>webc_CookieSetHost</B></A><DD><I>Set a cookie's host </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_CookieSetPath"></A>
+<A HREF=webc_CookieSetPath.html><B>webc_CookieSetPath</B></A><DD><I>Set the path of a cookie </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_HttpSetAuthorization"></A>
+<A HREF=webc_HttpSetAuthorization.html><B>webc_HttpSetAuthorization</B></A><DD><I>Set Authorization for HTTP site </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_HttpClearAuthorization"></A>
+<A HREF=webc_HttpClearAuthorization.html><B>webc_HttpClearAuthorization</B></A><DD><I>Discard username/password for an HTTP host </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_HttpClearAllAuthorizations"></A>
+<A HREF=webc_HttpClearAllAuthorizations.html><B>webc_HttpClearAllAuthorizations</B></A><DD><I>Discard all HTTP username/passwords </I>
+</DL>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>These functions are old but good.  </BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

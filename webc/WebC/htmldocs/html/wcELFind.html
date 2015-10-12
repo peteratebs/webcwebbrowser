@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>wcEL <A HREF="#DOC.DOCU">wcELFind</A></H2></TD><TD><H2>(wcCtx* Ctx,  wcEL El,  char* Domstr,  wcBOOL* pError)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Traverse the dom following an XPATH specifier. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Traverse the dom following the provided path and return the element.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcCtx</B> - *     Ctx     -   The current wc context.
+<BR><B>wcEL</B> -        El      -   The root element for the search, may be zero if the search path begins at the root of the document.
+<BR><B>char</B> - *     Domstr   -   A string containing the path from the current element.
+<BR><B>wcBOOL</B> - *   pError    -   Set to wcTRUE if some kind of error.
+<PRE>
+The string is a subset of the XPATH standard having the form "id/id/id/id".
+The following subset of XPATH expressions are supported.
+</PRE>
+<ul>
+<li> '/'             - The root of the current document (only valid for the first character) </li>
+<li> '.'             - The current element </li>
+<li> '..'             - Parent of the current element </li>
+<li> '*'             - The first child of the element. </li>
+<li> '*[last()]'     - The last child of the  current element. </li>
+</ul>
+<PRE>
+The following webC specific non-XPATH expressions are also supported.
+</PRE>
+<ul>
+<li> '<'             - Previous sibling to the current element. </li>
+<li> '>'             - Next sibling to the current element. </li><li>
+</ul>
+<PRE>
+Examples:
+ItemFromRoot          = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, 0, "/section/subsection/paragraph/item");
+FirstChild            = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "*");
+LastChild             = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "*[last()]");
+LastGrandChild        = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "*[last()]/*[last()]");
+FirstGrandChild       = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "* /*");  (no space after * please)
+Child                 = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "myChild");
+Child                 = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "./myChild");
+Cousin                = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "../myUncle/HisChild");
+Cousin                = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "../myUncle/*");
+GrandParent           = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "../..");
+PrevSibling           = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "<");
+Nephew                = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, ">/HisChild");
+Nephew                = <!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, Parent, "</HisChild");
+Example: traverse all children of element X.
+el=<!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, X, "*");
+while (el)
+el=<!1><A HREF="wcELFind.html">wcELFind</A> (Ctx, el, ">");
+</PRE>
+<BR><DT><B>Returns:</B><DD>  wcEL        The element if successful, 0 if not found, ELERROR on an error.
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

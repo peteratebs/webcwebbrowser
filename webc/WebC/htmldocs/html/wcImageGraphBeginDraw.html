@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcImageGraphBeginDraw</A></H2></TD><TD><H2>(wcEL ImageElement)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Prepare an image for a sequence of one or more wcImageGraphDraw commands to follow. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>wcImageGraphBeginDraw clears the pallet to the orignial image it was created from so that a clean set of draw subroutines can be executed.
+The draw commands to follow will not be visible until <!1><A HREF="wcImageGraphEndDraw.html">wcImageGraphEndDraw</A> is called.
+
+<P><i><b> Note: ImageElement is an image element that was either created with an html &lt;div&gt; tag or by a call <!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A> or some other Javascript or C method
+that loads a valid image file.
+<br> Note: The following restrictions and limitations should be kept in mind.</i></b>
+<ul>
+<li>The image content must exist, wcImageGraph does not support drawing to dynamically created elements with source not successfully set and loaded.</li>
+<li>The image must be either 24 bit or 32 bit, not all image types and combinations are tested.</li>
+<li>If you have any doubts try using a 24 or 32 bit .png image.</li>
+<li>Position the image using its exact height and width. Do not scale the image using width and height properties or styles. Doing so will distort the pitch of drawn graphics.</li>
+<li>Only operations sandwiched between the previous wcImageGraphBeginDraw, wcImageGraphEndDraw pair are visible.</li>
+</ul>
+<PRE>
+Example: Create a pallet to draw into and draw crossing diagonal lines on it.
+
+<P>	wcEL ImageElement =  wcNewStyledImage(&childwindowCtx, 0, wcTRUE, "webc:///Example/Images/ExampleCanvas.png", 0, 0, 0, 200,200, 0, 0);
+	wcImageGraphBeginDraw(ImageElement);
+	wcImageGraphSetPenColor(ImageElement, wcImageGraphNameToColor(Blue));
+	wcImageGraphDrawLine(ImageElement, 200, 200, 0, 0);
+	wcImageGraphDrawLine(ImageElement, 0,  0, 200, 200);
+	wcImageGraphEndDraw(ImageElement);
+</PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcEL</B> -  ImageElement 	- An image element that is the background canvas for our draw operations.
+<BR><DT><B>Returns:</B><DD>  nothing
+<BR><DT><B>See Also:</B><DD><!1><A HREF="ExGraphics.html">ExGraphics</A>,<!1><A HREF="wcImageGraphEndDraw.html">wcImageGraphEndDraw</A>
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

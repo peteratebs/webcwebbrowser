@@ -1,0 +1,6104 @@
+# Microsoft eMbedded Visual Tools Project File - Name="mozjs" - Package Owner=<4>
+# Microsoft eMbedded Visual Tools Generated Build File, Format Version 6.02
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (WCE ARMV4) Static Library" 0xa304
+# TARGTYPE "Win32 (WCE emulator) Static Library" 0xa604
+
+CFG=mozjs - Win32 (WCE emulator) Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "mozjs.vcn".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "mozjs.vcn" CFG="mozjs - Win32 (WCE emulator) Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "mozjs - Win32 (WCE emulator) Release" (based on "Win32 (WCE emulator) Static Library")
+!MESSAGE "mozjs - Win32 (WCE emulator) Debug" (based on "Win32 (WCE emulator) Static Library")
+!MESSAGE "mozjs - Win32 (WCE ARMV4) Release" (based on "Win32 (WCE ARMV4) Static Library")
+!MESSAGE "mozjs - Win32 (WCE ARMV4) Debug" (based on "Win32 (WCE ARMV4) Static Library")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""
+# PROP Scc_LocalPath ""
+# PROP ATL_Project 2
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "emulatorRel"
+# PROP BASE Intermediate_Dir "emulatorRel"
+# PROP BASE CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "emulatorRel"
+# PROP Intermediate_Dir "emulatorRel"
+# PROP CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "_LIB" /YX /Gs8192 /GF /O2 /c
+# ADD CPP /nologo /W3 /I "..\..\..\..\..\rtplatform\v0.4\include\pocketPC" /I "..\..\..\..\..\rtplatform\v0.4\include" /I "..\..\..\include" /D "_i386_" /D "_X86_" /D "x86" /D "NDEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /D "_WEBC_" /D WEBC_SUPPORT_JSCRIPT=1 /YX /Gs8192 /GF /O2 /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "emulatorDbg"
+# PROP BASE Intermediate_Dir "emulatorDbg"
+# PROP BASE CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "emulatorDbg"
+# PROP Intermediate_Dir "emulatorDbg"
+# PROP CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "_LIB" /YX /Gs8192 /GF /c
+# ADD CPP /nologo /W3 /Zi /Oxt /I "..\..\..\..\..\rtplatform\v0.4\include\pocketPC" /I "..\..\..\..\..\rtplatform\v0.4\include" /I "..\..\..\include" /D "DEBUG" /D "_i386_" /D "_X86_" /D "x86" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /D "_WEBC_" /D WEBC_SUPPORT_JSCRIPT=1 /FR /YX /Gs8192 /GF /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "ARMV4Rel"
+# PROP BASE Intermediate_Dir "ARMV4Rel"
+# PROP BASE CPU_ID "{ECBEA43D-CD7B-4852-AD55-D4227B5D624B}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "ARMV4Rel"
+# PROP Intermediate_Dir "ARMV4Rel"
+# PROP CPU_ID "{ECBEA43D-CD7B-4852-AD55-D4227B5D624B}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "NDEBUG" /D "ARM" /D "_ARM_" /D "ARMV4" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /YX /O2 /M$(CECrtMT) /c
+# ADD CPP /nologo /W3 /I "..\..\..\..\..\rtplatform\v0.4\include\pocketPC" /I "..\..\..\..\..\rtplatform\v0.4\include" /I "..\..\..\include" /D "NDEBUG" /D "ARM" /D "_ARM_" /D "ARMV4" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /D "_WEBC_" /D WEBC_SUPPORT_JSCRIPT=1 /YX /O2 /M$(CECrtMT) /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "ARMV4Dbg"
+# PROP BASE Intermediate_Dir "ARMV4Dbg"
+# PROP BASE CPU_ID "{ECBEA43D-CD7B-4852-AD55-D4227B5D624B}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "ARMV4Dbg"
+# PROP Intermediate_Dir "ARMV4Dbg"
+# PROP CPU_ID "{ECBEA43D-CD7B-4852-AD55-D4227B5D624B}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+CPP=clarm.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "ARM" /D "_ARM_" /D "ARMV4" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /YX /M$(CECrtMTDebug) /c
+# ADD CPP /nologo /W3 /Zi /Od /I "..\..\..\..\..\rtplatform\v0.4\include\pocketPC" /I "..\..\..\..\..\rtplatform\v0.4\include" /I "..\..\..\include" /D "DEBUG" /D "ARM" /D "_ARM_" /D "ARMV4" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_LIB" /D "_WEBC_" /D WEBC_SUPPORT_JSCRIPT=1 /YX /M$(CECrtMTDebug) /c
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+
+!ENDIF 
+
+# Begin Target
+
+# Name "mozjs - Win32 (WCE emulator) Release"
+# Name "mozjs - Win32 (WCE emulator) Debug"
+# Name "mozjs - Win32 (WCE ARMV4) Release"
+# Name "mozjs - Win32 (WCE ARMV4) Debug"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsapi.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSAPI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfile.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsmath.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSAPI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSAPI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfile.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsmath.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSAPI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSAPI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfile.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsmath.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSAPI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSAPI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfile.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsmath.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSAPI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsarena.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSARE=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSARE=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSARE=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSARE=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSARE=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSARE=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSARE=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSARE=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsarray.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSARR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSARR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSARR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSARR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSARR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSARR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSARR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSARR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsatom.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSATO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSATO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSATO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSATO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSATO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSATO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSATO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSATO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsbool.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSBOO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSBOO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSBOO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSBOO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSBOO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSBOO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSBOO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSBOO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jscntxt.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSCNT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSCNT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSCNT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSCNT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSCNT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSCNT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSCNT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSCNT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsdate.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSDAT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSDAT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSDAT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSDAT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSDAT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSDAT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSDAT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSDAT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsdbgapi.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSDBG=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDBG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSDBG=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDBG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSDBG=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDBG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSDBG=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDBG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsdhash.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSDHA=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDHA=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\nsTraceMalloc.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSDHA=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDHA=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\nsTraceMalloc.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSDHA=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDHA=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\nsTraceMalloc.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSDHA=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDHA=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\nsTraceMalloc.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsdtoa.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSDTO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jslibmath.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDTO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSDTO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jslibmath.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDTO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSDTO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jslibmath.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDTO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSDTO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jslibmath.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSDTO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsemit.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSEMI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSEMI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSEMI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSEMI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSEMI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSEMI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSEMI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSEMI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsexn.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSEXN=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSEXN=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSEXN=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSEXN=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSEXN=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSEXN=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSEXN=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSEXN=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsfile.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSFIL=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSFIL=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\jsfile.msg"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prerror.h"\
+	"..\..\..\lib\mozilla\prio.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSFIL=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSFIL=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\jsfile.msg"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prerror.h"\
+	"..\..\..\lib\mozilla\prio.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSFIL=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSFIL=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\jsfile.msg"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prerror.h"\
+	"..\..\..\lib\mozilla\prio.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSFIL=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdate.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSFIL=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\jsfile.msg"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prerror.h"\
+	"..\..\..\lib\mozilla\prio.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsfun.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSFUN=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSFUN=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSFUN=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSFUN=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSFUN=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSFUN=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSFUN=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSFUN=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsgc.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSGC_=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSGC_=\
+	"..\..\..\lib\mozilla\dump_xpc.h"\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSGC_=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSGC_=\
+	"..\..\..\lib\mozilla\dump_xpc.h"\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSGC_=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSGC_=\
+	"..\..\..\lib\mozilla\dump_xpc.h"\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSGC_=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSGC_=\
+	"..\..\..\lib\mozilla\dump_xpc.h"\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jshash.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSHAS=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSHAS=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSHAS=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSHAS=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSHAS=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSHAS=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSHAS=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSHAS=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsinterp.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSINT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSINT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\jsjit.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSINT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSINT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\jsjit.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSINT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSINT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\jsjit.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSINT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSINT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\jsjit.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jslock.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSLOC=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSLOC=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	"..\..\..\lib\mozilla\prthread.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSLOC=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSLOC=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	"..\..\..\lib\mozilla\prthread.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSLOC=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSLOC=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	"..\..\..\lib\mozilla\prthread.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSLOC=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSLOC=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	"..\..\..\lib\mozilla\prthread.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jslog2.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSLOG=\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	
+NODEP_CPP_JSLOG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSLOG=\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	
+NODEP_CPP_JSLOG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSLOG=\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	
+NODEP_CPP_JSLOG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSLOG=\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	
+NODEP_CPP_JSLOG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jslong.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSLON=\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	
+NODEP_CPP_JSLON=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSLON=\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	
+NODEP_CPP_JSLON=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSLON=\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	
+NODEP_CPP_JSLON=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSLON=\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	
+NODEP_CPP_JSLON=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsmath.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSMAT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslibmath.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsmath.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSMAT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSMAT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslibmath.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsmath.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSMAT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSMAT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslibmath.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsmath.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSMAT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSMAT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslibmath.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsmath.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_JSMAT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsnum.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSNUM=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSNUM=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSNUM=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSNUM=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSNUM=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSNUM=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSNUM=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSNUM=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsobj.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSOBJ=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSOBJ=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSOBJ=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSOBJ=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSOBJ=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSOBJ=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSOBJ=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSOBJ=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsopcode.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSOPC=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSOPC=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSOPC=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSOPC=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSOPC=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSOPC=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSOPC=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSOPC=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsparse.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSPAR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSPAR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSPAR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSPAR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSPAR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSPAR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSPAR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsparse.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSPAR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsprf.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSPRF=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSPRF=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSPRF=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSPRF=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSPRF=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSPRF=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSPRF=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSPRF=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsregexp.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSREG=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSREG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSREG=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSREG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSREG=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSREG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSREG=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSREG=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsscan.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSSCA=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSCA=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSSCA=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSCA=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSSCA=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSCA=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSSCA=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsdtoa.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsexn.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscan.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSCA=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsscope.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSSCO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSCO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSSCO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSCO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSSCO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSCO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSSCO=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbit.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSCO=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsscript.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSSCR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSSCR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSSCR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSSCR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSSCR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSSCR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSSCR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdbgapi.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsemit.h"\
+	"..\..\..\lib\mozilla\jsfun.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSSCR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsstr.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSSTR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSTR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSSTR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSTR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSSTR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSTR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSSTR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsarray.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsbool.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsnum.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsopcode.h"\
+	"..\..\..\lib\mozilla\jsopcode.tbl"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSSTR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsutil.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSUTI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSUTI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSUTI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSUTI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSUTI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSUTI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSUTI=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	
+NODEP_CPP_JSUTI=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\jsxdrapi.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_JSXDR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSXDR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_JSXDR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSXDR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_JSXDR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSXDR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_JSXDR=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\js.msg"\
+	"..\..\..\lib\mozilla\jsapi.h"\
+	"..\..\..\lib\mozilla\jsarena.h"\
+	"..\..\..\lib\mozilla\jsatom.h"\
+	"..\..\..\lib\mozilla\jsclist.h"\
+	"..\..\..\lib\mozilla\jscntxt.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jsconfig.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jsdhash.h"\
+	"..\..\..\lib\mozilla\jsgc.h"\
+	"..\..\..\lib\mozilla\jshash.h"\
+	"..\..\..\lib\mozilla\jsinterp.h"\
+	"..\..\..\lib\mozilla\jslock.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsobj.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsprvtd.h"\
+	"..\..\..\lib\mozilla\jspubtd.h"\
+	"..\..\..\lib\mozilla\jsregexp.h"\
+	"..\..\..\lib\mozilla\jsscope.h"\
+	"..\..\..\lib\mozilla\jsscript.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jsstr.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\jsxdrapi.h"\
+	
+NODEP_CPP_JSXDR=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\pratom.h"\
+	"..\..\..\lib\mozilla\prcvar.h"\
+	"..\..\..\lib\mozilla\prlock.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\lib\mozilla\prmjtime.c
+
+!IF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Release"
+
+DEP_CPP_PRMJT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpdate.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtptime.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_PRMJT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\rtc.h"\
+	"..\..\..\lib\mozilla\tri_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE emulator) Debug"
+
+DEP_CPP_PRMJT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpdate.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtptime.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_PRMJT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\rtc.h"\
+	"..\..\..\lib\mozilla\tri_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Release"
+
+DEP_CPP_PRMJT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpdate.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtptime.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_PRMJT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\rtc.h"\
+	"..\..\..\lib\mozilla\tri_types.h"\
+	
+
+!ELSEIF  "$(CFG)" == "mozjs - Win32 (WCE ARMV4) Debug"
+
+DEP_CPP_PRMJT=\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpdate.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmem.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtpmemdb.h"\
+	"..\..\..\..\..\rtplatform\v0.4\include\rtptime.h"\
+	"..\..\..\include\webcfg.h"\
+	"..\..\..\include\webcmem.h"\
+	"..\..\..\lib\mozilla\jscompat.h"\
+	"..\..\..\lib\mozilla\jscpucfg.h"\
+	"..\..\..\lib\mozilla\jslong.h"\
+	"..\..\..\lib\mozilla\jsosdep.h"\
+	"..\..\..\lib\mozilla\jsotypes.h"\
+	"..\..\..\lib\mozilla\jsprf.h"\
+	"..\..\..\lib\mozilla\jsstddef.h"\
+	"..\..\..\lib\mozilla\jstypes.h"\
+	"..\..\..\lib\mozilla\jsutil.h"\
+	"..\..\..\lib\mozilla\prmjtime.h"\
+	
+NODEP_CPP_PRMJT=\
+	"..\..\..\lib\mozilla\jsautocfg.h"\
+	"..\..\..\lib\mozilla\platform.h"\
+	"..\..\..\lib\mozilla\rtc.h"\
+	"..\..\..\lib\mozilla\tri_types.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl"
+# End Group
+# End Target
+# End Project

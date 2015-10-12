@@ -1,0 +1,9 @@
+﻿Build started 10/12/2015 5:31:21 PM.
+     1>Project "C:\0a_share_with_virtual_box\ebs\gitsources\webcwebbrowser\webc\WebC\project\msvc.net\libpng\libpng.vcxproj" on node 2 (clean target(s)).
+     1>_PrepareForClean:
+         Deleting file ".\libpng___Win32_Debug_JavaScript_Unicode\libpng.lastbuildstate".
+     1>Done Building Project "C:\0a_share_with_virtual_box\ebs\gitsources\webcwebbrowser\webc\WebC\project\msvc.net\libpng\libpng.vcxproj" (clean target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.04

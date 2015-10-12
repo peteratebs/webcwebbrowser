@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>int <A HREF="#DOC.DOCU">webc_BrowserAddToHistory</A></H2></TD><TD><H2>(HBROWSER_HANDLE browser,<BR>&nbsp; char* _url_str)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>webC document history interface. Add a location to the HTML Browser history </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Document history is used mainly in web browser applications but it can be useful in other applications with navigation requirements. If screens are being loaded through URLs a history is automatically maintained. This function can be used to manually add a url to the history.
+
+<P>
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>browser</B> -    The HTML Browser handle
+<BR><B>url_str</B> -    The URL to put in the history (a copy of this
+string will be created)
+<BR><DT><B>Returns:</B><DD>  0 on success, -1 otherwise
+<BR><DT><B>See Also:</B><DD>webc_BrowserRefresh, <!1><A HREF="webc_BrowserBack.html">webc_BrowserBack</A>, <!1><A HREF="webc_BrowserForward.html">webc_BrowserForward</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

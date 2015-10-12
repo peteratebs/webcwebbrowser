@@ -1,0 +1,97 @@
+Quick Start
+
+Feature Overview
+
+WebC 2.5 is a highly capable SDK that offers tremendous power and flexibility to the graphical embedded application developer.  WebC 2.5 is compatible with HTML version 4.01, Cascading Style Sheets level 1 (with support for much of CSS/2), JavaScript 1.5, HTTP 1.1 (with support for Basic authentication, persistent connections, and memory or disk-based caching), GIF images and animations, JPEG images, PNG images, MNG animations, and Unicode text rendering.
+
+WebC can be ported easily to any graphics display device that provides basic text rendering, bitmap and rectangle drawing, and clipping to rectangular regions.  WebC can also optionally support image scaling.  
+
+WebC recognizes many character encoding standards, including UTF-8, Unicode 16 bit, Shift-JIS, Chinese BIG5, EUCKR Korean, and EUCJP Japanese.  
+
+WebC has an offline browsing mode that allows the user to save web content to a memory or disk-based cache for later viewing when the embedded device is not connected to a network.  WebC also offers two dimensional tab navigation for TV remote-control style input devices.  
+
+Using the WebC API, an application developer can write native function event handlers for HTML or browser-level events, dynamically extend the JavaScript DOM, manipulate HTML documents and HTTP cookies, control screen updates and load queue processing, embed dynamically expanded macros into URLs, recognize custom HTML tag attributes, modify style sheets, and provide custom META tag handling.
+
+
+Folder Structure
+
+Here is the default WebC 2.5 release distribution folder structure, with brief descriptions:
+
+<install root>
+	bin/ - various Win32 binary executables used in the build process
+	doc/ - documentation folder.
+		html/ - dynamically generated HTML manual pages (start at index.html)
+	gui/ - integration support code for running WebC on various GUI libraries
+		peg/ - support package for Swell Software's PEG (version 1.80 and above)
+			include/ - PEG support header files
+			source/ - PEG support source files
+				fonts/ - pre-generated PEG font source files	
+		template/ - template files for creating a new GUI integration
+			include/ - template header files
+			source/ - template source files
+		windows/ - support package for WebC on Win32 using GDI+
+			include/ - GDI+ header files
+			source/ - GDI+ source files
+	html/ - pre-compiled HTML files and HTML test pages
+		chrome/ - browser UI (chrome) files
+		images/ - images used in pre-compiled HTML pages and tests
+		include/ - destination for pre-compiled content header files
+		source/ - destination for pre-compiled content data files
+		tests/ - static test suite
+		treeview/ - example implementation of a tree-view in HTML and JavaScript
+	include/ - core WebC header files
+	lib/ - third-party libraries used by WebC for various feature support
+		fdlibm/ - Freely distributable math library, used by JavaScript engine
+		libjpeg/ - used for JPEG decoding
+		libmng/ - used for MNG animation decoding and rendering
+		libpng/ - used for PNG decoding
+		mozilla/ - JavaScript engine from the Mozilla project; used for JavaScript support
+		openssl/ - used for secure HTTP (HTTPS)
+		zlib/ - used by libpng and libmng for lossless data compression support
+	project/ - project files for WebC
+		msvc6.0/ - Microsoft Visual C++ 6.0 project files
+			fdlibm/ - project file to build fdlibm.lib
+			libjpeg/ - project file to build libjpeg.lib
+			libmng/ - project file to build libmng.lib
+			libpng/ - project file to build libpng.lib
+			mozjs/ - project file to build Mozilla JavaScript library
+			peg/ - project file to build minimal PEG library for Win32 screen driver
+			rtplatform_win32/ - project file to build EBSnet Run-time Platform support library for Win32
+			webc/ - project file to build core webc library (webc.lib)
+			webcdemo_peg_win32/ - project file to build browser demo application running on Win32 with PEG graphics library
+			webcpeg_win32/ - project file to build WebC support library for PEG on Win32
+			zlib/ - project file to build zlib.lib						
+		msvc.net/ - Microsoft Visual C++ .net-ONLY project files
+			fdlibm/ - project file to build fdlibm.lib
+			libjpeg/ - project file to build libjpeg.lib
+			libmng/ - project file to build libmng.lib
+			libpng/ - project file to build libpng.lib
+			mozjs/ - project file to build Mozilla JavaScript library
+			peg/ - project file to build minimal PEG library for Win32 screen driver
+			rtplatform_win32/ - project file to build EBSnet Run-time Platform support library for Win32
+			webc/ - project file to build core webc library (webc.lib)
+			webcdemo_gdip/ - project file to build browser demo application running on Win32 with GDI+ graphics library
+			webcgdip/ - project file to build WebC support library for GDI+ on Win32
+			zlib/ - project file to build zlib.lib						
+		ultraedit32/ - IDM Computer Solution's UltraEdit-32 project file
+	source/ - core WebC source files
+	
+
+How to build the demo app
+	For Visual Studio 6.0 running with PEG graphics library
+	For Visual Studio .net running with GDI+ graphics library
+
+
+Downloading/Updating via CVS
+
+A WebC 2.5 installation can be kept up-to-date using any CVS client that supports SSH.  To use this feature, the WebC 2.5 module must be checked out from EBSnet's secure CVS server using the following parameters:
+
+Server: 66.189.87.81
+CVSROOT: /var/lib/support-cvs
+Module: ebs/webc/v2.5
+Username & Password: <given via email; contact support@ebsnetinc.com for CVS account information>
+
+When checking out and updating, make sure to specify network compression to help speed up the transfer of large text files.  Once the checkout has completed, the sandbox may be updated at any time to receive the latest service updates, bug fixes, and enhancements.  Updates to the CVS server are announced via email to all WebC customers with active support agreements.  
+
+For more information on using CVS on Windows, please refer to the EBSnet CVS tutorial, located in the doc/ folder of the WebC installation.
+

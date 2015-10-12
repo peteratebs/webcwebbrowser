@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExGraphics</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>A slideshow applet demonstrating the line drawing capabilities of webC. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>Presents several slides showing line, ellipse, arc, polygon, and rectangles draw and fill functions.
+<br> Note: childwindowCtx has already been initialized to a valid window context by <!1><A HREF="OpenExampleChildWindow.html">OpenExampleChildWindow</A>.
+<PRE>
+Source code:
+
+<P>static void ExGraphicsSlideShowCB(int Sequence, void *UserVoidParm);
+static void ExGraphics(void)
+{
+	// Clear the window content and load an immage to draw into.
+	<!1><A HREF="wcDocClear.html">wcDocClear</A>(&childwindowCtx, wcFALSE);
+	wcEL ImageElement =  <!1><A HREF="wcNewStyledImage.html">wcNewStyledImage</A>(&childwindowCtx, 0, wcTRUE, "webc:///Example/Images/ExampleCanvas.png", 0, 0, 0, GRAPHPALLETHEIGHT,GRAPHPALLETWIDTH, 0, 0);
+
+<P>	<!1><A HREF="wcWinBringToTop.html">wcWinBringToTop</A>(&childwindowCtx);
+	// Start the show imediately at sequence 0
+	<!1><A HREF="wcTimedCallback.html">wcTimedCallback</A>(ExGraphicsSlideShowCB, 0, 0, (void *)ImageElement);
+
+<P>}
+
+<P>#define GRAPHPALLETWIDTH  300
+#define GRAPHPALLETHEIGHT 120
+#define PI 3.14159265358979323846
+static void ExGraphicsSinWave(wcEL ImageElement,int frequency, int baseline, int amplitude, HTMLColor color, wcBOOL fill);
+// Float a label over the template
+static void ExGraphicsLabel(int top, int left,int z,char *message)
+{
+wcEL MessageDiv;
+	MessageDiv=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, 0, wcTRUE,  top, left, 20, 180,z, "white", "Transparent",0, "overflow:hidden;");
+	//  put something in it.
+	char Buffer[512];
+	rtp_sprintf(Buffer, "&lt;small&gt;%s&lt;/small&gt;", message);
+	<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(MessageDiv, Buffer);
+
+<P>}
+// Clears the child window and returns a new image element to draw into
+static wcEL ExGraphicsClear(void)
+{
+	<!1><A HREF="wcDocClear.html">wcDocClear</A>(&childwindowCtx, wcFALSE);
+	wcEL ImageElement =  <!1><A HREF="wcNewStyledImage.html">wcNewStyledImage</A>(&childwindowCtx, 0, wcTRUE, "webc:///Example/Images/ExampleCanvas.png", 0, 0, 0, GRAPHPALLETHEIGHT,GRAPHPALLETWIDTH, 0, 0);
+	return ImageElement;
+}
+
+<P>static void ExGraphicsSlideShowCB(int Sequence, void *UserVoidParm)
+{
+wcEL ImageElement = (wcEL) UserVoidParm;
+int nextShowDelay = SLIDESHOWDELAY; // Change nextShowDelay to speed up or slow down a particular slide
+wcBOOL 	FillPolygons = wcTRUE; // Cases that do the unfilled version clear this value
+	// We are called by a system timer that doesn't know about our window so check if the user press left or right an reloaded since the timer was armed.
+	// If we proceeded we would crash because the elements were cleared from the document.
+	if (Examples[currentExample].ExampleFunction != ExGraphics)
+		return;
+	// Cycle through the sequence numbers showing line graphics features
+	switch (Sequence) {
+	default: // Out of tests. just exit
+		UPDATECONSOLETEXT("Line Graphics slideshow complete - Click LEFT or RIGHT to move to next example.");
+		return;
+	case 0:  // Draw lines
+		{
+		UPDATECONSOLETEXT("Line Graphics  slideshow - Draw Lines and arcs");
+		<!1><A HREF="wcImageGraphBeginDraw.html">wcImageGraphBeginDraw</A>(ImageElement);
+		HtmlColorIndex c = Blue;
+		double Delta=(2*PI)/16;	double theta =0.0;	double r = 50.0;
+		int oy,ox;	oy=ox=50;
+		<!1><A HREF="wcImageGraphSetBrushWidth.html">wcImageGraphSetBrushWidth</A>(ImageElement, 4);
+		// Draw 16 lines in a circle, vary the color by indexing through the color table.
+		for (int i = 0;i < 16; i += 2,theta+=Delta)
+		{
+		int x0,y0,x1,y1;
+			y1 = oy+int(sin(theta)*r);y0=oy-int(sin(theta)*r);
+			x1 = ox+int(cos(theta)*r);x0=oy-int(cos(theta)*r);
+			<!1><A HREF="wcImageGraphSetPenColor.html">wcImageGraphSetPenColor</A>(ImageElement, <!1><A HREF="wcImageGraphNameToColor.html">wcImageGraphNameToColor</A>(c));
+			c = (HtmlColorIndex) ((int)c+1);
+			<!1><A HREF="wcImageGraphDrawLine.html">wcImageGraphDrawLine</A>(ImageElement, x0,  y0, x1, y1);
+		}
+		ExGraphicsLabel(oy+50, ox/2,1,"- Lines -");
+		// Draw a series of connected arcs, vary the color by indexing through the color table.
+		<!1><A HREF="wcImageGraphSetPenColor.html">wcImageGraphSetPenColor</A>(ImageElement, wcImageGraphNameToColor(Purple));
+		ox=200;oy=50;
+		for (int ir1 = 90; ir1 > 20; ir1 -= 10)
+		{
+			wcBOOL doFill = ir1==30 ? wcTRUE : wcFALSE; // Calculation so we fill the last arc we draw
+			<!1><A HREF="wcImageGraphSetPenColor.html">wcImageGraphSetPenColor</A>(ImageElement, wcImageGraphNameToColor(c));	c = (HtmlColorIndex) ((int)c+1);
+			<!1><A HREF="wcImageGraphArc.html">wcImageGraphArc</A>(ImageElement, ox, oy, ir1, 40, 0, 180,wcFALSE);
+			<!1><A HREF="wcImageGraphArc.html">wcImageGraphArc</A>(ImageElement, ox, oy, ir1, 40, 180, 360,doFill);
+		}
+		ExGraphicsLabel(oy+50, ox-20,1,"- Arcs -");
+		}
+		break;
+	case 1: // Draw Ellipses
+		{
+		int x,y,h,w;
+		UPDATECONSOLETEXT("Line Graphics slideshow - Draw Ellipses");
+		ImageElement = ExGraphicsClear();
+		<!1><A HREF="wcImageGraphBeginDraw.html">wcImageGraphBeginDraw</A>(ImageElement);
+		// Fill the background in SteelBlue
+		<!1><A HREF="wcImageGraphSetPenColor.html">wcImageGraphSetPenColor</A>(ImageElement, wcImageGraphNameToColor(SteelBlue));
+		<!1><A HREF="wcImageGraphDrawRect.html">wcImageGraphDrawRect</A>(ImageElement, 0, 0, GRAPHPALLETWIDTH, GRAPHPALLETHEIGHT, wcTRUE);
+		<!1><A HREF="wcImageGraphSetBrushWidth.html">wcImageGraphSetBrushWidth</A>(ImageElement, 4);
+		// Draw some elipses in different colors.
+		HtmlColorIndex c = Blue;
+		x=20; w=10;h=10;y=50;
+		for (;;)
+		{
+			<!1><A HREF="wcImageGraphSetPenColor.html">wcImageGraphSetPenColor</A>(ImageElement, wcImageGraphNameToColor(c));
+			c = (HtmlColorIndex) ((int)c+1);
+			<!1><A HREF="wcImageGraphDrawEllipse.html">wcImageGraphDrawEllipse</A>(ImageElement, x, y, h, w,wcFALSE);
+			x += 6; h+=6; w+=6;
+			if (x+w > GRAPHPALLETWIDTH || y+h > GRAPHPALLETHEIGHT)
+				break;
+		}
+		ExGraphicsLabel(GRAPHPALLETHEIGHT-20, (GRAPHPALLETWIDTH*1)/3-80,1,"- Ellipses -");
+		// Draw some filled elipses.
+		x = (GRAPHPALLETWIDTH*2)/3;
+		h-=6; w-=6;
+		for (;;)
+		{
+			wcImageGraphSetPenColor(ImageElement, wcImageGraphNameToColor(c));
+			c = (HtmlColorIndex) ((int)c+1);
+			<!1><A HREF="wcImageGraphDrawEllipse.html">wcImageGraphDrawEllipse</A>(ImageElement, x, y, h, w,wcTRUE);
+			x += 6; h-=6; w-=6;
+			if (w < 0 || h < 0)
+				break;
+		}
+		ExGraphicsLabel(GRAPHPALLETHEIGHT-20, (GRAPHPALLETWIDTH*2)/3-40,1,"- Filled Ellipses -");
+		}
+		break;
+	case 2: // Polygons
+		FillPolygons = wcFALSE;
+	case 3: // Filled Polygons
+		{
+			ImageElement = ExGraphicsClear();
+			HtmlColorIndex c = LightGreen;
+			int baseline = 40;
+			<!1><A HREF="wcImageGraphBeginDraw.html">wcImageGraphBeginDraw</A>(ImageElement);
+			// Fill the background in SteelBlue
+			<!1><A HREF="wcImageGraphSetPenColor.html">wcImageGraphSetPenColor</A>(ImageElement, wcImageGraphNameToColor(SteelBlue));
+			<!1><A HREF="wcImageGraphDrawRect.html">wcImageGraphDrawRect</A>(ImageElement, 0, 0, GRAPHPALLETWIDTH, GRAPHPALLETHEIGHT, wcTRUE);
+
+<P>			for (int frequency=20; frequency > 4; frequency -= 4,baseline+= 10)
+			{
+				c = (HtmlColorIndex) ((int)c+1);
+				ExGraphicsSinWave(ImageElement, frequency, baseline, 30, wcImageGraphNameToColor(c), FillPolygons);
+			}
+			if (FillPolygons)
+			{
+				UPDATECONSOLETEXT("Line Graphics slideshow- Draw Filled PolyGons");
+				ExGraphicsLabel(GRAPHPALLETHEIGHT-20, GRAPHPALLETWIDTH/2-80,1,"- Filled Polygons -");
+			}
+			else
+			{
+				UPDATECONSOLETEXT("Line Graphics slideshow - Draw PolyGons");
+				ExGraphicsLabel(GRAPHPALLETHEIGHT-20, GRAPHPALLETWIDTH/2-80,1,"- Polygons -");
+			}
+		}
+		break;
+
+<P>	}
+	<!1><A HREF="wcImageGraphEndDraw.html">wcImageGraphEndDraw</A>(ImageElement);
+	<!1><A HREF="wcTimedCallback.html">wcTimedCallback</A>(ExGraphicsSlideShowCB, SLIDESHOWDELAY, ++Sequence, UserVoidParm);
+}
+
+<P>static void ExGraphicsSinWave(wcEL ImageElement,int frequency, int baseline, int amplitude, HTMLColor color, wcBOOL fill)
+{
+	double Delta=(frequency*3.414)/200;
+	double theta =0;
+	int SinArray[220];
+	int npoints = 100;
+	for (int i = 0;i < 200; i += 2,theta+=Delta)
+	{
+		SinArray[i]=i+20;
+		SinArray[i+1]=baseline + int(sin(theta)*(double)amplitude);
+	}
+	SinArray[200]=SinArray[198];
+	SinArray[201]=(GRAPHPALLETHEIGHT-20);
+	SinArray[202]=SinArray[0];
+	SinArray[203]=(GRAPHPALLETHEIGHT-20);
+	SinArray[204]=SinArray[0];
+	SinArray[205]=SinArray[1];
+	if (fill)
+		npoints += 3;
+	<!1><A HREF="wcImageGraphSetPenColor.html">wcImageGraphSetPenColor</A>(ImageElement, color);
+	<!1><A HREF="wcImageGraphDrawPolygon.html">wcImageGraphDrawPolygon</A>(ImageElement, npoints, SinArray,fill);
+}
+
+<P></PRE>
+</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

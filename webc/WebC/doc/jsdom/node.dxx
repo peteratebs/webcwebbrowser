@@ -1,0 +1,71 @@
+Node
+
+	Base Class
+		none
+
+	Description
+		A node in a DOM tree.
+
+	Properties	
+	
+		childNodes
+			Type
+				Collection
+			Description
+				A collection of all children of this node.
+			Read-only
+				yes
+
+		firstChild
+			Type
+				Node
+			Description
+				The first child of this node in the DOM tree.
+			Read-only
+				yes
+
+		lastChild
+			Type
+				Node
+			Description
+				The last child of this node in the DOM tree.
+			Read-only
+				yes
+
+		nextSibling
+			Type
+				Node
+			Description
+				The next sibling of this node in the DOM tree.
+			Read-only
+				yes
+
+		parentElement
+			Type
+				Node
+			Description
+				The parent of this node in the DOM tree.
+			Read-only
+				yes
+
+		parentNode
+			Type
+				Node
+			Description
+				The parent of this node in the DOM tree.
+			Read-only
+				yes
+
+		previousSibling
+			Type
+				Node
+			Description
+				The previous sibling of this node in the DOM tree.
+			Read-only
+				yes
+
+	
+	Methods
+
+		none
+

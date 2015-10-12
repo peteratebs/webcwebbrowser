@@ -1,0 +1,82 @@
+
+Quick Start
+	Feature Overview
+	Folder Structure
+	How to build the demo app
+	Downloading/Updating via CVS
+
+Porting guide
+	Overview
+		WebC Architecture/Dependencies
+	RTPlatform
+	HTML Graphics Context functions
+
+Introduction to WebC	
+	API Conventions
+		String return values
+	Browsers, Documents, Elements
+		Overview
+		Creating/destroying browsers
+		Setting private data pointers
+	HTMLGraphicsContext
+	Input events
+		Passing input events to a Browser
+		Processing the input queue during URL loads
+		Setting the input focus			
+	Timer processing
+	Browser event handling
+	Controlling Graphics output
+		Suspend drawing
+		Resume drawing
+		Force draw
+	Virtual files
+	Running in a multi-threaded environment
+	UI
+		Key map
+		2D Tab navigation
+
+The WebC API (organized by web standard)
+	CSS
+		Setting an element style	
+	HTML
+		Element event handlers
+		Tag event handlers
+		META tag handlers
+		Property accessors/modifiers
+		Quarantined Frames
+		DOM functions	
+	HTTP
+		Authentication
+		Cookies
+		Caching
+		Offline Cache		
+	JavaScript
+		Custom JavaScript functions
+			Overview
+			Creating
+			Retrieving function argument values
+			How to pass string data back to a script
+			How to pass an HTMLElement reference back to a script
+			How to pass an HTMLDocument reference back to a script
+	Unicode
+		Character encoding support
+	URL
+		URL Macros	
+
+Appendix A - WebC API Index
+Appendix B - Build options
+Appendix C - Content Developer's Guide
+	Standards Compliance
+		HTML
+		CSS
+		JavaScript/DOM
+		HTTP
+	Creating Optimized Content	
+Appendix D - Testing Procedure
+	Static tests
+	Mozilla test suite
+	Random page test
+	Memory failure testing
+	Broken HTML test
+Appendix E - Code Example Index
+Appendix F - Diagram Index

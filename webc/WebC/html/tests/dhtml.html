@@ -1,0 +1,66 @@
+<div id='divOne' style='border: solid 1px black; margin: 5px; padding: 5px;' onclick=
+'
+var elem = document.getElementById("divTwo");
+if (elem)
+{
+	elem.innerHTML = this.innerHTML;
+}
+'><b>content</b> was <span style='color: red'>made</span> to be copied</div>
+<div id='divTwo' style='border: solid 1px black; margin: 5px; padding: 5px;'><i>content</i> is only temporary</div>
+
+<span style="font: 10pt arial;" 
+onclick='		
+		if (this.editing == 1)
+		{
+		}
+		else
+		{
+			this.innerHTML = "<input size=50 style=\"font: 10pt arial; border: solid black 1px;\" id=blah type=text value=\"" + this.innerHTML + "\">";
+			
+			var elem = document.getElementById("blah");
+			if (elem)	
+			{
+				elem.focus();
+			}
+			this.editing = 1;
+		}
+		
+	'
+onblur='
+		if (this.editing == 1)
+		{
+			var elem = document.getElementById("blah");
+			if (elem)	
+			{
+				this.innerHTML = elem.value;
+			}
+			this.editing = 0;			
+		}
+		else
+		{
+		}	
+	'
+	>A label you can edit!</span>
+
+<table border=1>
+ <tr onclick='this.innerHTML="<td rowspan=2>A new column!</td>" + this.innerHTML;'>
+  <td>1,1</td>
+  <td>2,1</td>
+ </tr>
+ <tr>
+  <td>1,2</td>
+  <td>2,2</td>
+ </tr>
+</table>
+
+
+<table border=1 onclick='this.innerHTML="<tr><td colspan=2>A new row!</td></tr>" + this.innerHTML;'>
+ <tr>
+  <td>1,1</td>
+  <td>2,1</td>
+ </tr>
+ <tr>
+  <td>1,2</td>
+  <td>2,2</td>
+ </tr>
+</table>

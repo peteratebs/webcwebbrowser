@@ -1,0 +1,125 @@
+Event
+
+	Base Class
+		none
+
+	Description
+		Represents an event.
+
+	Properties	
+	
+		button
+			Type
+				integer
+			Description
+				Which mouse button was pressed (1 = left, 2 = right, 3 = middle); always equals 1.
+			Read-only
+				yes
+
+		cancleBubble
+			Type
+				boolean
+			Description
+				Controls whether this event will be passed along to the parent element if the current element fails to handle it.
+			Read-only
+				no
+
+		clientX
+			Type
+				integer
+			Description
+				X coordinate of mouse position relative to the viewport window of the document which is handling the event.
+			Read-only
+				yes
+
+		clientY
+			Type
+				integer
+			Description
+				Y coordinate of mouse position relative to the viewport window of the document which is handling the event.
+			Read-only
+				yes
+
+		fromElement
+			Type
+				HTMLElement
+			Description
+				The original recipient of the event.
+			Read-only
+				yes
+
+		keyCode
+			Type
+				integer
+			Description
+				The key that was pressed/released.  Maps to Unicode character value in most cases.
+			Read-only
+				yes
+
+		offsetX
+			Type
+				integer
+			Description
+				X coordinate of mouse position relative to the position of the element which is handling the event.
+			Read-only
+				yes
+
+		offsetY
+			Type
+				integer
+			Description
+				Y coordinate of mouse position relative to the position of the element which is handling the event.
+			Read-only
+				yes
+
+		screenX
+			Type
+				integer
+			Description
+				X coordinate of mouse position relative to the upper left corner of the screen.
+			Read-only
+				yes
+
+		screenY
+			Type
+			Description
+				Y coordinate of mouse position relative to the upper left corner of the screen.
+			Read-only
+				yes
+			
+		srcElement
+			Type
+				HTMLElement
+			Description
+				The original recipient of the event.
+			Read-only
+				yes
+
+		type
+			Type
+				string
+			Description
+				The event type (for example, "mousedown" or "load")
+			Read-only
+				yes
+
+		x
+			Type
+				integer
+			Description
+				X coordinate of mouse position relative to the viewport window of the document which is handling the event.
+			Read-only
+				yes
+
+		y
+			Type
+				integer
+			Description
+				Y coordinate of mouse position relative to the viewport window of the document which is handling the event.
+			Read-only
+				yes
+	
+	Methods
+
+		none
+		

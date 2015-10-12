@@ -1,0 +1,18 @@
+DisableLCD()
+{  
+  __writeMemory32(0x00000000, 0xFFE10C00, "Memory"); // Disable LCD hardware cursor
+  __writeMemory32(0x00000000, 0xFFE10018, "Memory"); // Disable LCD contoller
+  
+  __writeMemory32(0x00000002, 0xE01FC040, "Memory"); // MEMMAP = 2;
+
+}
+
+execUserPreload()
+{
+  DisableLCD();
+}
+
+execUserReset()
+{
+  DisableLCD();
+}

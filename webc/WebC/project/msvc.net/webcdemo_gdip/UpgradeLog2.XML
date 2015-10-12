@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="webcdemo_gdip">
+</Property><Property Name="Solution File" Value="C:\ebs\webc_archive\EBSWebC2.6.14\webc\webc\project\msvc.net\webcdemo_gdip\webcdemo_gdip.sln">
+</Property><Property Name="User Options File" Value="C:\ebs\webc_archive\EBSWebC2.6.14\webc\webc\project\msvc.net\webcdemo_gdip\webcdemo_gdip.suo">
+</Property><Property Name="Date" Value="Thursday, March 04, 2010">
+</Property><Property Name="Time" Value="10:15 AM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="webcdemo_gdip.sln" Description="File successfully backed up as C:\ebs\webc_archive\EBSWebC2.6.14\webc\webc\project\msvc.net\webcdemo_gdip\webcdemo_gdip.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="webcdemo_gdip.suo" Description="File successfully backed up as C:\ebs\webc_archive\EBSWebC2.6.14\webc\webc\project\msvc.net\webcdemo_gdip\webcdemo_gdip.suo.old">
+</Event><Event ErrorLevel="0" Project="webcdemo_gdip" Source="webcdemo_gdip.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="webcdemo_gdip" Source="webcdemo_gdip.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="webc" Source="..\webc\webc.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="webc" Source="..\webc\webc.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="rtplatform_win32" Source="..\rtplatform_win32\rtplatform_win32.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="rtplatform_win32" Source="..\rtplatform_win32\rtplatform_win32.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="mozjs" Source="..\mozjs\mozjs.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="mozjs" Source="..\mozjs\mozjs.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="fdlibm" Source="..\fdlibm\fdlibm.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="fdlibm" Source="..\fdlibm\fdlibm.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libjpeg" Source="..\libjpeg\libjpeg.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="libjpeg" Source="..\libjpeg\libjpeg.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libmng" Source="..\libmng\libmng.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="libmng" Source="..\libmng\libmng.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="zlib" Source="..\zlib\zlib.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="zlib" Source="..\zlib\zlib.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libpng" Source="..\libpng\libpng.vcproj" Description="Project upgraded successfully.">
+</Event><Event ErrorLevel="3" Project="libpng" Source="..\libpng\libpng.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="webcdemo_gdip.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="webcdemo_gdip.sln" Description="Converted">
+</Event></UpgradeLog>

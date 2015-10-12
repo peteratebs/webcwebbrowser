@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<TITLE> JavaScript mouse events test </TITLE>
+</HEAD>
+
+<H1> Use the mouse on the DIV below to test mouse events. </H1>
+(Box will turn from blue to green when mouse enters)
+<DIV style="height: 200px; width: 200px; background-color: blue;"
+	onmouseover='style.backgroundColor = "green";'
+	onmouseout='style.backgroundColor = "blue";'
+	onmousemove='window.status = "Mouse move: (" + event.offsetX + "," + event.offsetY + ")";'
+	onmousedown='window.status = "Mouse down: (" + event.offsetX + "," + event.offsetY + ")";
+		var theDiv = document.getElementById("mdOne"); if (theDiv) {theDiv.style.backgroundColor = "red";}'
+	onmouseup='window.status = "Mouse up: (" + event.offsetX + "," + event.offsetY + ")";
+		var theDiv = document.getElementById("mdOne"); if (theDiv) {theDiv.style.backgroundColor = "white";}'>
+</DIV>
+
+<TABLE><TR><TD>
+<DIV id=mdOne style="background-color: white">
+Mouse Down
+</DIV>
+</TD></TR></TABLE>
+
+</HTML>

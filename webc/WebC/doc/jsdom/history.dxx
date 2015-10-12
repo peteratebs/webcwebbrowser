@@ -1,0 +1,43 @@
+History
+
+	Base Class
+		none
+
+	Description
+		URL history for a browser.
+
+	Properties	
+	
+		length
+			Type
+				integer
+			Description
+				The size of the history cache.
+			Read-only
+				yes
+	
+	Methods
+
+		back
+			Description
+				Navigate back in the browser history.
+			Parameters
+				howFar (default value == 1)
+					How many entries to skip back in the history (1 means go to the previous page).
+			Returns (nothing)
+
+		forward
+			Description
+				Navigate forward in the browser history.
+			Parameters
+				howFar (default value == 1)
+					How many entries to skip forward in the history (1 means go to the next page).
+			Returns (nothing)
+
+		go
+			Description
+				Navigate forward or backward in the browser history.
+			Parameters
+				howFar
+					Negative values go back in the history; positive values go forward.
+			Returns (nothing)

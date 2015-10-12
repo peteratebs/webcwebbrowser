@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExResizeBox</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>This example demonstrates a rectangular area that can be resized and dragged. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>This source code provided in webcapiexample.c demonstrates using a &lt;div&gt; with a transparent backround to act as a window manager for another &lt;div&gt; filled<br>
+with content. Demonstratesusing semitransparent borders, hiding and unhiding element, using images from the webc: rom file system and other principals of application development with webC.
+
+<P><br> Note: childwindowCtx has already been initialized to a valid window context by <!1><A HREF="OpenExampleChildWindow.html">OpenExampleChildWindow</A>.
+<PRE>
+// Declarations for resize box demo. A lot of statics but it's only a demo.
+static wcEL gResizeFrame, gResizeBox;
+static int gLastx, gLasty, gActivestation, gActiveIcon, gResizing,gDragIfTimeExpires,gDragingWindow;
+#define RESIZEFRAMEZ	5
+#define RESIZECURSORZ   7
+#define RESIZEBOXZ		6
+#define RESIZEFRAMEMARGIN 10
+#define RESIZEBOXWIDTH MAIN_CANVAS_WIDTH/2
+#define RESIZEBOXHEIGHT CHILD_CANVAS_HEIGHT/2
+#define RESIZEFRAMEWIDTH  (RESIZEBOXWIDTH+RESIZEFRAMEMARGIN*2)
+#define RESIZEFRAMEHEIGHT (RESIZEBOXHEIGHT+RESIZEFRAMEMARGIN*2)
+#define RESIZEFRAMEINITIALLEFT (MAIN_CANVAS_WIDTH-RESIZEFRAMEWIDTH)/2
+#define RESIZEFRAMEINITIALTOP  (CHILD_CANVAS_HEIGHT-RESIZEFRAMEHEIGHT)/2
+
+<P>
+static wcEL MovingIconHandle;
+static wcEL ResizeIconHandle[8];
+#define RESIZEICONHEIGHT 32
+#define RESIZEICONWIDTH  32
+
+<P>static void ResizeClearIcon(void);						// Clear resize icons
+static void ResizeClearMovingIcon(void);				// Clear dragging Icon
+static void ResizeMoveIcon(int deltax, int deltay);		// Moves currently active icons by deltax deltay
+static void ResizeSetMovingIcon(void);					// Puts dragging icon in the middle of the window.
+static int  GetResizeFrameStation(HTMLEvent* e);		// Return what clockwise "station" that the mouse is on the resize from, 0-7 where 0 is the top left
+static void GetResizeFrameStationPos(int station, int *x, int *y ); 	// Return the x,y coordinates of the station location realtive to gResizeFrame.
+static int ResizeDoMoveFrame(wcCtx* Ctx,int deltax, int deltay);	// Dragging - Move the frame and everything with it.
+static void ResizeDoResizeFrame(wcCtx* Ctx,int deltax, int deltay);	// Resizing - Resize the frame and the inner box, then redraw the active cursor
+static void ResizeDrawIcon(int currentstation); // Draw the current active resizing icon or the dragging icon if that is active. Clear icons that should be hidden
+static void ResizeCreateIcons(wcCtx* Ctx); // Load the icons we need from the webc: internal rom filesystem.Maker them hidden initially, we'll make them visible as needed
+static HTMLEventStatus ResizeFrameCb(wcCtx* Ctx,wcEL element,HTMLEvent* e,char* param); // Event handler for dragging and resizing
+
+<P>static void ExResizeBox(void)
+{
+	UPDATECONSOLETEXT("Drag in the margin to resize the box, Click hold and drag anywhere to move the box. You must click once to activate cursor rollovers.");
+	gLastx=gLasty=0;
+	gActivestation=-1;
+	gActiveIcon=-1;
+
+<P>	// Put something in the window so we can see our semi-transparent borders working
+	wcEL BackGroundChatter =wcNewStyledDiv(&childwindowCtx, 0, wcTRUE,  0, 0, CHILD_CANVAS_HEIGHT, MAIN_CANVAS_WIDTH,RESIZEFRAMEZ-1, 0, "white",0, 0);
+	wcElSetInnerHtml(BackGroundChatter, "&lt;small&gt;Click and drag on the borders to resize the box.&lt;br&gt;Click, hold and then drag to move the box. A tranparent div acts as a window manager but events are still passed to the Window under management, click on the text edit box.&lt;br&gt;Note semitransparent borders.&lt;br&gt;");
+	// Create a div to act as a frame frame around the canvas with a transparent background that's slightly larger and abovbe the canvas in z-index
+	gResizeFrame =wcNewStyledDiv(&childwindowCtx, 0, wcTRUE,  RESIZEFRAMEINITIALTOP, RESIZEFRAMEINITIALLEFT, RESIZEFRAMEHEIGHT, RESIZEFRAMEWIDTH,RESIZEFRAMEZ, 0, "rgba(21,21,21,.6)",0, 0); // Gold
+	// Create a canvas to display content in.
+	gResizeBox=wcNewStyledDiv(&childwindowCtx, gResizeFrame, wcTRUE,  0,0, RESIZEBOXHEIGHT, RESIZEBOXWIDTH,RESIZEBOXZ, 0, "SeaGreen",0, "overflow:hidden;");
+	// Give it a semi-transparent border RESIZEFRAMEMARGIN pixels thick
+	wcElSetStyleBorder(gResizeBox, RESIZEFRAMEMARGIN, "rgba(211,211,211,.6)", wcFALSE);
+	//  put something in it.
+	wcElSetInnerHtml(gResizeBox, "&lt;br&gt;&lt;input type=text value=\"XX\"&gt; Hello: Drag around the edges to resize the box");
+	// Create icons we will need for when we are resizing and moving. They are children of the frame. Leave them hidden.
+	ResizeCreateIcons(&childwindowCtx);
+	// Attach an event handler to the outer frame, we'll catch mouse events and move, resize and  update icons based on them.
+	wcElSetEventHandler(gResizeFrame, ResizeFrameCb);
+	wcWinBringToTop(&childwindowCtx);
+}
+
+<P>// Event handler for dragging and resizing.
+static HTMLEventStatus ResizeFrameCb(wcCtx* Ctx,wcEL element,HTMLEvent* e,char* param)
+{
+int currentstation = 0;
+
+<P>	switch (e->type)
+	{ // This first switch pushes us move mode if we hold he mouse down without moving for 200 milliseconds
+		case HTML_EVENT_TIMER:
+			if (gDragIfTimeExpires)
+			{ // 200 mSecs passed and we didn't move the mouse, start dragging
+				ResizeSetMovingIcon();
+				gDragIfTimeExpires=0;
+				gDragingWindow=1;
+				gResizing=0;
+			}
+		break;
+		case HTML_EVENT_MOUSEDOWN:
+			{ // Mouse down, set a timer, test later, if the mouse state doesn't chahge start dragging the window around
+				HTMLEvent T; T.type=HTML_EVENT_TIMER;
+				wcElTriggerEvent(element, &T, 200);
+			}
+			gDragIfTimeExpires=1;
+			break;
+		case HTML_EVENT_MOUSEOVER: case HTML_EVENT_MOUSEOUT: case HTML_EVENT_MOUSEMOVE:	case HTML_EVENT_MOUSEUP:
+			gDragIfTimeExpires=0; // A mouseevent, clear drag if no mouse activity flag.
+	}
+
+<P>	switch (e->type)
+	{ // For mouse events find if we are at a station on the boundary and make sure the cursor is drawn at the station.
+		case HTML_EVENT_MOUSEDOWN:	case HTML_EVENT_MOUSEOVER:	case HTML_EVENT_MOUSEMOVE:
+			currentstation=GetResizeFrameStation(e); // Will be -1 if we are not on the border.
+			if (!gDragingWindow && !gResizing && gActiveIcon != currentstation)
+					ResizeDrawIcon(currentstation);
+		break;
+	}
+	switch (e->type)
+	{
+		case HTML_EVENT_MOUSEDOWN:
+			wcElClaimPointer(element);			// Claim the pointer until the button is released.
+			gLastx = e->data.position.x;
+			gLasty = e->data.position.y;
+			gActivestation = currentstation;
+			ResizeDrawIcon(currentstation);
+			gResizing=1;						// Start resizing state but if we don't move the mouse within 200 mSecs we'll change to dragging.
+			wcElSetStyleColorNamed(gResizeBox,CSS_PROPERTY_BACKGROUND_COLOR,rgbaSeaGreen(.5), wcTRUE);  // Start dragging, make it semi transparent.
+			break;
+		case HTML_EVENT_MOUSEOVER:			   // Draw proper icons for a rollover
+			ResizeDrawIcon(currentstation);
+			break;
+		case HTML_EVENT_MOUSEOUT:			   // UnDraw the Icon
+			if (!gResizing)
+				ResizeClearIcon();
+			break;
+		case HTML_EVENT_MOUSEMOVE:
+			if (gResizing||gDragingWindow)	{ // Mouse move while resizing or dragging, perform the operation.
+				int deltax = e->data.position.x-gLastx;
+				int deltay = e->data.position.y-gLasty;
+				gLastx  = e->data.position.x;
+				gLasty = e->data.position.y;
+				if (gResizing)
+					ResizeDoResizeFrame(Ctx,deltax, deltay);
+				else if (gDragingWindow)
+					ResizeDoMoveFrame(Ctx,deltax, deltay);
+			}
+			break;
+		case HTML_EVENT_MOUSEUP: {	// UnDraw the Icon and release the mouse pointer now that we are not dragging
+			wcElReleasePointer(element);
+			ResizeClearIcon();
+			gResizing=gDragingWindow=0;
+			ResizeClearMovingIcon();
+			wcElSetStyleColorNamed(gResizeBox,CSS_PROPERTY_BACKGROUND_COLOR,"SeaGreen", wcTRUE);  // Stop dragging, make it opaque.
+			break;
+		}
+	}
+	return HTML_EVENT_STATUS_CONTINUE;
+}
+
+<P>
+
+<P>// Return what clockwise "station" that the mouse is on the resize from, 0-7 where 0 is the top left
+static int  GetResizeFrameStation(HTMLEvent* e)
+{
+int xoff,yoff, horizontalbar, verticalbar;
+int top, left, width, height;
+int station=-1;
+
+<P>	wcElGetPosStyle(gResizeFrame, &top, &left, &height, &width);
+	xoff= e->data.position.x-left;
+	yoff=  e->data.position.y-top;
+	verticalbar=height-RESIZEFRAMEMARGIN;
+	horizontalbar=width-RESIZEFRAMEMARGIN;
+	if (yoff <=  RESIZEFRAMEMARGIN)
+	{
+		if (xoff <= RESIZEFRAMEMARGIN) station = 0;  // Top left
+		else if (xoff <= horizontalbar) station = 1; // Top
+		else station = 2;                            // Top right
+	}
+	else if (yoff < verticalbar)
+	{
+		if (xoff > horizontalbar) station = 3;		// Right
+		else if (xoff <= RESIZEFRAMEMARGIN) station = 7;						    // Left
+	}
+	else if (yoff >= verticalbar)
+	{
+		if (xoff <= RESIZEFRAMEMARGIN) station = 6; // Bottom left
+		else if (xoff <= horizontalbar) station = 5;// Bottom
+		else station = 4;							// Botom right
+	}
+
+<P>	return station;
+}
+
+<P>// Return the x,y coordinates of the station location realtive to gResizeFrame.
+static void GetResizeFrameStationPos(int station, int *x, int *y )
+{
+int top, left, width,right,height,bottom,middley,middlex;
+
+<P>	wcElGetPosStyle(gResizeFrame, &top, &left, &height, &width);
+	top = left = 0; // Reset these to zero size we want to report  relative to the parent.
+	right=left+width-1;middlex=left+(right-left)/2;
+	bottom=top+height-1;middley=top+(bottom-top)/2;
+	if (station == 0) { *x = left; *y = top;}
+	else if (station == 1) { *x = middlex; *y = top;}
+	else if (station == 2) { *x = right; *y = top;}
+	else if (station == 3) { *x = right; *y = middley;}
+	else if (station == 4) { *x = right; *y = bottom;}
+	else if (station == 5) { *x = middlex; *y = bottom;}
+	else if (station == 6) { *x = left; *y = bottom;}
+	else  { *x = left; *y = middley;} // Station == 7
+}
+
+<P>
+
+<P>// Dragging - Move the frame and everything with it.
+static int ResizeDoMoveFrame(wcCtx* Ctx,int deltax, int deltay)
+{
+int frametop,frameleft,framewidth,frameheight;
+	wcElGetPosStyle(gResizeFrame, &frametop, &frameleft, &frameheight, &framewidth);
+	wcElSetStylePos(gResizeFrame, frametop+deltay, frameleft+deltax,  wcTRUE);
+	ResizeMoveIcon(deltax, deltay);
+	return 0;
+}
+
+<P>// Resizing - Resize the frame and the inner box, then redraw the active cursor
+static void ResizeDoResizeFrame(wcCtx* Ctx,int deltax, int deltay)
+{
+int boxtop, boxleft, boxwidth,boxheight;
+int frametop,frameleft,framewidth,frameheight;
+	wcElGetPosStyle(gResizeBox, &boxtop, &boxleft, &boxheight, &boxwidth);
+	wcElGetPosStyle(gResizeFrame, &frametop, &frameleft, &frameheight,  &framewidth);
+	// Note that boxtp and boxleft always stay zero because top,left is offset from the parent.
+	if (gActivestation==0 || gActivestation==1 || gActivestation==2)  // Top
+	{ boxheight-=deltay; frametop+=deltay; frameheight-=deltay; }
+	else if (gActivestation==4 || gActivestation==5 || gActivestation==6) // Bottom
+	{ boxheight+=deltay; frameheight+=deltay; }
+	if (gActivestation==0 || gActivestation == 6 || gActivestation ==7) // left
+	{ boxwidth-=deltax; frameleft+=deltax; framewidth-=deltax; }
+	if (gActivestation == 2 || gActivestation ==3 || gActivestation ==4) // Right
+	{ boxwidth+=deltax; framewidth+=deltax; }
+	if (framewidth > (2 *RESIZEFRAMEMARGIN) && frameheight > (2 *RESIZEFRAMEMARGIN))
+	{
+		wcElSetStyleDim(gResizeFrame, frameheight, framewidth,  wcFALSE);
+		wcElSetStylePos(gResizeFrame, frametop, frameleft,  wcTRUE);
+		wcElSetStyleDim(gResizeBox, boxheight, boxwidth,  wcFALSE);
+		wcElSetStylePos(gResizeBox, boxtop, boxleft,  wcTRUE);
+		ResizeMoveIcon(deltax, deltay);
+	}
+}
+
+<P>// Move the icon at the current active position by deltax, deltay.
+static void ResizeMoveIcon(int deltax, int deltay)
+{
+int top, left, width,height;
+	if (gActiveIcon!=-1)
+	{
+		wcElGetPosStyle(ResizeIconHandle[gActiveIcon], &top, &left, &height,  &width);
+		if ((gActiveIcon == 1) || (gActiveIcon == 5)) deltax=0; // Don't move x if we are on the top or bottom rail
+		if ((gActiveIcon == 3) || (gActiveIcon == 7)) deltay=0; // Don't move y if we are on the left or right rail
+		if (gActiveIcon > 2) top+=deltay;
+		if (gActiveIcon > 0 && gActiveIcon < 6) left+=deltax;
+		wcElSetStylePos(ResizeIconHandle[gActiveIcon], top, left, wcTRUE);
+	}
+
+<P>}
+
+<P>// Draw the current active resizing icon or the dragging icon if that is active. Clear icons that should be hidden
+static void ResizeDrawIcon(int currentstation)
+{
+	if (gDragingWindow) {
+		ResizeClearIcon();	// Clear the current icon if showing
+		return;
+	}
+	ResizeClearMovingIcon();
+	if (gActiveIcon!=currentstation)
+		ResizeClearIcon();	// Clear the current icon if showing
+	if (currentstation < 0)
+		return;
+	gActiveIcon=currentstation; // Select a new icon and position it by station
+	wcEL IconHandle = ResizeIconHandle[currentstation];
+	int top, left;
+	GetResizeFrameStationPos(currentstation, &left, &top );
+	wcElSetStylePos(IconHandle, top-(RESIZEICONHEIGHT/2), left-(RESIZEICONHEIGHT/2), wcTRUE);
+	wcElSetStyleVisible(IconHandle,wcTRUE);
+	gActiveIcon = currentstation;
+}
+// Clear the resize icon if one is showing
+static void ResizeClearIcon(void)
+{
+	if (gActiveIcon!=-1)
+	{
+		wcElSetStyleHidden(ResizeIconHandle[gActiveIcon],wcTRUE);
+		gActiveIcon=-1;
+	}
+}
+// Clear the moving (dragging) icon if it is showing
+static void ResizeClearMovingIcon(void)
+{
+	  wcElSetStyleHidden(MovingIconHandle,wcTRUE);
+}
+// Draw the moving (dragging) icon, and clear the resizing icon if it is showing.
+static void ResizeSetMovingIcon(void)
+{
+int top, left, height, width;
+	ResizeClearIcon();
+	wcElGetPosStyle(gResizeFrame, &top, &left,  &height, &width);
+ 	wcElSetStylePos(MovingIconHandle, (height-RESIZEICONHEIGHT)/2, (width-RESIZEICONHEIGHT)/2, wcTRUE);
+	wcElSetStyleVisible(MovingIconHandle,wcTRUE);
+}
+// Load the icons we need from the webc: internal rom filesystem.Maker them hidden initially, we'll make them visible as needed
+static void ResizeCreateIcons(wcCtx* Ctx) // Load the icons we need from the webc: internal rom filesystem.Maker them hidden initially, we'll make them visible as needed
+{
+	ResizeIconHandle[0]= wcNewStyledImage(Ctx, gResizeFrame, wcTRUE, "webc:/SysImages/Cursors/StyleOneSingles/NorthWest.gif", 0, 0, 0,RESIZEICONHEIGHT, RESIZEICONWIDTH, RESIZECURSORZ, "visibility:hidden;");
+	ResizeIconHandle[1]= wcNewStyledImage(Ctx, gResizeFrame, wcTRUE, "webc:/SysImages/Cursors/StyleOneSingles/North.gif", 0, 0, 0,RESIZEICONHEIGHT, RESIZEICONWIDTH, RESIZECURSORZ, "visibility:hidden;");
+	ResizeIconHandle[2]= wcNewStyledImage(Ctx, gResizeFrame, wcTRUE, "webc:/SysImages/Cursors/StyleOneSingles/NorthEast.gif", 0, 0, 0,RESIZEICONHEIGHT, RESIZEICONWIDTH, RESIZECURSORZ, "visibility:hidden;");
+	ResizeIconHandle[3]= wcNewStyledImage(Ctx, gResizeFrame, wcTRUE, "webc:/SysImages/Cursors/StyleOneSingles/East.gif", 0, 0, 0,RESIZEICONHEIGHT, RESIZEICONWIDTH, RESIZECURSORZ, "visibility:hidden;");
+	ResizeIconHandle[4]= wcNewStyledImage(Ctx, gResizeFrame, wcTRUE, "webc:/SysImages/Cursors/StyleOneSingles/SouthEast.gif", 0, 0, 0,RESIZEICONHEIGHT, RESIZEICONWIDTH, RESIZECURSORZ, "visibility:hidden;");
+	ResizeIconHandle[5]= wcNewStyledImage(Ctx, gResizeFrame, wcTRUE, "webc:/SysImages/Cursors/StyleOneSingles/South.gif", 0, 0, 0,RESIZEICONHEIGHT, RESIZEICONWIDTH, RESIZECURSORZ, "visibility:hidden;");
+	ResizeIconHandle[6]= wcNewStyledImage(Ctx, gResizeFrame, wcTRUE, "webc:/SysImages/Cursors/StyleOneSingles/SouthWest.gif", 0, 0, 0,RESIZEICONHEIGHT, RESIZEICONWIDTH, RESIZECURSORZ, "visibility:hidden;");
+	ResizeIconHandle[7]= wcNewStyledImage(Ctx, gResizeFrame, wcTRUE, "webc:/SysImages/Cursors/StyleOneSingles/West.gif", 0, 0, 0,RESIZEICONHEIGHT, RESIZEICONWIDTH, RESIZECURSORZ, "visibility:hidden;");
+	MovingIconHandle =  wcNewStyledImage(Ctx, gResizeFrame, wcTRUE, "webc:/SysImages/Cursors/StyleOneDoubles/NorthSouthEastWest.gif", 0, 0, 0,RESIZEICONHEIGHT, RESIZEICONWIDTH, RESIZECURSORZ, "visibility:hidden;");
+
+<P>}
+
+<P>	</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

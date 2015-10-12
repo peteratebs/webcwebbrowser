@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>int <A HREF="#DOC.DOCU">wcElGetColorValue</A></H2></TD><TD><H2>(wcEL element,  CSSPropertyType Prop,<BR>&nbsp; HTMLColor* color)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Get a property of type color from Css or html. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Get a property of type color from Css. First checks Css, if not found consults html for default values.
+Note: The property must ve one that is expressed in color otherwise the result will be meaningless. <br>
+<PRE>
+		These are the most common properties that applications code might query.
+
+<P>		CSS_PROPERTY_COLOR
+		CSS_PROPERTY_BACKGROUND_COLOR
+
+<P>		These properties may also be queried.
+
+<P>		CSS_PROPERTY_ALINK_COLOR
+		CSS_PROPERTY_VLINK_COLOR
+		CSS_PROPERTY_LINK_COLOR
+		CSS_PROPERTY_OUTLINE_COLOR
+
+<P>		CSS_PROPERTY_BORDER_BOTTOM_COLOR
+		CSS_PROPERTY_BORDER_COLOR
+		CSS_PROPERTY_BORDER_LEFT_COLOR
+		CSS_PROPERTY_BORDER_RIGHT_COLOR
+		CSS_PROPERTY_BORDER_TOP_COLOR
+
+<P>	</PRE>
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>element</B> -  The element whose color value to get
+<BR><B>Prop</B> -     Which property to retrieve
+<BR><B>color</B> -    Pointer to an HTMLColor (unsigned long) variable to fill in with the
+color information for this element.
+<BR><DT><B>Returns:</B><DD>  0 if the property was found and color was filled with a valid color,
+-1 otherwise
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcElGetLengthValue.html">wcElGetLengthValue</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

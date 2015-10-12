@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>#define <A HREF="#DOC.DOCU">Changeable Parameters</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Click on this link to view display parameters that may be configured. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>webC consults the default table for formatting instructions when it needs to draw internal elements like scroll bars. It also consult the default table when drawing HTML elements and
+a needed formatting instruction can is not available from styles or html attributes. The default values in the table may be changed at compile time and at run time to change the default motif.
+
+<P><PRE>
+     The following default values are used by webC when it is drawing elements and the required property is not provided by a style declaration or html property setting.
+
+<P>     Note: Most defaults may be overridden using CSS styles or the html style attribute, but some properties can only be changed by changing the default values in the default table.
+
+<P>	 In particulr scrollbar display properties are always retrieved from the default and can ony be changed by changing the default values in the table at compile time or by calling webc_SetDefault at run time.
+
+<P>	 * = Not supported.
+
+<P>     WEBC_DEFAULT_ACTIVE_BACKGROUND_COLOR   WEBC_DEFAULT_SLIDER_BACKGROUND_COLOR
+     WEBC_DEFAULT_ACTIVE_COLOR              WEBC_DEFAULT_SLIDER_COLOR
+     WEBC_DEFAULT_ACTIVE_LINK_COLOR         WEBC_DEFAULT_SLIDER_FRAME_WIDTH
+     WEBC_DEFAULT_BACKGROUND_COLOR          WEBC_DEFAULT_SLIDER_BACKGROUND_FRAME_WIDTH
+     WEBC_DEFAULT_BODY_FONT_FAMILY          WEBC_DEFAULT_SLIDER_HILITE_COLOR
+     WEBC_DEFAULT_BODY_FONT_SIZE            WEBC_DEFAULT_SLIDER_PADDING
+     WEBC_DEFAULT_BODY_FONT_STYLE           WEBC_DEFAULT_SLIDER_SHADOW_COLOR
+     WEBC_DEFAULT_BODY_FONT_WEIGHT          WEBC_DEFAULT_SLIDER_WIDTH
+     WEBC_DEFAULT_BODY_PADDING              WEBC_DEFAULT_SLIDER_FRAME_SHADOW_COLOR
+     WEBC_DEFAULT_BUTTON_BACKGROUND_COLOR   WEBC_DEFAULT_SLIDER_FRAME_HILITE_COLOR
+     WEBC_DEFAULT_BUTTON_FONT_FAMILY        WEBC_DEFAULT_TEXT_AREA_FONT_FAMILY
+     WEBC_DEFAULT_BUTTON_FONT_SIZE          WEBC_DEFAULT_TEXT_AREA_FONT_SIZE
+     WEBC_DEFAULT_BUTTON_FONT_STYLE         WEBC_DEFAULT_TEXT_AREA_FONT_STYLE
+     WEBC_DEFAULT_BUTTON_FONT_WEIGHT        WEBC_DEFAULT_TEXT_AREA_FONT_WEIGHT
+     WEBC_DEFAULT_BUTTON_FRAME_WIDTH        WEBC_DEFAULT_TEXT_COLOR
+    * WEBC_DEFAULT_BUTTON_HILITE_COLOR      WEBC_DEFAULT_TEXT_INPUT_FONT_FAMILY
+    * WEBC_DEFAULT_BUTTON_SHADOW_COLOR      WEBC_DEFAULT_TEXT_INPUT_FONT_SIZE
+    * WEBC_DEFAULT_BUTTON_PADDING           WEBC_DEFAULT_TEXT_INPUT_FONT_STYLE
+     WEBC_DEFAULT_HILITE_COLOR              WEBC_DEFAULT_TEXT_INPUT_FONT_WEIGHT
+     WEBC_DEFAULT_LINK_COLOR                WEBC_DEFAULT_MONOSPACE_FONT_FAMILY
+     WEBC_DEFAULT_LIST_INDENT               WEBC_DEFAULT_MONOSPACE_FONT_SIZE
+     WEBC_DEFAULT_SCROLL_BAR_BUTTON_LENGTH  WEBC_DEFAULT_MONOSPACE_FONT_STYLE
+     WEBC_DEFAULT_SELECT_FONT_FAMILY        WEBC_DEFAULT_MONOSPACE_FONT_WEIGHT
+     WEBC_DEFAULT_SELECT_FONT_SIZE          WEBC_DEFAULT_VISITED_LINK_COLOR
+     WEBC_DEFAULT_SELECT_FONT_STYLE         WEBC_DEFAULT_SCROLL_CORNER_COLOR
+     WEBC_DEFAULT_SELECT_FONT_WEIGHT        WEBC_DEFAULT_DRAW_SCROLL_CORNER
+    * WEBC_DEFAULT_SHADOW_COLOR
+    </PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>wcEL <A HREF="#DOC.DOCU">wcNewStyledTable</A></H2></TD><TD><H2>(wcCtx* Ctx,  wcEL ParentEl,  wcBOOL insert,<BR>&nbsp; int top,  int left,  int height,  int width,<BR>&nbsp; int borderwidth,  int cellspacing,<BR>&nbsp; int cellpadding,  int zindex,  char* color,<BR>&nbsp; char* bgcolor,  char* bgimage,<BR>&nbsp; char* style)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Constructor function for an "image" element with common styles applied to it. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Creates an image element and customize it with CSS based on the the values original in the function arguments. If requested the new element is also inserted into the document.
+If you can't conveniently completely style the element your needs with this constructor function you can modify the returned element handle by calling  wcElSetStyle or one of its derivatives.
+
+<P>
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcCtx</B> - *  Ctx        The current wc context.
+<BR><B>wcEL</B> -  ParentEl		If insert is wcTRUE and this value is non-zero, insert the new element into this container element.
+<BR><B>wcBOOL</B> -  insert
+<br>&nbsp;&nbsp;If insert is wcTRUE and ParentEl is non-zero insert the new element into ParentEl.
+<br>&nbsp;&nbsp;If insert is wcTRUE and ParentEl is zero then insert the new element into the document.
+<br> &nbsp;&nbsp;If insert is wcFALSE, the element is not inserted and must be inserted later by calling one of webC explicit element insert methods, the most common being <!1><A HREF="wcDocInsertLast.html">wcDocInsertLast</A> and <!1><A HREF="wcElInsertLast.html">wcElInsertLast</A>.
+<BR><B>int</B> -  top            top position in pixels, absolute.
+<BR><B>int</B> -  left			left position in pixels, absolute.
+<BR><B>int</B> -  height			height in pixels or zero to not apply the height style and rely on values retrieved from the image.
+<BR><B>int</B> -  width          width in pixels or zero to not apply the width style and rely on values retrieved from the image.
+<BR><B>int</B> -  borderwidth    borderwidth in pixels or zero for no border.
+<BR><B>int</B> -  cellspacing    Space between cells or zero for no spacing.
+<BR><B>int</B> -  cellpadding    Pading around cell content or zero for no padding.
+<BR><B>int</B> -  zindex			zindex value.
+<BR><B>char</B> -  *color		Named foreground (text) color or zero to use default, see <!1><A HREF="wcElSetStyleColorNamed.html">wcElSetStyleColorNamed</A> for available colors.
+<BR><B>char</B> -  *bgcolor		named background color or zero to use default.
+<BR><B>char</B> -  *bgimage      URL of background image (example: "file://images/mainpagebackground.gif") or , or zero for none.
+<BR><B>char</B> -  *style		Additional styles to apply or zero for none. Any style string may be provided for example" "visibilty:hidden;border-color:black;border-style:solid;border-thickness:2px;"
+<BR><DT><B>Returns:</B><DD>  wcEl the new element or zero if an error is detected or the element can't be created.
+<BR><DT><B>See Also:</B><DD><!1><A HREF="ExCalculatorDynamic.html">ExCalculatorDynamic</A> <!1><A HREF="wcTableInsertRow.html">wcTableInsertRow</A> <!1><A HREF="wcTableInsertCell.html">wcTableInsertCell</A> <!1><A HREF="wcTableInsertHeaderCell.html">wcTableInsertHeaderCell</A> <!1><A HREF="wcTableCellSetWidth.html">wcTableCellSetWidth</A> <!1><A HREF="wcTableCellSetHeight.html">wcTableCellSetHeight</A> <!1><A HREF="wcTableCellSetSpans.html">wcTableCellSetSpans</A> <!1><A HREF="wcTableGetCell.html">wcTableGetCell</A> <!1><A HREF="wcTableGetRow.html">wcTableGetRow</A>
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

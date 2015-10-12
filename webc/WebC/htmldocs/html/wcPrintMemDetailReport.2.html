@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<IMG ALT="oooo >>>> header <<< oooo " BORDER=0 SRC=header.gif>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcPrintMemDetailReport</A></H2></TD><TD><H2>(long startSequence,<BR>&nbsp; long endSequence,<BR>&nbsp; MemDbReportSummaryType ReportType,<BR>&nbsp; MemDbReportSortType SortBy)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Specify sorting and summary options and print a heap report to the console. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>The caller supplies parameters that instruct wcPrintMemDetailReport how data is to be summarized and sorted. The report is then printed to the console.<br>
+Note: RTP_TRACK_LOCAL_MEMORY must be enabled in rtplatform/include/rtpmem.h for the function to operate properly, if it is not enabled the function simply return.
+<i><b>Note:</b> Note: RTP_TRACK_LOCAL_MEMORY must be enabled in rtplatform/include/rtpmem.h for the function to operate properly, if it is not enabled the function simply return.<br>
+<b>Note:</b> rtplatform's rtp_printf function must be functional to see the output. rtp_printf can be enabled by either mapping it to your system's printf() or by using the version supplied with webC and routing the output to an output port through rtp_term_cputs().</i><br>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>long</B> -   startSequence -  You may use the MallocSequence field returned from <!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> to select the first record to process, pass zero to start at the first allocation.
+<BR><B>long</B> -   endSequence -   You may use the MallocSequence field returned from <!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> to select the last record to process, pass zero to end at the last allocation.
+<BR><B>MemDbReportSummaryType</B> -  ReportType - Choose a report type from the list below
+<PRE>
+&nbsp;&nbsp;DbSummarizeByFile // Print a report containing file name and total memory allocations outstanding for the named file.
+&nbsp;&nbsp;DbSummarizeByLine // Print a report containing file name:line number and total memory allocations outstanding at that location the file.
+&nbsp;&nbsp;DbSummarizeNone   // Print a report containing every outstanding allocation in the range.
+</PRE>
+<BR><B>MemDbReportSortType</B> -  SortBy - Choose a sort type from the list below
+<PRE>
+&nbsp;&nbsp;SortNone		// Do not sort the records, best method for DbSummarizeNone report type.
+&nbsp;&nbsp;SortBySize		// Sort in descending order by size.
+&nbsp;&nbsp;SortByFile		// Sort in ascending order by file name followed by line if DbSummarizeByLine is specified.
+</PRE>
+<BR><DT><B>Returns:</B><DD>  none
+<PRE>
+Example: Print memory allocations totaled by file and print the largest first:
+wcPrintMemDetailReport(0, 0,  DbSummarizeByFile, SortBySize);
+Example: Print memory allocations total by line print in file:line order:
+wcPrintMemDetailReport(0, 0,  DbSummarizeByLine, SortByFile);
+Example: Print all new memory allocations performed by a function named MyAppletInit.
+{
+MemDbStats Stats;
+wcMemDbGetStats(&Stats);
+MyAppletInit();
+wcPrintMemDetailReport(Stats.MallocSequence, 0,  DbSummarizeNone, SortNone);
+}
+<i>Note:</i>
+<ul>
+<li>The first column contains the file name.</li>
+<li>The second column contains line number.</li>
+<li>If ReportType is DbSummarizeByFile the third column contains the number of outstanding allocation calls by file surrounded by ().</li>
+<li>If ReportType is DbSummarizeByLine the third column contains the number of outstanding allocation calls by file:line surrounded by ().</li>
+<li>If ReportType is not DbSummarizeNone the third column contains the sequence number of the individual allocation surrounded by {}.</li>
+<li>The fourth column is total outstanding memory allocated from file, line or individual allocation call, for ReportType equal to DbSummarizeByFile, DbSummarizeByLine, or DbSummarizeByNone, repectively.</li>
+<li>The fifth column is the comment assoiated with the memory when it was allocated or just {} if the location has no label.</li>
+</ul>
+// A report like the following is produced.
+fbabstraction.cpp              369  (47  ) 457404   {BitMapData}
+webjpeg.cpp                    119  (1   ) 412164   {New}
+windowsbitmapframebuffer.cpp   94   (1   ) 307200   { }
+windowsbitmapframebuffer.cpp   97   (1   ) 307200   { }
+fbabstractwindowmanager.cpp    615  (1   ) 192000   {SaveUnder}
+hashtbl.cpp                    99   (6   ) 93168    {HashTable}
+jsapi.c                        738  (1   ) 66648    { }
+....
+Records returned == 110
+Bytes accounted for = 2081088
+</PRE>
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> <!1><A HREF="wcMemDbInstallPeakUsageCallback.html">wcMemDbInstallPeakUsageCallback</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A> <!1><A HREF="wcMemDbReleaseReport.html">wcMemDbReleaseReport</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetChangesSinceWatchPoint.html">wcMemDbGetChangesSinceWatchPoint</A> <!1><A HREF="wcPrintMemStats.html">wcPrintMemStats</A> <!1><A HREF="wcPrintMemChangeReport.html">wcPrintMemChangeReport</A> <!1><A HREF="wcPrintMemDetailReport.2.html">wcPrintMemDetailReport</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<IMG ALT="oooo >>>> footer <<< oooo " BORDER=0 SRC=footer.gif>
+</BODY>
+</HTML>

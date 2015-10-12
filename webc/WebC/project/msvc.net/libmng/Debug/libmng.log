@@ -1,0 +1,53 @@
+﻿Build started 5/31/2011 12:07:37 PM.
+     1>Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\libmng\libmng.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\libmng.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\lib\zlib /I..\..\..\lib\libjpeg /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\libmng\libmng_callback_xs.c ..\..\..\lib\libmng\libmng_chunk_io.c ..\..\..\lib\libmng\libmng_chunk_prc.c ..\..\..\lib\libmng\libmng_chunk_xs.c ..\..\..\lib\libmng\libmng_cms.c ..\..\..\lib\libmng\libmng_display.c ..\..\..\lib\libmng\libmng_dither.c ..\..\..\lib\libmng\libmng_error.c ..\..\..\lib\libmng\libmng_filter.c ..\..\..\lib\libmng\libmng_hlapi.c ..\..\..\lib\libmng\libmng_jpeg.c ..\..\..\lib\libmng\libmng_object_prc.c ..\..\..\lib\libmng\libmng_pixels.c ..\..\..\lib\libmng\libmng_prop_xs.c ..\..\..\lib\libmng\libmng_read.c ..\..\..\lib\libmng\libmng_trace.c ..\..\..\lib\libmng\libmng_write.c ..\..\..\lib\libmng\libmng_zlib.c
+         libmng_callback_xs.c
+         libmng_chunk_io.c
+         libmng_chunk_prc.c
+         libmng_chunk_xs.c
+         libmng_cms.c
+         libmng_display.c
+         libmng_dither.c
+         libmng_error.c
+         libmng_filter.c
+         libmng_hlapi.c
+         libmng_jpeg.c
+         libmng_object_prc.c
+         libmng_pixels.c
+         libmng_prop_xs.c
+         libmng_read.c
+         libmng_trace.c
+         libmng_write.c
+         libmng_zlib.c
+         Generating Code...
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Debug\libmng.lib" /NOLOGO .\Debug/libmng_callback_xs.obj
+         .\Debug/libmng_chunk_io.obj
+         .\Debug/libmng_chunk_prc.obj
+         .\Debug/libmng_chunk_xs.obj
+         .\Debug/libmng_cms.obj
+         .\Debug/libmng_display.obj
+         .\Debug/libmng_dither.obj
+         .\Debug/libmng_error.obj
+         .\Debug/libmng_filter.obj
+         .\Debug/libmng_hlapi.obj
+         .\Debug/libmng_jpeg.obj
+         .\Debug/libmng_object_prc.obj
+         .\Debug/libmng_pixels.obj
+         .\Debug/libmng_prop_xs.obj
+         .\Debug/libmng_read.obj
+         .\Debug/libmng_trace.obj
+         .\Debug/libmng_write.obj
+         .\Debug/libmng_zlib.obj
+         libmng.vcxproj -> C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\libmng\Debug\libmng.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\libmng.unsuccessfulbuild".
+         Touching "Debug\libmng.lastbuildstate".
+     1>Done Building Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\libmng\libmng.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:22.71

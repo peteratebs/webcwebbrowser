@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>void wcElSetEventHandler</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>void <A HREF="#DOC.DOCU">wcElSetEventHandler</A></H2><H2>(HELEMENT_HANDLE element,<BR>&nbsp; wcEventCallback cb)</H2><BLOCKQUOTE>Assign an event handler for this element. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Push the previous event handler for this element on an internal stack and then
+set a new handler for events targetted at the specified element.
+The previous event handler may be restored later by calling wcElpopEventHandler.
+
+<P>Note: wcElSetEventHandler pushes the previous handler onto an internal stack. You must call
+wcElPopEventHandler at a later time if your application requires you to restore the previous handler when the current algorith is completed.
+Most applications don't need a stack more than one level deep but more complex interfaces like drag and drop and slide under windows use this capability.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcEL</B> -           		Element       -   The element.
+<BR><B>wcEventCallback</B> -  	cb			  -   Function to call for when an event occur.
+<PRE>
+The callback function is of type:
+typedef HTMLEventStatus (*wcEventCallback) (wcCtx* Ctx,	wcEL element, HTMLEvent* event,	char* param);
+where Ctx and Element are as in other documented routines.
+param is typically unused..
+See below for a description of event types and the event structure.
+Example:
+Attach a callback event handler that displays all events to a table row.
+Demonstrate restoring the previous handler by Popping the current handler
+on click.
+static HTMLEventStatus wcTestEventCallback(wcCtx* Ctx,	wcEL element,HTMLEvent* event,	char* param);
+wcBOOL &Error;
+wcEL El = <!1><A HREF="wcELFind.html">wcELFind</A> (&_Ctx, 0, "/table0/row0/col0", &Error);
+<!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A>(&_Ctx, wcTestEventCallback);
+static char *EventToString(HTMLEventType type);
+static HTMLEventStatus wcTestEventCallback(wcCtx* Ctx,	wcEL element,HTMLEvent* event,	char* param)
+{
+// print the event name
+rtp_printf("Event>>: %s\n", EventToString(event->type));
+// dispatch on event ids to appropriate responses.
+switch (event->type)
+{
+case HTML_EVENT_CLICK            :
+// Revert to previous handler when clicked.
+<!1><A HREF="wcElPopEventHandler.html">wcElPopEventHandler</A>(element);
+return (HTML_EVENT_STATUS_HALT);
+break;
+case HTML_EVENT_KEYDOWN             :
+case HTML_EVENT_KEYPRESS            :
+case HTML_EVENT_KEYUP               :
+case HTML_EVENT_DBLCLICK            :
+case HTML_EVENT_MOUSEDOWN           :
+case HTML_EVENT_MOUSEMOVE           :
+case HTML_EVENT_MOUSEOUT            :
+case HTML_EVENT_MOUSEOVER           :
+case HTML_EVENT_MOUSEUP             :
+break;
+case HTML_EVENT_FOCUS               :
+case HTML_EVENT_UNFOCUS             :
+case HTML_EVENT_LOAD                :
+case HTML_EVENT_UNLOAD              :
+case HTML_EVENT_SUBMIT              :
+case HTML_EVENT_CHANGE              :
+case HTML_EVENT_EDIT                :
+case HTML_EVENT_RESET               :
+break;
+case HTML_EVENT_OBJECT_CREATED       :
+case HTML_EVENT_OBJECT_DESTROYED     :
+case HTML_EVENT_ATTRIBUTE_PARSED     :
+case HTML_EVENT_LOSECAPTURE          :
+case HTML_EVENT_TIMER                :
+case HTML_EVENT_RENDER	            :
+case HTML_FIRST_USER_EVENT           :
+default:
+break;
+}
+return (HTML_EVENT_STATUS_CONTINUE);
+}
+=================================================================
+The following events are reported along with user assignable event.
+HTML_EVENT_CLICK               Single mouse click
+HTML_EVENT_DBLCLICK            Double mouse click
+HTML_EVENT_KEYDOWN             Key pressed
+HTML_EVENT_KEYPRESS            Key pressed and released
+HTML_EVENT_KEYUP               Key released
+HTML_EVENT_MOUSEDOWN           Mouse button pressed
+HTML_EVENT_MOUSEMOVE           Mouse movement over this object
+HTML_EVENT_MOUSEOUT            Mouse pointer exits the client area of this object
+HTML_EVENT_MOUSEOVER           Mouse pointer enters the client area
+HTML_EVENT_MOUSEUP             Mouse button released
+HTML_EVENT_FOCUS               Object has received input focus
+HTML_EVENT_UNFOCUS             Object will lose input focus
+HTML_EVENT_LOAD                Load completes
+HTML_EVENT_UNLOAD              Object is discarded
+HTML_EVENT_SUBMIT              For forms only; submit is pressed
+HTML_EVENT_CHANGE              Input text was edited
+HTML_EVENT_EDIT                Finished Editing on a Textbox
+HTML_EVENT_RESET               For forms only; reset is pressed
+HTML_EVENT_OBJECT_CREATED       HTMLElement object created
+HTML_EVENT_OBJECT_DESTROYED     HTMLElement object destroyed
+HTML_EVENT_ATTRIBUTE_PARSED     Attribute parsed
+HTML_EVENT_LOSECAPTURE          Mouse capture released
+HTML_EVENT_ONREADYSTATECHANGE   Ajax event (XMLHttpRequest.onreadystatechange event) not implemented
+HTML_EVENT_TIMER                A timer message sent by user code via wcQueueEventTimed
+HTML_EVENT_RENDER	            A notification message send by the display processing loop about the element. Useful for doing things like retrieveing an element's screen position after it was automatically placed in non fixed formatted
+content.
+HTML_FIRST_USER_EVENT           This and higher event numbers are available for application programming.
+Event handlers must return one of the following:
+HTML_EVENT_STATUS_DONE       Handling of this event is complete don't pass it to parent handlers.
+HTML_EVENT_STATUS_CONTINUE   Pass the event to parent handler listers and perform any default processing.
+HTML_EVENT_STATUS_HALT       Cancel processing operation. Examples include refusing to give up focus and cancel mouse processing.
+HTML_EVENT_STATUS_ERROR
+The event structure has the following fields.
+struct s_HTMLEvent
+{
+HTMLEventType type;
+union
+{
+struct
+{
+long x;
+long y;
+} position;
+struct
+{
+const WEBC_CHAR* name;
+const WEBC_CHAR* value;
+} attribute;
+struct
+{
+enum NotifierType Notifier;
+enum NotifyEventType NotifyEvent;
+} NotifyMessage;
+WebKey         key;
+WEBC_CHAR*     string;
+unsigned char* buffer;
+} data;
+HELEMENT_HANDLE elem;
+HELEMENT_HANDLE target;
+HELEMENT_HANDLE srcElement;
+WEBC_UINT8 flags;                 see flag definitions below
+int returnValue;
+};
+Event flags that may be set by handlers to control processing as with the return codes.
+The return codes are more often used by Javascript but they can be used for C event dispatchers as well.
+HTML_EVENT_FLAG_CANCEL_BUBBLE    - These flags values may be set by handlers to
+HTML_EVENT_FLAG_CANCEL_DEFAULT   - control processing as with the return codes.
+HTML_EVENT_FLAG_CANCEL_SET_FOCUS - Javascript events use these flags too.
+Keyboard metakey states are provided on mouse events an key events.
+HTML_EVENT_FLAG_SHIFT_DOWN       - Keyboard metakey states provided on mouse event or keypress.
+HTML_EVENT_FLAG_CTRL_DOWN        -
+HTML_EVENT_FLAG_ALT_DOWN         -
+</PRE>
+<BR><DT><B>Returns:</B><DD>  Nothing
+<BR><DT><B>See Also:</B><DD><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

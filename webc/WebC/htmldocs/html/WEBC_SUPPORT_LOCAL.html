@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>#define <A HREF="#DOC.DOCU">WEBC_SUPPORT_LOCAL</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Set to 1 to enable support for LOCAL: protocol </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>Set to 1 to enable the LOCAL:// callback interface for content. If WEBC_SUPPORT_LOCAL is one when a URL starting with local: is requested webC calls user based
+callback routines to satisfy the requests.
+<PRE>
+		These routines must be populated if WEBC_SUPPORT_LOCAL is enabled. (examples are provided)
+		webc_localGet  - Give a the URL, prepare a named pipe of some sort based on the contents of the url string ande return a handle.
+		webc_localRead - Return data from a pipe opened in webc_localGet
+		localWrite     - Write data to a pipe opened in webc_localGet. Only needed if posting to local:
+		webc_localClose- Close a pipe opened in webc_localGet.
+		</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

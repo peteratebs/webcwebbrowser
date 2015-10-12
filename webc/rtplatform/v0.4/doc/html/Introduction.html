@@ -1,0 +1,81 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2> <A HREF="#DOC.DOCU">Introduction</A></H2></H2><A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>RTPlatform is EBSnet's new cross-platform runtime environment.  
+It defines an interface between the high-level platform-independent 
+code in EBSnet's standalone products and the lower-level
+operating system/hardware environment.
+
+<P>RTPlatform is divided into a number of modules, each providing an
+interface to a specific service.  For example, there is the rtpnet
+module, which defines a sockets-style interface to TCP/IP networking
+services, and rtpfile, which defines a roughly POSIX-style interface to
+file system services. 
+
+<P>Some of the RTPlatform modules have platform-independent, or <i>generic</i>,
+implementations; others must rely on platform-specific code for their
+implementation (these are the <i>environment-specific</i> or 
+<i>non-portable</i> modules).  The release distribution of RTPlatform may include
+many different versions of the non-portable modules, each in a 
+different directory that indicates the target environment.  For example,
+the rtpnet module has an implementation for EBSnet's TCP/IP stack, RTIP, 
+in "source/rtip/rtpnet.c", and an implementation for
+the Winsock library on 32-bit Microsoft Windows environments in 
+"source/win32/rtpnet.c".  
+
+<P>Although there may be many ".c" files (one for each target) corresponding to a particular module,
+there is usually only one ".h" file, located in the 
+"include" directory.  Therefore, because all of the
+header files are platform-independent, there are often no environment-specific 
+header files included by the "core" source files of 
+EBSnet's products.  This greatly simplifies the porting process because
+it eliminates any potential symbol/namespace collisions.              </BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>

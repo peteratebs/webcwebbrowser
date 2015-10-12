@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcMemDbInstallPeakUsageCallback</A></H2></TD><TD><H2>(void (*fn)(const char* file,<BR>&nbsp; long line_num,<BR>&nbsp; void* puserctx),<BR>&nbsp; void* puserctx,<BR>&nbsp; unsigned long threshold)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Install a function to be called when peak memory allocation is reached. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Set a threshold value for activating the callback and install a function to be called when peak memory allocation is reached.
+A callback function may be used to capture the state of the heap at the time it is at maximum usage, this my be used to identify leaks and,
+along with other reporting modules, to characterize your application's worst case mekory usage.
+
+<P>
+<PRE>
+ Note: RTP_TRACK_LOCAL_MEMORY must be enabled in rtplatform/include/rtpmem.h for the function to operate properly, if it is not enabled the function simply return.
+
+<P> For example: We've called <!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> from our application and determined that the maximum ram usage of an application is a little over 2,000,000 bytes.
+ We want to know where this memory is being used, so we create a callback function that will call <!1><A HREF="wcPrintMemDetailReport.html">wcPrintMemDetailReport</A> to print details to the system console.
+ (assuming we have a system console).
+
+<P>// This callback will print a report summarizing the number of allocations made from the specific file and line and the number of bytes allocated, displaying the list
+   largest to smallest.
+    static void PeakUsageCallback(const char *file, long line_num,void *ctx)
+    {
+	    wcPrintMemDetailReport(0, 0, DbSummarizeByLine, SortBySize);
+    }
+  ..
+ // This line of code when executed instructs webC to call PeakUsageCallback when a new maximum heap allocation is reached and the total memory allocated is over 2 million bytes.
+
+<P>		wcMemDbInstallPeakUsageCallback(PeakUsageCallback,(void *)0, 2000000);
+
+<P>
+ // A report like the following is produced.
+
+<P>
+  fbabstraction.cpp              369  (47  ) 457404   {BitMapData}
+  webjpeg.cpp                    119  (1   ) 412164   {New}
+  windowsbitmapframebuffer.cpp   94   (1   ) 307200   { }
+  windowsbitmapframebuffer.cpp   97   (1   ) 307200   { }
+  fbabstractwindowmanager.cpp    615  (1   ) 192000   {SaveUnder}
+  hashtbl.cpp                    99   (6   ) 93168    {HashTable}
+  jsapi.c                        738  (1   ) 66648    { }
+  ....
+  Records returned == 110
+  Bytes accounted for = 2081088
+
+<P>  And from it we see that of the 2081088 byte allocated at the peak that almost 2,000,000 of those bytes are allocated from only 7 seperate locations. the next 80 K or so that is used is allocated
+  from calls in over 103 seperate locations. The first three reocrds indicated that 457404 bytes are allocated in 47 seperate calls made from fbabstraction.cpp to hold bit map data. Notice how the memo field contains
+  says that the memory is for "BitMapData". If a memo fields is not filled and empty field{} is displayed. There is one allocation at  webjpeg.cpp , line 369 for 412164 bytes (this is unlabled so the source must be consulted) and
+  two calls each, for 307200, inside windowsbitmapframebuffer.cpp (the raw frame buffer and background buffer).
+
+<P>  </PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>void</B> -  (*fn)(const char *file, long line_num,void *puserctx)	-   Function to call when memory reaches a high water mark.
+<BR><B>void</B> -  *puserctx -  webC does not use this, it is a pointer passed to the callback function that may be used for any purpose. Pass zero if it is not needed.
+<BR><B>unsigned</B> -  long threshold - Tells webC to call the function only if this amount of memory or more is allocated. If zero is provided the callback is performed
+every time a new maximum is reached, if a non-zero value is provided the callback is performed only when the heap usagage exceeds the threshold.
+<BR><DT><B>Returns:</B><DD>  nothing
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> <!1><A HREF="wcMemDbInstallPeakUsageCallback.html">wcMemDbInstallPeakUsageCallback</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A> <!1><A HREF="wcMemDbReleaseReport.html">wcMemDbReleaseReport</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetChangesSinceWatchPoint.html">wcMemDbGetChangesSinceWatchPoint</A> <!1><A HREF="wcPrintMemStats.html">wcPrintMemStats</A> <!1><A HREF="wcPrintMemChangeReport.html">wcPrintMemChangeReport</A> <!1><A HREF="wcPrintMemDetailReport.html">wcPrintMemDetailReport</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

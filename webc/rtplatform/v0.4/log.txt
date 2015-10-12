@@ -1,0 +1,266 @@
+===============================================================================
+This is the RT-PLATFORM Project log.
+ Please add comments BELOW THIS HEADER
+===============================================================================
+09/24/04 (Tony)
+	- For v0.5:
+		- add rtpassert
+		- change rtpsignl API to use:
+				RTP_MUTEX and RTP_MUTEX_INSTANCE
+				RTP_SEMAPHORE and RTP_SEMAPHORE_INSTANCE
+
+				int  rtp_sig_mutex_alloc       (RTP_MUTEX_INSTANCE* instance);
+				int  rtp_sig_semaphore_alloc   (RTP_SEMAPHORE_INSTANCE* instance);
+
+				OR
+
+				int  rtp_sig_mutex_init        (RTP_MUTEX_INSTANCE* instance);
+				int  rtp_sig_semaphore_init    (RTP_SEMAPHORE_INSTANCE* instance);
+				void rtp_sig_mutex_destroy     (RTP_MUTEX_INSTANCE* instance);
+				void rtp_sig_semaphore_destroy (RTP_SEMAPHORE_INSTANCE* instance);
+
+			add:
+				RTP_MUTEX     rtp_sig_mutex_get_handle     (RTP_MUTEX_INSTANCE* instance);
+				RTP_SEMAPHORE rtp_sig_semaphore_get_handle (RTP_SEMAPHORE_INSTANCE* instance);
+
+				RTP_MUTEX_INSTANCE*     rtp_sig_mutex_get_instance     (RTP_MUTEX handle);
+				RTP_SEMAPHORE_INSTANCE* rtp_sig_semaphore_get_instance (RTP_SEMAPHORE handle);
+
+			Same for threads.  This will require re-coding of existing RTPlatform apps.
+
+
+09/09/04 (Tony)
+
+	- Add rtpdbout (rtpdebug?) layer:
+		rtp_debug_output_str
+		rtp_debug_output_int
+
+	- Change error logging in each module to:
+		RTP_NET_DEBUG_OUTPUT_STR -> maps to (nothing) or rtp_debug_output_str
+		...
+
+	- Convert rtp_... calls in target-specific source code to native calls
+		(for example: rtp_memcpy -> memcpy) WHERE POSSIBLE, to reduce
+		dependencies between modules
+
+	- Add assert statements to double-check that modules have been initilized
+		(example: in rtp_thread_spawn check to make sure rtp_thread_init
+		has been called by asserting that a global is non-zero)
+
+	- Add source/targets folder?
+
+	- Rename rtp_not_supported -> rtp_not_yet_implemented ?
+
+	- Add #define rtp_... in the template source files, and #ifndef rtp_...
+		around the actual function definition, so that all functions are
+		turned off by default.  That way, implementing each one is an intentional
+		action motivated by the need for that function in the application
+		code.  We should also tell people to use the link errors method to
+		determine which rtp_... functions need to be implemented for their
+		system.
+
+
+04/14/04 (Shane & Peter) - We should rewrite the server layer to allow a server
+    daemon to hand off jobs to either, its corresponding sync (single threaded)
+    implementation and reject further requests while waiting for this job to
+    finish, or its corresponding async (multithreaded) implementation and reject
+    further requests only when it has ran out of threads (or server contexts) for
+    this server daemon.  We should also add a kill a current server instance and
+    a kill server daemon.  This would hopefully leave us with one api at the
+    individual protocol layer rather than one for sync implementations and one
+    for async implementations.
+
+04/14/04 (Shane & Peter) - When infinite is passed in, it should still only
+    process a single request and return.  There should also be a callback
+    to kill the infinite wait of the sync server.
+
+04/14/04 (Shane) - FTP Server reverted to original implementation and will
+    split out later, only after everything works.
+
+04/12/04 (Shane & Sarah) - FTP Server, split into a sync and async file implementing
+    a timer value to select on when sync (do same with servers.c).  If infinite is
+    passed in we should continually process incoming requests in sync mode (this is
+    when you want to run a simple ftp server only).
+
+04/08/04 (Shane) - We should add the ability to spawn mulitple servers, then kill
+    them by passing the ip and port identifying the correct server to kill.
+
+02/26/04 (Shane) - Creating demo application. Trying to limit those files that
+    will need porting to run on another platform.
+
+02/18/04 (Shane) - Removed the depricated select support in netutil.c.
+
+02/18/04 (Shane) - Removing packet api from protocol layer and moving it to the
+    porting layer (will need to make a RTIP packet/rtpnet port).
+
+02/16/04 (Shane) - telnet_server_daemon_interface replaced with telnet_server_daemon_netaddr
+
+02/13/04 (Shane) - Replacing all instances of xn_abort with hard close (set linger
+    to 0 and the close the socket).
+
+02/13/04 (Shane) - ftp_server_daemon_interface replaced with ftp_server_daemon_netaddr
+
+02/13/04 (Shane) - All add-on API functions should make use of only primitive
+    types.  This will make them more like our porting layer.
+
+02/06/04 (Shane) - RTP Documentation.
+02/06/04 (Shane) - RTPDate Documentation.
+02/06/04 (Shane) - RTPDutil Documentation.
+02/06/04 (Shane) - RTPEnv Documentation.
+02/06/04 (Shane) - RTPFile Documentation.
+02/06/04 (Shane) - RTPKern Documentation.
+02/06/04 (Shane) - RTPMem Documentation.
+02/06/04 (Shane) - RTPMemdb Documentation.
+02/06/04 (Shane) - RTPNet Documentation.
+02/06/04 (Shane) - RTPPrint Documentation.
+02/08/04 (Shane) - RTPSignl Documentation.
+  /  /   (     ) - RTPSsl Documentation.
+02/06/04 (Shane) - RTPStdio Documentation.
+02/06/04 (Shane) - RTPTerm Documentation.
+02/08/04 (Shane) - RTPThrd Documentation.
+02/06/04 (Shane) - RTPTime Documentation.
+02/06/04 (Shane) - RTPUtil Documentation.
+
+02/06/04 (Shane) - Peter suggests that we move the rtputil.h and rtpprint.h to
+    the rtputil and rtpprint directories respectively.  Removing the need for
+    any porting directories.  We would add defines that would turn on and off
+    our versions and ship with our versions on.  Then warn that turning them
+    off will force native header includes through out the projects and this
+    functionality (although more efficient) will not be supported.
+
+    He also thinks that we may want to create our own version of sprintf that
+    takes about 5 params one of which would be a flag indicating that sprintf
+    has been called on the root of the string and we are to catenate the new
+    pointer to it using the formatting arguments.  The only problem I see is
+    that the optimizing feature of defining tc_sprintf as the native sprintf
+    would not be able to be done.
+
+01/28/04 (Shane) - FTP Client ported. [tbd] - add comments to helper functions
+  /  /   (     ) - FTP Server ported.
+  /  /   (     ) - HTTP Server ported.
+02/16/04 (Shane) - Telnet Server ported. [tbd] - 90% complete - add comments and buffer memory
+02/10/04 (Shane) - Telnet Client ported. [tbd] - add comments and buffer memory
+  /  /   (     ) - TFTP Server ported.
+02/10/04 (Shane) - TFTP Client ported. [tbd] - add comments and buffer memory
+  /  /   (     ) - NFS Server ported.
+  /  /   (     ) - NFS Client ported.
+02/10/04 (Shane) - SMTP Client ported. [tbd] - add comments and buffer memory
+  /  /   (     ) - POP3 Client ported.
+  /  /   (     ) - IMAP Client ported.
+  /  /   (     ) - DHCP Client ported.
+  /  /   (     ) - DHCP Server ported.
+  /  /   (     ) - Telnet Client ported.
+  /  /   (     ) - RTSSL ported.
+  /  /   (     ) - SMB ported.
+  /  /   (     ) - WEBC ported.
+  /  /   (     ) - ERTFS ported.
+
+01/15/04 (Tony) - found bug in rtp_file_gfirst, gnext: DROBJ struct is placed on the
+  stack, then returned.
+
+01/15/04 (Shane) - Need to ship rtpprint (RTSSL) and rtpmem (RTSSL, NFS) only
+    when needed and document that no porting necessary if shipped and not needed.
+
+01/15/04 (Shane) - Need to add #if (RTP_STDLIB_SUPPORT) #endif around rtputil
+    functions.
+
+01/12/04 (Shane) - I think we should restructure the RTPlatfrom tree to look like
+    the following:
+
+        RTPlatform
+            |
+            -->WIN32
+            |   |
+            |   -->RTPNet
+            |   -->RTPKern
+            |   -->RTPFile
+            |   ...
+            |
+            -->LINUX
+            |   |
+            |   -->RTPNet
+            |   -->RTPKern
+            |   -->RTPFile
+            |   ...
+            |
+            -->MICROSOFT32
+            |   |
+            |   -->RTPUtil
+            |   -->RTPPrint
+            |   ...
+            |
+            ...
+
+01/08/04 (Shane) - Added a RTPPrint Layer to the RTPlatform.  This print layer
+  acts much like RTPUtil in that the header file is what needs porting, rather
+  than the source file.
+
+01/08/04 (Shane) - Need to create convertion macro in rtpnet.c to move from port,
+  ipAddr, and type to native address structure.
+
+01/07/04 (Shane) - Need to test tc_bsearch and tc_qsort.
+
+12/24/03 (Shane) - Start moving RTIP protocols onto RTPlatform.  Check off bellow
+  when protocol can be compiled (with stubs if necessary).
+
+    FTP Client      [ ]         SMTP            [ ]         RTSSL           [ ]
+    FTP Server      [ ]         POP3            [ ]         SMB             [ ]
+    HTTP Server     [ ]         IMAP            [ ]         WEBC            [ ]
+    Telnet Server   [ ]                                     ERTFS           [ ]
+    TFTP Server     [ ]         DHCP Client     [ ]
+    TFTP Client     [ ]         DHCP Server     [ ]
+    NFS Server      [ ]
+    NFS Client      [ ]         Telnet Client   [ ]
+
+12/18/03 (Shane) - Added higher level file system function api to RTPlatform that
+  makes use of RTPlatform ported functions.  This is useful as a common library
+  in the case that others make use of fopen/fgets/fputs..., but it doesn't need
+  porting!
+
+12/11/03 (Shane) - Added a rtp_net_setkeepalive() to the Socket porting API.
+
+11/07/03 (Shane) - Peter has suggested that we merge these porting files down
+  to two files.  One containing RTOS/Network/SSL/Date/File and the other contains
+  Device Driver.  This will simplify the number of duplicated porting files
+  for every port we do.
+
+11/06/03 (Shane) - Move all memory utility functions into one file; move all
+  string functions into one file; and move all stdlib functions into one file.
+
+10/30/03 (Shane) - Added utility functions.
+
+10/28/03 (Shane) - Added comments to template rtpnet.c.
+
+10/27/03 (Shane) - Added rtp_net_getpeername, rtp_net_getsockname and
+  rtp_net_shutdown to rtpnet.
+
+10/27/03 (Shane) - Added rtplatform.prj to CVS. This project file is for
+  use with UltraEdit.
+
+10/23/03 (Shane) - After talking to Tom, we suggest that a header file be created
+  for no other purpose than for RTIP backwords compatability.  This file would
+  contain macros for the RTIP4.x API to the RTPNET API.
+
+10/23/03 (Shane) - Added a rtperrno.c and rtperrno.h to rtplatform. This is
+  to handle the mapping between RTP error values and the underlying error
+  values.  The RTP error values are now in rtperrno.h and two functions giving
+  access to this mapping have been added to rtperrno.c (rtp_errno_getlasterror
+  and rtp_errno_setlasterror).
+
+  - (Shane) I have created rtperrno.h, but after talking with Tony, rtperrno.c
+  has not been implemented.  Rather, we handle the necessary errno's within
+  each porting layer. We may still want to implement getlasterror and
+  setlasterror in the kernel porting layer.
+
+10/22/03 (Shane) - May want to do a gethostbyname in rtp_net_str_to_ip() incase
+  a FQDN was passed in, rather than a dotted ip string.
+
+  - (Shane) I have decided that this should not be done.  In the cases that you
+    are looking for the ip of an FQDN, you should know to call
+    rtp_net_gethostbyname.
+
+10/20/03 (Tony) - Peter suggested separating thread creation/termination,
+  mutexes (locks), and semaphores (signals) each into their own porting module.
+  Also putting ISR-safe signals into their own porting module because apps do
+  not generally need access to that service.
+

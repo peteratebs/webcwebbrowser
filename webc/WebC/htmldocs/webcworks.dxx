@@ -1,0 +1,128 @@
+/**
+    @memo <center> webC<br> C and HTML GUI for Embedded Platforms <br> Version 1.4 <br> <br> </center>
+ */
+//@{
+    /** @name Introduction
+        @doc  webCApi Interface
+
+        The webC API provides a C/C++ level interface to webC. All API's start with the letters "wc", followed by the
+        type of object it works on, including "wcEl", "wcDoc", "wcSys", "wcDom", "wcWin". Subsequant characters describe the function, examples are
+        wcElSetEventHandler, wcDocEnumerate, and wcWinCreateEx.
+
+
+        The API provides these features and more:
+
+            Windowing system with support for create, move, load content or dynamically create content, z-order, modal dialogue support, save under, destroy,
+<ul>
+<li>            Context management</li>
+<ul>
+<li>                All API cals require a user context, these are created on entry to an event handler and is destroyed on exit.</li>
+<li>                The user context helps manage heap space used to pass information between the webC core, typically ASCII representations of strings</li>
+                that are stored internally as unicode.
+</ul>
+<li>            Windowing API</li>
+<ul>
+<li>                Dynamicaly Create, modify, insert, and delete elements in a document.</li>
+<li>                Save under and modal support simplify dialog box coding.</li>
+</ul>
+<li>            Support for complex composite application objects.</li>
+<ul>
+<li>                Dynamicaly push and pop user local data to elements, documents or windows.</li>
+<li>                Dynamicaly push and pop user local event handlers to elements or documents.</li>
+</ul>
+<li>            Element and DOM support.</li>
+<ul>
+<li>                Create, insert, append remove, delete elements in a document.
+<li>                Attach and release event handlers and private data sets.
+<li>                Get and set styles and other attributes.
+</ul>
+<li>            Search and document enumeration support.</li>
+<ul>
+<li>                Top down dom search with XML search strings.</li>
+<li>                Simplified document enumeration support with user supplied callbacks.</li>
+</ul>
+<li>            Metatag API</li>
+<ul>
+<li>                Mechanism for calling 'C' subroutines when web pages containing specific metatags are loaded.
+<li>                Supports native application and device code that is callable from web pages and thus controlled from the server side.
+</ul>
+<li>            Sytem level utilities to help application development.</li>
+<ul>
+<li>                A new timer callback model simplifies including user timer callback functions that are not associated with a document or element.</li>
+</ul>
+</ul>
+
+        Please review the manual pages for more details on the API.
+
+        A sample application wcapiexamples.cpp is provided with documented code fragments that demonstrate how to use the API. Documentation for the
+        example code in this documentation set.
+      */
+
+	/** @memo Module Descriptions */
+
+			/** @name wcSys - System Oriented API Functions
+	    		@memo System Oriented API Functions
+	    	    @doc  These functions manage system level resource outside of thewindows heirarchy. */
+	    	//@{
+	    		//@Include:  ../source/webcapi/wcsysapi.cpp
+	    	//@}
+
+			/** @name wcDom - DOM Search functions.
+	    		@memo DOM (Document Object Model) Search functions.
+	    	    @doc  These functions search an object hierarchy. */
+	    	//@{
+	    		//@Include: ../source/webcapi/wcdomapi.cpp
+	    	//@}
+
+			/** @name wcWin - Window Oriented API Functions
+	    		@memo Window Oriented API Functions
+	    	    @doc  These functions create and manage individual windows containing browser instances. */
+	    	//@{
+	    		//@Include: ../source/webcapi/wcwinapi.cpp
+	    	//@}
+
+			/** @name wcDoc - Document Oriented Functions
+	    		@memo Document Oriented Functions
+	    	    @doc  These functions generally operate on document content winin a window. */
+	    	//@{
+	    		//@Include: ../source/webcapi/wcdocapi.cpp
+	    	//@}
+
+			/** @name wcEl - Element Oriented Functions
+	    		@memo Element Oriented Functions
+	    	    @doc  These functions generally operate on individual elements within a document. */
+	    	//@{
+	    		//@Include: ../source/webcapi/wcelemapi.cpp
+	    	//@}
+
+			/** @name wcMeta - Metatag Oriented Functions
+	    		@memo Metatag Oriented Functions
+	    	    @doc  These functions are independent of document and are processed when a metatag is encountered while loading a document. */
+	    	//@{
+	    		//@Include: ../source/webcapi/wcmetatagapi.cpp
+	    	//@}
+
+			/** @name Config - Configuration constants
+	    	     */
+	    	//@{
+	    		//@Include: webcfg.h
+	    	//@}
+
+
+	/** @name Appendix A
+    	@memo  webC compile Time configuration.
+    	@doc
+        Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+
+    	<b>NOTE: <i>Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+        Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+        Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+        Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+        Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+        Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+        Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+        Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+        Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense Nonsense nonsense
+      */
+
+//@}

@@ -1,0 +1,6 @@
+jhtml_doc_write
+jhtml_element_attachEvent
+jhtml_doc_CreateElement
+jhtml_element_setProperty 40587766
+jhtml_element_setProperty 42754062
+jhtml_element_appendChild

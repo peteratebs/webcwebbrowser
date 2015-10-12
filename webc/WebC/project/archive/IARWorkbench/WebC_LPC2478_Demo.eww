@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\libjpeg\libjpeg.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\libmng\libmng.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\libpng\libpng.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\mozjs\mozjs.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\rtPlatform\rtPlatform.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\TouchDemoPP\TouchDemoPP.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\webC\webC.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\zlib\zlib.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+

@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Font Files">
+      <UniqueIdentifier>{1b1954e1-f448-4263-84a0-65624c02bbb2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\source\util\dbgprofile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBAbstraction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBAbstractionFonts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBGraphicsContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\Filters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\Localurlcallbacks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\Remoteterminalwindows.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="webcdemo_fb_gdip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\WindowsBitMapFrameBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold10B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold14B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold20B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold6B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold9B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic10B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic6B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic9B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular10B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular14B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular20B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular6B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular9B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold10B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold14B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold20B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular10B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular14B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular20B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold10B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold11B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold12B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold13B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold14B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold15B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold16B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold17B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold18B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular10B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular11B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular12B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular13B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular14B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular15B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular16B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular17B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular18B0020E007e.c">
+      <Filter>Font Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBAbstractWindowManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBEventsandUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\WindowsBitMapEventing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FrameBufferDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold10.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold13.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold14.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold14B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold20B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\arialbold7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic10.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\arialregular10.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular14B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold10B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold14B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold20B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular10B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular14B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\FB_HWInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\FBAbstraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\FBAbstractionFonts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\FBGraphicsContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\Filters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold10B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold11B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold12B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold13B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold14B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold15B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold16B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold17B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold18B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular10B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular11B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular12B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular13B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular14B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular15B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular16B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular17B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular18B0020E007e.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="webcdemo_fb_gdip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\WindowsBitMapFrameBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="webcdemo_fb_gdip.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="webcdemo_fb_gdip.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

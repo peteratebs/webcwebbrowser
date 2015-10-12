@@ -1,0 +1,75 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2>void* <A HREF="#DOC.DOCU">_rtp_debug_realloc</A></H2><H2>( void*  ptr,   unsigned long size,<BR>&nbsp;  RTP_REALLOC_FN reallocFn,<BR>&nbsp;  const char* file,   long line_num )</H2><BLOCKQUOTE>Reallocate memory. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Allocates, if possible, a portion of memory of 'size' 
+bytes, then moves 'size' bytes, if possible, of the old region 
+ptr was pointing to, to the newly allocated space.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>ptr</B> -   Pointer to currently allocated space. 
+<BR><B>size</B> -   New number of bytes to allocate. 
+<BR><B>reallocFn</B> -   Memory reallocation function pointer. 
+<BR><B>file</B> -   The preprocessor macro __FILE__. 
+<BR><B>line_num</B> -   The preprocessor macro __LINE__. <BR><DT><B>Returns:</B><DD>  Pointer to the location of the newly allocated spcae, 
+0 otherwise. For debugging purposes; if the cause of the
+error is obtainable at the native Memory System layer, 
+turn on RTP_DEBUG in rtpmem.c to display the native 
+error value.
+<BR><DT><B>Preconditions:</B><DD>  <b>Only use if dynamic memory is required. MUST</b> 
+not be called directly. Use the <b>rtp_realloc</b> macro defined 
+in rtpmem.h and turn on RTP_TRACK_LOCAL_MEMORY. If the preprocessor
+macros used are unavailable in the target environment, define 
+them at the compiler to a chosen dummy value.
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>int <A HREF="#DOC.DOCU">webc_BrowserSetTagEventHandler</A></H2></TD><TD><H2>( HBROWSER_HANDLE wc,<BR>&nbsp; HTMLTagType tagType,<BR>&nbsp; HTMLEventCallback cb )</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Specify a default event handler for all elements with the specified HTML tag type </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Specify a default event handler for this tag type for this browser/window. This is different from wcElSetEventHandler in two important ways.
+<br> 1. If a new document is created or loaded in the window the handler remains in place.
+<br> 2. The handler is called for every element of the specified type, not just for a spefic element, for which a handler was assigned.
+<br><PRE>
+ // This code fragment attaches a default handler for the Body tag.
+ Each time a new document is loaded the callback function is called.
+ In this example the callback function tests the ID of the document body and initiaates startup code for the page based on the ID.
+
+<P> // Attach a custom handler to the <BODY> tag
+ webc_BrowserSetTagEventHandler (hbrowser,HTML_TAG_BODY, AppBuilderBodycb);
+ ..
+ // Example callback handler for the BODY tag. If it is a load of our ID, "MainWindow", we let load processing complete and start a timer to call us
+    again in 100 milliseconds to start the main application.
+ static HTMLEventStatus newAppBuilderBodycb(wcCtx* Ctx,wcEL element,HTMLEvent* event,char* param)
+{
+	if (element && wcELIdMatches(element, "MainWindow"))
+	{
+    	switch (event->type)
+    	{
+    		case HTML_EVENT_LOAD:
+    		{
+				// queu up the application to run in 100 msec (after background was drawn)
+    			HTMLEvent Event;
+    			rtp_memset(&Event, 0 ,sizeof(Event));
+    			Event.type = HTML_EVENT_TIMER;
+    			wcElTriggerEvent(element, &Event, 100);
+    			return (HTML_EVENT_STATUS_CONTINUE);
+    		}
+    		break;
+	        case HTML_EVENT_TIMER:
+				StartMainApplication(Ctx->hbrowser, Ctx->hdoc);
+	        	break;
+	        case HTML_EVENT_KEYDOWN:
+				printf("Keydown in Body\n");
+         	default:
+         	break;
+		}
+    }
+    return (HTML_EVENT_STATUS_CONTINUE);
+}
+
+<P>
+</PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <BR><DT><B>Returns:</B><DD>  0 on success -1 on error.<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

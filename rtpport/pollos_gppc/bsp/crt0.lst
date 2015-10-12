@@ -1,0 +1,127 @@
+GAS LISTING D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s 			page 1
+
+
+   1              	/**************************************************************************#
+   2              	#*                                                                        *#
+   3              	#* CRT0.S 02/08 TVO                                                     *#
+   4              	#**************************************************************************/
+   5              	
+   6              		.file		"crt0"
+   7              	##	PowerPC assembler header file
+   8              	##
+   9              	##=============================================================================
+  10              	##=============================================================================
+  11              	##
+  12              	##=============================================================================
+  13              	
+  14              	#------------------------------------------------------------------------------
+  15              	# Easier to read names for the registers
+  16              	
+  17              		.equ	r0, 0
+  18              		.equ	r1, 1
+  19              		.equ	r2, 2
+  20              		.equ	r3, 3
+  21              		.equ	r4, 4
+  22              		.equ	r5, 5
+  23              		.equ	r6, 6
+  24              		.equ	r7, 7
+  25              		.equ	r8, 8
+  26              		.equ	r9, 9
+  27              		.equ	r10, 10
+  28              		.equ	r11, 11
+  29              		.equ	r12, 12
+  30              		.equ	r13, 13
+  31              		.equ	r14, 14
+  32              		.equ	r15, 15
+  33              		.equ	r16, 16
+  34              		.equ	r17, 17
+  35              		.equ	r18, 18
+  36              		.equ	r19, 19
+  37              		.equ	r20, 20
+  38              		.equ	r21, 21
+  39              		.equ	r22, 22
+  40              		.equ	r23, 23
+  41              		.equ	r24, 24
+  42              		.equ	r25, 25
+  43              		.equ	r26, 26
+  44              		.equ	r27, 27
+  45              		.equ	r28, 28
+  46              		.equ	r29, 29
+  47              		.equ	r30, 30
+  48              		.equ	r31, 31
+  49              	
+  50              		.equ	sp, r1
+  51              		.equ	XER, 1
+  52              		.equ	LR,  8
+  53              		.equ	lr,  8
+  54              		.equ	CTR, 9
+  55              		.equ	DEC, 22
+  56              		.equ	SRR0, 26
+  57              		.equ	SRR1, 27
+GAS LISTING D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s 			page 2
+
+
+  58              		.equ	SPRG0, 272
+  59              		.equ	SPRG1, 273
+  60              	
+  61              	.extern   __bss_end__ /* defined by the linker */
+  62              	.globl  _start
+  63              		.align		2
+  64              	
+  65              	_start:
+  66 0000 7C1113A6 	mtspr  81, r0 		/* disable interrupts */
+  67 0004 3C200000 	lis	r1,__bss_end__@h	    /* Initialize stack pointer r1 to */
+  68 0008 60210000 	ori	r1,r1,__bss_end__@l	/* value in linker command file.  */
+  69 000c 48000001 	bl startc
+GAS LISTING D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 crt0
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:17     *ABS*:00000000 r0
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:18     *ABS*:00000001 r1
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:19     *ABS*:00000002 r2
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:20     *ABS*:00000003 r3
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:21     *ABS*:00000004 r4
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:22     *ABS*:00000005 r5
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:23     *ABS*:00000006 r6
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:24     *ABS*:00000007 r7
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:25     *ABS*:00000008 r8
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:26     *ABS*:00000009 r9
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:27     *ABS*:0000000a r10
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:28     *ABS*:0000000b r11
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:29     *ABS*:0000000c r12
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:30     *ABS*:0000000d r13
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:31     *ABS*:0000000e r14
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:32     *ABS*:0000000f r15
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:33     *ABS*:00000010 r16
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:34     *ABS*:00000011 r17
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:35     *ABS*:00000012 r18
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:36     *ABS*:00000013 r19
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:37     *ABS*:00000014 r20
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:38     *ABS*:00000015 r21
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:39     *ABS*:00000016 r22
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:40     *ABS*:00000017 r23
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:41     *ABS*:00000018 r24
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:42     *ABS*:00000019 r25
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:43     *ABS*:0000001a r26
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:44     *ABS*:0000001b r27
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:45     *ABS*:0000001c r28
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:46     *ABS*:0000001d r29
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:47     *ABS*:0000001e r30
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:48     *ABS*:0000001f r31
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:50     *ABS*:00000001 sp
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:51     *ABS*:00000001 XER
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:52     *ABS*:00000008 LR
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:53     *ABS*:00000008 lr
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:54     *ABS*:00000009 CTR
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:55     *ABS*:00000016 DEC
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:56     *ABS*:0000001a SRR0
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:57     *ABS*:0000001b SRR1
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:58     *ABS*:00000110 SPRG0
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:59     *ABS*:00000111 SPRG1
+D:/rtip5.0/L3/rtip5.0/rtpport/pollos_gppc/bsp/crt0.s:65     .text:00000000 _start
+
+UNDEFINED SYMBOLS
+__bss_end__
+startc

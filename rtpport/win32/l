@@ -1,0 +1,15 @@
+File RTPPORT.H:
+int  rtp_sig_semaphore_alloc_dynamic (RTP_SEMAPHORE *newSem, const char *name, 
+File RTPSIGIN.H:
+ *       use by the overall system will be the RTP_SEMAPHORE
+ *       int proprietary_alloc_semaphore (RTP_SEMAPHORE* sem)
+ *          RTP_SEMAPHORE_INSTANCE* newSem = malloc(sizeof(RTP_SEMAPHORE_INSTANCE));
+typedef HANDLE RTP_SEMAPHORE_INSTANCE;
+int                     _rtp_sig_semaphore_alloc        (RTP_SEMAPHORE_INSTANCE* newSem, const char *name);
+RTP_SEMAPHORE           _rtp_sig_semaphore_get_handle   (RTP_SEMAPHORE_INSTANCE* sem);
+RTP_SEMAPHORE_INSTANCE* _rtp_sig_semaphore_get_instance (RTP_SEMAPHORE           semHandle);
+void                    _rtp_sig_semaphore_free         (RTP_SEMAPHORE_INSTANCE* sem);
+int                     _rtp_debug_sig_semaphore_alloc        (RTP_SEMAPHORE_INSTANCE* newSem, const char* name, const char* file, long line_num);
+RTP_SEMAPHORE           _rtp_debug_sig_semaphore_get_handle   (RTP_SEMAPHORE_INSTANCE* sem,    const char* file, long line_num);
+RTP_SEMAPHORE_INSTANCE* _rtp_debug_sig_semaphore_get_instance (RTP_SEMAPHORE     semHandle,    const char* file, long line_num);
+void                    _rtp_debug_sig_semaphore_free         (RTP_SEMAPHORE_INSTANCE* sem,    const char* file, long line_num);

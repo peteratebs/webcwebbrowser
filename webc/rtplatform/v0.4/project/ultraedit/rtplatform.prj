@@ -1,0 +1,56 @@
+[Project ID]
+Signature=UE Proj: v.1
+[Files - generic]
+0=..\..\source\generic\rtp.c
+1=..\..\source\generic\rtpdate.c
+2=..\..\source\generic\rtpdutil.c
+3=..\..\source\generic\rtpmemdb.c
+4=..\..\source\generic\rtpprint.c
+5=..\..\source\generic\rtpstdio.c
+6=..\..\source\generic\rtpstdup.c
+7=..\..\source\generic\rtputil.c
+[Project Information]
+Use Relative Directory=1
+Relative to Project File=1
+Project Wordfile=
+Filter=*.c;*.h
+Project Directory=C:\dev\ebs\rtplatform\v0.3\project\ultraedit\
+Project Tagfile=
+Create Tagfile=0
+Include Sub Directories=1
+[Files - include]
+0=..\..\include\rtp.h
+1=..\..\include\rtpdate.h
+2=..\..\include\rtpdutil.h
+3=..\..\include\rtpenv.h
+4=..\..\include\rtpfile.h
+5=..\..\include\rtpkern.h
+6=..\..\include\rtpmem.h
+7=..\..\include\rtpmemdb.h
+8=..\..\include\rtpnet.h
+9=..\..\include\rtppkt.h
+10=..\..\include\rtpprint.h
+11=..\..\include\rtpsignl.h
+12=..\..\include\rtpssl.h
+13=..\..\include\rtpstdio.h
+14=..\..\include\rtpstdup.h
+15=..\..\include\rtpterm.h
+16=..\..\include\rtpthrd.h
+17=..\..\include\rtptime.h
+18=..\..\include\rtputil.h
+[Open Files]
+Open File0=D:\Segger\RTIP4.1.grundfoss\XNET\ostype.h
+Active File Display Mode=3
+Open File Pos0=2902
+Open File Line0=0
+Active File Index=0
+Open File Window Pos0=2,3,-1,-1,-4,-26,225,225,974,806
+Open File1=
+[File View]
+Current Select=Open Files\
+Scroll Position=0
+[Files]
+0=..\..\include\
+1=..\..\source\
+[Group]
+1=

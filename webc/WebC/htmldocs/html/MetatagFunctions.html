@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">Metatag Functions</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Metatag oriented functions facilitate calling native 'C' functions based on metadata encoded in html document headers. </BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Introduction"></A>
+<A HREF=MetatagFunctions.html><B>Introduction</B></A></TD><TD><BR>
+<I><PRE> <ul> <li> Native 'C' functions are included in the target build. </li> <li> These functions are then registered by the target code to be called when a named Metatag is encountered in an HTML header.</li> <li> The method is simple and managable and has been used several times to pubish device control APIs accesible to back office developers. <li> Content developers can then call these pages by linking to content containing the proper metatatags.</li> <li> The contents of the metatag EQUIV property are passed to the 'C' function allowing content developers can pass parameters to the callback functions.</li> <li> Simple HTML url based menu or button arrays may be used to link pages that invoke callbacks with specific device side resposibilities.</li> <li> Examples: <ul> <li> Initiate a barcode scan operation which is then posted back to the server.</li> <li> Enable, disable or change a device accessory seeting (lower volume, dim backlight, etc.).</li> <li> Allow access to device functions after succesful password validation.</li> <li> Based on device specific paramaters, allow or cancel loading of pages with security metatags in their headers.</li> <li> Push update instructions to a device on a page load.</li> <li> Allow "out of band" call operations to a device by injecting metatags into normal application pages as they are loaded.</li> </ul></I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="wcRegisterMetaCallback"></A>
+<A HREF=wcRegisterMetaCallback.html><B>wcRegisterMetaCallback</B></A></TD><TD><BR>
+<I>Register a user supplied Metatag handler. </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>These functions allow server based applications to send pages to the device that trigger native 'C' code to execute. </BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

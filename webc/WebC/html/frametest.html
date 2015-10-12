@@ -1,0 +1,60 @@
+<html>
+<head>
+<script>
+
+var maxwindow=1;
+var numwindows=5;
+var newmax=2;
+// var windownumber = 1;
+function clicked(windownumber)
+{
+    alert("button: "+windownumber+"clicked !");
+    myid = "app"+windownumber;
+    document.getElementById(myid).style.zIndex=newmax;
+    newmax+=1;
+}
+function ShowTime()
+{
+var D = new Date();
+    dbprint("TIME: "+ D.getHours()+":"+D.getMinutes()+":"+D.getSeconds() );
+    delete D;
+    var t=setTimeout("ShowTime()",2000);
+}
+function Doit()
+{
+    alert("Loaded man");
+    var t=setTimeout("ShowTime()",2000);
+}
+</script>
+</head>
+<body onload="Doit()";>
+
+<iframe id="app1" src ="mock1.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app2" src ="mock2.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app3" src ="mock3.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app4" src ="mock4.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app5" src ="mock5.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+
+
+<button type="button" onclick="clicked('0')" style="position:absolute; left:0px; top:0px;   width:36px; height:40px; z-index:10000">0</button>
+<button type="button" onclick="clicked('1')" style="position:absolute; left:0px; top:50px;  width:36px; height:40px; z-index:10000">1</button>
+<button type="button" onclick="clicked('2')" style="position:absolute; left:0px; top:100px;  width:36px; height:40px; z-index:10000">2</button>
+<button type="button" onclick="clicked('3')" style="position:absolute; left:0px; top:150px; width:36px; height:40px; z-index:10000">3</button>
+<button type="button" onclick="clicked('4')" style="position:absolute; left:0px; top:200px; width:36px; height:36px; z-index:10000">4</button>
+
+<button type="button" onclick="clicked('5')" style="position:absolute; left:50px;  top:200px; width:50px; height:36px; z-index:10000">5</button>
+<button type="button" onclick="clicked('6')" style="position:absolute; left:100px; top:200px; width:50px; height:36px; z-index:10000">6</button>
+<button type="button" onclick="clicked('7')" style="position:absolute; left:150px; top:200px; width:50px; height:36px; z-index:10000">7</button>
+<button type="button" onclick="clicked('8')" style="position:absolute; left:200px; top:200px; width:50px; height:36px; z-index:10000">8</button>
+<button type="button" onclick="clicked('9')" style="position:absolute; left:250px; top:200px; width:50px; height:36px; z-index:10000">9</button>
+
+<button type="button" onclick="clicked('10')" style="position:absolute; left:300px; top:0px;   width:36px; height:40px; z-index:10000">10</button>
+<button type="button" onclick="clicked('11')" style="position:absolute; left:300px; top:50px;  width:36px; height:40px; z-index:10000">11</button>
+<button type="button" onclick="clicked('12')" style="position:absolute; left:300px; top:100px;  width:36px; height:40px; z-index:10000">12</button>
+<button type="button" onclick="clicked('13')" style="position:absolute; left:300px; top:150px; width:36px; height:40px; z-index:10000">13</button>
+<button type="button" onclick="clicked('14')" style="position:absolute; left:300px; top:200px; width:36px; height:36px; z-index:10000">14</button>
+
+
+
+</body>
+</html>

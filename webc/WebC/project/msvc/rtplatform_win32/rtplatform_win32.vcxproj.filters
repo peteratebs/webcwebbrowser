@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0e71e4b0-343e-4462-91f7-2def0d962f13}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{3a814b0f-4961-4aae-8053-d5c781a89df2}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="SourceWin32">
+      <UniqueIdentifier>{11e24cc2-4f3f-490b-b6fe-1c8ab2efefe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RtpCore">
+      <UniqueIdentifier>{78f77fbf-8bac-4455-8673-775167a4c910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RtpPort">
+      <UniqueIdentifier>{6b0b7bc8-c491-41a1-ac0c-238d45f7a767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RtpPort\win32">
+      <UniqueIdentifier>{6deab19e-128d-4d9a-b0ae-95516d477854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RtpPort\rtip">
+      <UniqueIdentifier>{4bcbbb00-e4bd-46d6-9f58-cab7421cdbc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RtpPort\winsock">
+      <UniqueIdentifier>{84f57f0a-bc18-4fb3-a84d-2afaa72189ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RtpPort\rtipresources">
+      <UniqueIdentifier>{3ae65860-a8be-4bf3-b71f-b5798c1ac384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RtpPort\win32Pollos">
+      <UniqueIdentifier>{06492bff-e4f0-42a0-8801-838c03e51041}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtpchar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\win32\rtpdebug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtpdutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtpmemdb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtprand.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\openssl\rtpssl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtpstdup.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtpstr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtpwchar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtpwcs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtpwscnv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\generic\rtpxml.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\win32\rtpfile.c">
+      <Filter>SourceWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\win32\rtpnet.c">
+      <Filter>SourceWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\win32\rtpmem.c">
+      <Filter>SourceWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\win32\rtptime.c">
+      <Filter>SourceWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\win32\rtpdobj.c">
+      <Filter>SourceWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\win32\rtpthrd.c">
+      <Filter>SourceWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\rtplatform\v0.4\source\win32\rtpdate.c">
+      <Filter>SourceWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpchar.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpdebug.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpdutil.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpmemdb.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtprand.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpscnv.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpstdup.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpstr.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpwchar.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpwcs.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\win32\rtpdate.c">
+      <Filter>RtpPort\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\win32\rtpdobj.c">
+      <Filter>RtpPort\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\win32\rtpmem.c">
+      <Filter>RtpPort\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\win32\rtpnet.c">
+      <Filter>RtpPort\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\win32\rtptime.c">
+      <Filter>RtpPort\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpssl.c">
+      <Filter>RtpCore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\winsock\rtpnet.c">
+      <Filter>RtpPort\winsock</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\rtip\rtpnet.c">
+      <Filter>RtpPort\rtip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\rtip\rtipconfig.c">
+      <Filter>RtpPort\rtip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtputil.c">
+      <Filter>RtpPort\rtipresources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\pollos_win32\rtpirq.c">
+      <Filter>RtpPort\rtipresources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\pollos_win32\rtpkern.c">
+      <Filter>RtpPort\rtipresources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\pollos_win32\rtpsignl.c">
+      <Filter>RtpPort\rtipresources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\pollos_win32\rtptime.c">
+      <Filter>RtpPort\win32Pollos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\win32\rtpfile.c">
+      <Filter>RtpPort\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\pollos_win32\rtpthrd.c">
+      <Filter>RtpPort\rtipresources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\pollos_win32\rtpdate.c">
+      <Filter>RtpPort\win32Pollos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpport\pollos_win32\rtpterm.c">
+      <Filter>RtpPort\rtipresources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\rtpcore\rtpprint.c">
+      <Filter>RtpPort\rtipresources</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

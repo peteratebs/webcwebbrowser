@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcPushData</A></H2></TD><TD><H2>(wcCtx* Ctx,  wcEL Element,  void* data)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Associate a data pointer with a window or element within a window. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>The data is not used by WebC. Typical use of private data is to associate
+application specific data with the window when it is created, perhaps at start-up
+and to attach element specific data to screen objects as screens are loaded and created.
+Event handlers can then access this data and perform application specific operations based on
+their contents and perform updates on their contents.
+
+<P>Note: wcPushData places the argument onto an internal stack. You must call wcGetData to access the private data pointer that was
+last pushed. When you are done using the data pointer stack you may pop your value and expose the previous private data pointer by
+calling wcPopData. Most applications don't need a stack more than one level deep but more complex interfaces involving drag and drop, slide under windows use this capability.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcCtx</B> - * Ctx 	- Context to associate private data with.
+<BR><B>wcEL</B> -    Element - Element to associate private data with. If this value is zero the data is associated with the context and not a specific element within the conmtext.
+<BR><B>void</B> - *  data    - Data pointer to push.
+<BR><DT><B>Returns:</B><DD>  Nothing<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

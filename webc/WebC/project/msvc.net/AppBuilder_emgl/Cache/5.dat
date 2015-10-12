@@ -1,0 +1,653 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<TITLE>embedded fat file system, embedded transactional file system, real time file system, rtos, Embedded Software Solutions by EBS</TITLE>
+
+<META name="description" content="embedded fat file system, embedded transactional file system, real time file system, Embedded Software Solutions by EBS.  EBS RTOS, File System Software, Portable FAT32 file system with Failsafe operation and support for 64 bit files, GUI SDK, Web browser, CIFS/SMB protocol and a CD ROM file system, SDK for UPnP™ certified devices. Portability to any kernel. Royalty Free!">
+
+<META name="keywords" content="embedded fat file system, embedded transactional file system, real time file system, Embedded Software Solutions by EBS EBS RTOS, File System Software, Portable DOS, WIN9X Compatible File System, CD Rom, DOS File System-EBS, embedded fat32 fat64 file system, Fat 32, fat 64  Operating System, embedded web browser, Real time web browser, file system, embedded file system, EBS Real time  embedded file system rtos, embedded, real time, realtime, embedded system, embedded systems, realtime linux, network, stack, sdk, footprint, royalty free, vxworks, threadx, linux, rtkernel, itron, nucleus, integrity, ARM, x86, powerpc, xscale, coldfire, mips, nexperia, Renesas, qnx, green  hills, datalight, reliance, cmx, wind river, lynuxworks , smx, allegro, segger, ontime, ebsnet, ertfs, rtfs, fat32, fat64, fat 64, fat 32, fat file system, fat32 file system, fat64 file system, fat, fail safe, rtfile, DOS, flash, CD-ROM,  CDROM,  compatible, flash  file system, journaling, journal, transactional, file system, file system,  failsafe, driver, patent, nand flash, nor flash, smart media, compact flash, sd card, mmc, upnp, server, client, media server, embedded upnp, real time upnp, IGD, SOAP, XML, digitalhome, dlna, upnp device, control point, rtupnp, smbclient, samba, network neighborhood, smb, netbios, cifs, cifs/smb, cifs server, cifs client, rtsmb, Peg, browser, web browser, gui, webc, HTML browser, USB host stack, USB, rtusb">
+
+<link rel="stylesheet" type="text/css" href="index.CSS">
+<!--Script Code Ends-->
+<style type="text/css">
+
+#dropmenudiv{
+position:absolute;
+/*border:1px solid black;*/
+font:normal 10px Verdana;
+line-height:18px;
+z-index:100;
+text-decoration: none;
+color:#EC8425;
+}
+
+#dropmenudiv a{
+width: 100%;
+font:normal 10px Verdana;
+display: block;
+text-indent: 3px;
+text-decoration: none;
+text-align:left;
+color:#000000;
+padding:4px;
+}
+
+#dropmenudiv a:hover{ /*hover background color*/
+background-color: #ECF3FD;
+font-family:verdana;
+font-size:10px;
+font-variant:normal;
+color:#EC8425;
+text-decoration: none;
+border:#000000;
+border-left: solid 1px #989CA2;
+border-top: solid 1px #989CA2;
+border-right: solid 1px #989CA2;
+border-bottom: solid 1px #989CA2;
+
+}
+
+</style>
+<!-- Google Ad-word tracking tool script START -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-952154-1";
+urchinTracker();
+</script>
+<!-- Google Ad-word tracking tool script STOP -->
+
+<script type="text/javascript">
+<!--
+//Contents for menu 1
+var menu1=new Array()
+menu1[0]='<a href="product_ertfs_overview.htm">Rtfs File System</a>'
+menu1[1]='<a href="product_RTSMB_server.htm">RTSMB-Server</a>'
+menu1[2]='<a href="product_RTSMB_client.htm">RTSMB-Client</a>'
+menu1[3]='<a href="product_web_c_overview.htm">GUI Products</a>'
+menu1[4]='<a href="product_upnp_overview.htm">RTUPnP-Device</a>'
+menu1[5]='<a href="product_upnp_overview.htm">RTUPnP-Control</a>'
+menu1[6]='<a href="product_upnp_overview.htm">RTUPnP-AV</a>'
+
+//Contents for menu 5, and so on
+/*var menu5=new Array()
+menu5[0]='<a href="#">Menu 01</a>'
+menu5[1]='<a href="#">Menu 02</a>'
+menu5[2]='<a href="#">Menu 03</a>'
+menu5[3]='<a href="#">Menu 04</a>'*/
+
+
+var menuwidth='165px' //default menu width
+var menubgcolor='#C2D1E7'  //menu bgcolor
+var disappeardelay=100  //menu disappear speed onMouseout (in miliseconds)
+var hidemenu_onclick="yes" //hide menu when user clicks within menu?
+
+/////No further editting needed
+
+var ie4=document.all
+var ns6=document.getElementById&&!document.all
+
+if (ie4||ns6)
+document.write('<div id="dropmenudiv" style="visibility:hidden;width:'+menuwidth+';background-color:'+menubgcolor+'" onMouseover="clearhidemenu()" onMouseout="dynamichide(event)"></div>')
+
+function getposOffset(what, offsettype){
+var totaloffset=(offsettype=="left")? what.offsetLeft : what.offsetTop;
+var parentEl=what.offsetParent;
+while (parentEl!=null){
+totaloffset=(offsettype=="left")? totaloffset+parentEl.offsetLeft : totaloffset+parentEl.offsetTop;
+parentEl=parentEl.offsetParent;
+}
+return totaloffset;
+}
+
+
+function showhide(obj, e, visible, hidden, menuwidth){
+if (ie4||ns6)
+dropmenuobj.style.left=dropmenuobj.style.top=-500
+if (menuwidth!=""){
+dropmenuobj.widthobj=dropmenuobj.style
+dropmenuobj.widthobj.width=menuwidth
+}
+if (e.type=="click" && obj.visibility==hidden || e.type=="mouseover")
+obj.visibility=visible
+else if (e.type=="click")
+obj.visibility=hidden
+}
+
+function iecompattest(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function clearbrowseredge(obj, whichedge){
+var edgeoffset=0
+if (whichedge=="rightedge"){
+var windowedge=ie4 && !window.opera? iecompattest().scrollLeft+iecompattest().clientWidth-15 : window.pageXOffset+window.innerWidth-15
+dropmenuobj.contentmeasure=dropmenuobj.offsetWidth
+if (windowedge-dropmenuobj.x < dropmenuobj.contentmeasure)
+edgeoffset=dropmenuobj.contentmeasure-obj.offsetWidth
+}
+else{
+var windowedge=ie4 && !window.opera? iecompattest().scrollTop+iecompattest().clientHeight-15 : window.pageYOffset+window.innerHeight-18
+dropmenuobj.contentmeasure=dropmenuobj.offsetHeight
+if (windowedge-dropmenuobj.y < dropmenuobj.contentmeasure)
+edgeoffset=dropmenuobj.contentmeasure+obj.offsetHeight
+}
+return edgeoffset
+}
+
+function populatemenu(what){
+if (ie4||ns6)
+dropmenuobj.innerHTML=what.join("")
+}
+
+
+function dropdownmenu(obj, e, menucontents, menuwidth){
+if (window.event) event.cancelBubble=true
+else if (e.stopPropagation) e.stopPropagation()
+clearhidemenu()
+dropmenuobj=document.getElementById? document.getElementById("dropmenudiv") : dropmenudiv
+populatemenu(menucontents)
+
+if (ie4||ns6){
+showhide(dropmenuobj.style, e, "visible", "hidden", menuwidth)
+dropmenuobj.x=getposOffset(obj, "left")
+dropmenuobj.y=getposOffset(obj, "top")
+dropmenuobj.style.left=dropmenuobj.x-clearbrowseredge(obj, "rightedge")+"px"
+dropmenuobj.style.top=dropmenuobj.y-clearbrowseredge(obj, "bottomedge")+obj.offsetHeight+"px"
+}
+
+return clickreturnvalue()
+}
+
+function clickreturnvalue(){
+if (ie4||ns6) return false
+else return true
+}
+
+function contains_ns6(a, b) {
+while (b.parentNode)
+if ((b = b.parentNode) == a)
+return true;
+return false;
+}
+
+function dynamichide(e){
+if (ie4&&!dropmenuobj.contains(e.toElement))
+delayhidemenu()
+else if (ns6&&e.currentTarget!= e.relatedTarget&& !contains_ns6(e.currentTarget, e.relatedTarget))
+delayhidemenu()
+}
+
+function hidemenu(e){
+if (typeof dropmenuobj!="undefined"){
+if (ie4||ns6)
+dropmenuobj.style.visibility="hidden"
+}
+}
+
+function delayhidemenu(){
+if (ie4||ns6)
+delayhide=setTimeout("hidemenu()",disappeardelay)
+}
+
+function clearhidemenu(){
+if (typeof delayhide!="undefined")
+clearTimeout(delayhide)
+}
+
+if (hidemenu_onclick=="yes")
+document.onclick=hidemenu
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+ var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+   var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+   if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+//-->
+</script>
+
+
+<script language="JavaScript" src="quoteoftheday.js"></script>
+
+<style>
+<!--
+.main-content
+{
+	padding-left: 3%;
+}
+
+-->
+</style>
+
+</head>
+
+<body topmargin="0" style="text-align: left">
+
+<div align="center">
+	<table border="0" width="776" id="table1" height="606" cellpadding="0" style="border-collapse: collapse">
+		<tr>
+			<td align="left" valign="top" height="197" colspan="2">
+			<table border="0" cellpadding="0" cellspacing="0" width="775" id="table2">
+<!-- fwtable fwsrc="layout-img.png" fwbase="layout-img.jpg" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  				<tr>
+					<td>
+					<img src="images/spacer.gif" width="194" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="18" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="52" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="42" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="55" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="44" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="47" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="50" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="47" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="57" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="31" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="57" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="64" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="17" height="1" border="0" alt=""></td>
+					<td>
+					<img src="images/spacer.gif" width="1" height="1" border="0" alt=""></td>
+				</tr>
+				</table>
+			<table border="0" width="100%" id="table15" cellspacing="0" cellpadding="0">
+				<tr>
+					<td align="left" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="775" id="table16">
+<!-- fwtable fwsrc="layout-img.png" fwbase="layout-img.jpg" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+  <tr>
+   <td><img src="layout-ebs/spacer.gif" width="194" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="18" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="52" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="42" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="55" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="44" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="60" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="37" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="47" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="57" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="31" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="57" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="64" height="1" border="0" alt=""></td>
+   <td><img src="layout-ebs/spacer.gif" width="17" height="1" border="0" alt=""></td>
+   <td width="1"><img src="layout-ebs/spacer.gif" width="1" height="1" border="0" alt=""></td>
+  </tr>
+
+  <tr>
+   <td rowspan="3" colspan="2"><img name="layoutimg_r1_c1" src="layout-ebs/layout-img_r1_c1.jpg" alt="Embedded Software Solutions by EBS" width="212" height="74" border="0"></td>
+   <td colspan="12"><img name="layoutimg_r1_c3" src="layout-ebs/layout-img_r1_c3.jpg" alt="EBS Real time embedded file system" width="563" height="50" border="0"></td>
+   <td width="1"><img src="layout-ebs/spacer.gif" width="1" height="50" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td>
+	<a onMouseOut="MM_swapImgRestore();" onMouseOver="MM_swapImage('layoutimg_r2_c3','','layout-ebs/layout-img_r2_c3_f2.gif',1);" href="about_us.htm"><img name="layoutimg_r2_c3" src="layout-ebs/layout-img_r2_c3.gif" width="52" height="8" border="0" alt=""></a></td>
+   <td rowspan="2"><img name="layoutimg_r2_c4" src="layout-ebs/layout-img_r2_c4.jpg" alt"Universal Plug and Play UPnP SDK Family" width="42" height="24" border="0" alt=""></td>
+   <td><a href="#" onMouseOut="MM_swapImgRestore();" onMouseOver="MM_swapImage('layoutimg_r2_c5','','layout-ebs/layout-img_r2_c5_f2.gif',1);"><img name="layoutimg_r2_c5" src="layout-ebs/layout-img_r2_c5.gif" width="55" height="8" border="0" alt="" onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, menu1, '150px')" onMouseout="delayhidemenu()"></a></td>
+   <td rowspan="2"><img name="layoutimg_r2_c6" src="layout-ebs/layout-img_r2_c6.jpg" alt="Advanced Light Weight UPnP SDK" width="44" height="24" border="0" alt=""></td>
+   <td>
+	<a onMouseOut="MM_swapImgRestore();" onMouseOver="MM_swapImage('layoutimg_r2_c7','','layout-ebs/layout-img_r2_c7_f2.gif',1);" href="download.htm"><img name="layoutimg_r2_c7" src="layout-ebs/layout-img_r2_c7.gif" width="60" height="8" border="0" alt=""></a></td>
+   <td rowspan="2"><img name="layoutimg_r2_c8" src="layout-ebs/layout-img_r2_c8.jpg" alt="open networking architecture" width="37" height="24" border="0" alt=""></td>
+   <td>
+	<a onMouseOut="MM_swapImgRestore();" onMouseOver="MM_swapImage('layoutimg_r2_c9','','layout-ebs/layout-img_r2_c9_f2.jpg',1);" href="support.htm"><img name="layoutimg_r2_c9" src="layout-ebs/layout-img_r2_c9.jpg" alt="royalty free software" width="47" height="8" border="0" alt=""></a></td>
+   <td rowspan="2"><img name="layoutimg_r2_c10" src="layout-ebs/layout-img_r2_c10.jpg" alt="File System Software" width="57" height="24" border="0" alt=""></td>
+   <td>
+	<a onMouseOut="MM_swapImgRestore();" onMouseOver="MM_swapImage('layoutimg_r2_c11','','layout-ebs/layout-img_r2_c11_f2.gif',1);" href="press.htm"><img name="layoutimg_r2_c11" src="layout-ebs/layout-img_r2_c11.gif" width="31" height="8" border="0" alt=""></a></td>
+   <td rowspan="2"><img name="layoutimg_r2_c12" src="layout-ebs/layout-img_r2_c12.jpg" alt="CD Rom file system" width="57" height="24" border="0" alt=""></td>
+   <td><a href="contact_us.htm" onMouseOut="MM_swapImgRestore();" onMouseOver="MM_swapImage('layoutimg_r2_c13','','layout-ebs/layout-img_r2_c13_f2.jpg',1);"><img name="layoutimg_r2_c13" src="layout-ebs/layout-img_r2_c13.jpg" alt="fat 64 Operating System" width="64" height="8" border="0" alt=""></a></td>
+   <td rowspan="2"><img name="layoutimg_r2_c14" src="layout-ebs/layout-img_r2_c14.jpg" alt="embedded web browser" width="17" height="24" border="0" alt=""></td>
+   <td width="1"><img src="layout-ebs/spacer.gif" width="1" height="8" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td><img name="layoutimg_r3_c3" src="layout-ebs/layout-img_r3_c3.jpg" alt="embedded fat file system"  width="52" height="16" border="0" ></td>
+   <td><img name="layoutimg_r3_c5" src="layout-ebs/layout-img_r3_c5.jpg" alt="Embedded fat32 fat64 file system, Fat 32" width="55" height="16" border="0"></td>
+   <td><img name="layoutimg_r3_c7" src="layout-ebs/layout-img_r3_c7.jpg" alt="DOS File System-EBS" width="60" height="16" border="0"></td>
+   <td><img name="layoutimg_r3_c9" src="layout-ebs/layout-img_r3_c9.jpg" alt="embedded transactional file system" width="47" height="16" border="0"></td>
+   <td><img name="layoutimg_r3_c11" src="layout-ebs/layout-img_r3_c11.jpg" alt="real time file system" width="31" height="16" border="0"></td>
+   <td><img name="layoutimg_r3_c13" src="layout-ebs/layout-img_r3_c13.jpg" alt="royalty free software" width="64" height="16" border="0"></td>
+   <td width="1"><img src="layout-ebs/spacer.gif" width="1" height="16" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td><a href="index.htm"><img name="layoutimg_r4_c1" src="layout-ebs/layout-img_r4_c1.jpg" alt="Embedded Software Solutions by EBS" width="194" height="122" border="0" alt=""></a></td>
+   <td colspan="13"><img name="layoutimg_r4_c2" src="layout-ebs/layout-img_r4_c2.jpg" alt="embedded fat file system, embedded transactional file system, real time file system, EBS Universal Plug and Play, CIFS/SMB File and Print Sharing, Real-time High Performance File System, Web Browser-based Graphical User Interface SDK" width="581" height="122" border="0" alt=""></td>
+   <td width="1"><img src="layout-ebs/spacer.gif" width="1" height="122" border="0" alt=""></td>
+  </tr>
+  </table>
+					</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="213" background="images/layout-img_r5_c1.jpg" alt="CD Rom file system" rowspan="2" align="left" valign="top">
+			<table border="0" width="199" id="table5" height="311" style="border-collapse: collapse">
+            		<tr>
+					<td width="5" rowspan="2">&nbsp;</td>
+					<td height="66" align="left" valign="top">
+					<table border="1" width="100%" id="table6" height="158" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0">
+						<tr>
+							<td bgcolor="#E1E2D2" align="left" valign="top">
+							<table border="0" width="187" id="table10" cellpadding="0" style="border-collapse: collapse">
+								<tr>
+									<td>
+									<p class="greybold">Announcing Rtfs 6</p></td>
+								</tr>
+								<tr>
+									<td height="35">
+                                    <ul class="small">
+                                    <li>Very fast</li>
+                                        <ul>
+                                        <li>Small or huge transactions.</li>
+                                        <li>Real time performance.</li>
+                                        </ul>
+                                    <li>Very Reliable</li>
+                                        <ul>
+                                        <li>20 years embedded file systems.</li>
+                                        </ul>
+                                    <li>Scalable to any job</li>
+                                        <ul>
+                                        <li>Basic</li>
+                                        <li>Pro</li>
+                                        <li>Pro Plus</li>
+                                        <li>Failsafe</li>
+                                        </ul>
+                                    <li>Feature Rich</li>
+                                        <ul>
+                                        <li>Journaling.</li>
+                                        <li>DVR Support.</li>
+                                        <li>64 Bit Files.</li>
+                                        <li>Rich API for serious apps.</li>
+                                        </ul>
+                                    </ul>
+									</td>
+								</tr>
+								<tr>
+									<td height="19" width="167">
+									<p align="right"><a href="product_ertfs_overview.htm">&gt;&gt; more</a>&nbsp;&nbsp; </td>
+								</tr>
+							</table>
+							</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">
+					<table border="1" width="100%" id="table7" height="149" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0">
+						<tr>
+							<td bgcolor="#EBECE1" align="left" valign="top">
+							<table border="0" width="186" id="table8" height="160" cellpadding="0" style="border-collapse: collapse">
+								<tr>
+									<td height="17">
+									<p class="greyhead" align="center">
+									<img border="0" src="images/left-news.gif" width="14" height="20"></td>
+									<td height="17">
+									<p class="greybold">News And Events</td>
+								</tr>
+								<tr>
+									<td align="left" valign="top" height="13" width="18">
+									<p class="small"></td>
+									<td align="left" valign="top" height="13" width="168">
+									<p class="small"><u><b>webC</b></u> - GUI/HTML viewer for windows,
+									linux/X, wndml, peg, nucleus. Works with any graphics library.
+&nbsp;</td>
+								</tr>
+								<tr>
+									<td align="left" valign="top" height="19" width="18">&nbsp;</td>
+									<td align="left" valign="top" height="19" width="168">
+									<p class="small"><u><b>Linux</b></u> versions of UPnP, CIFS/SMB and webC now available.
+&nbsp;</td>
+								</tr>
+								<tr>
+									<td align="left" valign="top" width="18">&nbsp;</td>
+									<td align="left" valign="top" width="168">
+									<p class="small"><u><b>Rtfs 6</b></u> receives two cell phone reference design wins. More to be announced soon.
+									</td>
+								</tr>
+								<tr>
+									<td align="left" valign="top" height="14" colspan="2">
+									<p align="right"><a href="press.htm">&gt;&gt; more</a>&nbsp;&nbsp;&nbsp; </td>
+								</tr>
+							</table>
+							</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+
+			</td>
+			<td width="563" align="left" valign="top" height="5">
+			<img border="0" src="images/horizontal-line.gif" width="525" height="5"></td>
+		</tr>
+		<tr>
+			<td width="563" align="left" valign="top">
+			<table border="1" width="562" id="table4" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#C0C0C0" height="344">
+				<tr>
+					<td align="left" valign="top">
+					<table border="0" width="560" id="table11" height="341" style="border-collapse: collapse">
+						<tr>
+							<td align="left" valign="top" height="81" colspan="4">
+							<table border="0" width="560" id="table12" height="120" cellspacing="0">
+								<tr>
+									<td height="23">
+									<table border="0" width="100%" id="table13" bordercolor="#0099CC" bgcolor="#0099CC" cellspacing="1" cellpadding="0" style="border-collapse: collapse">
+										<tr>
+											<td background="images/cell-bg.gif">
+											<p class="bodycopy-header">&nbsp;WELCOME
+											TO EBS</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="left" valign="top" background="images/index-middle1.jpg">
+									<table border="0" width="552" id="table14" height="139" cellpadding="4" style="border-collapse: collapse">
+										<tr>
+											<td width="74">&nbsp;</td>
+											<td>
+											<p class="normalP" align="justify">
+											Serving the embedded industry for over 20 years.
+                                            <ul class="greybold">
+                                            <li>File Systems since 1987</li>
+                                            <li>Innovative HTML Based GUI</li>
+                                            <li>UPnP Device, Control Point and AV</li>
+                                            <li>NetBios & CIFS/SMB</li>
+                                            </ul>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+							</table>
+							</td>
+						</tr>
+						<tr>
+							<td height="8" colspan="4">
+							<p align="center">
+							<img border="0" src="images/horizontal-line-yellow.gif" width="550" height="15"></td>
+						</tr>
+						<tr>
+							<td height="7" colspan="4">
+									<table border="0" width="100%" id="table17" bordercolor="#0099CC" bgcolor="#0099CC" cellspacing="1" cellpadding="0" style="border-collapse: collapse" height="22">
+										<tr>
+											<td background="images/cell-bg.gif">
+											<p class="bodycopy-header">&nbsp;PRODUCTS
+											: Powering an embedded technology
+											revolution</td>
+										</tr>
+									</table>
+									</td>
+						</tr>
+						<tr>
+							<td width="87" align="center">
+							<a href="product_upnp_overview.htm">
+							<img border="0" src="images/pd_icon4.jpg" alt="Universal Plug and Play" width="64" height="62"></a></td>
+							<td width="184" align="center">
+							<p class="tableheader" align="left"><a href="http://www.ebsembeddedsoftware.com/product_upnp_overview.htm">Universal Plug and
+							Play </a></td>
+							<td width="92" align="center">
+							<a href="product_RTSMB_server.htm">
+							<img border="0" src="images/pd_icon1.jpg" alt="CIFS/SMB File and Print Sharing" width="64" height="62"></a></td>
+							<td width="197" align="center">
+							<p class="tableheader" align="left"><b><a href="http://www.ebsembeddedsoftware.com/product_RTSMB_server.htm">CIFS/SMB File
+							and Print Sharing</a></b> </td>
+						</tr>
+						<tr>
+							<td width="87" align="center" height="32">
+							<a href="product_ertfs_overview.htm">
+							<img border="0" src="images/pd_icon2.jpg" alt="Real-time High Performance File System" width="64" height="62"></a></td>
+							<td width="184" align="center" height="32">
+							<p class="tableheader" align="left"><a href="http://www.ebsembeddedsoftware.com/product_ertfs_overview.htm">Real-time High
+							Performance File System</a><br>
+&nbsp;</td>
+							<td width="92" align="center" height="32">
+							<a href="product_web_c_overview.htm">
+							<img border="0" src="images/pd_icon3.jpg" alt="Web Browser-based Graphical User Interface SDK" width="64" height="62"></a></td>
+							<td width="197" align="center" height="32">
+							<p class="tableheader" align="left"><a href="http://www.ebsembeddedsoftware.com/product_web_c_overview.htm">Web Browser-based
+							Graphical User Interface SDK </a><br>
+&nbsp;</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+
+						<tr>
+							<td align="left" valign="top">
+							<table border="1" width="100%" id="table98" height="39" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0">
+								<tr>
+									<td bgcolor="#CCCC00" align="left" valign="top">
+									<table border="1" cellpadding="2" style="border-collapse: collapse" bordercolor="#FFFFFF">
+										<tr>
+											<td bgcolor="#A8A800">
+											<p class="whitesmall" align="justify">
+											<script language="JavaScript">
+											quoteoftheday();
+											</script>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+							</table>
+							</td>
+						</tr>
+
+
+
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="59" background="images/left-bottom.gif" align="left" valign="top">
+			<table border="0" width="206" id="table9" height="38" style="border-collapse: collapse">
+				<tr>
+					<td>
+					<p class="copywrite" align="center">
+					<a href="http://china.ebsembeddedsoftware.com">
+					<img border="0" src="images/china.jpg">&nbsp;Chinese Version
+					</a></td>
+				</tr>
+				<tr>
+					<td>
+					<p class="copywrite" align="center">Copyright ©2005 ebs.com</td>
+				</tr>
+				</table>
+			</td>
+			<td height="59">
+			<table border="0" width="561" id="table18" cellpadding="0" style="border-collapse: collapse">
+				<tr>
+					<td>
+					<p class="greyhead" align="center"><a href="index.htm">HOME</a>&nbsp;
+					//&nbsp; <a href="about_us.htm">ABOUT&nbsp; </a>//
+					<a href="product_home.htm">&nbsp;PRODUCTS</a>&nbsp; //&nbsp;
+					<a href="digital_home.htm">DIGITAL HOME</a>&nbsp; //&nbsp;
+					<a href="support.htm">SUPPORT</a>&nbsp; //&nbsp;
+					<a href="testimonials.htm">TESTIMONIALS</a>&nbsp; //
+					<a href="press.htm">PRESS</a>&nbsp; //&nbsp;
+					<a href="contact_us.htm">CONTACT</a></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	</table>
+</div>
+ <BR>  <DIV ALIGN="left">
+
+
+<!-- <script language="JavaScript" type="text/javascript"
+src="http://m1.webstats4u.com/m.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+  webstats4u("ADrdSwLcNYVY9SSZY3VRXo5y9zDg", 0);
+// -->
+<!-- </script>
+<noscript>
+<a target="_blank" href="http://www.webstats4u.com/stats?ADrdSwLcNYVY9SSZY3VRXo5y9zDg"><img
+src="http://m1.webstats4u.com/n?id=ADrdSwLcNYVY9SSZY3VRXo5y9zDg"
+border="0" width="18" height="18"
+alt=""></a><br>
+<a target="_blank" href="http://www.webstats4u.com/"> </a>
+</noscript> -->
+</DIV></body>
+
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1268765223" alt="setstats" border="0" width="1" height="1"></noscript>

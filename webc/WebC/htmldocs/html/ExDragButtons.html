@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExDragButtons</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>This example demonstrates using dynamic HTML from 'C' create a pallet of buttons that may be dragged and inserted into a target area. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>This source code provided in webcapiexample.c implements a simple drag and drop interface that drags test buttons from a pallet that when dropped into a target div are cloned and inserted into the target div.
+<br> Note: childwindowCtx has already been initialized to a valid window context by <!1><A HREF="OpenExampleChildWindow.html">OpenExampleChildWindow</A>.
+<PRE>
+
+<P>//
+// Source code for ExDragButtons
+//
+
+<P>static HTMLEventStatus FlyButtonCb(wcCtx* Ctx,wcEL element,HTMLEvent* event,char* param);
+static wcEL DragPallete, DragTarget;
+#define PALLETTOP  20
+#define PALLETLEFT 200
+#define PALLETHEIGHT 120
+#define PALLETWIDTH  120
+#define TARGETTOP  10
+#define TARGETLEFT 10
+#define TARGETHEIGHT 160
+#define TARGETWIDTH  160
+#define EXDBUTTONHEIGHT 20
+#define EXDBUTTONWIDTH  20
+#define PALLETBUTTONZ 6
+#define PALLETZ	5
+#define FLYBUTTONZ 7
+#define EXTARGETIMAGE "webc:/Example/Images/Target.png"
+
+<P>static void ExDragButtons(void)
+{
+char buttonfacetext[4];
+	// Clear the window content
+	<!1><A HREF="wcDocClear.html">wcDocClear</A>(&childwindowCtx, wcFALSE);
+	// Insert a div into the document to act as our pallet no foreground color no extra style directive
+	DragPallete=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, 0, wcTRUE, PALLETTOP, PALLETLEFT, PALLETHEIGHT, PALLETWIDTH,PALLETZ, 0, "DarkTurquoise",0, 0);
+	// Create two 3 by 3 array of buttons in deifferent z-index planes. The top layer of buttons will be dragged around
+	buttonfacetext[0] = 'a';buttonfacetext[1]=0;
+	for (int row = 0; row < 3; row++)
+	{
+		for (int col = 0; col < 3; col++)
+		{
+		wcEL ButtonObject,FlyButtonObject;
+		int left, top;
+			buttonfacetext[0]=(char) 'a' + (row*3) + col;
+			left = PALLETLEFT+(EXDBUTTONWIDTH/2) + col*(EXDBUTTONWIDTH*2);
+			top  = PALLETTOP+(EXDBUTTONHEIGHT/2) + row*(EXDBUTTONHEIGHT*2);
+			// The button that remains behind when we drag.
+			ButtonObject=\Ref{wcNewStyledButtonText(&childwindowCtx, 0, wcTRUE, buttonfacetext, top, left, EXDBUTTONHEIGHT, EXDBUTTONWIDTH, PALLETBUTTONZ, "Black", "SteelGrey", 0);
+			// The button that gets dragged.
+			FlyButtonObject=wcNewStyledButtonText(&childwindowCtx, 0, wcTRUE, buttonfacetext, top, left, EXDBUTTONHEIGHT, EXDBUTTONWIDTH, FLYBUTTONZ, "Black", "SteelBlue", 0);
+			// Set an event handler for the button so we can drag it.
+			<!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A>(FlyButtonObject, FlyButtonCb);
+			<!1><A HREF="wcPushData.html">wcPushData</A>(&childwindowCtx, FlyButtonObject,(void *) 0);// Use wcPushData to set the state to zero, no dragging
+		}
+	}
+	// Insert a div into the document to act as our target.
+	DragTarget=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, 0, wcTRUE, TARGETTOP, TARGETLEFT, TARGETWIDTH, TARGETHEIGHT,PALLETZ, 0, "DarkSlateBlue", EXTARGETIMAGE, "overflow:hidden;");
+	// Bring the child windo to the top and go
+	<!1><A HREF="wcWinBringToTop.html">wcWinBringToTop</A>(&childwindowCtx);
+}
+// Event handler for dragging.
+static HTMLEventStatus FlyButtonCb(wcCtx* Ctx,wcEL element,HTMLEvent* e,char* param)
+{
+	switch (e->type)
+	{
+		case HTML_EVENT_MOUSEDOWN:
+			<!1><A HREF="wcPopData.html">wcPopData</A>(Ctx, element);
+			<!1><A HREF="wcPushData.html">wcPushData</A>(Ctx, element,(void *)1);	// Set the state to one, dragging
+			<!1><A HREF="wcElClaimPointer.html">wcElClaimPointer</A>(element);			// Claim the pointer until the button is released.
+			return HTML_EVENT_STATUS_HALT;		// returning HALT so normal button processing is not performed
+			break;
+		case HTML_EVENT_MOUSEMOVE:
+			if (<!1><A HREF="wcGetData.html">wcGetData</A>(Ctx, element))
+			{ // Mouse the button if we are dragging
+				<!1><A HREF="wcElSetStylePos.html">wcElSetStylePos</A>(element, e->data.position.y, e->data.position.x, wcTRUE);
+				return HTML_EVENT_STATUS_HALT;
+			}
+			break;
+		case HTML_EVENT_MOUSEUP:
+		{
+			if (<!1><A HREF="wcGetData.html">wcGetData</A>(Ctx, element))
+			{ // If we are dragging.
+			int row, col, left, top,width, height;
+			char *p;
+				<!1><A HREF="wcPopData.html">wcPopData</A>(Ctx, element); // Pop the value, will set private data to null
+				// Move the tracking button back to the pallet.
+				p = <!1><A HREF="wcELGetValue.html">wcELGetValue</A>(Ctx,element);
+				row = (int)(*p - 'a')/3;
+				col = (int)(*p - 'a')%3;
+				left = PALLETLEFT+(EXDBUTTONWIDTH/2) + col*(EXDBUTTONWIDTH*2);
+				top  = PALLETTOP+(EXDBUTTONHEIGHT/2) + row*(EXDBUTTONHEIGHT*2);
+				<!1><A HREF="wcElSetStylePos.html">wcElSetStylePos</A>(element,top, left, wcTRUE);
+
+<P>				// Check if we are in the target div, if so, create a new button and put it into the target div at the mouse coordinates
+				<!1><A HREF="wcElGetPosStyle.html">wcElGetPosStyle</A>(DragTarget, &top, &left, &height,  &width);
+				if (e->data.position.y >= top && e->data.position.y < top + height && e->data.position.x >= left && e->data.position.x < left + width)
+					<!1><A HREF="wcNewStyledButtonText.html">wcNewStyledButtonText</A>(Ctx, DragTarget, wcTRUE, p, e->data.position.y , e->data.position.x, EXDBUTTONHEIGHT, EXDBUTTONWIDTH, PALLETBUTTONZ, "Red", "BlanchedAlmond", 0);
+				// Release the mouse pointer now that we are not dragging
+				<!1><A HREF="wcElReleasePointer.html">wcElReleasePointer</A>(element);
+				return HTML_EVENT_STATUS_HALT;
+			}
+			break;
+		}
+	}
+	return HTML_EVENT_STATUS_CONTINUE;
+//	return HTML_EVENT_STATUS_HALT;
+}
+	</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

@@ -1,0 +1,314 @@
+
+Porting webC to a new target.
+
+
+Moving webC to a new target requires the following steps.
+
+Import webC files into your build environment.
+Retarget required Rtplatform porting files to your environment.
+Retarget the webC frame buffer driver user interface eventing to your hardware.
+Retarget the webC frame buffer driver to your framebuffer hardware.
+Reconfigure Javascript's target specific header file to your target.
+Reconfigure webC's target specific header file definitions to your target.
+Reconfigure webC's font set to select fonts appropriate for your application.
+
+
+Retargeting required Rtplatform porting files to your environment.
+
+webC uses subroutines from EBS's rtplatform abstraction layer to perform many of its system an utility functions.
+
+Some of the abstraction routines are portable while others are platform dependent.
+
+Header files
+
+Header files are segregated into two groups, generic and platform specific.
+Generic header files in rtplatform\include contain rtplatform function prototypes and constants.
+Platform specific header files usually contain macros that redefine rtplatform prototypes with macros that invoke library functions.
+For each platform specific header files there is also a generic header file that it replaces.
+A platform specific header files must either replace the generic header file in rtplatform\include or it must be placed in a directory with a higher include precedence so that the platform specific version is included over the generic version.
+Typically the only platform specific header files used are rtpstr.h, rtpprint.h and rtpscnv.h. These map rtplatform string and printf, sprintf to generic libraries.
+
+Example implementations of these files are included in include\ms32 and include\linux.
+For your target we recommend either using the generic versions of the header files or copying and modifying the platform specific files.
+
+The implementations are pretty self explanatory.
+
+For example rtpstr.h contains a set of macro definitions that map rtplatform string manipulation routines to ANSI functions.
+
+#define rtp_memchr   memchr
+#define rtp_memcmp   memcmp
+#define rtp_memcpy   memcpy
+#define rtp_memmove  memmove
+#define rtp_memset   memset
+#define rtp_stricmp  stricmp
+...
+
+Source files
+
+Rtplatform 'C' files are segregated in two groups, files containing generic portable functions and files containing target specific functions.
+
+
+Files in source\generic contain portable functions.
+The following files from source\generic must be included in a webC project. They should not require any modification:
+    rtpchar.c, rtpdutil.c, rtpmemdb.c, rtprand.c, rtpstdup.c, rtpstr.c, rtpwchar.c, rtpwcs.c, rtpwscnv.c,
+
+Files in source\targetname (where targetname is the name of your target) provide functions with platform specific implementations must be included in a webC project..
+
+The following files from source\targetname must be included in a webC project. They do require modification:
+    rtpdate.c,rtpfile.c,rtpmem.c,rtpnet.c,rtptime.c
+Note:  EBS's convention is to place these files in source\targetname but you can place them anywhere.
+
+Example implementations are provided for Linux and Windows, archived implementations are also provided for VXWORKS and some other run time environments.
+
+The recommended strategy for implementing these functions is:
+. Create a platform specific directory in the rtplatform subdirectory.
+. Copy rtpdate.c,rtpfile.c,rtpmem.c,rtpnet.c and rtptime.c from either source\linux or from the source\win32 subdirectory to the new directory.
+. Port the subroutines to your target environment.
+. See the next section for porting instructions.
+
+Porting requirements by file:
+
+rtpdate.c
+   rtp_get_date  - If date support is needed return the current date and time.
+
+rtpmem.c - Contains functions that call heaps management functions (usually ansi 'C' malloc, free, calloc, realloc).
+    _rtp_malloc  -  Like malloc
+    _rtp_calloc  -  Like calloc
+    _rtp_realloc -  Like realloc
+    _rtp_free    -  Like free
+rtptime.c
+    rtp_get_system_msec         - Get elapsed miliseconds since startup.
+    rtp_get_system_sec     - Get elapsed seconds since startup.
+
+rtpfile.c - Required if caching or file: url support is needed.
+
+    These functions must be ported to your target if you required caching or if the file: url is required.
+
+    rtp_file_init  - Initialize file system operations if necessary.
+    rtp_file_open  - like posix open
+    rtp_file_close - like posix close
+    rtp_file_read  - like posix read
+    rtp_file_lseek - like posix lseek (used to determine file sizes)
+
+    These functions must be ported to your target if you require caching support.
+    rtp_file_write - like posix write
+    rtp_file_flush - like posix flush
+
+    These functions are not required but are included because other EBS products require them. You may remove these functions or stub the bodies out.
+
+    rtp_file_truncate,rtp_file_rename,rtp_file_delete,rtp_file_mkdir,rtp_file_rmdir,rtp_file_setcwd,rtp_file_pwd,rtp_file_chmode,rtp_file_get_free,rtp_file_set_time
+
+rtpnet.c - Required if http: url support is needed.
+
+    These functions must be ported to your target.
+
+    rtp_net_init            - Initialize the network stack if necessary.
+    rtp_net_exit            - Shut down the network stack (for exit processing, not usually needed).
+    rtp_net_closesocket     - Close a tcp socket.
+    rtp_net_setblocking     - Set socket options.
+    rtp_net_setnagle
+    rtp_net_setlinger
+    rtp_net_socket_stream   - Open a tcp socket.
+    rtp_net_connect         - connect()
+    rtp_net_recv            - recv()
+    rtp_net_send            - send()
+    rtp_net_select          - Socket select functions.
+    rtp_net_read_select
+    rtp_fd_isset
+    rtp_fd_set
+    rtp_fd_zero
+    rtp_net_gethostbyname  - Retrieve IP address of a remote server.
+    rtp_net_is_connected   - Test if a socket is connected.
+
+    These functions are not required but are included because other EBS products require them. You may remove these functions or stub the bodies out.
+
+    rtp_net_bind,rtp_net_listen,rtp_net_getpeername,rtp_net_getsockname,rtp_net_accept,rtp_net_write_select,rtp_net_sendto,rtp_net_recvfrom,rtp_net_shutdown
+    rtp_net_getntoread,rtp_net_setreusesock,rtp_net_setreuseaddr,rtp_net_settcpnocopy,rtp_net_setkeepalive,rtp_net_setmembership,rtp_net_setmcastttl
+    rtp_net_setbroadcast,rtp_net_htons,rtp_net_ntohs,rtp_net_htonl,rtp_net_ntohl,rtp_net_ip_to_str,rtp_net_str_to_ip,rtp_fd_clr,_fd_set_to_rtp
+    _rtp_to_fd_set,rtp_net_getifaceaddr,rtp_net_socket_datagram,rtp_net_socket_datagram_dual,rtp_net_socket_stream_dual,rtp_net_connect_dual,rtp_net_bind_dual
+
+
+webC frame buffer driver
+
+Introduction.
+
+The frame buffer driver provides the event handling, windowing, font rendering, and graphics primitives necessary to run webC on bare hardware with out the need for a third party graphics package.
+
+
+Retargeting webC eventing to your hardware.
+
+
+The file FBEventsandUtils.cpp provides subroutines that you may call to integrate your systems eventing hardware and interrupt software to webC. Event handling requires two steps, formatting events to pass to webC and then passing those events to webC.
+
+There are three event types that must be implemented:
+
+Keystrokes.
+Pointer move events (mouse or touchscreen).
+Pointer button events (mouse or touchscreen).
+Timer events.
+
+Keystroke events.
+
+To provide keyboard events to webC you must first format the event by calling the subroutine keyboard_event() and then pass the event to webC by calling call_BrowserDispatchEvent().
+
+int keyboard_event(int type, WebKey keyPressed, HTMLEvent* e);
+
+Where
+
+int type - either KEY_UP or KEY_DOWN.
+WebKey keypressed - Is a 32 bit value containing either a value ('A', 'a', 'B' etc..) or a metakey value defined in webc.h.
+    Metakey values include:
+    WGK_TAB,WGK_CR,WGK_PGUP,WGK_PGDN,WGK_LNUP,WGK_LNDN,WGK_ALT,WGK_CTRL,WGK_SHIFT,WGK_CAPS,WGK_NUMLOCK,WGK_SCROLLLOCK,WGK_F1,WGK_F2,WGK_F3,WGK_F4,WGK_F5,WGK_F6
+    WGK_F7,WGK_F8,WGK_F9,WGK_F10,WGK_F11,WGK_F12,WGK_INSERT,WGK_DELETE,WGK_BACKSPACE,WGK_LEFT,WGK_RIGHT,WGK_HOME,WGK_END,WGK_ESC
+HTMLEvent* e - Is a pointer to a webC event structure. It is not necessary to zero fill before calling. It may be on the stack.
+
+keyboard_event() Fills in the event's target field with frame buffer windowing system's current focus window and fills in the data fields for the key value and event type.
+
+Pointer move events (mouse or touchscreen).
+
+int mouse_move_event(DISPLAY_INT x, DISPLAY_INT y, HTMLEvent* e){
+
+This method must be called by system software when the mouse moves or when a touchscreen pointer is moved.
+
+Where:
+
+int x - X and Y coordinates of the mouse in screen coordinates.
+int y -
+HTMLEvent* e - Is a pointer to a webC event structure. It is not necessary to zero fill before calling. It may be on the stack.
+
+mouse_move_event() - Fills in the event's target field with frame buffer windowing system's current focus window and fills in the data fields for a mouse move event with x, y values.
+
+
+int mouse_button_event(int type, DISPLAY_INT x, DISPLAY_INT y, HTMLEvent* e);
+
+This method must be called by system software when a mouse button is pressed or a touch occurs.
+
+Where:
+
+type is RBUTTON_DOWN,LBUTTON_DOWN,RBUTTON_UP, or LBUTTON_UP
+int x - X and Y coordinates of the mouse in screen coordinates.
+int y -
+HTMLEvent* e - Is a pointer to a webC event structure. It is not necessary to zero fill before calling. It may be on the stack.
+
+mouse_button_event() - Fills in the event's target field with the window in the frame buffer windowing system that contains x,y and fills in the data fields for a mouse button with x,y values.
+
+
+mouse_move_event() - Fills in the event's target field with frame buffer windowing system's current focus window and fills in the data fields for a mouse move event with x, y values.
+
+
+int webc_timer_event(HTMLEvent* e);
+
+This method must be called by system software to format a periodic timer message, webC behaves best when given a periodic timer pulse every 100 miliseconds.
+
+Where:
+HTMLEvent* e - Is a pointer to a webC event structure. It is not necessary to zero fill before calling. It may be on the stack.
+
+
+Posting messages to webC
+
+The preceeding functions only format webC event structures, they don't actually send them to webC. To send a message to webC you must call:
+
+void webc_MessageReceive(HTMLEvent* event)
+
+This function must be called to pass pointer, keyboard and timer events to webC.
+It processes timer events immediately, pointer, keyboard and other events are placed on webC's input queue. If webC is idle the top message on the queue is processed.
+
+Note: webc_MessageReceive() may not be called an interrupt routine. If events are sourced from the interrupt layer they should be placed on a separate queue by
+the ISR and later dequeued by a task level thread and passed to webc_MessageReceive().
+
+
+Retargeting webC frame buffer graphics to your framebuffer hardware.
+
+To retarget the webC frame buffer driver you must:
+
+Define configuration parameters for color depth and resolution.
+Provide basic methods that link the frame buffer abstraction layer to underlying graphics hardware.
+
+Defining configuration parameters for color depth and resolution.
+
+To set the color depth for your hardware you must set the color depth in FBConfig.h.
+
+Currently three depths are supported, 8 bit indexed, RGB24 and RGBA. Other depths may be added but they require changing sections of code in FBAbstraction.c that are conditionally included
+based on the defines in FBConfig.h.
+
+To select the color scheme modify this block in FBConfig.h
+#define RENDER8BITINDEX 0  // Set to one to display in 8 bit indexed.
+#define RENDERRGB24     1  // Set to one to display in RGB24.
+#define RENDERRGBA      0  // Set to one to display in RGB24 Plus alpha (not done).
+
+You must edit the values WEBC_SCREEN_WIDTH and WEBC_SCREEN_HEIGHT in webcfg.h to equal the horizontal and vertical resolution for your target.
+
+For a quarter VGA solution you should used the following values:
+#define WEBC_SCREEN_WIDTH		  320
+#define WEBC_SCREEN_HEIGHT		  240
+
+Providing basic methods that link the frame buffer abstraction layer to underlying graphics hardware.
+
+
+To talk to the hardware you must implement methods for the FBHWInterface class
+
+The FBHWInterface class is defined in FB_HWInterface.h.
+
+// FB_HWInterface represents the typical hardware functionality of a dumb frame buffer
+class FBHWInterface
+{
+public:
+	virtual WEBC_UINT8 *GetBaseAddress(WEBC_INT whichBuffer=0) = 0;
+	virtual WEBC_INT GetNumberOfBuffers() = 0;
+	virtual WEBC_INT GetWidth() = 0;
+	virtual WEBC_INT GetHeight() = 0;
+	virtual WEBC_INT GetDepth() = 0;
+	virtual WEBC_INT GetRowBytes() = 0;
+	virtual void DoDisplay() = 0;
+	virtual void SwitchToBuffer(WEBC_INT whichBuffer) = 0;
+};
+
+You must provide a function named FBInitFrameBufferDriver() to instantiate an object containing that class and return it.
+
+For most targets you won't need to create a new device driver, instead you'll only need to modify code in EmbeddedFrameBuffer.cpp. If you need to extend its
+class definition you can modify the definition in EmbeddedFrameBuffer.h.
+
+Examples are included for a reconfigurable "dumb" frame buffer in EmbeddedFrameBuffer.h and EmbeddedFrameBuffer.cpp few MCUs including the LP2478 are supported by EmbeddedFrameBuffer, others can
+easilly be added. Another quite different driver allows us to use the same interface to display to a virtual frame buffer driver on Windows.
+
+Here are the methods in EmbeddedFrameBuffer.cpp for an LP2478 device.
+
+WEBC_UINT8 *EmbeddedBitmapVideoBaseAddr(WEBC_INT whichBuffer)
+{
+	// Call "bios" function to get the address of the buffer (0 or 1)
+	return ((WEBC_UINT8 *)  getVideoBaseAddr(whichBuffer));
+}
+
+WEBC_INT EmbeddedBitMapGetNumberOfBuffers()
+{
+	return 2;
+}
+
+WEBC_INT EmbeddedBitMapGetWidth()
+{
+	return WEBC_SCREEN_WIDTH;
+}
+
+WEBC_INT EmbeddedBitMapGetHeight()
+{
+	return WEBC_SCREEN_HEIGHT;
+}
+
+WEBC_INT EmbeddedBitMapGetDepth()
+{
+	return COLOR_DEPTH;
+}
+
+WEBC_INT EmbeddedBitMapGetRowBytes()
+{
+	return BYTES_PER_ROW;
+}
+
+void EmbeddedBitMapFrameBuffer::SwitchToBuffer(WEBC_INT whichBuffer)
+{
+	// Call "bios" function to get the address of the buffer (0 or 1)
+    // and program the base address of the video controller
+	LCD_UPBASE = (unsigned long) GetBaseAddress(whichBuffer) & ~7UL ;
+	LCD_LPBASE = (unsigned long) GetBaseAddress(whichBuffer) & ~7UL ;
+}
+

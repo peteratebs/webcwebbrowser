@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>void wcElPopEventHandler</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>void <A HREF="#DOC.DOCU">wcElPopEventHandler</A></H2><H2>(wcEL element)</H2><BLOCKQUOTE>Restore the previous event handler for this element. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Pop the previous event handler for this element from an internal stack and make it
+the new event handler for the specified element. This function returns the event handler to
+the handler prior to the last call to wcElSetEventHandler. This push pop capability simplifies implementing
+effects like drag and drop, where a new event handlers are assigned when dragging starts, and released when it stops.
+
+<P>Note: See wcElSetEventHandler.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcEL</B> -           		Element       -   The element.
+<PRE>
+Example:
+See the example for wcElSetEventHandler.
+case HTML_EVENT_CLICK            :
+// Revert to previous handler when clicked.
+<!1><A HREF="wcElPopEventHandler.html">wcElPopEventHandler</A>(element);
+return (HTML_EVENT_STATUS_HALT);
+</PRE>
+<BR><DT><B>Returns:</B><DD>  Nothing<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExElEventHandling</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>This example demonstrates using element event handlers. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>This source code provided in webcapiexample.c demonstrates how to use element event handlers. Element event handlers are attached to individual elements and called when events are directed to them. These handlers perform
+most of the work in a typical application.<br>
+<i>Note: This example demonstrates event behavior and API usage, other examples show real world application of event handlers. </i>
+<br> Note: childwindowCtx has already been initialized to a valid window context by <!1><A HREF="OpenExampleChildWindow.html">OpenExampleChildWindow</A>.
+<PRE>
+<ul>
+<li>Demonstrate assigning an event handler to an element.</li>
+<li>Verify using the push/pop stack on an event handler.</li>
+<li>Demonstrate the behavior of element event handlers with HTML_EVENT_OBJECT_CREATED, HTML_EVENT_OBJECT_DESTROYED events.</li>
+<li>Demonstrate sending events to element event handlers.</li>
+</ul>
+
+<P>// Event handler used when we open a new window
+static HTMLEventStatus ExElEventcb(wcCtx* Ctx,wcEL element,HTMLEvent* event,char* param)
+{
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExElEventcb:->%s\n", ExEventToAscii(event->type));
+    return (HTML_EVENT_STATUS_CONTINUE);
+}
+// Event handler used when we call wcDocSetEventHandler
+static HTMLEventStatus ExElEventcbTwo(wcCtx* Ctx,wcEL element,HTMLEvent* event,char* param)
+{
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExElEventcbTwo:->%s\n", ExEventToAscii(event->type));
+    return (HTML_EVENT_STATUS_CONTINUE);
+}
+static void ExElEventHandling(void)
+{
+	wcEL Element;
+	HTMLEvent Event;
+
+<P>	// Allocate a buffer for logging results in formated html.
+	ExEventPrintBuffer=ExEventPrintBufferBase = (char *) WEBC_MALLOC(0x8000);
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "&lt;small&gt;&lt;textarea style=\"font-size:small;color:black;height:%dpx;width:%dpx;white-space:no-wrap;\"&gt;", CHILD_CANVAS_HEIGHT, MAIN_CANVAS_WIDTH);
+	// Clear the child window content and make sure it is the top window
+	<!1><A HREF="wcDocClear.html">wcDocClear</A>(&childwindowCtx, wcFALSE);
+	<!1><A HREF="wcWinBringToTop.html">wcWinBringToTop</A>(&childwindowCtx);
+	// Set inner html on the body to create some context on the fly.
+	wcEL hBody = <!1><A HREF="wcDocGetBody.html">wcDocGetBody</A>(&childwindowCtx);
+	<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(hBody, "Look at the printf console window for results&lt;br&gt;Input control: &lt;input type=text value=\"XXX\"&gt;");
+	<!1><A HREF="wcDocRefresh.html">wcDocRefresh</A>(&childwindowCtx); // Make sure it is visible
+	// Get the input element from the document
+	Element = <!1><A HREF="wcDocFindElement.html">wcDocFindElement</A>(&childwindowCtx, 0, 0, HTML_EDIT_STR_ELEMENT, 0);
+
+<P>
+	// print what events we are expecting, then set event handler, it will print what events it processed.
+	// Set an event handler. An HTML_EVENT_OBJECT_CREATED event is automatically sent to the hander.
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExElEventcb:Expecting:HTML_EVENT_OBJECT_CREATED\n");
+
+<P>	<!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A>(Element,ExElEventcb);
+	// Set another event handler. An HTML_EVENT_OBJECT_CREATED event is automatically sent to the hander.
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExElEventcbTwo:Expecting:HTML_EVENT_OBJECT_CREATED\n");
+	<!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A>(Element,ExElEventcbTwo);
+
+<P>	rtp_memset(&Event, 0 ,sizeof(Event));
+	Event.type = HTML_EVENT_TIMER;
+	// Send a timer event to the second event handler to show that it is attached.
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer,"ExElEventcbTwo:Expecting:HTML_EVENT_TIMER\n");
+	<!1><A HREF="wcElTriggerEvent.html">wcElTriggerEvent</A>(Element, &Event, 0);
+	// Pop the old event handler
+	<!1><A HREF="wcElPopEventHandler.html">wcElPopEventHandler</A>(Element);
+	// send it a timer event to be sure that pop worked.
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExElEventcb:Expecting:HTML_EVENT_TIMER\n");
+	<!1><A HREF="wcElTriggerEvent.html">wcElTriggerEvent</A>(Element, &Event, 0);
+	// Pop the original event handler (zero unless we inhereted the object through a chain)
+	<!1><A HREF="wcElPopEventHandler.html">wcElPopEventHandler</A>(Element);
+	// Make sure we don't see it.
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "NotExpecting:HTML_EVENT_TIMER\n");
+	<!1><A HREF="wcElTriggerEvent.html">wcElTriggerEvent</A>(Element, &Event, 0);
+	// Set inner html on the body to report our results.
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "&lt;/textarea&gt;&lt;/small&gt;");
+	hBody = <!1><A HREF="wcDocGetBody.html">wcDocGetBody</A>(&childwindowCtx);
+	<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(hBody, ExEventPrintBufferBase);
+	<!1><A HREF="wcDocRefresh.html">wcDocRefresh</A>(&childwindowCtx); // Make sure it is visible
+	WEBC_FREE(ExEventPrintBufferBase);
+
+<P>}
+
+<P>
+static char *ExEventToAscii(HTMLEventType EventType)
+{
+	switch(EventType)
+	{
+	/// Single mouse click
+	case HTML_EVENT_CLICK:
+	    return "HTML_EVENT_CLICK";
+	/// Double mouse click
+	case HTML_EVENT_DBLCLICK:
+	    return "HTML_EVENT_DBLCLICK";
+	/// Key pressed
+	case HTML_EVENT_KEYDOWN:
+	    return "HTML_EVENT_KEYDOWN";
+	/// Key pressed and released
+	case HTML_EVENT_KEYPRESS:
+	    return "HTML_EVENT_KEYPRESS";
+	/// Key released
+	case HTML_EVENT_KEYUP:
+	    return "HTML_EVENT_KEYUP";
+	/// Mouse button pressed
+	case HTML_EVENT_MOUSEDOWN:
+	    return "HTML_EVENT_MOUSEDOWN";
+	/// Mouse movement over this object
+	case HTML_EVENT_MOUSEMOVE:
+	    return "HTML_EVENT_MOUSEMOVE";
+	/// Mouse pointer exits the client area of this object
+	case HTML_EVENT_MOUSEOUT:
+	    return "HTML_EVENT_MOUSEOUT";
+	/// Mouse pointer enters the client area
+	case HTML_EVENT_MOUSEOVER:
+	    return "HTML_EVENT_MOUSEOVER";
+	/// Mouse button released
+	case HTML_EVENT_MOUSEUP:
+	    return "HTML_EVENT_MOUSEUP";
+	/// Object has received input focus
+	case HTML_EVENT_FOCUS:
+	    return "HTML_EVENT_FOCUS";
+	/// Object has lost input focus
+	case HTML_EVENT_UNFOCUS:
+	    return "HTML_EVENT_UNFOCUS";
+	/// Load completes
+	case HTML_EVENT_LOAD:
+	    return "HTML_EVENT_LOAD";
+	/// Object is discarded
+	case HTML_EVENT_UNLOAD:
+	    return "HTML_EVENT_UNLOAD";
+	/// For forms only; submit is pressed
+	case HTML_EVENT_SUBMIT:
+	    return "HTML_EVENT_SUBMIT";
+	/// Input text was edited
+	case HTML_EVENT_CHANGE:
+	    return "HTML_EVENT_CHANGE";
+	/// Finished Editing on a Textbox
+	case HTML_EVENT_EDIT:
+	    return "HTML_EVENT_EDIT";
+	/// For forms only; reset is pressed
+	case HTML_EVENT_RESET:
+	    return "HTML_EVENT_RESET";
+	/// HTMLElement object created
+	case HTML_EVENT_OBJECT_CREATED:
+	    return "HTML_EVENT_OBJECT_CREATED";
+	/// HTMLElement object destroyed
+	case HTML_EVENT_OBJECT_DESTROYED:
+	    return "HTML_EVENT_OBJECT_DESTROYED";
+	/// Attribute parsed
+	case HTML_EVENT_ATTRIBUTE_PARSED:
+	    return "HTML_EVENT_ATTRIBUTE_PARSED";
+	/// mouse capture released
+	case HTML_EVENT_LOSECAPTURE:
+	    return "HTML_EVENT_LOSECAPTURE";
+
+<P>	case HTML_EVENT_TIMER:
+	    return "HTML_EVENT_TIMER";
+
+<P>	case HTML_EVENT_RENDER:
+	    return "HTML_EVENT_RENDER";
+
+<P>	case HTML_EVENT_WINDOW_REFRESHED:
+	    return "HTML_EVENT_WINDOW_REFRESHED";
+	default:
+	    return "HTML_UNKNOWN_EVENT";
+	}
+}
+
+<P>
+	</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

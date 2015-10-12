@@ -1,0 +1,504 @@
+Building webC
+
+The "project" subdirectory contains makefiles and project file for building webC.
+
+The following projects are provided:
+
+linuxgeneric    - Linux Xwindows
+msvc.net        - Windows XP et al
+msvc6.0         - PEG under windows
+msevc4.0        - WindowsCE
+vxworks55       - vxworks/windML/vxsim
+
+To build for windows using Visual C 7.0 open the project:
+
+project\msvc.net\webcdemo_gdip\webcdemo_gdip.vcproj
+
+Select build all..
+
+Notes on building and configuring webC:
+
+1. "compiled in" web pages. These are 'C' files built from HTML and graphics files with an included
+utility named bintoc.exe. In the Visual C 7.0 project file these C files are built by the project.
+In other environments these files must be build from the command line. To manually build these
+files execute the script named html\go.bat. (see html\makefile)
+
+2. Command line arguments the build process requires some predefined preprocessor variables.
+
+In the Visual C 7.0 project file the preprocessor variables are set in the properties pages of the
+webC sub-projects. In other environments these are passed in the command line. (see linuxgeneric and
+vxworks for make file examples).
+
+The following preprocessor variables are configured in this way.
+
+_DEBUG
+WEBC_DEBUG
+WEBC_SUPPORT_JSCRIPT=1
+WEBC_SUPPORT_UNICODE=1
+WEBC_SUPPORT_HTTPS=1
+__WEBC__
+_LIB
+RTP_TRACK_LOCAL_MEMORY
+
+3. Configuring of webC - The configuration section of the webC manual is out of date. Please read the
+following notes:
+
+
+Compile time configuring -
+
+Compile time configuration is accomplished using the pre-defined preprocessor
+variables mentioned above along with modifiable constants in the source file named
+"include\webcfg.h".
+
+The names of these constant and the associated comments indicate their purpose:
+
+The following constants are provided:
+
+#define WEBC_SUPPORT_SMALL_SCREEN 0
+#define WEBC_SCREEN_WIDTH		  240
+#define WEBC_CFG_STR_FOCUS_SELECT           1 /* Set to 1 to select all when a text edit gets the */
+#define WEBC_CFG_ENABLE_CHROME              1 /* Set to 1 to enable HTML-based browser interface */
+#define WEBC_SUPPORT_HTTP                   1  /* Set to 1 to enable support for HTTP: protocol */
+#define WEBC_SUPPORT_FILE                   1  /* Set to 1 to enable support for FILE:// protocol */
+#define WEBC_SUPPORT_INTERNAL               1 /* Set to 1 to enable the WEBC:// internal precompiled file lookup */
+#define WEBC_SUPPORT_BIG5                   1  // Chinese Traditional encoding
+#define WEBC_SUPPORT_SHIFTJIS               1  // Japanese encoding
+#define WEBC_SUPPORT_UTF8                   1  // Unicode 8-bit transitional format
+#define WEBC_SUPPORT_EUC_KR                 1  // Korean encoding
+#define WEBC_SUPPORT_EUC_JP                 1  // Japanese encoding
+#define WEBC_CFG_MAX_FONT_FAMILIES          7
+#define WEBC_CFG_HTTP_BUFFER_SIZE           1024
+#define WEBC_CFG_BITMAP_BUFFER_SIZE         1024
+#define WEBC_CFG_MAX_STREAMS                4
+#define WEBC_CFG_META_TABLE_SIZE            1
+#define WEBC_CFG_MAX_ELEMENT_DEPTH          30 // How deep you allow HTML tags to be nested
+#define WEBC_CFG_MAX_FRAME_DEPTH            10 // How deep frames are allowed to be nested
+#define WEBC_DBLCLICK_TIME                  300
+#define WEBC_DRAW_IMAGE_BOXES               1
+#define WEBC_DRAW_ALT_TEXT                  1
+#define WEBC_MINIMIZE_SCREEN_REFRESH        0
+#define WEBC_USE_3D_FRAMES                  1
+#define WEBC_ANIMATE_IMAGES                 1
+#define WEBC_SUPPORT_USER_EVENTS            1
+#define WEBC_SUPPORT_STYLE_SHEETS           1
+#define WEBC_SUPPORT_TABLES                 1
+#define WEBC_SUPPORT_FRAMES                 1
+#define WEBC_SUPPORT_IFRAMES                1
+#define WEBC_SUPPORT_IMAGES                 1
+#define WEBC_SUPPORT_DITHERING              1
+#define WEBC_SUPPORT_GIFS                   1
+#define WEBC_SUPPORT_JPGS                   1
+#define WEBC_SUPPORT_PNG                    1
+#define WEBC_SUPPORT_MNG                    1
+#define WEBC_SUPPORT_BMP                    1
+#define WEBC_SUPPORT_BACKGROUND_IMAGES      1
+#define WEBC_SUPPORT_ZINDEX                 1
+#define WEBC_SUPPORT_RELATIVE_POS           1
+#define WEBC_SUPPORT_SPATIAL_TAB_NAVIGATION 1
+#define WEBC_SUPPORT_INNER_HTML             1
+#define WEBC_SUPPORT_OUTER_HTML             1
+#define WEBC_SUPPORT_CACHE                  1   /* Set to 1 to support caching, 0 otherwise. */
+#define WEBC_SUPPORT_COOKIES                1
+#define WEBC_SUPPORT_OFFLINE_BROWSING       1
+#define WEBC_SUPPORT_URL_MACROS             1  // Set to 1 to enable URL Macros
+#define WEBC_SUPPORT_STORE_BITMAP           0  // Set to 1 to enable code for store and retrieving images (required for image caching)
+#define WEBC_SUPPORT_URL_LOG                1
+#define WEBC_CFG_HISTORY_SIZE               20  // Number of URLs stored in the history buffer
+#define WEBC_CFG_EVENT_QUEUE_SIZE           15  // Size of HTMLEvent queue
+#define WEBC_CFG_EVENT_MAX_RECURSE_DEPTH    4   // Max recursion depth for HTMLElement::Event
+#define WEBC_CFG_MAX_COOKIE_BYTES			(1024*32)
+#define WEBC_CONVERT_FW_ASCII_TO_ASCII      1
+#define WEBC_LOAD_BUFFER_SIZE               8192
+#define WEBC_TIMEOUT_SEC                    60
+#define WEBC_DEFAULT_TEXTAREA_COLS          20
+#define WEBC_DEFAULT_TEXTAREA_ROWS          2
+#define WEBC_CFG_DEFAULT_TEXT_HEIGHT        19
+#define WEBC_CFG_DEFAULT_VSCROLL_STEP       32
+#define WEBC_CFG_DEFAULT_HSCROLL_STEP       32
+#define WEBC_CFG_BULLET_WIDTH               12
+#define WEBC_CFG_BULLET_HEIGHT              16
+#define WEBC_SUPPORT_RGB_TABLE              1
+#define WEBC_SUPPORT_SOCKETS                1
+
+Run time configuring -
+
+Additional configuration values may be changed at run-time. These values affect mainly the
+appearance, like fonts, colors, and widget defaults characteristics.
+
+The default values are set in the file "source\webcdefault.cpp" by the function webc_RestoreDefaults().
+The values may be changed by editing the source code for webc_RestoreDefaults() or by calling
+the function _webc_SetDefault() after webc_int() has completed.
+
+The following configuration values may be set:
+
+WEBC_DEFAULT_ACTIVE_BACKGROUND_COLOR       WEBC_DEFAULT_ACTIVE_COLOR          WEBC_DEFAULT_ACTIVE_LINK_COLOR
+WEBC_DEFAULT_BACKGROUND_COLOR              WEBC_DEFAULT_BODY_FONT_FAMILY      WEBC_DEFAULT_BODY_FONT_SIZE
+WEBC_DEFAULT_BODY_FONT_STYLE               WEBC_DEFAULT_BODY_FONT_WEIGHT      WEBC_DEFAULT_BODY_PADDING
+WEBC_DEFAULT_BUTTON_BACKGROUND_COLOR       WEBC_DEFAULT_BUTTON_FONT_FAMILY    WEBC_DEFAULT_BUTTON_FONT_SIZE
+WEBC_DEFAULT_BUTTON_FONT_STYLE             WEBC_DEFAULT_BUTTON_FONT_WEIGHT    WEBC_DEFAULT_BUTTON_FRAME_WIDTH
+WEBC_DEFAULT_BUTTON_HILITE_COLOR           WEBC_DEFAULT_BUTTON_SHADOW_COLOR   WEBC_DEFAULT_BUTTON_PADDING
+WEBC_DEFAULT_HILITE_COLOR                  WEBC_DEFAULT_LINK_COLOR            WEBC_DEFAULT_LIST_INDENT
+WEBC_DEFAULT_SCROLL_BAR_BUTTON_LENGTH      WEBC_DEFAULT_SELECT_FONT_FAMILY    WEBC_DEFAULT_SELECT_FONT_SIZE
+WEBC_DEFAULT_SELECT_FONT_STYLE             WEBC_DEFAULT_SELECT_FONT_WEIGHT    WEBC_DEFAULT_SHADOW_COLOR
+WEBC_DEFAULT_SLIDER_BACKGROUND_COLOR       WEBC_DEFAULT_SLIDER_COLOR          WEBC_DEFAULT_SLIDER_FRAME_WIDTH
+WEBC_DEFAULT_SLIDER_BACKGROUND_FRAME_WIDTH WEBC_DEFAULT_SLIDER_HILITE_COLOR   WEBC_DEFAULT_SLIDER_PADDING
+WEBC_DEFAULT_SLIDER_SHADOW_COLOR           WEBC_DEFAULT_SLIDER_WIDTH          WEBC_DEFAULT_SLIDER_FRAME_SHADOW_COLOR
+WEBC_DEFAULT_SLIDER_FRAME_HILITE_COLOR     WEBC_DEFAULT_TEXT_AREA_FONT_FAMILY WEBC_DEFAULT_TEXT_AREA_FONT_SIZE
+WEBC_DEFAULT_TEXT_AREA_FONT_STYLE          WEBC_DEFAULT_TEXT_AREA_FONT_WEIGHT WEBC_DEFAULT_TEXT_COLOR
+WEBC_DEFAULT_TEXT_INPUT_FONT_FAMILY        WEBC_DEFAULT_TEXT_INPUT_FONT_SIZE  WEBC_DEFAULT_TEXT_INPUT_FONT_STYLE
+WEBC_DEFAULT_TEXT_INPUT_FONT_WEIGHT        WEBC_DEFAULT_VISITED_LINK_COLOR    WEBC_DEFAULT_SCROLL_CORNER_COLOR
+WEBC_DEFAULT_DRAW_SCROLL_CORNER
+
+
+
+Release note for version 2.6.0
+
+Chapter 1:  Introduction
+
+Design goals for Version 2.6.0 -
+
+1. Provide upgraded documentation for the GUI abstraction layer interface
+    See the document entitled "The webC GUI Abstraction Interface"
+2. Provide updated documentation for the webc API.
+    New examples are provided descriptions of webC api usage.
+3. Provide example code to demonstrate effective use of the webc API
+    New examples are provided which demonstrate how to use webC to manipulate
+    common HTML controls to solve common GUI application development problems.
+4. Fix bugs and complete partially implemented webC API functions
+    The majority of code changes in this release are constrained to htmlsdk.cpp
+    and html.h.
+5. Add additional funtions to the webC API where needed to provide traditional
+   UI control functionality.
+    These new functions have been added:
+        webc_BrowserQueueTimedEvent     - Queue an event to be triggered in the future
+        webc_ElementSetTagEventHandler  - Set an event handler for a specific tags
+        void webc_ElementClaimPointer   - Grab the pointing device and receive all of it's messages
+        void webc_ElementReleasePointer - Release claim on the pointing device
+        webc_ElementMoveAbs             - Move an element to a fixed position
+        webc_ElementMove                - Move an element by an offset
+
+6. Provide diagnostics help webC API users visualize program message flow.
+    A new configuration constant named WEBC_MESSAGEFLOW_DEBUG and a new source
+    file named htmldiag.cpp have been added. When this feature is enabled, message
+    flow can be logged (we use printf in htmldiag.cpp, which you may need to change.
+    Constants in htmldiag.cpp, may be modified to select which messages destined
+    for which elements to log.
+
+7. Clean up the startup sequence to provide a clean sequence to either start the chrome web browser
+   interface or start the webc API examples.
+        To accomplish this the following changes were made:
+            The code necessary to implement the chrome browser interface was removed from the
+            demo directories and placed in the source directory. Two new files have been created
+            for this purpose:
+                source/chromebrowser.cpp
+                include/chromebrowser.hpp
+
+                chromebrowser.cpp - contains a new subroutine named:
+                    webc_start_chrome_browser();
+                The startup code can call this routine to start webC as a browser.
+
+                By default if WEBC_CFG_ENABLE_CHROME (webcfg.h) is set to one the startup code
+                calls this routine to start webC as a browser.
+
+                If WEBC_CFG_ENABLE_CHROME (webcfg.h) is set to zero, the startup code
+                calls webc_start_webc_demo() (webc_ctrl_demo_main.c) to start webC and
+                execute the webC API example application.
+
+8. Keep structural changes to the webC core at a mimimum.
+    The majority of code changes in this release were made to the the files htmlsdk.cpp
+    and html.h. In addition a new file, htmldiag.cpp, has been added. In addition
+    most the HTML element and display element source and header files have had one to a few
+    lines of code added to support message flow tracing.
+    Other than these listed changes the core version 2.6.0 is unchanged from version 2.5.4
+
+9. Provide a generic GNU/LINUX project.
+    A new project directory is included named linuxgeneric. This directory contains the makefiles needed
+    to build Webc with the GNU compiler, targeted to linux.
+
+    Note: This build does not include a populated GUI abstraction layer, instead it includes the
+    generic GUI abstraction layer, which contains stub functions. A GUI drivers for Qt on linux is
+    completed Qt versions for Xwindows and Peg over linux are planned.
+
+    To complete a working linux port you must either support populate a GUI abstraction layer yourself
+    or contact us to determine the availabilty of the above mentioned solutions.
+
+
+Chapter 2:  Examples
+
+  A new subdirectory named "webc_example_controls" has been added. This directory contains
+  source code for a simple example programming framework and indivifual files that demonstrate
+  how to solve common GUI programming problems using the webc API.
+
+  The directory contains the following files:
+      include/webc_ctrl_demo.h              - Common defines and declarations
+
+      basic/webc_ctrl_demo_main.cpp              -
+       webc_ctrl_demo_main provides the main entry point to the demos, it also provides the
+       following:
+        This file provides a console environment that allows you to:
+            Select which example to activate
+            Choose whether to, execute the demo or show source code.
+            View status information of executing demos.
+
+        This file provides common utitity functions that are used by all files in
+        the webc_example_controls directory.
+
+        This file also provides diagnostic tools to help you to implement custom
+        event handlers for specific controls.
+            When LOG_DEMO_CONTROL_EVENTS (see webc_ctrl_demo.h) is set to one this
+            file uses printf to print out a set of cases for a switch statement for every
+            event that controls recieve.
+
+    A set of example files with the common base webc_ctrl_demo_XXXX.cpp is included, the
+    examples are split into two groups:
+
+    . Basic examples  - Examples are provided for each primitive HTML control.
+        Each basic example demostrates:
+            The HTML source code necessary to create the control
+            Retrieving the webC HANDLE so webC can access the control.
+            Installing an event callback handler and event dispatcher for the control.
+
+            Note: - If LOG_DEMO_CONTROL_EVENTS is enabled, (see webc_ctrl_demo.h),
+            the event flow to the control will be logged. You can experment
+            with with the control, clicking, rolling over, key pressing etc and
+            print a case list of event for the control.
+
+    . Advanced examples - Several examples are provided that demonstrate creating custom
+      controls and applications.
+      These advanced applications are provided to demonstrate webC's ability to create custom
+      graphical controls and user interfaces.
+
+      These advanced examples are not designed to be used directly as high level widgets in
+      your programs, but are rather designed to demonstrate the process of developing GUI
+      based applications with webC.
+
+      The simple examples include:
+
+           webc_ctrl_demo_button.cpp       - Simple control example
+           webc_ctrl_demo_checkbox.cpp     - Simple control example
+           webc_ctrl_demo_image.cpp        - Simple control example
+           webc_ctrl_demo_password.cpp     - Simple control example
+           webc_ctrl_demo_radio_button.cpp - Simple control example
+           webc_ctrl_demo_resetandsubmit.cpp Simple control example
+           webc_ctrl_demo_select.cpp       - Simple control example
+           webc_ctrl_demo_textarea.cpp     - Simple control example
+
+      The advanced examples include:
+
+            webc_ctrl_demo_autohelp.cpp    - Demonstrate Balloon help
+            webc_ctrl_demo_text.cpp        - Demonstrate special processing on text input controls
+            webc_ctrl_demo_sliders.cpp     - Demonstrate using webC to implement a slider control
+            webc_ctrl_demo_viewer.cpp      - Demonstrate using webC to implement a file browser viewer
+            webc_ctrl_demo_menu.cpp        - Demonstrate using webC to implement dropdown menus
+            webc_ctrl_demo_atmdemo.cpp     - Demonstrate using webC to implement a complex
+                                             user interface, using a phoney ATM machine as a model
+
+      The following webC API calls are utilized in the listed example files:
+
+            webc_BrowserDispatchEvent()
+                webc_ctrl_demo_atmdemo.cpp, webc_ctrl_demo_text.cpp
+            webc_BrowserGetDocument()
+                webc_ctrl_demo_main.cpp
+            webc_BrowserQueueTimedEvent()
+                webc_ctrl_demo_main.cpp, webc_ctrl_demo_text.cpp
+            webc_DocClear()
+                webc_ctrl_demo_main.cpp,webc_ctrl_demo_viewer.cpp
+            webc_DocClose()
+                webc_ctrl_demo_main.cpp,webc_ctrl_demo_viewer.cpp
+            webc_DocFindElement()
+                webc_ctrl_demo_main.cpp,ebc_ctrl_demo_viewer.cpp
+            webc_DocOpen()
+                webc_ctrl_demo_main.cpp,webc_ctrl_demo_viewer.cpp
+            webc_DocRefresh()
+                webc_ctrl_demo_main.cpp,webc_ctrl_demo_viewer.cpp
+            webc_DocWriteHtml()
+                webc_ctrl_demo_main.cpp,webc_ctrl_demo_viewer.cpp
+            webc_ElementClaimPointer()
+                webc_ctrl_demo_image.cpp,webc_ctrl_demo_sliders.cpp,webc_ctrl_demo_text.cpp
+            webc_ElementEditStr()
+                webc_ctrl_demo_text.cpp
+            webc_ElementFocus()
+                webc_ctrl_demo_atmdemo.cpp
+            webc_ElementGetFrameDocument()
+                webc_ctrl_demo_main.cpp
+            webc_ElementGetHeight()
+                webc_ctrl_demo_image.cpp,ebc_ctrl_demo_text.cpp
+                webc_ctrl_demo_button.cpp,webc_ctrl_demo_image.cpp
+                webc_ctrl_demo_main.cpp,webc_ctrl_demo_resetandsubmit.cpp
+                webc_ctrl_demo_viewer.cpp
+            webc_ElementGetNameASCII()
+                webc_ctrl_demo_main.cpp
+            webc_ElementGetParent()
+                webc_ctrl_demo_image.cpp
+            webc_ElementGetType()
+                webc_ctrl_demo_main.cpp
+            webc_ElementGetValueASCII()
+                webc_ctrl_demo_atmdemo.cpp,webc_ctrl_demo_main.cpp
+                webc_ctrl_demo_password.cpp,webc_ctrl_demo_select.cpp
+                webc_ctrl_demo_text.cpp,webc_ctrl_demo_textarea.cpp
+            webc_ElementGetWidth()
+                webc_ctrl_demo_autohelp.cpp,webc_ctrl_demo_image.cpp
+                webc_ctrl_demo_text.cpp
+            webc_ElementGetXYPosition()
+                webc_ctrl_demo_autohelp.cpp,webc_ctrl_demo_image.cpp
+                webc_ctrl_demo_text.cpp
+            webc_ElementMove()
+                webc_ctrl_demo_image.cpp,webc_ctrl_demo_text.cpp
+            webc_ElementReleasePointer()
+                webc_ctrl_demo_image.cpp,webc_ctrl_demo_sliders.cpp
+                webc_ctrl_demo_text.cpp
+            webc_ElementSetAttributeASCII()
+                webc_ctrl_demo_text.cpp
+            webc_ElementSetHeightINT()
+                webc_ctrl_demo_menu.cpp
+            webc_ElementSetPrivateData()
+                webc_ctrl_demo_viewer.cpp
+            webc_ElementSetStyleASCII()
+                webc_ctrl_demo_atmdemo.cpp,webc_ctrl_demo_autohelp.cpp
+                webc_ctrl_demo_color_blender.cpp,webc_ctrl_demo_main.cpp
+                webc_ctrl_demo_menu.cpp,webc_ctrl_demo_sliders.cpp
+                webc_ctrl_demo_viewer.cpp
+            webc_ElementSetTagEventHandler()
+                webc_ctrl_demo_main.cpp,webc_ctrl_demo_viewer.cpp
+            webc_ElementSetValueASCII)
+                webc_ctrl_demo_atmdemo.cpp,webc_ctrl_demo_atmdemo.cpp
+                webc_ctrl_demo_autohelp.cpp,webc_ctrl_demo_button.cpp
+                webc_ctrl_demo_main.cpp,webc_ctrl_demo_menu.cpp
+                webc_ctrl_demo_sliders.cpp,webc_ctrl_demo_text.cpp
+            webc_ElementSetWidthINT()
+                webc_ctrl_demo_menu.cpp
+            webc_FreeASCIIString()
+                webc_ctrl_demo_atmdemo.cpp,webc_ctrl_demo_button.cpp
+                webc_ctrl_demo_image.cpp,webc_ctrl_demo_main.cpp
+                webc_ctrl_demo_password.cpp,webc_ctrl_demo_resetandsubmit.cpp
+                webc_ctrl_demo_select.cpp,webc_ctrl_demo_text.cpp
+                webc_ctrl_demo_textarea.cpp,webc_ctrl_demo_viewer.cpp
+            webc_GetBrowserWithFocus()
+                webc_ctrl_demo_main.cpp
+
+
+      The control demo suite does provide an example of using
+      the following webC functions:
+
+        webc_BrowserGetDocument         webc_BrowserQueueTimedEvent
+        webc_DocClear                   webc_DocClose
+        webc_DocFindElement             webc_DocGetPrivateData
+        webc_DocGetTitleASCII)          webc_DocOpen
+        webc_DocRefresh                 webc_DocWriteHtml
+        webc_ElementClaimPointer        webc_ElementFocus
+        webc_ElementGetAttribute        webc_ElementGetFrameDocument
+        webc_ElementGetHeight           webc_ElementGetNameASCII()
+        webc_ElementGetParent           webc_ElementGetType
+        webc_ElementGetValueASCII       webc_ElementGetWidth
+        webc_ElementGetXYPosition       webc_ElementMove
+        webc_ElementReleasePointer      webc_ElementSetAttributeASCII
+        webc_ElementSetHeightINT        webc_ElementSetPrivateData
+        webc_ElementSetStyleASCII       webc_ElementSetTagEventHandler
+        webc_ElementSetValueASCII       webc_ElementSetWidthINT
+        webc_ElementSetXYPosition       webc_FreeASCIIString
+        webc_GetBrowserWithFocus
+
+      The control demo suite does not provide an example of using
+      the following webC functions:
+
+        Document level API functions.
+
+        webc_BrowserSetPrivateData      webc_BrowserSetTagEventHandler
+        webc_BrowserGetPrivateData
+
+        webc_DocFocus                   webc_DocGetBrowser
+        webc_DocGetPrivateData          webc_DocGetTitleASCII
+        webc_DocReload                  webc_DocSetPrivateData
+        webc_DocSetUrl                  webc_DocWriteString
+
+        Element level API functions.
+
+        webc_ElementDisable             webc_ElementEnable
+        webc_ElementGetAttribute        webc_ElementGetBgColor
+        webc_ElementGetBgImage          webc_ElementGetChecked
+        webc_ElementGetColor            webc_ElementGetIdASCII
+        webc_ElementGetSrcASCII         webc_ElementGetValueUC
+        webc_ElementIdMatches           webc_ElementIdMatchesASCII
+        webc_ElementSetBgColor          webc_ElementSetBgImageASCII
+        webc_ElementSetChecked          webc_ElementSetColor
+        webc_ElementSetHeightASCII      webc_ElementSetInnerHTMLASCII
+        webc_ElementSetNameASCII        webc_ElementSetOuterHTMLASCII
+        webc_ElementSetSelected         webc_ElementSetSrcASCII
+        webc_ElementSetValueUC          webc_ElementSetWidthASCII
+        webc_ElementSetWidthINT         webc_ElementMoveAbs
+        webc_ElementRefresh
+
+        Element level API functions for document traversal.
+
+        webc_ElementNext                webc_ElementPrev
+        webc_ElementGetFirstChild       webc_ElementGetLastChild
+        webc_ElementGetNextSibling      webc_ElementGetPrevSibling
+        webc_ElementGetChild            webc_ElementGetDocument
+
+        Utility API functions
+
+        webc_MallocASCIIString          webc_MallocStringFromInt
+        webc_MallocUCString             webc_FreeUCString
+        webc_FreeTempStore
+
+        Event and callback functions
+
+        webc_RegisterEventCallback      webc_RegisterMetaCallback
+        webc_TriggerEvent
+
+        Browser navigation functions
+
+        webc_BrowserHome                webc_BrowserBack
+        webc_BrowserForward
+
+        Browser url load functions
+
+        webc_BrowserLoadUrl             webc_BrowserStop
+
+
+        webc_BrowserGetConfig   - obsolete
+
+
+        Javascript related functions
+
+        webc_ElementGetInnerHTML        webc_ElementGetOuterHTML
+        webc_JScriptDefineFunction      webc_JScriptGetDoc
+        webc_JSValToDoc                 webc_JSValToElement
+        webc_DocToJSVal
+        webc_ElementToJSVal
+
+        Secure sockets related functions
+
+        webc_HttpRemoveAllAuthorizations webc_HttpRemoveAuthorization
+        webc_HttpSetAuthorization
+
+        Cookie management functions
+
+        webc_FindCookie                 webc_CreateCookie
+        webc_CookieGetHost              webc_CookieGetName
+        webc_CookieGetPath              webc_CookieGetValue
+        webc_CookieSetHost              webc_CookieSetName
+        webc_CookieSetPath              webc_CookieSetValue
+        webc_DestroyCookie
+
+        Web Browser functions
+
+        webc_SetOnlineStatus            webc_GetOnlineStatus
+        webc_UrlAvailableOffline        webc_DocSaveForOffline
+
+        Browser draw control functions
+
+        webc_BrowserDraw                webc_BrowserGetDrawState
+        webc_BrowserInvalidate          webc_BrowserRefresh
+        webc_BrowserResumeDraw          webc_BrowserSuspendDraw
+
+        Browser process managment functions
+
+        webc_BrowserProcessLoadQueueAll webc_BrowserProcessTimers
+
+        Browser initialization and creation functions
+
+        webc_Init                       webc_CreateBrowser
+        webc_DestroyBrowser             webc_CreateKeyMap
+        webc_DestroyKeyMap              webc_Exit
+        webc_TranslateKey

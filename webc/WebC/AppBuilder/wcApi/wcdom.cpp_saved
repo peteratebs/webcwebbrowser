@@ -1,0 +1,2263 @@
+//
+// wcdom.CPP -
+//
+// EBS - WebC
+//
+// Copyright EBS Inc. , 2011
+// All rights reserved.
+// This code may not be redistributed in source or linkable object form
+// without the consent of its author.
+//
+// Module description:
+//  [tbd]
+//
+
+/*****************************************************************************/
+// Header files
+/*****************************************************************************/
+
+
+//#include "../include/NewApi.h"
+#include "wcapi.h"
+
+#include "dflow.hpp"
+#include "helement.hpp"
+#include "htmlbrow.hpp"
+#include "webcassert.h"
+#include "htmlfind.hpp"
+#include "htmldoc.hpp"
+#include "webcmem.h"
+#include "rtptime.h"
+
+enum DomTraverseResult
+{
+    DomError=-1,
+    DomFind,
+    DomSelf,
+    DomParent,
+    DomFirstChild,
+    DomLastChild,
+    DomPrevSibling,
+    DomNextSibling,
+};
+static enum DomTraverseResult _ParseNextExpression(char *p, int *CharsConsumed);
+static wcEL _FindElementById(wcCtx* Ctx, wcEL El, char *findId);
+static wcEL _FindParentElement(wcCtx* Ctx,wcEL El);
+static wcEL _FindFirstChild(wcCtx* Ctx,wcEL El);
+static wcEL _FindFirstChildInRoot(wcCtx* Ctx);
+
+static wcEL _FindElementInRoot(wcCtx* Ctx, char *findId);
+static wcEL _FindLastChild(wcCtx* Ctx,wcEL El);
+static wcEL _FindPrevSibling(wcCtx* Ctx,wcEL El);
+static wcEL _FindNextSibling(wcCtx* Ctx,wcEL El);
+#define MAXIDSIZE 256
+#define HTML_TEMP_STR_LEN         256
+
+/*****************************************************************************/
+// wcElFind
+/**
+
+ @memo  Traverse the dom following and XPATH specifier.
+ @doc   Traverse the dom following the provided path and return the element.
+
+ @param  wcCtx*     Ctx     -   The current wc context.
+ @param  wcEL       El      -   The root element for the search, may be zero if the search path begins at the root of the document.
+ @param  char*     Domstr   -   A string containing the path from the current element.
+ @param  wcBOOL*   pError    -   Set to wcTRUE if some kind of error.
+
+ <pre>
+ The string is a subset of the XPATH standard having the form "id/id/id/id".
+ The following subset of XPATH expressions are supported.
+ </pre>
+
+ <ul>
+ <li> '/'             - The root of the current document (only valid for the first character) </li>
+ <li> '.'             - The current element </li>
+ <li> '..'             - Parent of the current element </li>
+ <li> '*'             - The first child of the element. </li>
+ <li> '*[last()]'     - The last child of the  current element. </li>
+ </ul>
+
+ <pre>
+ The following webC specific non-XPATH expressions are also supported.
+ </pre>
+
+ <ul>
+ <li> '<'             - Previous sibling to the current element. </li>
+ <li> '>'             - Next sibling to the current element. </li>
+ </ul>
+
+ <pre>
+ Examples:
+     ItemFromRoot          = wcELFind (Ctx, 0, "/section/subsection/paragraph/item");
+     FirstChild            = wcELFind (Ctx, Parent, "*");
+     LastChild             = wcELFind (Ctx, Parent, "*[last()]");
+     LastGrandChild        = wcELFind (Ctx, Parent, "*[last()]/*[last()]");
+     FirstGrandChild       = wcELFind (Ctx, Parent, "* /*");  (no space after * please)
+     Child                 = wcELFind (Ctx, Parent, "myChild");
+     Child                 = wcELFind (Ctx, Parent, "./myChild");
+     Cousin                = wcELFind (Ctx, Parent, "../myUncle/HisChild");
+     Cousin                = wcELFind (Ctx, Parent, "../myUncle/*");
+     GrandParent           = wcELFind (Ctx, Parent, "../..");
+     PrevSibling           = wcELFind (Ctx, Parent, "<");
+     Nephew                = wcELFind (Ctx, Parent, ">/HisChild");
+     Nephew                = wcELFind (Ctx, Parent, "</HisChild");
+     Example: traverse all children of element X.
+         el=wcELFind (Ctx, X, "*");
+         while (el)
+             el=wcELFind (Ctx, el, ">");
+ </pre>
+
+ @return wcEL        The element if successful, 0 if not found, ELERROR on an error.
+
+ */
+/*****************************************************************************/
+
+wcEL wcELFind (wcCtx* Ctx, wcEL El, char *Domstr, wcBOOL *pError)
+{
+wcEL current;
+char *p;
+int isRoot = 0;
+	*pError = wcFALSE;
+    p = Domstr;
+    current = El;
+    if (*p == '/')
+    {
+        current = 0;
+    	isRoot = 1;
+        p++;
+    }
+    else
+	{
+        current = El;
+		if (!current)
+			*pError = wcTRUE;
+	}
+
+    while (*p && (current || isRoot))
+    {
+        enum DomTraverseResult opcode;
+        int nChars;
+        opcode = _ParseNextExpression(p, &nChars);
+		// Find first and find is the only legal operation on the root
+     	if (isRoot && (opcode!=DomFind && opcode!=DomFirstChild))
+		{
+     		*pError = wcTRUE;
+     		return current;
+		}
+        switch (opcode) {
+            case DomFind:
+            {
+                char findBuffer[MAXIDSIZE+1];
+                if (nChars > MAXIDSIZE)
+                    nChars = MAXIDSIZE;
+                rtp_memcpy(findBuffer,p,nChars);
+				findBuffer[nChars] = 0;
+            	if (isRoot)
+            		current = _FindElementInRoot(Ctx,findBuffer);
+				else
+					current = _FindElementById(Ctx,current,findBuffer);
+            }
+            break;
+            case DomSelf:
+                current = current;
+            break;
+            case DomParent:
+                current = _FindParentElement(Ctx,current);
+            break;
+            case DomFirstChild:
+            	if (isRoot)
+            		current = _FindFirstChildInRoot(Ctx);
+				else
+               		current = _FindFirstChild(Ctx,current);
+            break;
+            case DomLastChild:
+                current = _FindLastChild(Ctx,current);
+            break;
+            case DomPrevSibling:
+                current = _FindPrevSibling(Ctx,current);
+            break;
+            case DomNextSibling:
+                current = _FindNextSibling(Ctx,current);
+            break;
+            case DomError:
+            default:
+            	*pError = wcTRUE;
+                current = 0;
+            break;
+        }
+        p+= nChars;
+        if (*(p) == '/')
+            p++;
+        else if (*(p) != '\0')
+		{
+           	*pError = wcTRUE;
+            current = 0;
+		}
+		isRoot = 0;
+    }
+    return current;
+}
+
+static enum DomTraverseResult _ParseNextExpression(char *p, int *CharsConsumed)
+{
+enum DomTraverseResult result = DomFind;
+int nchars = 0;
+    switch (*p) {
+        case '.':
+            if (*(p+1) == '.')
+            {    result = DomParent; nchars = 2;}
+            else if (*(p+1) == '/' || *(p+1) == '\0')
+            {    result = DomSelf; nchars = 1;}
+            break;
+        case '*':
+            if (*(p+1) == '/' || *(p+1) == '\0')
+            {
+                nchars = 1;
+                result = DomFirstChild;
+            }
+            else if (*(p+1) == '[' && rtp_strstr((p+1), "[last()]/") == (p+1) )
+            {
+                nchars = 8;
+                result = DomLastChild;
+            }
+            break;
+        case '<':
+            nchars = 1;
+            result = DomPrevSibling;
+            break;
+        case '>':
+            nchars = 1;
+            result = DomNextSibling;
+            break;
+        default:
+            nchars = 0;
+            result = DomFind;
+            break;
+    }
+    if (result == DomFind)
+    {
+        char *separator;
+        separator = rtp_strstr(p, "/");
+        if (separator)
+        {
+            nchars = (int) (separator - p);
+        }
+        else
+            nchars = rtp_strlen(p);
+        if (nchars == 0)
+            result = DomError;
+    }
+    *CharsConsumed = nchars;
+    return (result);
+}
+static wcEL _FindFirstChildInRoot(wcCtx* Ctx)
+{
+	return (wcEL) ((HTMLDocument *) Ctx->hdoc)->Body()->FirstChild();
+}
+static wcEL _FindElementInRoot(wcCtx* Ctx, char *findId)
+{
+wcEL ElResult, r;
+    ElResult = 0;
+    r = (wcEL) ((HTMLDocument *) Ctx->hdoc)->Body()->FirstChild();
+    while (r)
+    {
+        if (wcELIdMatches(r, findId))
+        {
+            ElResult = r;
+            break;
+        }
+        r = _FindNextSibling(Ctx,r);
+    }
+    return ElResult;
+
+}
+static wcEL _FindElementById(wcCtx* Ctx,wcEL El, char *findId)
+{
+wcEL ElResult, r;
+    ElResult = 0;
+    r = _FindFirstChild(Ctx, El);
+    while (r)
+    {
+        if (wcELIdMatches(r, findId))
+        {
+            ElResult = r;
+            break;
+        }
+        r = _FindNextSibling(Ctx,r);
+    }
+    return ElResult;
+}
+static wcEL _FindParentElement(wcCtx* Ctx,wcEL El)
+{
+    return (HELEMENT_HANDLE) (HELEMENT_OBJ(El)->mpParent);
+}
+static wcEL _FindFirstChild(wcCtx* Ctx,wcEL El)
+{
+    return (wcEL) (HELEMENT_OBJ(El)->FirstChild());
+}
+static wcEL _FindLastChild(wcCtx* Ctx,wcEL El)
+{
+wcEL Elem, prevElem, result;
+    result = Elem = prevElem = 0;
+    Elem = _FindFirstChild(Ctx, El);
+    while (Elem)
+    {
+        result = Elem;
+        Elem = _FindPrevSibling(Ctx, Elem);
+    }
+    return result;
+}
+static wcEL _FindPrevSibling(wcCtx* Ctx,wcEL El)
+{
+    return (HELEMENT_HANDLE) (HELEMENT_OBJ(El)->mpPrev);
+}
+static wcEL _FindNextSibling(wcCtx* Ctx,wcEL El)
+{
+    return (HELEMENT_HANDLE) (HELEMENT_OBJ(El)->mpNext);
+}
+
+/*****************************************************************************/
+// wcElSetInnerHtml
+/**
+
+ @memo Display html source inside a container element.
+ @doc Set an HTML element's inner html. Parses the provided Html source code and insert it into the the specified container element.
+ The existing contents are freed and replaced with the elements created from the html text representation.
+
+ <pre>
+ Examples:
+     wcElSetInnerHtml(Ctx, "<table border=\"1\">\<tr><td>(1,1)</td><td>(1,2)</td></tr></table>");
+ </pre>
+
+ @param  wcEL 		Elw    		-   The containing element.
+ @param  char 		*NewHtml    -   Html source code.
+
+ @return The new element or zero on failure.
+
+ @see wcElGetInnerHtml
+ */
+/*****************************************************************************/
+
+/*****************************************************************************/
+void wcElSetInnerHtml(wcEL El,	char * newhtml)
+{
+  #if (WEBC_SUPPORT_UNICODE)
+   	WEBC_CHAR *pustring;
+	pustring = (WEBC_CHAR *) rtp_malloc((rtp_strlen(newhtml)+1)*2);
+	if (pustring)
+	{
+		webc_c_strcpy(pustring, newhtml);
+		HELEMENT_OBJ(El)->SetInnerHTML(pustring);
+		rtp_free(pustring);
+	}
+  #else
+	HELEMENT_OBJ(El)->SetInnerHTML(newhtml);
+  #endif
+}
+
+HTMLElement *jhutil_CreateElement(HTMLElementType eType, HTMLTagParse *tag, HTMLDocument *pDoc);
+
+/*****************************************************************************/
+// wcElNew
+/**
+
+ @memo Dynamically create an element.
+ @doc Dynamically create an element from its tag name.
+ The element must be inserted into the document before much can be done with it.
+
+ <pre>
+  Examples:
+     wcElNew(Ctx, "div");
+     wcElNew(Ctx, "img");
+
+     Example : Make a table with one cell.
+     wcEL table = wcElNew(Ctx, "table");
+     wcEL td 	= wcElNew(Ctx, "td");
+     wcEL tr 	= wcElNew(Ctx, "tr");
+     	wcELInsertFirst(table,tr);
+     	wcELInsertFirst(tr,td);
+     	wcElSetInnerHtml(td,"Hello");
+	    wcDocInsertLast(Ctx, table);
+
+	    Example : Create, position and assign an event handler to an input button.
+	    Note that input element creation is different because the type must be specified.
+	    The button element is actually a container of content to displays with a specified value,
+	    so both the inner html and the value have to be set.
+
+     	wcEL button = wcElNew(&_Ctx, "input type=button");
+     	wcElSetInnerHtml(button, "Clickme");
+     	wcElSetValue(button, "Clickme");
+     	wcElSetStyle(button, "position:absolute;left:20px;top:150px;",wcTRUE);
+     	wcDocInsertLast(&_Ctx, button);
+     	wcElSetEventHandler(button,  wcTestEventCallback);
+ </pre>
+
+ @param  wcCtx*     Ctx     -   The current wc context.
+ @param  char *     Name    -   Html tag name.
+
+ @return The new element or zero on failure.
+
+ @see
+ */
+/*****************************************************************************/
+#include "hedit.hpp"
+#include "hchkbox.hpp"
+#include "hradio.hpp"
+#include "himage.hpp"
+#include "hbutton.hpp"
+
+wcEL wcElNew(wcCtx* Ctx, char *_name)
+{
+  #if (WEBC_SUPPORT_UNICODE)
+	WEBC_CHAR name[HTML_TEMP_STR_LEN];
+	webc_c_strncpy(name, _name, HTML_TEMP_STR_LEN-1);
+	name[HTML_TEMP_STR_LEN-1] = 0;
+  #else
+  	 WEBC_CHAR* name = _name;
+  #endif
+
+	if (webc_c_strnicmp (name,"input type=", 11)==0)
+	{
+		WEBC_CHAR* na = name;
+		na+=11;
+		HTMLInputType inputType = HTML_ParseInputType (na, webc_strlen(na));
+		HTMLElement *pElement = 0;
+		HTMLTagParse tag[1];
+
+#if (0)
+	/// <INPUT type=submit>
+	HTML_BUTTON_ELEMENT,
+	/// <INPUT type=checkbox>
+	HTML_CHECKBOX_ELEMENT,
+	/// <INPUT type=text>
+	HTML_EDIT_STR_ELEMENT,
+	/// <TEXTAREA>
+	HTML_EDITBOX_ELEMENT,
+	/// <INPUT type=hidden>
+	HTML_HIDDEN_INPUT_ELEMENT,
+	/// <IMG>
+	HTML_IMAGE_ELEMENT,
+	/// <INPUT type=button>
+	HTML_INPUT_BUTTON_ELEMENT,
+	/// <INPUT type=pass>
+	HTML_INPUT_PASSWORD_ELEMENT,
+	/// <INPUT type=reset>
+	HTML_INPUT_RESET_ELEMENT,
+	/// <INPUT type=radio>
+	HTML_RADIO_BUTTON_ELEMENT,
+#endif
+    	HTML_InitTagParse(tag, HTML_TAG_INPUT);
+
+        switch (inputType)
+        {
+		    case HTML_INPUT_TYPE_FILE:
+		    case HTML_INPUT_TYPE_TEXT: //AK_TODO treat the file upload object like a text item for now
+				WEBC_NEW(pElement, HTMLEditString(tag, (HTMLDocument *)Ctx->hdoc));
+			    break;
+		    case HTML_INPUT_TYPE_PASSWORD:
+//			input_elem = Password(td);
+			    break;
+		    case HTML_INPUT_TYPE_CHECKBOX:
+				WEBC_NEW(pElement,HTMLCheckbox(tag, (HTMLDocument *)Ctx->hdoc));
+			    break;
+		    case HTML_INPUT_TYPE_RADIO:
+				WEBC_NEW(pElement,HTMLRadioButton(tag, (HTMLDocument *)Ctx->hdoc));
+			    break;
+		    case HTML_INPUT_TYPE_SUBMIT:
+//			input_elem = InputSubmit(td);
+			    break;
+		    case HTML_INPUT_TYPE_HIDDEN:
+//			input_elem = InputHidden(td);
+			    break;
+		    case HTML_INPUT_TYPE_IMAGE:
+				WEBC_NEW(pElement,HTMLImage(tag, (HTMLDocument *)Ctx->hdoc));
+//			input_elem = Image(td);
+			    break;
+		    case HTML_INPUT_TYPE_RESET:
+//			input_elem = InputReset(td);
+			    break;
+		    case HTML_INPUT_TYPE_BUTTON:
+				WEBC_NEW(pElement,HTMLButton(tag, (HTMLDocument *)Ctx->hdoc));
+			    break;
+		    default:
+			    // ignore other input types
+			    return (0);
+		    }
+			return (wcEL) pElement;
+	}
+
+	HTMLTagType hType = HTML_ParseTagType(name, webc_strlen(name));
+	if (hType < 0)
+		return 0;
+
+	HTMLElementType eType = TagToHTMLElementType[hType];
+
+	HTMLTagParse tag[1];
+	HTMLDocument *pDoc = (HTMLDocument *)Ctx->hdoc;
+	HTML_InitTagParse(tag, hType);
+	HTMLElement *pElement = jhutil_CreateElement(eType, tag, pDoc);
+	return ((wcEL)pElement);
+}
+
+/*****************************************************************************/
+// wcELRemoveChild
+/**
+
+ @memo Remove a child element from its parent.
+ @doc Remove a child element from its parent. The child element must be contained by the parent.
+ The child and parent are unlinked. The child is not deleted, it may be deleted or inserted into another
+ container.
+
+ @param  wcEL          Parent        -   The parent "container" element.
+ @param  wcEL          Child        -   The child element to remove.
+
+ @return wcTRUE    if the arguments non NULL. It is the callers responsibilty to ensure Child is a direct child of parent.
+
+ @see
+ */
+/*****************************************************************************/
+
+wcBOOL wcELRemoveChild (wcEL parent,wcEL child)
+{
+    if (!parent || !child)
+        return wcFALSE;
+    HELEMENT_OBJ(parent)->Remove(HELEMENT_OBJ(child));
+    HELEMENT_OBJ(parent)->Update(0,(WEBC_PFBYTE)1);
+    HELEMENT_OBJ(parent)->Refresh();
+    return wcTRUE;
+}
+
+/*****************************************************************************/
+// wcELDeleteChildren
+/**
+
+ @memo Delete all child elements from a container element.
+ @doc   Delete all child elements from element.
+
+ @param  wcEL          Parent        -   The parent "container" element.
+
+ @return wcTRUE    if the argument is non NULL.
+
+ */
+/*****************************************************************************/
+
+wcBOOL wcELDeleteChildren (wcEL element)
+{
+    if (!element)
+        return wcFALSE;
+    HELEMENT_OBJ(element)->DeleteChildren();
+    HELEMENT_OBJ(element)->Update(0,(WEBC_PFBYTE)1);
+    HELEMENT_OBJ(element)->Refresh();
+    return wcTRUE;
+}
+
+/*****************************************************************************/
+// wcELDelete
+/**
+
+ @memo Delete an element and all of its children.
+ @doc   Delete element and all of its children.
+
+ @param  wcEL          Element        -   The element to delete.
+
+ @return wcTRUE    if the argument is non NULL.
+
+ */
+/*****************************************************************************/
+wcBOOL wcELDelete(wcEL element)
+{
+    if (!element)
+        return wcFALSE;
+    wcELDeleteChildren (element);
+    delete HELEMENT_OBJ(element);
+    return wcTRUE;
+}
+
+/*****************************************************************************/
+// wcELInsertFirst
+/**
+
+ @memo Insert an element into the first position of a containing element.
+ @doc   Insert an element into the first position of a containing element.
+
+ @param  wcEL          Parent        -   The containing element.
+ @param  wcEL          Child        -   The element to insert.
+
+ @return wcTRUE    if the arguments are non NULL.
+
+ */
+/*****************************************************************************/
+wcBOOL wcELInsertFirst(wcEL element,wcEL child)
+{
+    if (!element || !child)
+        return wcFALSE;
+    HELEMENT_OBJ(element)->InsertFirst(HELEMENT_OBJ(child));
+    HELEMENT_OBJ(element)->Update(0,(WEBC_PFBYTE)1);
+    HELEMENT_OBJ(element)->Refresh();
+    return wcTRUE;
+}
+/*****************************************************************************/
+// wcELInsertLast
+/**
+
+ @memo Insert an element into the last position of a containing element.
+ @doc   Insert an element into the last position of a containing element.
+
+ @param  wcEL          Parent        -   The containing element.
+ @param  wcEL          Child        -   The element to insert.
+
+ @return wcTRUE    if the arguments are non NULL.
+
+ */
+/*****************************************************************************/
+wcBOOL wcELInsertLast(wcEL element,wcEL child)
+{
+    if (!element || !child)
+        return wcFALSE;
+    HELEMENT_OBJ(element)->InsertLast(HELEMENT_OBJ(child));
+    HELEMENT_OBJ(element)->Update(0,(WEBC_PFBYTE)1);
+    HELEMENT_OBJ(element)->Refresh();
+    return wcTRUE;
+}
+
+/*****************************************************************************/
+// wcELInsertAfter
+/**
+
+ @memo Insert an element after a specific element.
+ @doc   Insert an element after a specific element in a container.
+
+ @param  wcEL          Parent            -   The containing element.
+ @param  wcEL          CurChild        -   The element to insert after.
+ @param  wcEL          NewChild        -   The element to insert.
+
+ @return wcTRUE    if the arguments are non NULL.
+
+ */
+/*****************************************************************************/
+
+wcBOOL wcELInsertAfter(wcEL Parent,wcEL CurChild, wcEL NewChild)
+{
+    if (!Parent || !NewChild || !CurChild)
+        return wcFALSE;
+    HELEMENT_OBJ(Parent)->InsertAfter(HELEMENT_OBJ(NewChild),HELEMENT_OBJ(CurChild));
+    HELEMENT_OBJ(Parent)->Update(0,(WEBC_PFBYTE)1);
+    HELEMENT_OBJ(Parent)->Refresh();
+    return wcTRUE;
+}
+
+/*****************************************************************************/
+// wcELInsertBefore
+/**
+
+ @memo Insert an element before a specific element.
+ @doc   Insert an element before a specific element in a container.
+
+ @param  wcEL          Parent            -   The containing element.
+ @param  wcEL          CurChild        -   The element to insert before.
+ @param  wcEL          NewChild        -   The element to insert.
+
+ @return wcTRUE    if the arguments are non NULL.
+
+ */
+/*****************************************************************************/
+wcBOOL wcELInsertBefore(wcEL Parent,wcEL CurChild,wcEL NewChild)
+{
+    if (!Parent || !NewChild || !CurChild)
+        return wcFALSE;
+    HELEMENT_OBJ(Parent)->InsertBefore(HELEMENT_OBJ(NewChild),HELEMENT_OBJ(CurChild));
+    HELEMENT_OBJ(Parent)->Update(0,(WEBC_PFBYTE)1);
+    HELEMENT_OBJ(Parent)->Refresh();
+    return wcTRUE;
+}
+
+
+/*****************************************************************************/
+// wcELIdMatches
+/**
+
+ @memo  Compare an element's id to a string.
+ @doc   Compare an element's id to a string, return true if they match.
+
+
+ @param  wcEL          El        -   The element to compare.
+ @param  char*         IdStr   -   The string to match.
+
+ @return wcTRUE    if the element has an assigned id and they match wcFALSE otherwise.
+
+ @see
+ */
+/*****************************************************************************/
+
+
+wcBOOL wcELIdMatches(wcEL element, char *string)
+{
+    if (HELEMENT_OBJ(element)->Id() && string && !webc_c_stricmp(HELEMENT_OBJ(element)->Id(), string))
+        return wcTRUE;
+    return wcFALSE;
+}
+
+
+
+HTMLElement *jhutil_CloneElement(HTMLElement *clone, WEBC_BOOL bCloneChildren);
+/*****************************************************************************/
+// wcElClone
+/**
+
+ @memo  Create an element by cloning.
+ @doc Dynamically create a new element by cloning an existing element. If bCloneChildren is true, clone the element's children too.
+ The element must be inserted into the document before much can be done with it.
+  Note:
+
+ @param  wcEL 	El			    -   The element to clone.
+ @param  wcBOOL	bCloneChildren	-	wcTRUE or wcFALSE
+
+ @return The new element or zero on failure.
+
+ @see
+ */
+/*****************************************************************************/
+
+
+wcEL wcElClone(wcEL element, wcBOOL bCloneChildren)
+{
+	return (wcEL) jhutil_CloneElement((HTMLElement *) element, (WEBC_BOOL) bCloneChildren);
+}
+
+
+/*****************************************************************************/
+// wcElSetStyle
+/**
+ @memo Set element style attributes.
+ @doc  Set style value(s) for an element and redraw the element.
+
+ @param wcEL element 	- The element to set style info for.
+ @param char* style   	- Cascading style sheet source data (e.g. "top:20px;left:10px;")
+ @param wcBOOL doUpdate	- Pass wcTRUE to queue the element for redraw after changing the style.
+
+ @return wcTRUE    if the arguments are non NULL.
+ @see
+ */
+/*****************************************************************************/
+
+wcBOOL wcElSetStyle(wcEL element, char *_style,wcBOOL doUpdate)
+{
+#if (WEBC_SUPPORT_STYLE_SHEETS)
+HTMLDocument *pDocument;
+	if (!element)
+		return wcFALSE;
+  #if (WEBC_SUPPORT_UNICODE)
+	WEBC_CHAR style[HTML_TEMP_STR_LEN];
+	webc_c_strncpy(style, _style, HTML_TEMP_STR_LEN-1);
+	style[HTML_TEMP_STR_LEN-1] = 0;
+  #else
+  	WEBC_CHAR *style = _style;
+  #endif
+	pDocument = HELEMENT_OBJ(element)->GetDocument();
+	if (pDocument)
+	{
+		pDocument->GetCSSContext()->ParseElementStyle(HELEMENT_OBJ(element), style, pDocument->CurrentURL());
+		if (doUpdate)
+		{
+			HELEMENT_OBJ(element)->StyleUpdate();
+			HELEMENT_OBJ(element)->Update(0,(WEBC_PFBYTE)1);
+			HELEMENT_OBJ(element)->Refresh();
+		}
+	}
+#endif
+	return wcTRUE;
+}
+
+/*****************************************************************************/
+// wcElSetId
+/**
+ @memo Assign an id to an element.
+ @doc           Assign an id to an element.
+
+ @param wcEL element 	- The element to set style info for.
+ @param char* Id   		- Id for the element.
+
+ @return wcTRUE    if the arguments are non NULL.
+ @see
+ */
+/*****************************************************************************/
+
+wcBOOL wcElSetId(wcEL element, char *_Id)
+{
+	if (!element)
+		return wcFALSE;
+#if (WEBC_SUPPORT_UNICODE)
+	WEBC_CHAR Id[HTML_TEMP_STR_LEN];
+	webc_c_strncpy(Id, _Id, HTML_TEMP_STR_LEN-1);
+	Id[HTML_TEMP_STR_LEN-1] = 0;
+#else
+  	WEBC_CHAR *Id = _Id;
+#endif
+	HELEMENT_OBJ(element)->SetId(Id);
+	return wcTRUE;
+}
+
+
+/*****************************************************************************/
+// wcElSetValue
+/**
+ @memo Assign a value to an element.
+ @doc           Set the value propery of an element.
+
+ @param wcEL element 	- The element to set style info for.
+ @param char* Val   	- New Value for the element.
+
+ @return wcTRUE    if the arguments are non NULL.
+ @see
+ */
+/*****************************************************************************/
+
+wcBOOL wcElSetValue(wcEL element, char *_Val)
+{
+	if (!element)
+		return wcFALSE;
+#if (WEBC_SUPPORT_UNICODE)
+	WEBC_CHAR Val[HTML_TEMP_STR_LEN];
+	webc_c_strncpy(Val, _Val, HTML_TEMP_STR_LEN-1);
+	Val[HTML_TEMP_STR_LEN-1] = 0;
+#else
+  	WEBC_CHAR *Val = _Val;
+#endif
+	HELEMENT_OBJ(element)->SetValue(Val);
+	return wcTRUE;
+}
+
+
+struct EnumParms
+{
+	wcCtx* Ctx;
+	wcDocEnumFn pfn;
+	int Intparm;
+	void *Voidparm;
+};
+
+static WEBC_BOOL wcDocEnumerateFinderCallback(HTMLElement *pElem, int chore, void **ppContext)
+{
+struct EnumParms *Pe;
+	Pe = (struct EnumParms *)ppContext;
+	return (WEBC_BOOL) Pe->pfn(Pe->Ctx,(wcEL) pElem, Pe->Intparm, Pe->Voidparm);
+	return(0);
+}
+
+
+
+/*****************************************************************************/
+// wcDocEnumerate
+/**
+
+ @memo Traverse all elements in a document with user callback.
+ @doc Traverse all elements in the current document and pass each element to a user supplied
+ callback function. The callback instructs the enumerator to continue scanning or stop.
+
+ @param  wcCtx*     	Ctx     	-   The current wc context.
+ @param  wcDocEnumFn 	pfn    		-   User supplied callback function.
+ @param  int 			Intparm 	-   Integer (command perhaps) passed to the callback fucntion.
+ @param  void*			VoidParm 	-   Void pointer (pass by reference or return by reference.)
+
+ <pre>
+   The user callback function is of type:
+  	typedef wcBOOL (*wcDocEnumFn)(wcCtx* Ctx, wcEL El, int UserIntParm, void *UserVoidParm);
+	When the callback fuction returns wcFALSE the enumeration continues, when it returns wcTRUE, enumeration stops.
+
+ Examples:
+ 	Scan the document for an element with id "findme" and return the element.
+
+	Callback function
+  	wcBOOL MyEnumFn(wcCtx* Ctx, wcEL El, int UserIntParm, void *UserVoidParm)
+	{
+        if (wcELIdMatches(El, "findme"))
+		{
+            *((wcEL *) UserVoidParm) = El; << return the element and stop
+			return wcTRUE;
+		}
+		else
+		return wcFALSE;
+	}
+	wcEL MyFindFunction(wcCtx* Ctx)
+	{
+		wcEl answer = 0;
+		wcDocEnumerate( Ctx, MyEnumFn, 0, (void *) &answer);
+		return answer;
+	}
+ </pre>
+
+
+ @return Nothing.
+
+ @see
+ */
+/*****************************************************************************/
+
+void wcDocEnumerate(wcCtx* Ctx, wcDocEnumFn pfn, int Intparm, void *Voidparm)
+{
+struct EnumParms E;
+	E.Ctx = Ctx;
+	E.pfn = pfn;
+	E.Intparm = Intparm;
+	E.Voidparm = Voidparm;
+	HTMLGenericFinder finder(wcDocEnumerateFinderCallback,0,(void **) &E);
+	((HTMLDocument *) Ctx->hdoc)->FindElement(&finder);
+}
+
+
+/*****************************************************************************/
+// wcDocFindEl
+/**
+
+ @memo Search the document for a specific id.
+ @doc			Search of the document tree for the first element with the specified id.
+
+ @param  wcCtx*     Ctx    -   The current wc context.
+ @param  char*     Id	   -   The id to search for.
+
+ @return		The handle of the element with the specified id, or zero.
+
+ @see
+ */
+/*****************************************************************************/
+
+
+wcEL wcDocFindEl (wcCtx* Ctx, char *id)
+{
+HTMLIdNameTypeIndexFinder8 f(id, 0, HTML_ELEMENT_ANY, 0);
+	return (wcEL) (((HTMLDocument *) Ctx->hdoc)->FindElement(&f));
+}
+
+/*****************************************************************************/
+// wcDocInsertFirst
+/**
+
+ @memo  Insert an element into the first position of a document.
+ @doc   Insert an element into the first position of a document.
+
+ @param  wcCtx*    		Ctx    -   The current wc context.
+ @param  wcEL         	Child  -   The element to insert.
+
+
+ @return		nothing
+
+ @see
+ */
+/*****************************************************************************/
+void wcDocInsertFirst (wcCtx* Ctx,wcEL eL)
+{
+
+	((HTMLDocument *) Ctx->hdoc)->Body()->InsertFirst((HTMLElement *) eL);
+}
+/*****************************************************************************/
+// wcDocInsertLast
+/**
+
+ @memo  Insert an element into the last position of a document.
+ @doc  Insert an element into the last position of a document.
+
+ @param  wcCtx*    		Ctx    -   The current wc context.
+ @param  wcEL         	Child  -   The element to insert.
+
+
+ @return		nothing
+
+ @see
+ */
+/*****************************************************************************/
+void wcDocInsertLast (wcCtx* Ctx,wcEL eL)
+{
+	((HTMLDocument *) Ctx->hdoc)->Body()->InsertLast((HTMLElement *) eL);
+}
+
+
+/*****************************************************************************/
+// wcDocRefresh
+/**
+
+ @memo  Redraw the current document.
+ @doc   Redraw the current document.
+
+ @param  wcCtx*    		Ctx    -   The current wc context.
+
+ @return		nothing
+
+ @see
+ */
+/*****************************************************************************/
+void wcDocRefresh (wcCtx* Ctx)
+{
+	((HTMLDocument *) Ctx->hdoc)->Refresh();
+}
+
+/*****************************************************************************/
+// wcCtxtInit
+/**
+ @memo  Initialize a webC context for use.
+ @doc   Initialize a webC context for use. This function must be called by event handlers to create
+        a browser context for passing to wcAPI functions.
+
+ @param  wcCtx*    		Ctx    		-   The wc context to initialize.
+ @param  wcBROW    		Browser    	-   The browser.
+ @param  wcDOC    		Document   	-   The document.
+
+ @return		nothing
+
+ @see			wcCtxtRelease
+ */
+/*****************************************************************************/
+
+void wcCtxtInit(wcCtx* Ctx, wcBROW browser, wcDOC doc)
+{
+	rtp_memset(Ctx, 0, sizeof(*Ctx));
+	Ctx->hdoc = doc;
+	Ctx->hbrowser = browser;
+}
+/*****************************************************************************/
+// wcCtxtRelease
+/**
+
+ @memo  Garbage collect resources associated with a webC context.
+ @doc   Release resources associated with a webC context that was initialized by an earlier call to wctxtInit.
+ 		The resources that accumulate in the context block are mainly string buffers used to return data that has
+		been converted from internal unicode form to Ascii.
+
+ <pre>
+  Note: wcCtxtRelease may be called multiple times per wcCtxtInit() call. Each time it is called it frees all accumulated buffers.
+ Handlers that retrieve a lot of values from the DOM in one call may want to call wcCtxtRelease() more frequently than once to free
+ accumulated return buffers.
+ </pre>
+
+ @param  wcCtx*    		Ctx    		-   The wc context to release.
+
+ @return		nothing
+
+ @see			wcCtxtInit
+ */
+/*****************************************************************************/
+
+void wcCtxtRelease(wcCtx* Ctx)
+{
+	for (int i = 0; i < MAXGARBAGEPOINTERS; i++)
+	{
+		if (Ctx->GarbageList[i])
+			rtp_free(Ctx->GarbageList[i]);
+		Ctx->GarbageList[i]=0;
+	}
+	// Nothing yet.
+}
+
+char * wcCtxtAppendGarbage(wcCtx* Ctx, char *p)
+{
+	for (int i = 0; i < MAXGARBAGEPOINTERS; i++)
+	{
+		if (!Ctx->GarbageList[i])
+		{
+			Ctx->GarbageList[i] = p;
+			return p;
+		}
+	}
+	WEBC_ASSERT(0);
+	return 0;
+}
+
+/*****************************************************************************/
+// wcELGetId
+/**
+
+ @memo   Get the id attribute.
+ @doc           Returns the unique id string of this element.
+
+ @param  wcEL          Element       -   The element.
+
+ @return char *Id     The id if the element has one, or zero. (note: You must call wcCtxtRelease, to release the storage).
+
+ */
+/*****************************************************************************/
+
+char *wcELGetId(wcCtx* Ctx,wcEL element)
+{
+    if (element && HELEMENT_OBJ(element)->Id())
+	    return wcCtxtAppendGarbage(Ctx, webc_MallocASCIIString(HELEMENT_OBJ(element)->Id()));
+	else
+	    return(0);
+}
+
+/*****************************************************************************/
+// wcELGetValue
+/**
+
+ @memo   Get the value attribute.
+ @doc           Returns the value field of this element. TODO: Booleans check boxes ?
+
+ @param  wcEL          Element       -   The element.
+
+ @return char *Value     The value if the element has one, or zero. (note: You must call wcCtxtRelease, to release the storage).
+
+
+ */
+/*****************************************************************************/
+
+char *wcELGetValue(wcCtx* Ctx,wcEL element)
+{
+    if (element && HELEMENT_OBJ(element)->Value())
+	    return wcCtxtAppendGarbage(Ctx, webc_MallocASCIIString(HELEMENT_OBJ(element)->Value()));
+	else
+	    return(0);
+}
+
+
+/*****************************************************************************/
+// wcELGetType
+/**
+ @memo   Get the tag type of this element.
+ @doc    Returns the type identifier of this element.
+
+ @param  wcEL          Element       -   The element.
+
+ @return HTMLElementType Type     The type of element, HTML_ADDRESS_ELEMENT, HTML_BUTTON_ELEMENT etc (see htmlsdk.h)
+
+ @param element The element whose type to return
+ @return        The element type
+ @see
+ */
+/*****************************************************************************/
+
+HTMLElementType wcElGetType(wcEL element)
+{
+	if (!element)
+		return (HTMLElementType)0;
+	return (HELEMENT_OBJ(element)->Type());
+}
+
+
+/*****************************************************************************/
+// Local types
+/*****************************************************************************/
+class wcCFunctionHandler : public HTMLEventHandler
+{
+public:
+
+	wcCFunctionHandler(WEBC_CHAR *pName, wcEventCallback Function)
+	{
+		if (pName)
+		{
+			webc_strncpy(mpName, pName, 35);
+			mpName[35] = '\0';
+		}
+		else
+		{
+			mpName[0] = '\0';
+		}
+		mFunction = Function;
+	}
+	~wcCFunctionHandler() {}
+
+
+	virtual HTMLEventStatus Event(HTMLElement *pElement, HTMLEvent *pEvent, WEBC_CHAR *pParam = 0)
+	{
+		HTMLEventStatus result = HTML_EVENT_STATUS_CONTINUE;
+
+		if (mFunction)
+		{
+			HTMLDocument *pDoc;
+			HTMLBrowser  *pBrowser;
+			wcCtx _Ctx;
+			char nphoney[4];
+
+			pDoc = (pElement)? pElement->GetDocument() : 0;
+			pBrowser = (pDoc)? pDoc->GetBrowser() : 0;
+
+			wcCtxtInit(&_Ctx,  (wcBROW) pBrowser, (wcDOC) pDoc);
+			char *param = webc_arg_to_char(pParam);
+			if (!param)
+				param = &nphoney[0];
+
+			result = mFunction(&_Ctx, (wcEL)pElement, pEvent, param);
+			if (param != &nphoney[0])
+				webc_arg_done(param);
+		}
+		return (result);
+	}
+
+	virtual WEBC_CHAR *Name(void) { return mpName; }
+	WEBC_CHAR mpName[36];
+	wcEventCallback mFunction;
+};
+
+
+
+/*****************************************************************************/
+// wcElSetEventHandler
+/**
+ @memo          Assign an event handler for this element.
+ @doc           Push the previous event handler for this element on an internal stack and then
+ 				set a new handler for events targetted at the specified element.
+				The previous event handler may be restored later by calling wcElpopEventHandler.
+
+		 Note: wcElSetEventHandler pushes the previous handler onto an internal stack. You must call
+		 wcElPopEventHandler at a later time if your application requires you to restore the previous handler when the current algorith is completed.
+		 Most applications don't need a stack more than one level deep but more complex interfaces like drag and drop and slide under windows use this capability.
+
+ @param  wcEL          		Element       -   The element.
+ @param  wcEventCallback 	cb			  -   Function to call for when an event occur.
+ <pre>
+  The callback function is of type:
+ 	typedef HTMLEventStatus (*wcEventCallback) (wcCtx* Ctx,	wcEL element, HTMLEvent* event,	char* param);
+	where Ctx and Element are as in other documented routines.
+	param is typically unused..
+	See below for a description of event types and the event structure.
+
+	Example:
+
+	Attach a callback event handler that displays all events to a table row.
+	Demonstrate restoring the previous handler by Popping the current handler
+	on click.
+
+		static HTMLEventStatus wcTestEventCallback(wcCtx* Ctx,	wcEL element,HTMLEvent* event,	char* param);
+
+		wcBOOL &Error;
+		wcEL El = wcELFind (&_Ctx, 0, "/table0/row0/col0", &Error);
+		wcElSetEventHandler(&_Ctx, wcTestEventCallback);
+
+
+static char *EventToString(HTMLEventType type);
+static HTMLEventStatus wcTestEventCallback(wcCtx* Ctx,	wcEL element,HTMLEvent* event,	char* param)
+{
+
+	// print the event name
+	rtp_printf("Event>>: %s\n", EventToString(event->type));
+	// dispatch on event ids to appropriate responses.
+
+    switch (event->type)
+    {
+		case HTML_EVENT_CLICK            :
+		// Revert to previous handler when clicked.
+			wcElPopEventHandler(element);
+			return (HTML_EVENT_STATUS_HALT);
+			break;
+		case HTML_EVENT_KEYDOWN             :
+		case HTML_EVENT_KEYPRESS            :
+		case HTML_EVENT_KEYUP               :
+		case HTML_EVENT_DBLCLICK            :
+		case HTML_EVENT_MOUSEDOWN           :
+		case HTML_EVENT_MOUSEMOVE           :
+		case HTML_EVENT_MOUSEOUT            :
+		case HTML_EVENT_MOUSEOVER           :
+		case HTML_EVENT_MOUSEUP             :
+			break;
+		case HTML_EVENT_FOCUS               :
+		case HTML_EVENT_UNFOCUS             :
+		case HTML_EVENT_LOAD                :
+		case HTML_EVENT_UNLOAD              :
+		case HTML_EVENT_SUBMIT              :
+		case HTML_EVENT_CHANGE              :
+		case HTML_EVENT_EDIT                :
+		case HTML_EVENT_RESET               :
+			break;
+		case HTML_EVENT_OBJECT_CREATED       :
+		case HTML_EVENT_OBJECT_DESTROYED     :
+		case HTML_EVENT_ATTRIBUTE_PARSED     :
+		case HTML_EVENT_LOSECAPTURE          :
+		case HTML_EVENT_TIMER                :
+		case HTML_EVENT_RENDER	            :
+		case HTML_FIRST_USER_EVENT           :
+		default:
+
+
+
+		break;
+	}
+	return (HTML_EVENT_STATUS_CONTINUE);
+}
+
+
+	=================================================================
+	The following events are reported along with user assignable event.
+
+	HTML_EVENT_CLICK               Single mouse click
+	HTML_EVENT_DBLCLICK            Double mouse click
+	HTML_EVENT_KEYDOWN             Key pressed
+	HTML_EVENT_KEYPRESS            Key pressed and released
+	HTML_EVENT_KEYUP               Key released
+	HTML_EVENT_MOUSEDOWN           Mouse button pressed
+	HTML_EVENT_MOUSEMOVE           Mouse movement over this object
+	HTML_EVENT_MOUSEOUT            Mouse pointer exits the client area of this object
+	HTML_EVENT_MOUSEOVER           Mouse pointer enters the client area
+	HTML_EVENT_MOUSEUP             Mouse button released
+	HTML_EVENT_FOCUS               Object has received input focus
+	HTML_EVENT_UNFOCUS             Object will lose input focus
+	HTML_EVENT_LOAD                Load completes
+	HTML_EVENT_UNLOAD              Object is discarded
+	HTML_EVENT_SUBMIT              For forms only; submit is pressed
+	HTML_EVENT_CHANGE              Input text was edited
+	HTML_EVENT_EDIT                Finished Editing on a Textbox
+	HTML_EVENT_RESET               For forms only; reset is pressed
+	HTML_EVENT_OBJECT_CREATED       HTMLElement object created
+	HTML_EVENT_OBJECT_DESTROYED     HTMLElement object destroyed
+	HTML_EVENT_ATTRIBUTE_PARSED     Attribute parsed
+	HTML_EVENT_LOSECAPTURE          Mouse capture released
+	HTML_EVENT_ONREADYSTATECHANGE   Ajax event (XMLHttpRequest.onreadystatechange event) not implemented
+	HTML_EVENT_TIMER                A timer message sent by user code via wcQueueEventTimed
+	HTML_EVENT_RENDER	            A notification message send by the display processing loop about the element. Useful for doing things like retrieveing an element's screen position after it was automatically placed in non fixed formatted
+	content.
+	HTML_FIRST_USER_EVENT           This and higher event numbers are available for application programming.
+
+	Event handlers must return one of the following:
+		HTML_EVENT_STATUS_DONE       Handling of this event is complete don't pass it to parent handlers.
+		HTML_EVENT_STATUS_CONTINUE   Pass the event to parent handler listers and perform any default processing.
+		HTML_EVENT_STATUS_HALT       Cancel processing operation. Examples include refusing to give up focus and cancel mouse processing.
+		HTML_EVENT_STATUS_ERROR
+
+	The event structure has the following fields.
+        struct s_HTMLEvent
+        {
+            HTMLEventType type;
+            union
+            {
+                struct
+                {
+                    long x;
+                    long y;
+                } position;
+                struct
+                {
+                    const WEBC_CHAR* name;
+                    const WEBC_CHAR* value;
+                } attribute;
+                struct
+                {
+                    enum NotifierType Notifier;
+                    enum NotifyEventType NotifyEvent;
+                } NotifyMessage;
+                WebKey         key;
+                WEBC_CHAR*     string;
+                unsigned char* buffer;
+            } data;
+            HELEMENT_HANDLE elem;
+            HELEMENT_HANDLE target;
+            HELEMENT_HANDLE srcElement;
+            WEBC_UINT8 flags;                 see flag definitions below
+            int returnValue;
+		};
+
+        Event flags that may be set by handlers to control processing as with the return codes.
+        The return codes are more often used by Javascript but they can be used for C event dispatchers as well.
+
+        HTML_EVENT_FLAG_CANCEL_BUBBLE    - These flags values may be set by handlers to
+        HTML_EVENT_FLAG_CANCEL_DEFAULT   - control processing as with the return codes.
+        HTML_EVENT_FLAG_CANCEL_SET_FOCUS - Javascript events use these flags too.
+
+        Keyboard metakey states are provided on mouse events an key events.
+        HTML_EVENT_FLAG_SHIFT_DOWN       - Keyboard metakey states provided on mouse event or keypress.
+        HTML_EVENT_FLAG_CTRL_DOWN        -
+        HTML_EVENT_FLAG_ALT_DOWN         -
+ </pre>
+
+ @return        Nothing
+ @see
+ */
+/*****************************************************************************/
+
+void wcElSetEventHandler(HELEMENT_HANDLE element, wcEventCallback cb)
+{
+    if (element)
+    {
+        wcCFunctionHandler* eventHandler;
+        WEBC_NEW(eventHandler, wcCFunctionHandler(0,cb));
+        if (eventHandler)
+        {
+            HTMLEvent the_event;
+//            HELEMENT_OBJ(element)->SetElementEventHandler(eventHandler);
+            HELEMENT_OBJ(element)->PushElementEventHandler(eventHandler);
+            the_event.type = HTML_EVENT_OBJECT_CREATED;
+            webc_TriggerEvent(element, &the_event);
+        }
+   }
+}
+
+/*****************************************************************************/
+// wcElPopEventHandler
+/**
+ @memo          Restore the previous event handler for this element.
+ @doc           Pop the previous event handler for this element from an internal stack and make it
+ 				the event handler for events targetted for the specified element.
+
+		 Note: See wcElSetEventHandler.
+
+ @param  wcEL          		Element       -   The element.
+
+ <pre>
+  	Example:
+
+	See the example for wcElSetEventHandler.
+
+			case HTML_EVENT_CLICK            :
+		// Revert to previous handler when clicked.
+			wcElPopEventHandler(element);
+			return (HTML_EVENT_STATUS_HALT);
+ </pre>
+
+
+ @return        Nothing
+ */
+/*****************************************************************************/
+
+void wcElPopEventHandler(wcEL  element)
+{
+    if (element)
+    {
+   		HELEMENT_OBJ(element)->PopElementEventHandler();
+   }
+}
+
+/*****************************************************************************/
+// wcTriggerEvent
+/**
+ @memo  Send an event to an element immediately or with delay.
+ @doc           Pass an event to an element's event handler routine.
+
+ @param  wcEL          		Element     -   The element.
+ @param  HTMLEvent *		pEvent    	-   Initialized event structure to pass to the handler.
+ @param  int 				delay   	-   Delay in miliseconds before triggering the event. Zero for no delay.
+
+
+ @return        HTMLEventStatus. If Delay is non-zero HTML_EVENT_STATUS_CONTINUE otherwise the return value from the element's event handler.
+
+ */
+/*****************************************************************************/
+
+HTMLEventStatus wcTriggerEvent(wcEL El, HTMLEvent *pEvent, int delay)
+{
+	if (delay == 0)
+		return webc_TriggerEvent((HELEMENT_HANDLE) El, pEvent);
+	else if (webc_ElementGetDocument((HELEMENT_HANDLE) El))
+	{
+		webc_BrowserQueueTimedEvent(webc_DocGetBrowser(webc_ElementGetDocument((HELEMENT_HANDLE) El)),(HELEMENT_HANDLE) El,pEvent,(WEBC_INT32) delay);
+		return HTML_EVENT_STATUS_CONTINUE;
+	}
+	else
+		return HTML_EVENT_STATUS_CONTINUE;
+
+}
+
+/*****************************************************************************/
+// wcTimedCallback
+/**
+
+ @memo Wait a number of miliseconds and then call the user callback function.
+ @doc Wait the specified number of miliseconds and then call the user callback function. The function is
+ called outside the context of a browser so it may be used to do things that otherwise will not work in a browser context.
+ An example of such an operation is allowing browser Event handler to queue a window close from its timer event handler.
+ like close browser instructs the enumerator to continue scanning or stop.
+
+ @param  wcTimedCallbackfn 	pfn    		-   User supplied callback function.
+ @param  int 				Delay		-   Milliseconds to delay before calling. If zero called on the next clock.
+ @param  int 				Intparm 	-   Integer (command perhaps) passed to the callback fucntion.
+ @param  void*				VoidParm 	-   Void pointer pass by reference.
+
+ <pre>
+   The user callback function is of type:
+  	typedef void (*wcTimedCallbackfn)(int UserIntParm, void *UserVoidParm);
+
+ Examples:
+ 	Use a timed callback function to close a window from inside an elements HTML_EVENT_TIMER handler and Queue a restart.
+
+	Callback function
+  	void MyAppCallback(int UserIntParm, void *UserVoidParm)
+	{
+		if (UserIntParm == MYCLOSE)
+		{
+			wcWinClose((wcCtx 	*)UserVoidParm);
+			Queue up a restart of the demo in one second.
+			wcTimedCallback(MyCloseCallback, 1000, MYRESTART, (void *) UserVoidParm);
+		}
+		else if (UserIntParm == MYRESTART)
+		{
+			RestartMyDemo((wcCtx *)UserVoidParm);
+		}
+	}
+
+	.. Event handler fragment
+	else if (event->type == HTML_EVENT_TIMER)
+	{
+		pcontrol = (struct flyingwindowcontrol *) wcGetData(Ctx, element);
+		pcontrol->iteration += 1;
+		if (pcontrol->iteration >= FLYINGWINDOWITERATIONS)
+		{
+			wcPopData(Ctx, element);
+			rtp_free(pcontrol);
+			// Close the window on the next tick
+			// Make a private copy of the stack based context to pass to the Global timer handler
+			wcCtx* KillCtx;
+			KillCtx = (wcCtx*)rtp_malloc(sizeof(*Ctx));
+			*KillCtx = *Ctx;
+			// Tell the global timer to call our close callback routine
+			wcTimedCallback(MyAppCallback, 0, MYCLOSE, (void *) KillCtx);
+			return (HTML_EVENT_CONTINUE);
+		}
+	}
+ </pre>
+
+ @return Nothing.
+
+ @see
+ */
+/*****************************************************************************/
+
+
+
+typedef struct _wcTimedCallbackRecord
+{
+	struct _wcTimedCallbackRecord* pNext;
+	WEBC_UINT32			TriggerTime;
+	wcTimedCallbackfn	pfn;
+	int					IntParm;
+	void *				VoidParm;
+} wcTimedCallbackRecord;
+wcTimedCallbackRecord *gPTimedCallbackRecords;
+
+
+void wcTimedCallback(wcTimedCallbackfn pfn,int delay, int IntParm, void *VoidParm)
+{
+wcTimedCallbackRecord *newRecord;
+	newRecord = (wcTimedCallbackRecord *)WEBC_MALLOC(sizeof(wcTimedCallbackRecord));
+	if (!newRecord)
+		return;
+	rtp_memset(newRecord, 0, sizeof(*newRecord));
+	newRecord->pfn 		= pfn;
+	newRecord->TriggerTime	= rtp_get_system_msec()+(WEBC_UINT32)delay;
+	newRecord->IntParm 	= IntParm;
+	newRecord->VoidParm = VoidParm;
+	// If delay is zero put the record on the front of the list. Required because if we queue from inside a callback we want to
+	// Process it on the next tick, not this tick.
+	if (delay == 0)
+	{
+		newRecord->pNext = gPTimedCallbackRecords;
+		gPTimedCallbackRecords = newRecord;
+	}
+	else if (!gPTimedCallbackRecords)
+		gPTimedCallbackRecords = newRecord;
+	else
+	{
+	wcTimedCallbackRecord *RecordEnumerator = gPTimedCallbackRecords;
+		while (RecordEnumerator->pNext)
+			RecordEnumerator = RecordEnumerator->pNext;
+		RecordEnumerator->pNext = newRecord;
+	}
+}
+// Called from the system timer before it enumerates the browser specific timere
+void wcProcessTimedCallbacks(void)
+{
+wcTimedCallbackRecord *RecordEnumerator = gPTimedCallbackRecords;
+WEBC_UINT32 ThisTriggerTime;
+	if (RecordEnumerator)
+	{
+		ThisTriggerTime	= rtp_get_system_msec();
+		while (RecordEnumerator)
+		{
+			if (ThisTriggerTime >= RecordEnumerator->TriggerTime)
+			{
+				wcTimedCallbackRecord *thisRecord = RecordEnumerator;
+				RecordEnumerator = RecordEnumerator->pNext;
+				if (thisRecord == gPTimedCallbackRecords)
+					gPTimedCallbackRecords = RecordEnumerator;
+				thisRecord->pfn(thisRecord->IntParm, thisRecord->VoidParm);
+				WEBC_FREE(thisRecord);
+			}
+			else
+				RecordEnumerator = RecordEnumerator->pNext;
+		}
+	}
+}
+
+/*****************************************************************************/
+// wcElGetPosWin
+/**
+ @memo  Get the displayed position of an element.
+ @doc           Get the current position of an element. The values returned make up the actual bounding rectangle surrounding
+ the element the last time it was displayed.
+ Note: wcElGetPosWin is useful for obtaining the coordinates of elements that were automatically sized or
+ positioned by webC. It returns the coordinates the last time an element was drawn.
+ The routine can not be used in screen constructors on elements that have not been drawn yet.
+ If an element is manually positioned it's coordinates can be optained before it is drawn by calling wcElGetPosStyle.
+
+ @param  wcEL          		Element     -   The element.
+ @param  int*          		top      	-   top goes here. If NULL no result is returned for top.
+ @param  int*          		left      	-   left goes here. If NULL no result is returned for leftl.
+ @param  int*          		height     	-   height goes here. If NULL no result is returned for height.
+ @param  int*          		width     	-   width goes here. If NULL no result is returned for width.
+
+ <pre>
+  	Example:
+		The following event handler fragment handles the HTML_EVENT_WINDOW_REFRESHED event on an auto positioned element.
+		It updates the element's style attributes from the auto positioned values of top, left, height, width.
+		This operation is important because, to operate properly, operations like drag, resize, and window manager functions require
+		style based positioning. This technique may be used to allow auto formatting (like center, left right etc) to
+		initially position certain elements and still use algorithms that rely on absolute positioning.
+
+    if (event->type == HTML_EVENT_WINDOW_REFRESHED)
+	{
+	char ascii_buff[256];
+	int top,left,width,height;
+		wcElGetPosWin(element, &top,&left,&width,&height);
+		rtp_sprintf(ascii_buff, "position:absolute;left:%dpx;top:%dpx;height:%dpx;width:%dpx;", left, top, height, width);
+		== Set the style but don't trigger a redraw
+		wcElSetStyle(element, ascii_buff,wcFALSE);
+	}
+ </pre>
+
+
+ @return        wcTRUE if the arguments are valid and the element has been drawn.
+ @return		wcFALSE if the element has not yet been drawn or it does not have a display element associated with it.
+
+ @see wcElGetPosStyle,wcElSetPosStyle
+ */
+/*****************************************************************************/
+
+wcBOOL wcElGetPosWin(wcEL element, int *top, int *left, int *width, int *height)
+{
+HTMLElement *pContainer;
+DisplayElement *pDisplay =0;
+	if (!element)
+		return(wcFALSE);
+	pContainer = (HTMLElement *)element;
+	pDisplay = pContainer->GetDisplayElement();
+
+	if (pDisplay)
+	{
+		if (pDisplay->mRect.left==0 &&  pDisplay->mRect.top==0 && pDisplay->mRect.right==0 && pDisplay->mRect.bottom==0)
+		{
+			if (top) 	*top   =0;
+			if (left)	*left  =0;
+			if (width) 	*width =0;
+			if (height) *height=0;
+		}
+		else
+		{
+			if (top) 	*top =pDisplay->mRect.top;
+			if (left)	*left =pDisplay->mRect.left;
+			if (width) 	*width =pDisplay->mRect.Width();
+			if (height) *height=pDisplay->mRect.Height();
+		}
+		return(wcTRUE);
+	}
+	else
+		return(wcFALSE);
+}
+
+/*****************************************************************************/
+// wcElGetPosStyle
+/**
+ @memo  Get the style positioning values of an element.
+ @doc           Get the current position of an element from its CSS or HTML positioning. Fails if the element has not
+ been positioned.
+ Note: wcElGetPosStyle can only obtain the coordinates of elements that were manually sized and positioned
+ with CSS or HTML attributes. The routine can be used in screen constructors on elements that have been positioned but not yet drawn.
+ After an is drawn, whether manually positioned or not, coordinates may be obtained by calling wcElGetPosWin.
+ Note: top, left height and width are returned as zero if they have not been set.
+
+ @param  wcEL          		Element     -   The element.
+ @param  int*          		top      	-   top goes here. If NULL no result is returned for top.
+ @param  int*          		left      	-   left goes here. If NULL no result is returned for left.
+ @param  int*          		height     	-   height goes here. If NULL no result is returned for height.
+ @param  int*          		width     	-   width goes here. If NULL no result is returned for width.
+
+ @return        wcTRUE if the argument is valid.
+
+ @see wcElGetPosStyle,wcElSetPosStyle
+ */
+/*****************************************************************************/
+
+wcBOOL wcElGetPosStyle(wcEL element, int *top, int *left, int *width, int *height)
+{
+CSSPropertyValue value;
+	if (!element)
+		return(wcFALSE);
+
+	if (top) 	*top   =0;
+	if (left)	*left  =0;
+	if (width) 	*width =0;
+	if (height) *height=0;
+
+	if ( top && (
+		(HELEMENT_OBJ(element)->GetStyleFromCSS(CSS_PROPERTY_TOP, &value) >= 0) ||
+		(HELEMENT_OBJ(element)->GetStyleFromHTML(CSS_PROPERTY_TOP, &value) >= 0)))
+		{
+		*top = (int) value.length.val.dec;
+		}
+	if (left && (
+		(HELEMENT_OBJ(element)->GetStyleFromCSS(CSS_PROPERTY_LEFT, &value) >= 0) ||
+		(HELEMENT_OBJ(element)->GetStyleFromHTML(CSS_PROPERTY_LEFT, &value) >= 0)))
+		{
+			*left = (int) value.length.val.dec;
+		}
+	if (width && (
+		(HELEMENT_OBJ(element)->GetStyleFromCSS(CSS_PROPERTY_WIDTH, &value) >= 0) ||
+		(HELEMENT_OBJ(element)->GetStyleFromHTML(CSS_PROPERTY_WIDTH, &value) >= 0)))
+		{
+			*width = (int) value.length.val.dec;
+		}
+	if (height && (
+		(HELEMENT_OBJ(element)->GetStyleFromCSS(CSS_PROPERTY_HEIGHT, &value) >= 0) ||
+		(HELEMENT_OBJ(element)->GetStyleFromHTML(CSS_PROPERTY_HEIGHT, &value) >= 0)))
+		{
+			*height = (int) value.length.val.dec;
+		}
+	return(wcTRUE);
+}
+
+
+int webc_GuiInitConfig(HTMLBrowserConfig *pconfig);
+static HTMLEventStatus WinCreatecb (HBROWSER_HANDLE hbrowser,HTMLBrowserEvent* event);
+
+/*****************************************************************************/
+// wcWinCreateEx
+/**
+
+ @memo   Create a browser window.
+ @doc    Opens a new browser view in a window with specified border style, color, position and mode.
+ 		 Load optional initial content and sets a user supplied handler function to be called when the view is created.
+		 The Window config structure can be used to set the border color, background color, and border style.
+		 The Window config structure can be used to control window properties including if it is modal and if it is resizable.
+
+
+ @param  	wcCtx *Ctx 						Context to initialize with document information. This context block may be used as a handle to other wcAPI functions.
+ @param  	char *_windowname 				The DOM name to use for retrieve the window from the list of all windows.
+ @param  	wcEventCallback BodyCallback	If non-zero provides a callback function that is activated when the window is created. May be used initialize application fragments and to dynamically generate content and insert into the page.
+ @param  	char *_defaultUrl				If non-zero initialize the window from the content at the URL.
+ @param  	char *_defaultContent           If non-zero initialize the window from content stored in this string.
+ @param		struct HTMLBrowserWindowConfig *pWindowConfig;
+ <pre>
+			pWindowConfig must be zeroed and then initialized with proper values.
+        struct HTMLBrowserWindowConfig
+		{
+            DISPLAY_INT top;                top, left, height and width of the Window.
+            DISPLAY_INT left;
+            DISPLAY_INT height;
+            DISPLAY_INT width;
+        	DISPLAY_INT BorderThickness;    Thickness of the border in pixels
+        	WEBC_UINT32	BorderColor;        Border Color in RGBA
+        	WEBC_UINT32 BackGroundColor;    Background Color in RGBA
+        	WEBC_UINT32 BorderStyle;        BS_RAISED,BS_LOWERED,BS_RIDGE or BS_GROOVE
+			WEBC_UINT32 Radius;             In non-zero create rounded corners, with raius in pixels.
+        	WEBC_UINT32 WindowFlags;        Or together the folowing options
+
+        	WF_DISABLESCROLLBARS  - If set content is clipped and no scrollbars appear on overflow.
+        	WF_MODAL			  - If set the focus is owned by the window until released.
+			                        Note: You should call wcWinExecute(); to process a modal window
+        	WF_SAVEUNDER          - If set the screen contents are saved when the window is created and restored when
+        	                        the window is destroyed.
+        	WF_SPRITE             - Like WF_SAVEUNDER but if the window is moved it manipulates the frame buffer
+                                    without repainting.
+        };
+
+</pre>
+ <pre>
+ Example:
+</pre>
+
+
+ @return wcWinCreateEx returns 0 if it was able to create the window, -1 otherwise.
+
+ @see wcWinCreate, wcWinClose
+ */
+/*****************************************************************************/
+
+
+int wcWinCreateEx(
+	wcCtx *Ctx,
+	char *_windowname,
+	wcEventCallback BodyCallback,
+	char *_defaultUrl,
+	char *_defaultContent,
+	struct HTMLBrowserWindowConfig *pWindowConfig
+  )
+{
+	HTMLBrowserConfig config, *pconfig;
+
+    rtp_memset(Ctx, 0, sizeof(*Ctx));
+	pconfig = (HTMLBrowserConfig *)&config;
+    rtp_memset(pconfig, 0, sizeof(*pconfig));
+	if (webc_GuiInitConfig(pconfig) < 0)
+		return -1;
+    pconfig->browserEventHandler = WinCreatecb;
+    pconfig->privateData = (void*) BodyCallback;
+
+	pconfig->WindowConfig = *pWindowConfig;
+	Ctx->hbrowser = webc_CreateBrowser(pconfig,  WEBC_TRUE, _windowname , "");
+	if (!Ctx->hbrowser)
+		return -1;
+	// Pass the user's callback structure to ourselves through browser private data.
+	if (BodyCallback)
+	{
+		webc_BrowserSetPrivateData((HBROWSER_HANDLE) Ctx->hbrowser, (void*) BodyCallback);
+	}
+
+	if (pWindowConfig->WindowFlags & WF_DISABLESCROLLBARS)
+		((HTMLBrowser *)Ctx->hbrowser)->SetScrollMode(SCROLL_MODE_NONE);
+	else
+		((HTMLBrowser *)Ctx->hbrowser)->SetScrollMode(SCROLL_MODE_AUTO);
+
+	Ctx->hdoc = webc_BrowserGetDocument(Ctx->hbrowser);
+	if (_defaultUrl)
+		webc_BrowserLoadUrl(Ctx->hbrowser, _defaultUrl);
+	else if (_defaultContent)
+	{
+		if (webc_DocWriteHtml((HDOC_HANDLE) Ctx->hdoc, _defaultContent, rtp_strlen(_defaultContent), WEBC_TRUE) < 0)
+			return -1;
+	}
+
+
+	if (pWindowConfig->WindowFlags & WF_MODAL)
+	{
+		// Lock the focus, may be released
+		webc_ClaimBrowserFocus(Ctx->hbrowser);
+	}
+	return 0;
+}
+
+static HTMLEventStatus WinCreatecb (HBROWSER_HANDLE hbrowser,HTMLBrowserEvent* event)
+{
+	switch (event->type)
+	{
+		case HTML_BROWSER_EVENT_DOCUMENT_TITLE_CHANGE:
+		{
+			wcEventCallback BodyCallback = (wcEventCallback) webc_BrowserGetPrivateData((HBROWSER_HANDLE) hbrowser);
+			if (BodyCallback)
+			{
+				wcCtx _Ctx;
+				wcCtxtInit(&_Ctx, (wcBROW) hbrowser, (wcDOC) event->hdoc);
+				HTMLEvent e;
+				// Pass an HTML_EVENT_LOAD event
+				e.type = HTML_EVENT_LOAD;
+				if (BodyCallback(&_Ctx, (wcEL) 0,&e,0) == HTML_EVENT_STATUS_CONTINUE)
+				{
+					HELEMENT_HANDLE el = webc_DocFindElement (event->hdoc, 0, 0, HTML_ELEMENT_ANY, 0);
+					// Set the Body event handler, that will trigger a CREATE_OBJECT event.
+					wcElSetEventHandler(el, BodyCallback);
+				}
+			}
+		}
+		break;
+		case HTML_BROWSER_EVENT_UNKNOWN_CONTENT_TYPE:
+		case HTML_BROWSER_EVENT_STATUS_CHANGE:
+		case HTML_BROWSER_EVENT_LOAD_START:
+		case HTML_BROWSER_EVENT_LOAD_DONE:
+		case HTML_BROWSER_EVENT_DOCUMENT_URL_CHANGE:
+		case HTML_BROWSER_EVENT_HTTP_NOT_AUTHORIZED:
+		case HTML_BROWSER_EVENT_HTTP_AUTHORIZATION_REJECTED:
+		case HTML_BROWSER_EVENT_BLANK_DOCUMENT_REQUESTED:
+			break;
+	}
+
+	return (HTML_EVENT_STATUS_CONTINUE);
+}
+
+static wcBOOL wcWinExecuteRunning;
+static int wcWinExecuteReturnValue = 0;
+
+/*****************************************************************************/
+// wcWinExecute
+/**
+
+ @memo   Perfrom modal cycling of webC message loop on the context until stopped by wcWinExecuteStop.
+ @doc    Cycles the webC message loop on the context until stopped by a call to wcWinExecuteStop from inside an event handler.
+
+
+ @param  	wcCtx *Ctx 						Context of the window to cycle on.
+
+ @return The integer return code passed to wcWinExecuteStop.
+
+ Example:
+
+
+ @see wcWinCreateEx, wcWinClose,wcWinExecuteStop
+ */
+/*****************************************************************************/
+int wcWinExecute(wcCtx *Ctx)
+{
+	wcWinExecuteReturnValue = 0;
+	wcWinExecuteRunning = wcTRUE;
+	HTMLBrowser *pBrowser = (HTMLBrowser *) Ctx->hbrowser;
+    while (wcWinExecuteRunning && pBrowser->ProcessInputQueue(WEBC_TRUE) >= 0)
+		;
+	return wcWinExecuteReturnValue;
+}
+/*****************************************************************************/
+// wcWinExecuteStop
+/**
+
+ @memo   Tell wcWinExecute to stop cycling and return a value to its caller.
+ @doc    Tell wcWinExecute to stop cycling and return a value to its caller.
+
+
+ @param  	wcCtx *Ctx 						Context of the window to cycle on.
+ @param  	int   ReturnValue				Value to return to the caller of wcWinExecute.
+
+ @return Nothing
+
+ Example:
+
+
+ @see wcWinCreateEx, wcWinClose,wcWinExecute
+ */
+/*****************************************************************************/
+
+void wcWinExecuteStop(wcCtx *Ctx, int ReturnValue)
+{
+	wcWinExecuteReturnValue = ReturnValue;
+	wcWinExecuteRunning = wcFALSE;
+}
+
+/*****************************************************************************/
+// wcWinClaimFocus
+/**
+
+ @memo   Claim focus for a browser window.
+ @doc    Instructs webC to disard all events not destined for the current window. The Claim may be relesed by calling wcWinReleaseFocus. The claim is automatically released if
+ wcWinClose is called. wcWinClaimFocus is called by wcWinCreate and wcWinCreateEx when a Modal window is requested.
+
+ @param  	wcCtx *Ctx 						Context to claim focus for.
+
+ @return Nothing
+
+ @see wcWinReleaseFocus
+ */
+/*****************************************************************************/
+
+void wcWinClaimFocus(wcCtx *Ctx)
+{
+	webc_ClaimBrowserFocus(Ctx->hbrowser);
+}
+
+/*****************************************************************************/
+// wcWinReleaseFocus
+/**
+
+ @memo   Release focus that was previously claimed for this browser view.
+ @doc    Instructs webC to release the hold the browser view has on events dispatching and allow other browser views to
+         recieve events.
+
+ @param  	wcCtx *Ctx 						Context to claim focus for.
+
+ @return Nothing
+
+ @see wcWinClaimFocus
+ */
+/*****************************************************************************/
+
+void wcWinReleaseFocus(wcCtx *Ctx)
+{
+	webc_UnSetBrowserFocus(Ctx->hbrowser);
+}
+
+/*****************************************************************************/
+// wcWinSetFocus
+/**
+
+ @memo   Set the focus to a browser window and element.
+ @doc    Instructs webC to route keyboard events to the current window.
+
+ @param  	wcCtx *Ctx 			- Window to set focus to. Current context if window already has focus.
+ @param  	wcEL  Element		- Element in the window. If zero use the windows current focus element.
+
+ @return wcTRUE on success.
+
+ @see wcWinGetFocus
+ */
+/*****************************************************************************/
+
+wcBOOL wcWinSetFocus(wcCtx *Ctx,wcEL  Element)
+{
+
+	if (gpFocusBrowser != (HTMLBrowser *) Ctx->hbrowser)
+	{
+		gpFocusBrowser = (HTMLBrowser *) Ctx->hbrowser;
+		if (gpFocusBrowser->GetDisplayManager())
+		{
+			WebGraphics *gc = gpFocusBrowser->GetDisplayManager()->GetGraphics();
+			if (gc)
+				gc->BringToTop();
+		}
+	}
+
+	if (Element)
+	{
+		if (webc_ElementFocus((HELEMENT_HANDLE) Element, WEBC_TRUE) >= 0)
+			return wcTRUE;
+	}
+	return wcFALSE;
+}
+
+
+/*****************************************************************************/
+// wcWinMoveTo
+/**
+
+ @memo   Move a browser window.
+ @doc    Move a browser window.
+
+ @param  	wcCtx *Ctx 			- Window to move.
+ @param  	int		left		- Move to left, top (x,y)
+ @param  	int		top			-
+
+ @return wcTRUE on success.
+
+ @see wcWinGetFocus
+ */
+/*****************************************************************************/
+void wcWinMoveTo(wcCtx *Ctx,int left, int top)
+{
+int oldleft,oldtop,width,height;
+	wcWinGetPos(Ctx, &oldleft, &oldtop, &width, &height);
+	wcWinSetPos(Ctx, left, top, width, height);
+}
+
+// wcWinBringToTop
+/**
+
+ @memo   Raise window to z-order stack top.
+ @doc    Raise browser to z-order stack top.
+
+ @param  	wcCtx *Ctx 			- Window to raise
+
+ @return wcTRUE on success.
+
+ */
+/*****************************************************************************/
+void wcWinBringToTop(wcCtx *Ctx)
+{
+	if (((HTMLBrowser *) Ctx->hbrowser)->GetDisplayManager())
+	{
+		WebGraphics *gc = ((HTMLBrowser *) Ctx->hbrowser)->GetDisplayManager()->GetGraphics();
+		if (gc)
+			gc->BringToTop();
+	}
+}
+
+/*****************************************************************************/
+// wcWinGetPos
+/**
+ @memo  Get the displayed position of a window.
+ @doc           Get the current position of a window.
+
+ @param  wcCtx *			Ctx 		- 	Window to report on.
+ @param  int*          		top      	-   top goes here. If NULL no result is returned for top.
+ @param  int*          		left      	-   left goes here. If NULL no result is returned for leftl.
+ @param  int*          		height     	-   height goes here. If NULL no result is returned for height.
+ @param  int*          		width     	-   width goes here. If NULL no result is returned for width.
+
+ @return        wcTRUE if the return arguments are updated.
+ @return		wcFALSE otherwise.
+
+ @see wcWinSetPos
+ */
+/*****************************************************************************/
+
+wcBOOL wcWinGetPos(wcCtx *Ctx, int *left, int *top, int *width, int *height)
+{
+	if (((HTMLBrowser *) Ctx->hbrowser)->GetDisplayManager())
+	{
+		WebGraphics *gc = ((HTMLBrowser *) Ctx->hbrowser)->GetDisplayManager()->GetGraphics();
+		if (gc)
+			gc->GetPos(left, top, width, height);
+		return(wcTRUE);
+	}
+	return(wcFALSE);
+}
+
+
+/*****************************************************************************/
+// wcWinSetPos
+/**
+ @memo  Set the position, height and width of a window.
+ @doc  Set the position, height and width of a window.
+
+ @param  wcCtx *			Ctx 		- 	Window to report on.
+ @param  int          		top      	-   New top position
+ @param  int          		left      	-   New left position.
+ @param  int          		height     	-   New height.
+ @param  int          		width     	-   New width.
+
+ @return        wcTRUE on succes.
+
+ @see wcWinSetPos
+ */
+/*****************************************************************************/
+
+
+wcBOOL wcWinSetPos(wcCtx *Ctx, int left, int top, int width, int height)
+{
+
+	if (((HTMLBrowser *) Ctx->hbrowser)->GetDisplayManager())
+	{
+		WebGraphics *gc = ((HTMLBrowser *) Ctx->hbrowser)->GetDisplayManager()->GetGraphics();
+		if (gc)
+			gc->SetPos(left, top, width, height);
+		return(wcTRUE);
+	}
+	return(wcFALSE);
+}
+
+
+/*****************************************************************************/
+// wcWinGetFocus
+/**
+
+ @memo			Search for the element and or window with focus.
+ @doc			If the Context is uninitialized find the browser window with focus. Do a depth-first search of the document tree of the focus window
+ for the element having focus.
+
+ @return		wcEL - The handle of the element with focus.
+ @see           wcWinSetFocus,wcWinClaimFocus,wcWinReleaseFocus
+ */
+/*****************************************************************************/
+
+wcEL wcWinGetFocus(wcCtx *Ctx)
+{	// Note - will superceed webc_FindFocusElement()
+	if (!Ctx->hbrowser)
+	{
+		Ctx->hbrowser = webc_GetBrowserWithFocus();
+		if (Ctx->hbrowser)
+			Ctx->hdoc = (wcDOC) (HBROWSER_OBJ(Ctx->hbrowser)->GetDocument());
+	}
+	if (Ctx->hbrowser)
+	{
+		if (Ctx->hdoc)
+		{
+			HTMLFocusElementFinder f;
+			HTMLElement *pElement;
+			// pElement = (HDOC_OBJ(Ctx->hdoc))->FindElement(&f);
+			pElement =(HDOC_OBJ(Ctx->hdoc)->FindElement(&f));
+			return (wcEL) pElement;
+		}
+	}
+	return (wcEL) (0);
+}
+
+/*****************************************************************************/
+// wcWinClose
+/**
+
+ @memo   Close a browser window.
+ @doc    Close the current browser view, call object destroy message handlers and release internal resources.
+
+
+ @param  	wcCtx 	*Ctx 					Context of the window to close.
+
+ @return Nothing.
+
+ @see wcWinCreateEx, wcWinCreate
+ */
+/*****************************************************************************/
+
+void wcWinClose(wcCtx *Ctx)
+{
+	webc_DestroyBrowser(Ctx->hbrowser,0);
+}
+
+/*****************************************************************************/
+// wcPushData
+/**
+
+ @memo   Associate a data pointer with a window or element within a window.
+ @doc    The data is not used by WebC. Typical use of private data is to associate
+         application specific data with the window when it is created, perhaps at start-up
+         and to attach element specific data to screen objects as screens are loaded and created.
+         Event handlers can then access this data and perform application specific operations based on
+		 their contents and perform updates on their contents.
+
+		 Note: wcPushData places the argument onto an internal stack. You must call wcGetData to access the private data pointer that was
+		 last pushed. When you are done using the data pointer stack you may pop your value and expose the previous private data pointer by
+		 calling wcPopData. Most applications don't need a stack more than one level deep but more complex interfaces involving drag and drop, slide under windows use this capability.
+
+ @param  wcCtx* Ctx 	- Context to associate private data with.
+ @param  wcEL   Element - Element to associate private data with. If this value is zero the data is associated with the context and not a specific element within the conmtext.
+ @param  void*  data    - Data pointer to push.
+
+ @return Nothing
+ */
+/*****************************************************************************/
+
+void wcPushData(wcCtx *Ctx, wcEL  Element, void* data)
+{
+	if (Element)
+		HELEMENT_OBJ(Element)->PushPrivateData(data);
+	else
+		HBROWSER_OBJ(Ctx->hbrowser)->PushPrivateData(data);
+}
+
+
+/*****************************************************************************/
+// wcGetData
+/**
+
+ @memo   Retrieve a data pointer from a window or element within a window.
+ @doc    Retrieves a data pointer that was placed by wcPushData.
+
+		 See wcPushData for an explanation about webC private data.
+
+ @param  wcCtx* Ctx 	- Context to retrieve private data from.
+ @param  wcEL   Element - Element to retrieve private data from. If this value is zero the data is retrieved from the context and not a specific element within the conmtext.
+
+ @return void*  data    - Data pointer that was last pushed.
+ */
+/*****************************************************************************/
+
+void * wcGetData(wcCtx *Ctx, wcEL  Element)
+{
+void *pdata=0;
+	if (Element)
+		pdata = (void *) HELEMENT_OBJ(Element)->GetFromPrivateDataStack();
+	else
+		pdata = (void *) HBROWSER_OBJ(Ctx->hbrowser)->GetFromPrivateDataStack();
+	return pdata;
+}
+/*****************************************************************************/
+// wcPopData
+/**
+
+ @memo   Pop the current data pointer from the a window or element within the window.
+
+ @param  wcCtx* Ctx 	- Context to retrieve private data from.
+ @param  wcEL   Element - Element whose data stack is to be popped. If this value is zero the context data stack is popped.
+
+ @return nothing
+ */
+/*****************************************************************************/
+
+void wcPopData(wcCtx *Ctx, wcEL  Element)
+{
+	if (Element)
+		HELEMENT_OBJ(Element)->PopPrivateData();
+	else
+		HBROWSER_OBJ(Ctx->hbrowser)->PopPrivateData();
+}
+
+
+/* Called from the Display Manager Draw after the display been refreshed */
+static wcBOOL SendDrawEvents(wcCtx* Ctx, wcEL El, int UserIntParm, void *UserVoidParm)
+{
+   	HTMLEvent the_event;
+   	the_event.type = HTML_EVENT_WINDOW_REFRESHED;
+	wcTriggerEvent(El, &the_event, 0);
+	return wcFALSE;
+}
+void wcDisplayManagerDrawCallback(DisplayManager *manager)
+{
+wcBROW browser;
+HTMLBrowser  *pBrowser;
+wcCtx _Ctx;
+
+	browser = (wcBROW) webc_FindBrowserByDisplayManager((void *) manager);
+	if (!browser)
+		return;
+	pBrowser = (HTMLBrowser  *) browser;
+	wcCtxtInit(& _Ctx, (wcBROW) browser, (wcDOC) pBrowser->GetDocument());
+	wcDocEnumerate(&_Ctx, SendDrawEvents, 0, 0);
+}
+//wcCtx* wcWinSetFocus(char * _windowname);
+//wcCtx* wcWinGetFocus(void);
+//wcCtx* wcWinGetRoot(void);

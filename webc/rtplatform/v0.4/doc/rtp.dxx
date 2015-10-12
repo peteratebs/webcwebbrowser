@@ -1,0 +1,400 @@
+/**@name EBSnet RTPlatform
+ <center>
+ Embedded Runtime Platform version 0.4 <br>
+ <br>
+ </center>
+ */
+//@{
+    /** @name Introduction
+        @doc  RTPlatform is EBSnet's new cross-platform runtime environment.  
+              It defines an interface between the high-level platform-independent 
+              code in EBSnet's standalone products and the lower-level
+              operating system/hardware environment.
+              
+              RTPlatform is divided into a number of modules, each providing an
+              interface to a specific service.  For example, there is the rtpnet
+              module, which defines a sockets-style interface to TCP/IP networking
+              services, and rtpfile, which defines a roughly POSIX-style interface to
+              file system services. 
+              
+              Some of the RTPlatform modules have platform-independent, or <i>generic</i>,
+              implementations; others must rely on platform-specific code for their
+              implementation (these are the <i>environment-specific</i> or 
+              <i>non-portable</i> modules).  The release distribution of RTPlatform may include
+              many different versions of the non-portable modules, each in a 
+              different directory that indicates the target environment.  For example,
+              the rtpnet module has an implementation for EBSnet's TCP/IP stack, RTIP, 
+              in "source/rtip/rtpnet.c", and an implementation for
+              the Winsock library on 32-bit Microsoft Windows environments in 
+              "source/win32/rtpnet.c".  
+              
+              Although there may be many ".c" files (one for each target) corresponding to a particular module,
+              there is usually only one ".h" file, located in the 
+              "include" directory.  Therefore, because all of the
+              header files are platform-independent, there are often no environment-specific 
+              header files included by the "core" source files of 
+              EBSnet's products.  This greatly simplifies the porting process because
+              it eliminates any potential symbol/namespace collisions.              
+      */
+	    
+	/** @name Module Descriptions */
+	//@{
+	
+		/** @name Generic (Platform-independent) Modules */
+		//@{
+		
+			/** @name RTP
+	    		@memo RTPlatform Stub Utility
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtp.c
+	    	//@}
+	
+			/** @name RTPBSEARCH
+	    		@memo Binary Search Utility
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpbsearch.c
+	    	//@}
+	    	
+	    	/** @name RTPCHAR
+	    		@memo Character Manipulation Services
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpchar.c
+	    	//@}
+	
+	    	/** @name RTPDATE
+	    		@memo Date Services
+	    	    @doc  These functions sometimes need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpdate.c
+	    	//@}
+	    	
+	    	/** @name RTPDEBUG
+	    		@memo Debug Services
+	    	    @doc  These functions sometimes need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpdebug.c
+	    	//@}
+	    	
+	    	/** @name RTPDLLIST
+	    		@memo Double Link List Utility
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpdllist.c
+	    	//@}
+
+	    	/** @name RTPDUTIL
+	    		@memo Date/Timestamp Utilities
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. 
+	    	    
+		    	      Depends on: \Ref{RTPDATE}
+	    	  */
+	    	//@{
+	    		//@Include: ../source/generic/rtpdutil.c
+	    	//@}
+	    	
+	    	/** @name RTPFIO
+	    	    @memo High Level File Services  
+	    	    @doc  These functions <b>DO NOT</b> need to be ported.
+
+		    	      Depends on: \Ref{RTPFILE}
+		   	  */
+	    	//@{
+	    		//@Include: ../source/generic/rtpfio.c
+	    	//@}
+		    
+		    /** @name RTPHELPER
+	    		@memo Helper Thread Services
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. 
+	    	    
+	    	          Depends on: \Ref{RTPTHRD}
+	    	  */
+	    	//@{
+	    		//@Include: ../source/generic/rtphelper.c
+	    	//@}
+		    
+		    /** @name RTPMEMDB
+		    	@memo Dynamic Memory Debugging Services  
+		    	@doc  These functions <b>DO NOT</b> need to be ported. 
+		    	
+		    	      Depends on: \Ref{RTPMEM}
+		      */
+	    	//@{
+	    	    //@Include: ../source/generic/rtpmemdb.c
+	    	//@}
+	    	
+	    	/** @name RTPMTXDB
+		    	@memo Mutex Debugging Services  
+		    	@doc  These functions <b>DO NOT</b> need to be ported. 
+		    	
+		    	      Depends on: \Ref{RTPSIGNL}
+		      */
+	    	//@{
+	    	    //@Include: ../source/generic/rtpmtxdb.c
+	    	//@}
+	    	
+	    	/** @name RTPNETSM
+		    	@memo Dynamic Memory Debugging Services  
+		    	@doc  These functions <b>DO NOT</b> need to be ported. 
+		    	
+		    	      Depends on: \Ref{RTPMEM}
+		      */
+	    	//@{
+	    	    //@Include: ../source/generic/rtpmemdb.c
+	    	//@}
+	    	
+	    	/** @name RTPPBUF
+	    	    @memo Packet Buffer Distribution Services
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtppbuf.c
+	    	//@}
+	    	
+	    	/** @name RTPPRINT
+	    	    @memo sprintf and related functions
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpprint.c
+	    	//@}
+	    	
+	    	/** @name RTPQSORT
+	    	    @memo Quick Sort Utility
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpqsort.c
+	    	//@}
+	    	
+	    	/** @name RTPRAND
+	    	    @memo Pseudo Random Number Generator  
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtprand.c
+	    	//@}
+	    	
+	    	/** @name RTPROT
+	    	    @memo Rotation Utility  
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtprot.c
+	    	//@}
+	    	
+	    	/** @name RTPSCNV
+	    	    @memo String Conversion Utility  
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpscnv.c
+	    	//@}
+	    	
+	    	/** @name RTPSEMDB
+		    	@memo Semaphore Debugging Services  
+		    	@doc  These functions <b>DO NOT</b> need to be ported. 
+		    	
+		    	      Depends on: \Ref{RTPSIGNL}
+		      */
+	    	//@{
+	    	    //@Include: ../source/generic/rtpsemdb.c
+	    	//@}
+	
+	    	/** @name RTPSTDUP
+	    	    @memo String Duplication Library Service  
+	    	    @doc  This function <b>DO NOT</b> need to be ported. */
+
+		    	      Depends on: \Ref{RTPMEM}
+	    	//@{
+	    		//@Include: ../source/generic/rtpstdup.c
+	    	//@}
+	    	
+	    	/** @name RTPSTR
+	    	    @memo String Library Services  
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpstr.c
+	    	//@}
+	    	
+	    	/** @name RTPTIMER
+	    	    @memo Timer Services  
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtptimer.c
+	    	//@}
+	    	
+	    	/** @name RTPWCHAR
+	    		@memo Wide Character Manipulation Services
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpwchar.c
+	    	//@}
+	    	
+	    	/** @name RTPWCS
+	    	    @memo Wide String Library Services  
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpwcs.c
+	    	//@}
+	    	
+	    	/** @name RTPWSCNV
+	    	    @memo Wide String Conversion Utility  
+	    	    @doc  These functions <b>DO NOT</b> need to be ported. */
+	    	//@{
+	    		//@Include: ../source/generic/rtpwscnv.c
+	    	//@}
+
+		//@}
+
+		/** @name Platform-specific Modules */
+		//@{
+		
+			/** @name RTPDOBJ
+	    	    @memo Directory Object Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpdobj.c
+	    	//@}
+	    	
+	    	/** @name RTPENV
+	    	    @memo Environment Variable Storage  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpenv.c
+	    	//@}
+		
+	    	/** @name RTPFILE
+	    	    @memo Low Level File System Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpfile.c
+	    	//@}
+	    	
+	    	/** @name RTPIRQ
+	    	    @memo Interrupt Service Routine  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpirq.c
+	    	//@}
+	    	
+	    	/** @name RTPKERN
+	    	    @memo Kernel Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpkern.c
+	    	//@}
+	    	
+	    	/** @name RTPMEM
+	    	    @memo Dynamic Memory Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpmem.c
+	    	//@}
+	    	
+	    	/** @name RTPNET
+	    	    @memo Network Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpnet.c
+	    	//@}
+	    	
+	    	/** @name RTPPKT
+	    	    @memo Packet Driver Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtppkt.c
+	    	//@}
+	    	
+	    	/** @name RTPSIGNL
+	    	    @memo Thread synchronization Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpsignl.c
+	    	//@}
+	
+	    	/** @name RTPSSL
+	    	    @memo Secure Socket Layer Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpssl.c
+	    	//@}
+	    	
+	    	/** @name RTPTERM
+	    	    @memo Terminal Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpterm.c
+	    	//@}
+	    	
+	    	/** @name RTPTHRD
+	    	    @memo Thread Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpthrd.c
+	    	//@}
+	    	
+	    	/** @name RTPTIME
+	    	    @memo System Time Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtptime.c
+	    	//@}
+	    	
+	    	/** @name RTPWFILE
+	    	    @memo Wide Character Low Level File System Services  
+	    	    @doc  These functions <b>MUST</b> be ported. */
+	    	//@{
+	    	    //@Include: ../source/template/rtpwfile.c
+	    	//@}
+   		//@}
+
+	//@}	
+
+	/** @name Appendix A 
+    	@memo  Porting an RTPlatform-enabled product to a new environment.
+    	@doc    	
+    	EBSnet's RTPlatform-enabled products all require a certain subset of the 
+    	total services provided by the RTPlatform library.  For each product, it is
+    	necessary to determine the modules required to provide the necessary services to 
+    	that product.  (For example, FTP may require rtpnet for networking, 
+    	rtpfile for file system access, rtpdate for date management, and rtpsignl/rtpthrd
+    	for multi-threaded operation.)
+    	
+    	The first step in the porting process is to create a new build environment,
+    	i.e. a new makefile or project file, for the new target.  All the product's "core"
+    	files (the ones in the product's example project file that do not begin with
+    	"rtp", and thus are not a part of RTPlatform) should be added to the new
+    	makefile/project file.  
+    	
+    	The next step in porting an RTPlatform-enabled product to a new environment is
+    	to identify the list of RTPlatform modules required by that product.  Once this has
+    	been done, this list can be separated into those modules which have generic, portable
+    	implementations (and thus do not need to be modified in order to support a new 
+    	environment), and those which are specific to a particular OS, CPU, software library,
+    	etc.  The generic RTPlatform modules are located in the RTPlatform install directory
+    	under "source/generic".  These files should be added into the makefile/project file
+    	"as is".
+    	
+    	Once this is complete, environment-specific versions of the non-portable modules must 
+    	be added into the build environment.  One should first refer to "source/" to see if 
+    	a compatible version of the required module(s) is already available as part of the 
+    	current RTPlatform distribution.  Those modules that are already ported should be added 
+    	to the build environment.  The remaining modules must be ported manually to the new 
+    	target.  
+    	
+    	To port an RTPlatform module to a new target, first locate the template version of 
+    	that module under "source/template".  Create a new directory inside "source/" for the 
+    	new target and copy the template version into this directory; this is the copy of the 
+    	file that you will modify to implement the required functionality in your target 
+    	environment.  Each template file has documentation in the comments above each function 
+    	that describes what the function should do.  
+    	
+    	<b>NOTE: <i>The header files are compiler specific (rather than target specific). 
+		If it is desired to make use of these header files to obtain native implementations 
+		of the modules, it is advised to first build with the generic implementations so 
+		not to run into any type and/or naming conflicts. Then attempt to build using the 
+		native version.  If any problems arise and persist, revert to the EBSnet generic 
+		implementation.  A number of compilers have poor implementations of these standard 
+		functions, and type and naming conflicts can occure if a project permits native header 
+		inclusion through to the core modules instead of segregating them to the RTPlatform 
+		source files.</pre></i></b>
+      */
+    
+//@}

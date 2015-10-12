@@ -1,0 +1,77 @@
+HTMLFrameElement
+
+	Base Class
+		HTMLElement
+
+	Description
+		Object type for HTML <frame> tag.
+
+	Properties	
+	
+		frameBorder
+			Type
+				integer
+			Description
+				The width in pixels of the border around this frame.
+			Read-only
+				no
+
+		location
+			Type
+				string
+			Description
+				The URL of the document currently displayed by this frame.
+			Read-only
+				no
+
+		marginHeight
+			Type
+				integer
+			Description
+				The number of pixels to pad the content of the frame's document in the vertical direction.
+			Read-only
+				no
+
+		marginWidth
+			Type
+				integer
+			Description
+				The number of pixels to pad the content of the frame's document in the horizontal direction.
+			Read-only
+				no
+
+		name
+			Type
+				string
+			Description
+				The name of this frame.
+			Read-only
+				no	
+
+		noResize
+			Type
+				boolean
+			Description
+				Whether this frame can be re-sized; frame resizing is not currently implemented, so setting this property will not have any affect.
+			Read-only
+				no
+
+		scrolling
+			Type
+				string
+			Description
+				Controls how scroll bars are attached to this frame.  "yes" means they are always present, "no" means they are always hidden, "auto" means scroll bars are added as content requires.
+			Read-only
+				no
+
+		src
+			Type
+				string
+			Description
+				The URL of the document currently displayed by this frame.
+			Read-only
+				no
+	
+	Methods
+
+		none

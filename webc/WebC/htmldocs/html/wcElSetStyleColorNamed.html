@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcElSetStyleColorNamed</A></H2></TD><TD><H2>(wcEL element,  CSSPropertyType Prop,<BR>&nbsp; char* ColorName,  wcBOOL refresh)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Set the color of an element using CSS. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Formats a string and passes it to wcElSetStyle() to set the a color property of an element using CSS.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcEL</B> - 	Element     -   The element.
+<BR><B>Prop</B> -     Which color property to set.
+<BR><B>char</B> -  *          	ColorName.
+<BR><B>refresh</B> -       		Redraw the element immediately if wcTRUE.
+<PRE>
+<br>These are the most common properties that you might set.<br>
+CSS_PROPERTY_COLOR - The text color
+CSS_PROPERTY_BACKGROUND_COLOR - The background
+<br>These properties may also be set.<br>
+CSS_PROPERTY_ALINK_COLOR,CSS_PROPERTY_VLINK_COLOR,CSS_PROPERTY_LINK_COLOR,CSS_PROPERTY_OUTLINE_COLOR,CSS_PROPERTY_BORDER_BOTTOM_COLOR,CSS_PROPERTY_BORDER_COLOR
+CSS_PROPERTY_BORDER_LEFT_COLOR,CSS_PROPERTY_BORDER_RIGHT_COLOR,CSS_PROPERTY_BORDER_TOP_COLOR
+<br>These named color values are supported.<br>
+AliceBlue,AntiqueWhite,Aqua,Aquamarine,Azure,Beige,Bisque,Black,BlanchedAlmond,Blue,BlueViolet,Brown,BurlyWood,CadetBlue,Chartreuse,Chocolate,Coral,CornflowerBlue,Cornsilk,
+Crimson,Cyan,DarkBlue,DarkCyan,DarkGoldenRod,DarkGray,DarkGreen,DarkKhaki,DarkMagenta,DarkOliveGreen,Darkorange,DarkOrchid,DarkRed,DarkSalmon,DarkSeaGreen,DarkSlateBlue,
+DarkSlateGray,DarkTurquoise,DarkViolet,DeepPink,DeepSkyBlue,DimGray,DodgerBlue,Feldspar,FireBrick,FloralWhite,ForestGreen,Fuchsia,Gainsboro,GhostWhite,Gold,GoldenRod,Gray,
+Green,GreenYellow,HoneyDew,HotPink,IndianRed,Indigo,Ivory,Khaki,Lavender,LavenderBlush,LawnGreen,LemonChiffon,LightBlue,LightCoral,LightCyan,LightGoldenRodYellow,LightGrey,
+LightGreen,LightPink,LightSalmon,LightSeaGreen,LightSkyBlue,LightSlateBlue,LightSlateGray,LightSteelBlue,LightYellow,Lime,LimeGreen,Linen,Magenta,Maroon,MediumAquaMarine,
+MediumBlue,MediumOrchid,MediumPurple,MediumSeaGreen,MediumSlateBlue,MediumSpringGreen,MediumTurquoise,MediumVioletRed,MidnightBlue,MintCream,MistyRose,Moccasin,NavajoWhite,
+Navy,OldLace,Olive,OliveDrab,Orange,OrangeRed,Orchid,PaleGoldenRod,PaleGreen,PaleTurquoise,PaleVioletRed,PapayaWhip,PeachPuff,Peru,Pink,Plum,PowderBlue,Purple,Red,
+RosyBrown,RoyalBlue,SaddleBrown,Salmon,SandyBrown,SeaGreen,SeaShell,Sienna,Silver,SkyBlue,SlateBlue,SlateGray,Snow,SpringGreen,SteelBlue,Tan,Teal,Thistle,Tomato,
+Transparent,Turquoise,Violet,VioletRed,Wheat,White,WhiteSmoke,Yellow,YellowGreen<br>
+You may also use named colors with an alpha channel component. Wcapi.h contains set of macros that generate rbga() quoted strings that may be used whereever a named color value is expected.
+The macros have the same base name as the named colors. The colr is predeeded by "rgba" and the macros take an alpha channel value as an argument (a decimal value between 0 and 1).
+For example, the intrinsic HTML color "LightSkyBlue" can expressed as "rgba(135,206,250)". When the rgbaLightSkyBlue(A) macro is expanded it produces "rgba(135,206,250,A)" where A is expanded.
+So rgbaLightSkyBlue(.5)	produces the string "rgba(135,206,250,.5)" which will display sky blue with 50 per cent opacity.<br>
+rgbaAliceBlue(A),rgbaAntiqueWhite(A),rgbaAqua(A),rgbaAquamarine(A),rgbaAzure(A),rgbaBeige(A),rgbaBisque(A),rgbaBlack(A),rgbaBlanchedAlmond(A),rgbaBlue(A),rgbaBlueViolet(A),rgbaBrown(A),rgbaBurlyWood(A),rgbaCadetBlue(A),rgbaChartreuse(A),rgbaChocolate(A),rgbaCoral(A),rgbaCornflowerBlue(A),rgbaCornsilk(A),
+rgbaCrimson(A),rgbaCyan(A),rgbaDarkBlue(A),rgbaDarkCyan(A),rgbaDarkGoldenRod(A),rgbaDarkGray(A),rgbaDarkGreen(A),rgbaDarkKhaki(A),rgbaDarkMagenta(A),rgbaDarkOliveGreen(A),rgbaDarkorange(A),rgbaDarkOrchid(A),rgbaDarkRed(A),rgbaDarkSalmon(A),rgbaDarkSeaGreen(A),rgbaDarkSlateBlue(A),
+rgbaDarkSlateGray(A),rgbaDarkTurquoise(A),rgbaDarkViolet(A),rgbaDeepPink(A),rgbaDeepSkyBlue(A),rgbaDimGray(A),rgbaDodgerBlue(A),rgbaFeldspar(A),rgbaFireBrick(A),rgbaFloralWhite(A),rgbaForestGreen(A),rgbaFuchsia(A),rgbaGainsboro(A),rgbaGhostWhite(A),rgbaGold(A),rgbaGoldenRod(A),rgbaGray(A),
+rgbaGreen(A),rgbaGreenYellow(A),rgbaHoneyDew(A),rgbaHotPink(A),rgbaIndianRed(A),rgbaIndigo(A),rgbaIvory(A),rgbaKhaki(A),rgbaLavender(A),rgbaLavenderBlush(A),rgbaLawnGreen(A),rgbaLemonChiffon(A),rgbaLightBlue(A),rgbaLightCoral(A),rgbaLightCyan(A),rgbaLightGoldenRodYellow(A),rgbaLightGrey(A),
+rgbaLightGreen(A),rgbaLightPink(A),rgbaLightSalmon(A),rgbaLightSeaGreen(A),rgbaLightSkyBlue(A),rgbaLightSlateBlue(A),rgbaLightSlateGray(A),rgbaLightSteelBlue(A),rgbaLightYellow(A),rgbaLime(A),rgbaLimeGreen(A),rgbaLinen(A),rgbaMagenta(A),rgbaMaroon(A),rgbaMediumAquaMarine(A),
+rgbaMediumBlue(A),rgbaMediumOrchid(A),rgbaMediumPurple(A),rgbaMediumSeaGreen(A),rgbaMediumSlateBlue(A),rgbaMediumSpringGreen(A),rgbaMediumTurquoise(A),rgbaMediumVioletRed(A),rgbaMidnightBlue(A),rgbaMintCream(A),rgbaMistyRose(A),rgbaMoccasin(A),rgbaNavajoWhite(A),
+rgbaNavy(A),rgbaOldLace(A),rgbaOlive(A),rgbaOliveDrab(A),rgbaOrange(A),rgbaOrangeRed(A),rgbaOrchid(A),rgbaPaleGoldenRod(A),rgbaPaleGreen(A),rgbaPaleTurquoise(A),rgbaPaleVioletRed(A),rgbaPapayaWhip(A),rgbaPeachPuff(A),rgbaPeru(A),rgbaPink(A),rgbaPlum(A),rgbaPowderBlue(A),rgbaPurple(A),rgbaRed(A),
+rgbaRosyBrown(A),rgbaRoyalBlue(A),rgbaSaddleBrown(A),rgbaSalmon(A),rgbaSandyBrown(A),rgbaSeaGreen(A),rgbaSeaShell(A),rgbaSienna(A),rgbaSilver(A),rgbaSkyBlue(A),rgbaSlateBlue(A),rgbaSlateGray(A),rgbaSnow(A),rgbaSpringGreen(A),rgbaSteelBlue(A),rgbaTan(A),rgbaTeal(A),rgbaThistle(A),rgbaTomato(A),
+rgbaTransparent(A),rgbaTurquoise(A),rgbaViolet(A),rgbaVioletRed(A),rgbaWheat(A),rgbaWhite(A),rgbaWhiteSmoke(A),rgbaYellow(A),rgbaYellowGreen(A)
+</PRE>
+<BR><DT><B>Returns:</B><DD>  nothing.
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcElSetStylePos.html">wcElSetStylePos</A>,,<!1><A HREF="wcElSetStyleColorHtml.html">wcElSetStyleColorHtml</A>, <!1><A HREF="wcElSetStyleColorNamed.html">wcElSetStyleColorNamed</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

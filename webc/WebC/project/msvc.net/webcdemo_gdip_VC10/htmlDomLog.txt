@@ -1,0 +1,6 @@
+jhtml_doc_write
+jhtml_element_resolve(style)
+jstyle_getProperty CSSPropertyType= 78
+jstyle_getProperty CSSPropertyType= 78
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 78

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">Appendix B</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Additional display configuration parameters.</BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Run time configuration"></A>
+<A HREF=AppendixB.html><B>Run time configuration</B></A></TD><TD><BR>
+<I>webcdefault.cpp contains a table of default values that determine how webC graphical elements will be displayed. The table is initialized in bulk at startup but individual values may be changed later by calling an API.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Changeable Parameters"></A>
+<A HREF=ChangeableParameters.html><B>Changeable Parameters</B></A></TD><TD><BR>
+<I>Click on this link to view display parameters that may be configured. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="webc_RestoreDefaults"></A>
+<A HREF=AppendixB.html><B>webc_RestoreDefaults</B></A></TD><TD><BR>
+<I>Called by webC as part of its initialization sequence. This function may be editted directly to change default settings when the application is compiled. Alternatively, at run time, the function webc_SetDefault() may be called to change individual values.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="_webc_SetDefault"></A>
+<A HREF=_webc_SetDefault.html><B>_webc_SetDefault</B></A></TD><TD><BR>
+<I>_webc_SetDefault(INDEX, VALUE) may be called to change any of the default values at run time. You should not call _webc_SetDefault directly, instead call the macro webc_SetDefault(), which castes the second argument to void *. </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>Additional display configuration parameters.</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

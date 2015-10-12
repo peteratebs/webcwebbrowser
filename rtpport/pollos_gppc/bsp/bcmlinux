@@ -1,0 +1,187 @@
+
+
+
+99 /* MII BCM5400 1000-BASET Control register */
+100 #define MII_BCM5400_GB_CONTROL                  0x09
+101 #define MII_BCM5400_GB_CONTROL_FULLDUPLEXCAP    0x0200
+102 
+103 /* MII BCM5400 AUXCONTROL register */
+104 #define MII_BCM5400_AUXCONTROL                  0x18
+105 #define MII_BCM5400_AUXCONTROL_PWR10BASET       0x0004
+106 
+107 /* MII BCM5400 AUXSTATUS register */
+108 #define MII_BCM5400_AUXSTATUS                   0x19
+109 #define MII_BCM5400_AUXSTATUS_LINKMODE_MASK     0x0700
+110 #define MII_BCM5400_AUXSTATUS_LINKMODE_SHIFT    8
+
+ static int reset_one_mii_phy(struct mii_phy* phy, int phy_id)
+ 71 {
+ 72         u16 val;
+ 73         int limit = 10000;
+ 74 
+ 75         val = __phy_read(phy, phy_id, MII_BMCR);
+ 76         val &= ~(BMCR_ISOLATE | BMCR_PDOWN);
+ 77         val |= BMCR_RESET;
+ 78         __phy_write(phy, phy_id, MII_BMCR, val);
+ 79 
+ 80         udelay(100);
+ 81 
+ 82         while (limit--) {
+ 83                 val = __phy_read(phy, phy_id, MII_BMCR);
+ 84                 if ((val & BMCR_RESET) == 0)
+ 85                         break;
+ 86                 udelay(10);
+ 87         }
+ 88         if ((val & BMCR_ISOLATE) && limit > 0)
+ 89                 __phy_write(phy, phy_id, MII_BMCR, val & ~BMCR_ISOLATE);
+ 90 
+ 91         return (limit <= 0);
+ 92 }
+ 93  
+191 static int bcm5400_init(struct mii_phy* phy)
+192 {
+193         u16 data;
+194 
+195         /* Configure for gigabit full duplex */
+196         data = phy_read(phy, MII_BCM5400_AUXCONTROL);
+197         data |= MII_BCM5400_AUXCONTROL_PWR10BASET;
+198         phy_write(phy, MII_BCM5400_AUXCONTROL, data);
+199 
+200         data = phy_read(phy, MII_BCM5400_GB_CONTROL);
+201         data |= MII_BCM5400_GB_CONTROL_FULLDUPLEXCAP;
+202         phy_write(phy, MII_BCM5400_GB_CONTROL, data);
+203 
+204         udelay(100);
+205 
+206         /* Reset and configure cascaded 10/100 PHY */
+207         (void)reset_one_mii_phy(phy, 0x1f);
+208 
+209         data = __phy_read(phy, 0x1f, MII_BCM5201_MULTIPHY);
+210         data |= MII_BCM5201_MULTIPHY_SERIALMODE;
+211         __phy_write(phy, 0x1f, MII_BCM5201_MULTIPHY, data);
+212 
+213         data = phy_read(phy, MII_BCM5400_AUXCONTROL);
+214         data &= ~MII_BCM5400_AUXCONTROL_PWR10BASET;
+215         phy_write(phy, MII_BCM5400_AUXCONTROL, data);
+216 
+217         return 0;
+218 }
+219 
+ static int bcm54xx_setup_aneg(struct mii_phy *phy, u32 advertise)
+469 {
+470         u16 ctl, adv;
+471 
+472         phy->autoneg = 1;
+473         phy->speed = SPEED_10;
+474         phy->duplex = DUPLEX_HALF;
+475         phy->pause = 0;
+476         phy->advertising = advertise;
+477 
+478         /* Setup standard advertise */
+479         adv = phy_read(phy, MII_ADVERTISE);
+480         adv &= ~(ADVERTISE_ALL | ADVERTISE_100BASE4);
+481         if (advertise & ADVERTISED_10baseT_Half)
+482                 adv |= ADVERTISE_10HALF;
+483         if (advertise & ADVERTISED_10baseT_Full)
+484                 adv |= ADVERTISE_10FULL;
+485         if (advertise & ADVERTISED_100baseT_Half)
+486                 adv |= ADVERTISE_100HALF;
+487         if (advertise & ADVERTISED_100baseT_Full)
+488                 adv |= ADVERTISE_100FULL;
+489         if (advertise & ADVERTISED_Pause)
+490                 adv |= ADVERTISE_PAUSE_CAP;
+491         if (advertise & ADVERTISED_Asym_Pause)
+492                 adv |= ADVERTISE_PAUSE_ASYM;
+493         phy_write(phy, MII_ADVERTISE, adv);
+494 
+495         /* Setup 1000BT advertise */
+496         adv = phy_read(phy, MII_1000BASETCONTROL);
+497         adv &= ~(MII_1000BASETCONTROL_FULLDUPLEXCAP|MII_1000BASETCONTROL_HALFDUPLEXCAP);
+498         if (advertise & SUPPORTED_1000baseT_Half)
+499                 adv |= MII_1000BASETCONTROL_HALFDUPLEXCAP;
+500         if (advertise & SUPPORTED_1000baseT_Full)
+501                 adv |= MII_1000BASETCONTROL_FULLDUPLEXCAP;
+502         phy_write(phy, MII_1000BASETCONTROL, adv);
+503 
+504         /* Start/Restart aneg */
+505         ctl = phy_read(phy, MII_BMCR);
+506         ctl |= (BMCR_ANENABLE | BMCR_ANRESTART);
+507         phy_write(phy, MII_BMCR, ctl);
+508 
+509         return 0;
+510 }
+511 
+512 static int bcm54xx_setup_forced(struct mii_phy *phy, int speed, int fd)
+513 {
+514         u16 ctl;
+515 
+516         phy->autoneg = 0;
+517         phy->speed = speed;
+518         phy->duplex = fd;
+519         phy->pause = 0;
+520 
+521         ctl = phy_read(phy, MII_BMCR);
+522         ctl &= ~(BMCR_FULLDPLX|BMCR_SPEED100|BMCR_SPD2|BMCR_ANENABLE);
+523 
+524         /* First reset the PHY */
+525         phy_write(phy, MII_BMCR, ctl | BMCR_RESET);
+526 
+527         /* Select speed & duplex */
+528         switch(speed) {
+529         case SPEED_10:
+530                 break;
+531         case SPEED_100:
+532                 ctl |= BMCR_SPEED100;
+533                 break;
+534         case SPEED_1000:
+535                 ctl |= BMCR_SPD2;
+536         }
+537         if (fd == DUPLEX_FULL)
+538                 ctl |= BMCR_FULLDPLX;
+539 
+540         // XXX Should we set the sungem to GII now on 1000BT ?
+541 
+542         phy_write(phy, MII_BMCR, ctl);
+543 
+544         return 0;
+545 }
+546 38 /* Link modes of the BCM5400 PHY */
+ 39 static const int phy_BCM5400_link_table[8][3] = {
+ 40         { 0, 0, 0 },    /* No link */
+ 41         { 0, 0, 0 },    /* 10BT Half Duplex */
+ 42         { 1, 0, 0 },    /* 10BT Full Duplex */
+ 43         { 0, 1, 0 },    /* 100BT Half Duplex */
+ 44         { 0, 1, 0 },    /* 100BT Half Duplex */
+ 45         { 1, 1, 0 },    /* 100BT Full Duplex*/
+ 46         { 1, 0, 1 },    /* 1000BT */
+ 47         { 1, 0, 1 },    /* 1000BT */
+ 48 };
+
+547 static int bcm54xx_read_link(struct mii_phy *phy)
+548 {
+549         int link_mode;
+550         u16 val;
+551 
+552         if (phy->autoneg) {
+553                 val = phy_read(phy, MII_BCM5400_AUXSTATUS);
+554                 link_mode = ((val & MII_BCM5400_AUXSTATUS_LINKMODE_MASK) >>
+555                              MII_BCM5400_AUXSTATUS_LINKMODE_SHIFT);
+556                 phy->duplex = phy_BCM5400_link_table[link_mode][0] ?
+557                         DUPLEX_FULL : DUPLEX_HALF;
+558                 phy->speed = phy_BCM5400_link_table[link_mode][2] ?
+559                                 SPEED_1000 :
+560                                 (phy_BCM5400_link_table[link_mode][1] ?
+561                                  SPEED_100 : SPEED_10);
+562                 val = phy_read(phy, MII_LPA);
+563                 phy->pause = (phy->duplex == DUPLEX_FULL) &&
+564                         ((val & LPA_PAUSE) != 0);
+565         }
+566         /* On non-aneg, we assume what we put in BMCR is the speed,
+567          * though magic-aneg shouldn't prevent this case from occurring
+568          */
+569 
+570         return 0;
+571 }
+572 
+
+

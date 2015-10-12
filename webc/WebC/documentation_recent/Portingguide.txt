@@ -1,0 +1,117 @@
+
+
+"..\..\..\include\util
+..\..\..\include\protocol
+..\..\..\include\minigui
+..\..\..\include\jscript
+..\..\..\include\imgdecode
+..\..\..\include\imgconvert
+..\..\..\include\htmldom
+..\..\..\include\htmldisplay
+..\..\..\include\browser
+..\..\..\gui\windows\include
+..\..\..\lib\mozilla
+..\..\..\..\rtplatform\v0.4\include\ms32
+..\..\..\..\rtplatform\v0.4\include
+..\..\..\ixml\v1.2\inc
+..\..\..\gui\framebuffer\FB_Fonts
+..\..\..\gui\framebuffer\include"
+
+
+Strategies for porting Rtplatform to a new target system.
+
+Introduction - Rtplatform provides webC with with a set of header files and 'C' subroutines that provoide a platform independent
+interface to the underlying target. Rtplatform source and header files are in two groups. The first group, generic, provides
+functionality in a generic way that will work on any system. The other group provides system specific functionality
+or functionality either becuase there is no generic functionality or a more efficient system specific solution is
+available.
+
+To add Rtplatform to you webC project you must:
+
+Add the path to the generic rtplatform header files to your include path.
+Add the path to the system specific rtplatform header files to your include path.
+(note: you may merge these two steps by copying your system specific header files to the generic include directory).
+Include the generic 'C' files in your project.
+Duplicate system specific 'C' files from another webC target and modify them for your target.
+Include the system specific 'C' files in your project.
+(note: you may merge these two steps by copying your system specific C source files to the generic source directory).
+
+To illustrate we'll describe how rtplatform is integrated into a windows mased build of webC.
+Note: IN the project the path to rtplatform is "..\..\..\..\rtplatform\v0.4" for shorthand we'll call this path $(RTPLATFORM)
+
+Rtplatform
+When webC is built to run in windows (ms32) the following rtplatform include paths are used for rtplatform.
+    $(RTPLATFORM)\include\ms32;$(RTPLATFORM)\include
+
+$(RTPLATFORM)\include\ms32 Contains the following system specific header files that must be provided by the rtplatform layer.
+    rtpprint.h,rtpscnv.h,rtpstr.h
+    The macros in these files most expand to ANSI C definitions and thus you should be able to simply copy the examples provided in
+    $(RTPLATFORM)\include\ms32 or $(RTPLATFORM)\include\linux.
+    rtprint.h Must provides macros called rtp_sprintf, and rtp_printf. rtp_sprintf is required, rtp_printf is used only
+    for diagnostics. If printf and sprintf are not available You may use the generic versions of these functions provided
+    in $(RTPLATFORM)\source\generic.
+
+$(RTPLATFORM)\include Contains generic include files that don't need modification.
+    (note: you if long complex include paths are a problem you can merge header files into a common directory).
+
+
+The following generic rtplatform files that should not require modification are required in the project.
+    $(RTPLATFORM)\source\generic\rtpchar.c
+    $(RTPLATFORM)\source\generic\rtpdutil.c
+    $(RTPLATFORM)\source\generic\rtpmemdb.c
+    $(RTPLATFORM)\source\generic\rtprand.c
+    $(RTPLATFORM)\source\generic\rtpstdup.c
+    $(RTPLATFORM)\source\generic\rtpstr.c
+    $(RTPLATFORM)\source\generic\rtpwchar.c
+    $(RTPLATFORM)\source\generic\rtpwcs.c
+    $(RTPLATFORM)\source\generic\rtpwscnv.c
+
+$(RTPLATFORM)\source\yourtarget contains system specific or system optimized functions.
+The following files are provided in $(RTPLATFORM)\source\win32 and $(RTPLATFORM)\source\linux. You should clone
+these files and either put them in a target specific subdirectory $(RTPLATFORM)\source\yourtarget.
+    $(RTPLATFORM)\source\win32\rtpdate.c
+    $(RTPLATFORM)\source\win32\rtptime.c
+    $(RTPLATFORM)\source\win32\rtpfile.c
+    $(RTPLATFORM)\source\win32\rtpnet.c
+    $(RTPLATFORM)\source\win32\rtpmem.c
+You must create your own Rtplatform target directory $(RTPLATFORM)\source\mytarget and populate it with ported versions of these files.
+
+Rtplatform header files -
+
+
+When building webC the include path for must include both the rtplatform generic header files and rtplatform
+system specific header files.
+
+For a generic windows build these two paths are included in the compiler's include path.
+
+..\..\..\..\rtplatform\v0.4\include\ms32
+..\..\..\..\rtplatform\v0.4\include
+
+
+The following system system specific header files must be provided by the rtplatform layer.
+
+rtpprint.h
+rtpscnv.h
+rtpstr.h
+
+
+
+
+
+The following system specific routines must be provided by the rtplatform layer.
+
+Dynamic memory - These functions can be implemented with ANSI C calls. (See rtpmem.c.)
+_rtp_malloc, _rtp_realloc, _rtp_calloc, _rtp_free
+Time and date funtions -    (See rtpdate.c and rtptime.c)
+    rtp_get_system_msec() must return the tick count in miliseconds.
+    rtp_get_date() must return the curent time and date. If a true date source is not available a generic version is provided
+    that may be used, if the generic version is used rtp_set_date() must be called once, it does not require the true date,
+    any valid date will do.
+File IO - (See rtpfile.c) Needed only if "file:" url support is desired. To disable file: url support you can set WEBC_SUPPORT_FILE
+to zero in webcfg.h. If you do implement these functions for your system examples are provided for windows, linux and RTFS.
+rtp_file_close,rtp_file_init, rtp_file_write, rtp_file_open,rtp_file_read,rtp_file_read,rtp_file_lseek
+Networking functions - (See rtpnet.c) Needed only if "http:" url support is desired. To disable http: url support you can set WEBC_SUPPORT_HTTP to zero in webcfg.h.
+If you do implement these functions for your system examples are provided for windows (Winsock) and linux (sockets).
+rtp_net_init,rtp_net_closesocket,rtp_net_setblocking,rtp_net_setnagle,rtp_net_setlinger,
+rtp_net_socket_stream,rtp_net_connect,rtp_net_recv,rtp_fd_isset,rtp_net_select,rtp_fd_set,rtp_fd_zero,rtp_net_send,rtp_net_gethostbyname
+rtp_net_is_connected,rtp_net_read_select.

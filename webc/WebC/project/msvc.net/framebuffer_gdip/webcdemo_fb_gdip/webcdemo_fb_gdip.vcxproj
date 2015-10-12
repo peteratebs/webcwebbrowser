@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FFF489F4-6082-4DAC-82B1-75753979CE79}</ProjectGuid>
+    <RootNamespace>webcdemo_fb_gdip</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\include\browser;..\..\..\..\include\webcapi;..\..\..\..\include\htmldom;..\..\..\..\include\htmldisplay;..\..\..\..\include\imgconvert;..\..\..\..\include\imgdecode;..\..\..\..\include\jscript;..\..\..\..\include\minigui;..\..\..\..\include\protocol;..\..\..\..\include\util;..\..\..\..\..\rtplatform\v0.4\include\ms32;..\..\..\..\..\rtplatform\v0.4\include;..\..\..\..\gui\framebuffer\FB_Fonts;..\..\..\..\gui\framebuffer\include;..\..\include;..\..\..\..\lib\mozilla;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;WEBC_SUPPORT_JSCRIPT=1;WEBC_SUPPORT_UNICODE=1;WEBC_DEBUG;__WEBC__;_CRTDBG_MAP_ALLOC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_VC80_UPGRADE=0x0710;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>libcpmtd.lib;libcmtd.lib;ws2_32.lib;gdiplus.lib;..\..\..\..\lib\openssl\openssl32.lib;oldnames.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBAbstractWindowManager.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBEventsandUtils.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FrameBufferDriver.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\WindowsBitMapEventing.cpp" />
+    <ClCompile Include="..\..\..\..\source\util\dbgprofile.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBAbstraction.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBAbstractionFonts.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\FBGraphicsContext.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\Filters.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\Localurlcallbacks.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\Remoteterminalwindows.cpp" />
+    <ClCompile Include="webcdemo_fb_gdip.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\source\WindowsBitMapFrameBuffer.cpp" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold6B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold9B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic6B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic9B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular6B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular9B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold11B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold12B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold13B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold15B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold16B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold17B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold18B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular11B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular12B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular13B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular15B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular16B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular17B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular18B0020E007e.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold10.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold11.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold12.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold13.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold14.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold14B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold20B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold6.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\arialbold7.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold8.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialBold9.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic10.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic6.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialItalic9.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\arialregular10.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular14B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular6.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\ArialRegular9.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold10B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold14B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierBold20B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular10B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\CourierRegular14B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\FB_HWInterface.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\FBAbstraction.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\FBAbstractionFonts.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\FBGraphicsContext.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\Filters.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold10B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold11B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold12B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold13B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold14B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold15B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold16B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold17B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaBold18B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular10B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular11B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular12B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular13B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular14B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular15B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular16B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular17B0020E007e.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\FB_Fonts\TahomaRegular18B0020E007e.h" />
+    <ClInclude Include="webcdemo_fb_gdip.h" />
+    <ClInclude Include="..\..\..\..\gui\framebuffer\include\WindowsBitMapFrameBuffer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="small.ico" />
+    <None Include="webcdemo_fb_gdip.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="webcdemo_fb_gdip.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\fdlibm\fdlibm.vcxproj">
+      <Project>{e5b51541-0654-4f8e-97fc-e1b70045d9be}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libjpeg\libjpeg.vcxproj">
+      <Project>{db1862ac-7ea9-4892-b4d4-c85024ebd001}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libmng\libmng.vcxproj">
+      <Project>{3641c2f9-4338-4224-955b-f162169dc443}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libpng\libpng.vcxproj">
+      <Project>{6f634536-dbd9-45d1-b328-470024cc9e15}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mozjs\mozjs.vcxproj">
+      <Project>{694659e3-aa21-46e1-81a6-5f069140dd51}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\rtplatform_win32\rtplatform_win32.vcxproj">
+      <Project>{923e946b-bc1c-439d-89b3-bf67b87812d3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\webc\webc.vcxproj">
+      <Project>{fe989b7c-d610-481c-944f-83815c0bef20}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zlib\zlib.vcxproj">
+      <Project>{a20432da-f81b-427e-a9a4-fa3167049984}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

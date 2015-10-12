@@ -1,0 +1,378 @@
+
+Subdirectory: source\browser and include\browser
+
+    These directories contain browser application source code, a C language API and source code for top level objects.
+
+    chromebowser.cpp    Contains C event handlers and C to Javascript iterfaces for the
+                        Javascript based browser interface.
+    dbgtimer.c          Obsolete file containing call-level profiling functions.
+    htmlbrow.cpp        Contains class HTMLBrowser, root class for WebC.
+    htmldiags.cpp       Contains routines to print webC message flow (a little rough, but useful)
+    htmldoc.cpp     	class HTMLDocument - represents an HTML document.
+    htmlsdk.cpp 	    Implements the WebC API.
+    webc.cpp        	Various core-level functions
+
+Subdirectory: source\imgconvert and include\imgconvert
+
+Bitmap pixel format converters
+	imgconv.cpp		The base class for all bitmap converters
+	24to24.cpp 		Contains no useful code
+	24to32.cpp 		Converts from 24bpp R-G-B to 32bpp R-G-B-A or A-B-G-R.  Implemented for PEG on EFI platform.
+	24to555.cpp		Converts from 24bpp R-G-B to 16bpp formats (5 bits for red, green, and blue, or 5 bits for red
+	24to565.cpp   	and blue, 6 bits for green).
+	24to8.cpp		Converts from 24bpp R-G-B to 8bpp indexed palette format.
+	24togs.cpp		Converts from 24bpp R-G-B to 1, 2, 4, or 8 bit gray level format.  1, 2,
+		            and 4 bit formats have several pixels packed into a single byte, with the
+		            most significant bits corresponding to the left-most pixels.
+	8to24.cpp		Converts from 8bpp indexed format to 24bpp R-G-B.
+	8to32.cpp		Converts from 8bpp indexed format to 32bpp formats.  See note for 24to32.cpp above.
+	8to555.cpp		Converts from 8bpp indexed format to 16bpp formats.  See note for 24to555.cpp and 24to565.cpp above.
+	8to565.cpp
+	8to8.cpp   		Converts a bitmap in 8bpp indexed format to the native palette, using best-fit color matching and optional dithering.
+	8togs.cpp		Converts from 8bpp indexed format to gray level formats.  See note for 24togs.cpp above.
+	gs8togs.cpp		Contains no useful code.
+
+
+These files contain classes which derive from class WebcBitmapConverter (imgconv.hpp).
+
+This is a general purpose image converter class but that is used mainly by GUI abstraction layer implementations
+to convert the image bitmaps output by the image decoders (libjpeg, libpng, libmng, bmpdec.c, webgif.cpp) to
+the native screen format used by the underlying graphics library.
+
+The following segment of code is condensed and uses pseudo-code to reduce detail and make it more understandable.
+(See: webc\gui\peg\source\webcpeg.cpp for a complete functioning sample.
+
+
+// Convert an RGB24 image to another format
+
+WebcBitmapConverter * converter;
+unsigned char * convertedData;
+short bitsPerPixel;
+WebcImageDitherMode ditherMode;
+
+       /* This example only performs dithering on RGB24 to RGB8 transformations */
+       if (outputdevicetype == 8_BITS_PER_PIXEL) {
+        	ditherMode = WEBIMAGE_ERROR_DIFFUSION;
+       else
+        	ditherMode = WEBIMAGE_NO_DITHERING;
+
+       /*  Set up conversions (not all fromats shown) */
+       switch (outputdevicetype)
+       {
+           case WEBC_32_BITS_PER_PIXEL:
+        	bitsPerPixel = 32;
+        	WEBC_NEW(converter, RGB24ToRGBA32());
+            break;
+           case WEBC_8_BITS_PER_PIXEL:
+        	bitsPerPixel = 8;
+        	WEBC_NEW(converter, RGB24ToIndexed());
+            break;
+           case WEBC_GRAYSCALE2:
+        	bitsPerPixel = 1;
+        	RGB24ToGreyscale* c;
+        	WEBC_NEW(c, RGB24ToGreyscale());
+        	c->setBitDepth((char)bitsPerPixel);
+        	converter = c;
+            break;
+           // More cases for more formats
+       }
+       /* If a converter was established, allocate a buffer results buffer and convert the data */
+       if (converter)
+       {
+       size_t size;
+           /* Allocate memory to store the transformed data */
+           if (bitsPerPixel >= 8)
+               size = info->iWidth * info->iHeight * bitsPerPixel/8;
+           else if (bitsPerPixel == 1)
+               size = ((info->iWidth + 7) >> 3) * info->iHeight;
+           WEBC_NEW(convertedData, unsigned char[size]);
+           /* Now transform the data in info->pData to and store it in convertedData */
+           converter->go(convertedData,
+   	                (unsigned char*) info->pData,
+   	                info->iWidth,
+   	                info->iHeight,
+   	                ditherMode);
+        }
+        WEBC_DELETE(converter);
+}
+
+Subdirectory: source\imgdecode and include\imgdecode
+
+Source code in this directory creates a generic webC image structure containing image and pallet information and then
+calls image decode libraries to convert the image data to an uncompressed bitmap. Finally the GUI abstraction layer is
+called to create a bitmap object from the header information and the uncompressed bitmap data.
+
+Note: webC stays in a loop while images are being loaded and decoded. It does not allow the main message dispatcher
+to run until it compltes. To avoid message deadlock webC calls a callback routine provided by the
+GUI abstraction layer to dispatch any messages. The function, ProcessInputQueue(), should dispatch pending messages
+but it should not block to wait for new messages to arrive.
+
+
+    webcbmp.cpp	    WebcImage class - this is the container class for all images
+	bmpdec.c       	A simple BMP image decoder.
+    webbmp.cpp	    Image reader for BMP images
+    webgif.cpp	    Image reader for GIF images
+    webimage.cpp    Classes and functions for image processing
+    webmng.cpp	    Wrapper code to interface with LibMNG
+    webpng.cpp	    Wrapper code to interface with LibPNG
+    webjpeg.cpp	    Wrapper code to interface with LibJPEG
+
+
+Subdirectory: source\util and include\util
+
+    wcconst.cpp 	String constants
+    buffer.c        Buffer allocation and resizing routines.
+    hashtbl.cpp     Hash table implementation; used by CSS style manager (css.cpp)
+
+    ref.cpp         Used by referable, ObjectAlias, and ObjectReference classes which together implement a
+                    mechanism for self-updating object references.
+    refcount.cpp   	class ReferenceCounted - base class for object which are automatically deleted when there are no more references to them.
+    strbld.cpp      StringBuilder interface and various implementations.  Builds strings out of various data (such as Url descriptor, numbers etc)
+    strtable.cpp    String hash table implementation.
+    template.c      Contains no source code, used as a Template for creating new WebC source files
+    templateinst.cpp
+                    File that resolves C++ template problem for GNU C. The code is never called but it must be linked in or some GNU compiler versions will not build webC.
+    util.c          Various utilities
+    vector.c       	Single-linked list implementation; used extensively throughout
+    wcache.cpp     	Cache implementation for HTTP and offline mode
+    wcconst.cpp    	String constants
+    webcfile.c     	Old file system porting layer, now calls rtplatform.
+    webcmem.cpp    	WebC allocation macros and wrapper functions (WEBC_MALLOC, WEBC_FREE, WEBC_NEW, WEBC_DELETE)
+    webcstr.cpp    	String library wrappers
+    webctmo.cpp    	Timer management functions
+    webfonts.cpp   	Font management functions
+    webrect.cpp    	class WebRect - rectangle arithmetic class used by DisplayElement's
+    webstr.cpp     	Webc string class
+
+Subdirectory: source\minigui and include\minigui
+	delement.cpp		Base class for all visible objects.
+	dmanager.cpp		DisplayManager methods.  DisplayManager is the root-level DisplayElement
+		                for all HTMLDocuments.  It serves as the 'frame' object.  It creates
+		                scroll bars, and controls the formatting of the display.
+	webcdefault.cpp 	Run-time configurable defaults table.  Mostly visual styles.
+	webgraph.cpp    	Methods for class WebGraphics - interface for a graphics output device
+	wgbmp.cpp       	Contains stock bitmaps (up/down/left/right arrows, checkboxes, etc)
+	wtbutton.cpp		Basic button widgets
+	wtcheck.cpp 		Check box widget
+	wtdrop.cpp  		Drop-box widget
+	wtedbox.cpp 		Multi-line text edit widget
+	wtedstr.cpp 		Single-line text edit widget
+	wtlist.cpp  		List box widget
+	wtpasswd.cpp		Password entry widget
+	wtradio.cpp 		Radio button widget
+	wtscroll.cpp		Scroll bar widget
+	wtslider.cpp		Slider widget
+	TestWidgits.cpp     Demonstrates the ability to display widgits without requiring the DOM, HTML and Javascipt.
+	                    This is done to demonstrate that the mini gui API is abstract enough to run on its own.
+                        An exported mini gui API is not fully developed yet but this serves as a model.
+	widgitglue.cpp      Shims to help use the minigui without the rest of webC.
+
+
+Subdirectory: source\htmldom and include\htmldom
+
+These are all used in one way or another in the formatting and display engine.
+
+    css.cpp	            CSS style manager and related classes.
+    html.c	            HTML parser. Uses XML parser (xml.c) to do much of the work.
+    htmlbld.cpp	        class HtmlDocumentBuilder - invokes HTML parser to process input text and create the DOM.
+    hdstream.cpp        class HTMLDocumentStream - implements cross-boundary buffering for an HTML document input stream.
+    htmldom.cpp         Miscellaneous HTML DOM-related functions and classes.
+    htmlfind.cpp        Definition of HTMLElementFinder interface and many derived classes that implement various filters for searching through a document
+	                    to find a particular element (or perform some operation on a set of elements)
+    xml.c               XML parser
+    xmlutil.c           Utilities for XML parser
+    urldesc.cpp         URLDescriptor class - parses URL's into an object
+    textstyle.cpp      	Objects that handle text visual property lookup and text rendering
+
+Subdirectory: source\htmldisplay and include\htmldisplay
+	dcontent.cpp		Implementation for class FlowDisplayContentHolder.  This is a utility class used to hold the flow-formatted content of an HTMLFlowDisplay
+		                object, and to set its vertical alignment.
+	dflow.cpp   		HTMLFlowDisplay methods.  Implements the core HTML page formatting algorithm (with help from format.cpp and margins.cpp), and serves 		as display object for DIV, P, Q, BLOCKQUOTE, SPAN, TD, etc.
+	tuenum.cpp	        TextUnit enumerator classes
+	tulist.cpp	        TextUnit list classes (maybe deprecated)
+	dharea.cpp   		Handles interaction with AREA elements.
+	dhbody.cpp  		HTMLBodyDisplay.  Extends HTMLFlowDisplay with extra functionality for formatting the document.
+	dhcheck.cpp 		Display for checkbox input controls (INPUT type=checkbox)
+	dhedbox.cpp 		Display for multi-line text input controls (TEXTAREA)
+	dhedit.cpp  		Common base class for classes in dhedbox and dhedstr.
+	dhbutton.cpp
+	dhedstr.cpp 		Display for single-line text input controls (INPUT type=text)
+	dhelem.cpp  		Template class that glues together DisplayElement and HTMLTextUnitMirror.
+	dhframe.cpp 		Display for document frames (FRAME)
+	dhframeset.cpp 		Display for framesets (FRAMESET)
+	dhhr.cpp    		Display for horizonal rules (HR)
+	dhibutton.cpp		Display for input buttons (INPUT type=button,submit,reset)
+	dhiframe.cpp		Display for inline document frames (IFRAME)
+	dhimg.cpp		    Display for images (IMG).  Handles animation.
+	dhli.cpp		    Display for numbered and bulletted lists (LI/UL/OL)
+	dhpasswd.cpp		Display for password-input controls (INPUT type=password)
+	dhradio.cpp		    Display for radio button controls (INPUT type=radio)
+	dhselect.cpp		Display for collapsable and multi-line select boxes (SELECT)
+	dhstring.cpp		Display for document text fragments
+	dhtable.cpp		    Display for tables (TABLE)
+	dhtd.cpp		    Display for table cells (TD).  Derived from HTMLFlowDisplay
+	dhtumirror.cpp		class HTMLTextUnitMirror; implements TextUnit interface with property caching, using an HTMLElement as the property source.
+	format.cpp      	Single-line formatter utility class.  Used by HTMLFlowDisplay.
+	formatctx.cpp   	Used in CSS/2 positioned box formatting algorithm.
+	keycatch.cpp    	Utility DisplayElement class used by HTMLBodyDisplay to maintain focus when it is set to non-displayed objects (such as inline anchors)
+	margins.cpp     	Utility classes for page formatting.  Used by HTMLFlowDisplay
+	hcbox.cpp       	Implements property lookup, caching, and display of CSS style border boxes.
+	zdelem.cpp      	Utility DisplayElement used in document formatting
+
+
+    HTMLElement-derived classes
+
+    There is one of these for each supported tag (element type).  All derive from
+    HTMLElement which contains the tree node implementation and many shared
+    properties and algorithms (event propogation, property lookup, etc)
+
+    	File name                   Tag name
+    	=========                   ========
+    	haddress.cpp                ADDR
+    	hanchor.cpp                 A
+    	harea.cpp                   AREA
+    	hbase.cpp                   BASE
+    	hbig.cpp                    BIG
+    	hblquote.cpp                BLOCKQUOTE
+    	hbody.cpp                   BODY
+    	hbold.cpp                   B
+    	hbr.cpp                     BR
+    	hcenter.cpp                 CENTER
+    	hchkbox.cpp                 INPUT type=checkbox
+    	hcite.cpp                   CITE
+    	hcode.cpp                   CODE
+    	hdd.cpp                     DD
+    	hdel.cpp                    DEL
+    	hdiv.cpp                    DIV
+    	hdl.cpp                     DL
+    	hdt.cpp                     DT
+    	hedit.cpp                   INPUT type=text
+    	helement.cpp                <base class for all elements>
+    	hemphsz.cpp                 EM
+    	hflow.cpp                   <base class for all block and inline type elements>
+    	hfont.cpp                   FONT
+    	hform.cpp                   FORM
+    	hframe.cpp                  FRAME
+    	hframset.cpp                FRAMESET
+    	hheading.cpp                H1,H2,H3,H4,H5,H6
+    	hhidden.cpp                 INPUT type=hidden
+    	hhr.cpp                     HR
+    	hibutton.cpp                INPUT type=button
+    	hiframe.cpp                 IFRAME
+    	himage.cpp                  IMG
+    	hinput.cpp                  <base class for all INPUT type elements>
+    	hins.cpp                    INS
+    	hitalic.cpp                 I
+    	hkbd.cpp                    KBD
+    	hlabel.cpp                  LABEL
+    	hli.cpp                     LI
+    	hlist.cpp                   OL,UL
+    	hmap.cpp                    MAP
+    	hnobr.cpp                   NOBR
+    	hoption.cpp                 OPTION
+    	hpara.cpp                   P
+    	hpasswd.cpp                 INPUT type=password
+    	hpre.cpp                    PRE
+    	hradio.cpp                  INPUT type=radio
+    	hreset.cpp                  INPUT type=reset
+    	hscript.cpp                 SCRIPT
+    	hselect.cpp                 SELECT
+    	hsmall.cpp                  SMALL
+    	hspacer.cpp                 SPACER (deprecated)
+    	hspan.cpp                   SPAN
+    	hstrike.cpp                 S
+    	hstring.cpp                 <text>
+    	hstrong.cpp                 STRONG
+    	hsubmit.cpp                 INPUT type=submit
+    	htable.cpp                  TABLE
+    	htd.cpp                     TD,TH
+    	htr.cpp                     TR
+    	htxtarea.cpp                TEXTAREA
+    	hundline.cpp                U
+    	hbutton.cpp                 <BUTTON>
+
+
+Subdirectory: source\protocol and include\protocol
+    cookie.c	        HTTP client-side cookie implementation.  Used by the WebC API (htmlsdk.c) and HTTP client (httpc.c).
+    fileext.c	        Utility functions for deriving MIME content-type from file extension.
+    filetype.c	        Utility functions for parsing MIME content-type strings.
+    httpc.c   	        The HTTP client.  This client is transport-layer agnostic; a non-secure	TCP transport and secure SSL-based transport for HTTP may be found in prothttp.c and protssl.c respectively.
+    protfile.cpp	    Implements FILE:// protocol
+    prothssl.cpp	    Implements HTTPS:// protocol
+    prothttp.cpp	    Implements HTTP:// protocol
+    protoffl.cpp	    Implements OFFLINE:// protocol
+    webcsock.c          Socket I/O related functions
+    webcutf.cpp	        Functions for converting between character encodings.
+    webvfile.cpp        Implements WEBC:// protocol; contains virtual file table
+    webload.cpp	        Load queue and load job functions
+    sramdisk.cpp	    class SimpleRamDisk - used when offline browsing is enabled
+	wcfilter.cpp	    Data stream filters
+	wcstream.cpp	    Abstract data stream interface
+	webcbig5.cpp	    Chinese BIG-5 charset conversion routines
+	webceuckr.cpp	    Extended Unix Code Korean (EUCKR) charset conversion routines
+	webcsjis.cpp	    Shift-JIS charset conversion routines
+
+
+
+JavaScript related files
+
+These fall into three catagories: JavaScript wrapper classes, container
+objects that as an interface to the JavaScript library, and utilities.
+
+Wrapper Classes
+
+These implement the methods and property get/set functions for various
+objects types in JavaScript.
+
+	jevent.cpp	        Implements the Event object; used inside event handlers to retrieve	information about the event.
+	jhanchor.cpp		Implements the Anchor object; associated with the A tag
+	jhbody.cpp  		Implements the Body object; associated with the BODY tag
+	jhcoll.cpp  		Implements all Collection type objects.
+	jhdoc.cpp   		Implements the Document object; associated with an HTML document
+	jhelem.cpp  		Base class for all objects associated with HTMLElement-derived types
+	jhflow.cpp  		Base class for all objects associated with HTMLFlow-derived types
+	jhform.cpp  		Implements the Form object; associated with the FORM tag
+	jhframe.cpp 		Implements the Frame object; associated with the FRAME tag
+	jhfrset.cpp 		Implements the Frameset object; associated with the FRAMESET tag
+	jhiframe.cpp    	Implements the InlineFrame object; associated with the IFRAME tag
+	jhimg.cpp   		Implements the Image object; associated with the IMG tag
+	jhinput.cpp 		Implements the Input object; associated with the INPUT tag
+	jhistory.cpp		Implements the History object.  Used for searching and navigating the browser URL history.
+	jhoption.cpp		Implements the Option object; associated with the OPTION tag
+	jhselect.cpp		Implements the Select object; associated with the SELECT tag
+	jhtable.cpp 		Implements the Table object; associated with the TABLE tag
+	jhtarea.cpp 		Implements the TextArea object; associated with the TEXTAREA tag
+	jhtblrow.cpp		Implements the TableRow object; associated with the TR tag
+	jhtcell.cpp     	Implements the TableCell object; associated with the TD tag
+	jhtitle.cpp 		Used for setting and getting the document title.
+	jloc.cpp    		Implements the Location object; used for navigating to new URLs
+	jnav.cpp    		Implements the Navigator object; used to retrieve various information
+		                about the browser application, such as version and vendor.
+	jrule.cpp		    BROKEN
+	jssheet.cpp 		BROKEN
+	jstyle.cpp  		Implements the Style object; used to set/get CSS style properties on a per-element basis.
+	jwindow.cpp 		Implements the Window object; this is the root object for JavaScript, and is associated with a document frame.
+	wjdialogs.cpp       Implements the Window.alert() and other dialogues.
+
+Containers
+	wjsbrowser.cpp		Per-HTMLBrowser container object.  Maintains the JSRuntime
+	wjscript.cpp  		Containers for scripts, functions, and event handlers.
+	wjsdoc.cpp    		Per-HTMLDocument container object.  Initializes classes and maintains the document's window object.
+Utilities
+	jhutils.cpp 		Various utilities for interfacing with the JavaScript library
+	jsobjref.cpp		Used to prevent automatic garbage collection of JSObjects that someone in C/C++ land wishes to keep track of.
+    wjsdebug.cpp        Debugging support, displays C to Javascript message and method flow
+
+
+
+
+
+
+
+
+
+
+
+
+
+

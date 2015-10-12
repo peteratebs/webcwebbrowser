@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>int webc_RegisterEventCallback</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>int <A HREF="#DOC.DOCU">webc_RegisterEventCallback</A></H2><H2>(HTMLEventCallback cb,<BR>&nbsp; char* argName)</H2><BLOCKQUOTE>Set a function to use as a custom event handler </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+After this function is called, whenever an HTML tag loaded
+into WebC specifies its 'eventhandler' attribute (a WebC
+HTML extension) as the name passed in, all events that happen
+to that tag will be passed on to the C function specified as
+cb.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>cb</B> -        The event handler callback.
+<BR><B>name</B> -      The name of this event handler
+<BR><DT><B>Returns:</B><DD>  0 if the callback was successfully registered; -1 otherwise
+<BR><DT><B>See Also:</B><DD>HELEMENT_HANDLE, SELECTED, webc_ElementGetValue<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

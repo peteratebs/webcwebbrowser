@@ -1,0 +1,98 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2> <A HREF="#DOC.DOCU">Appendix A </A></H2></H2><BLOCKQUOTE>Porting an RTPlatform-enabled product to a new environment. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>EBSnet's RTPlatform-enabled products all require a certain subset of the 
+total services provided by the RTPlatform library.  For each product, it is
+necessary to determine the modules required to provide the necessary services to 
+that product.  (For example, FTP may require rtpnet for networking, 
+rtpfile for file system access, rtpdate for date management, and rtpsignl/rtpthrd
+for multi-threaded operation.)
+
+<P>The first step in the porting process is to create a new build environment,
+i.e. a new makefile or project file, for the new target.  All the product's "core"
+files (the ones in the product's example project file that do not begin with
+"rtp", and thus are not a part of RTPlatform) should be added to the new
+makefile/project file.  
+
+<P>The next step in porting an RTPlatform-enabled product to a new environment is
+to identify the list of RTPlatform modules required by that product.  Once this has
+been done, this list can be separated into those modules which have generic, portable
+implementations (and thus do not need to be modified in order to support a new 
+environment), and those which are specific to a particular OS, CPU, software library,
+etc.  The generic RTPlatform modules are located in the RTPlatform install directory
+under "source/generic".  These files should be added into the makefile/project file
+"as is".
+
+<P>Once this is complete, environment-specific versions of the non-portable modules must 
+be added into the build environment.  One should first refer to "source/" to see if 
+a compatible version of the required module(s) is already available as part of the 
+current RTPlatform distribution.  Those modules that are already ported should be added 
+to the build environment.  The remaining modules must be ported manually to the new 
+target.  
+
+<P>To port an RTPlatform module to a new target, first locate the template version of 
+that module under "source/template".  Create a new directory inside "source/" for the 
+new target and copy the template version into this directory; this is the copy of the 
+file that you will modify to implement the required functionality in your target 
+environment.  Each template file has documentation in the comments above each function 
+that describes what the function should do.  
+
+<P><b>NOTE: <i>The header files are compiler specific (rather than target specific). 
+If it is desired to make use of these header files to obtain native implementations 
+of the modules, it is advised to first build with the generic implementations so 
+not to run into any type and/or naming conflicts. Then attempt to build using the 
+native version.  If any problems arise and persist, revert to the EBSnet generic 
+implementation.  A number of compilers have poor implementations of these standard 
+functions, and type and naming conflicts can occure if a project permits native header 
+inclusion through to the core modules instead of segregating them to the RTPlatform 
+source files.</pre></i></b></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>

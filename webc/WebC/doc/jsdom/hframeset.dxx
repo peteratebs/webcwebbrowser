@@ -1,0 +1,29 @@
+HTMLFrameSetElement
+
+	Base Class
+		HTMLElement
+
+	Description
+		Object type for HTML <frameset> tag.
+
+	Properties	
+	
+		cols
+			Type
+				string
+			Description
+				Comma seperated list of the column widths for this frameset (e.g. "70%, 50, *")
+			Read-only
+				no
+	
+		rows
+			Type
+				string
+			Description
+				Comma seperated list of the row heights for this frameset (e.g. "230, *, 2*, 45%")
+			Read-only
+				no
+
+	Methods
+
+		none

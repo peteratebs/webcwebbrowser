@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>wcEL <A HREF="#DOC.DOCU">wcDocFindElement</A></H2></TD><TD><H2>(wcCtx* Ctx,  char* id,  char* name,<BR>&nbsp; HTMLElementType type,  long index)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Search for an element by id, name, type, and/or index </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Does a depth-first search of the document tree for an element
+matching all of the search criteria
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>Ctx</B> - 		The current wc context.
+<BR><B>id</B> -       The ID of the element to search for (WEBC_NULL to match any id)
+<BR><B>name</B> - 	The NAME of the element to search for (WEBC_NULL to match any name)
+<BR><B>type</B> -     The TYPE of element to search for (HTML_ELEMENT_ANY to match any type)
+<BR><B>index</B> -    The index of the element to find (HTML_INDEX_LAST for the last
+element in the document)
+<BR><DT><B>Returns:</B><DD>  The handle of the Nth element with the specified id, name, and/or type,
+where N is the above specified index; WEBC_NULL if not found.
+<BR><DT><B>See Also:</B><DD>HDOC_HANDLE, wcEL<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

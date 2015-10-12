@@ -1,0 +1,12 @@
+/.cvsignore////*///
+/attr.c////*///
+/document.c////*///
+/ixml.c////*///
+/ixmlmembuf.c////*///
+/makefile////*///
+/namedNodeMap.c////*///
+/nodeList.c////*///
+D/inc///////
+/ixmlparser.c////*///
+/node.c////*///
+/element.c////*///

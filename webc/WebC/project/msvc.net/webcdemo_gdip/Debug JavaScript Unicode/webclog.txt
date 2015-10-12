@@ -1,0 +1,2 @@
+13:34:6 : Init GDI called, Unicode enabled
+13:34:6 : Init GDI called, Unicode enabled

@@ -1,0 +1,36 @@
+<html>
+<head>
+<script>
+
+var maxwindow=1;
+var numwindows=5;
+var newmax=2;
+// var windownumber = 1;
+function clicked(windownumber)
+{
+    myid = "app"+windownumber;
+    document.getElementById(myid).style.zIndex=newmax;
+    newmax+=1;
+}
+
+function Doit()
+{
+}
+</script>
+</head>
+<body onload="Doit()";>
+
+<iframe id="app1" src ="mock1.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:1;"></iframe>
+<iframe7 id="app2" src ="mock2.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app3" src ="mock3.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app4" src ="mock4.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app5" src ="mock5.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+
+<button type="button" onclick="clicked('1')" style="position:absolute; left:0px; top:200px; width:60px; height:40px; z-index:10000">one</button>
+<button type="button" onclick="clicked('2')" style="position:absolute; left:62px; top:200px; width:60px; height:40px; z-index:10000">two</button>
+<button type="button" onclick="clicked('3')" style="position:absolute; left:124px; top:200px; width:60px; height:40px; z-index:10000">three</button>
+<button type="button" onclick="clicked('4')" style="position:absolute; left:186px; top:200px; width:60px; height:40px; z-index:10000">four</button>
+<button type="button" onclick="clicked('5')" style="position:absolute; left:248px; top:200px; width:60px; height:40px; z-index:10000">five</button>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>int <A HREF="#DOC.DOCU">wcWinCreateEx</A></H2></TD><TD><H2>( wcCtx* Ctx,  char* _windowname,<BR>&nbsp; wcEventCallback BodyCallback,<BR>&nbsp; char* _defaultUrl,  char* _defaultContent,<BR>&nbsp; struct HTMLBrowserWindowConfig* pWindowConfig )</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Create a browser window. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Opens a new browser view in a window with specified border style, color, position and mode.
+Load optional initial content and sets a user supplied handler function to be called when the view is created.
+The Window config structure can be used to set the border color, background color, and border style.
+The Window config structure can be used to control window properties including if it is modal and if it is resizable.
+
+<P>
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcCtx</B> -  *Ctx 						Context to initialize with document information. This context block may be used as a handle to other wcAPI functions.
+<BR><B>char</B> -  *_windowname 				The DOM name to use for retrieve the window from the list of all windows.
+<BR><B>wcEventCallback</B> -  BodyCallback	If non-zero provides a callback function that is activated when the window is created. May be used initialize application fragments and to dynamically generate content and insert into the page.
+<BR><B>char</B> -  *_defaultUrl				If non-zero initialize the window from the content at the URL.
+<BR><B>char</B> -  *_defaultContent           If non-zero initialize the window from content stored in this string.
+<BR><B>struct</B> -  HTMLBrowserWindowConfig *pWindowConfig;
+<PRE>
+pWindowConfig must be zeroed and then initialized with proper values.
+struct HTMLBrowserWindowConfig
+{
+DISPLAY_INT top;                top, left, height and width of the Window.
+DISPLAY_INT left;
+DISPLAY_INT height;
+DISPLAY_INT width;
+DISPLAY_INT BorderThickness;    Thickness of the border in pixels
+WEBC_UINT32	BorderColor;        Border Color in RGBA
+WEBC_UINT32 BackGroundColor;    Background Color in RGBA
+WEBC_UINT32 BorderStyle;        BS_RAISED,BS_LOWERED,BS_RIDGE or BS_GROOVE
+WEBC_UINT32 Radius;             In non-zero create rounded corners, with raius in pixels.
+WEBC_UINT32 WindowFlags;        Or together the folowing options
+WF_DISABLESCROLLBARS  - If set content is clipped and no scrollbars appear on overflow.
+WF_MODAL			  - If set the focus is owned by the window until released.
+Note: You should call <!1><A HREF="wcWinExecute.html">wcWinExecute</A>(); to process a modal window
+WF_SAVEUNDER          - If set the screen contents are saved when the window is created and restored when
+the window is destroyed.
+WF_SPRITE             - Like WF_SAVEUNDER but if the window is moved it manipulates the frame buffer
+without repainting.
+WF_STARTINBG		  -	Do not put the window in the foreground initially. Drawing to the window, loading, etc can still be performed but
+they will not show until <!1><A HREF="wcWinBringToTop.html">wcWinBringToTop</A>() is called.
+};
+</PRE>
+<PRE>
+Example:
+</PRE>
+<BR><DT><B>Returns:</B><DD>  wcWinCreateEx returns 0 if it was able to create the window, -1 otherwise.
+<BR><DT><B>See Also:</B><DD>wcWinCreate, <!1><A HREF="wcWinClose.html">wcWinClose</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

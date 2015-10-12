@@ -1,0 +1,102 @@
+﻿Build started 12/29/2014 4:48:35 PM.
+     1>Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\mozjs\mozjs.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\mozjs___Win32_Debug_JavaScript_Unicode\mozjs.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\include\util /I..\..\..\..\..\rtpport\win32 /I..\..\..\..\..\rtpcore /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D WEBC_SUPPORT_JSCRIPT /D __WEBC__ /D WEBC_DEBUG /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\mozjs___Win32_Debug_JavaScript_Unicode/" /Fd".\mozjs___Win32_Debug_JavaScript_Unicode/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\mozilla\jsapi.c ..\..\..\lib\mozilla\jsarena.c ..\..\..\lib\mozilla\jsarray.c ..\..\..\lib\mozilla\jsatom.c ..\..\..\lib\mozilla\jsbool.c ..\..\..\lib\mozilla\jscntxt.c ..\..\..\lib\mozilla\jsdate.c ..\..\..\lib\mozilla\jsdbgapi.c ..\..\..\lib\mozilla\jsdhash.c ..\..\..\lib\mozilla\jsdtoa.c ..\..\..\lib\mozilla\jsemit.c ..\..\..\lib\mozilla\jsexn.c ..\..\..\lib\mozilla\jsfile.c ..\..\..\lib\mozilla\jsfun.c ..\..\..\lib\mozilla\jsgc.c ..\..\..\lib\mozilla\jshash.c ..\..\..\lib\mozilla\jsinterp.c ..\..\..\lib\mozilla\jsinvoke.c ..\..\..\lib\mozilla\jsiter.c ..\..\..\lib\mozilla\jslock.c ..\..\..\lib\mozilla\jslog2.c ..\..\..\lib\mozilla\jslong.c ..\..\..\lib\mozilla\jsmath.c ..\..\..\lib\mozilla\jsnum.c ..\..\..\lib\mozilla\jsobj.c ..\..\..\lib\mozilla\jsopcode.c ..\..\..\lib\mozilla\jsparse.c ..\..\..\lib\mozilla\jsprf.c ..\..\..\lib\mozilla\jsregexp.c ..\..\..\lib\mozilla\jsscan.c ..\..\..\lib\mozilla\jsscope.c ..\..\..\lib\mozilla\jsscript.c ..\..\..\lib\mozilla\jsstr.c ..\..\..\lib\mozilla\jsutil.c ..\..\..\lib\mozilla\jsxdrapi.c ..\..\..\lib\mozilla\jsxml.c ..\..\..\lib\mozilla\prmjtime.c
+         jsapi.c
+         jsarena.c
+         jsarray.c
+         jsatom.c
+         jsbool.c
+         jscntxt.c
+         jsdate.c
+         jsdbgapi.c
+         jsdhash.c
+         jsdtoa.c
+         jsemit.c
+         jsexn.c
+         jsfile.c
+         jsfun.c
+         jsgc.c
+         jshash.c
+         jsinterp.c
+         jsinvoke.c
+         jsiter.c
+         jslock.c
+         Generating Code...
+         Compiling...
+         jslog2.c
+         jslong.c
+         jsmath.c
+         jsnum.c
+         jsobj.c
+         jsopcode.c
+         jsparse.c
+         jsprf.c
+         jsregexp.c
+         jsscan.c
+     1>c:\dev\emglandwebc\webc\webc\lib\mozilla\jsscan.c(311): warning C4101: 'crflag' : unreferenced local variable
+     1>c:\dev\emglandwebc\webc\webc\lib\mozilla\jsscan.c(310): warning C4101: 'i' : unreferenced local variable
+     1>c:\dev\emglandwebc\webc\webc\lib\mozilla\jsscan.c(313): warning C4101: 'ubuf' : unreferenced local variable
+     1>c:\dev\emglandwebc\webc\webc\lib\mozilla\jsscan.c(312): warning C4101: 'cbuf' : unreferenced local variable
+     1>c:\dev\emglandwebc\webc\webc\lib\mozilla\jsscan.c(310): warning C4101: 'j' : unreferenced local variable
+     1>c:\dev\emglandwebc\webc\webc\lib\mozilla\jsscan.c(1248): warning C4244: 'function' : conversion from 'int32' to 'jschar', possible loss of data
+     1>c:\dev\emglandwebc\webc\webc\lib\mozilla\jsscan.c(1770): warning C4244: 'function' : conversion from 'int32' to 'jschar', possible loss of data
+     1>c:\dev\emglandwebc\webc\webc\lib\mozilla\jsscan.c(1782): warning C4244: 'function' : conversion from 'int32' to 'jschar', possible loss of data
+     1>c:\dev\emglandwebc\webc\webc\lib\mozilla\jsscan.c(1797): warning C4244: 'function' : conversion from 'int32' to 'jschar', possible loss of data
+         jsscope.c
+         jsscript.c
+         jsstr.c
+         jsutil.c
+         jsxdrapi.c
+         jsxml.c
+         prmjtime.c
+         Generating Code...
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\mozjs___Win32_Debug_JavaScript_Unicode\mozjs.lib" /NOLOGO .\mozjs___Win32_Debug_JavaScript_Unicode/jsapi.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsarena.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsarray.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsatom.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsbool.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jscntxt.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsdate.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsdbgapi.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsdhash.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsdtoa.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsemit.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsexn.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsfile.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsfun.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsgc.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jshash.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsinterp.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsinvoke.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsiter.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jslock.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jslog2.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jslong.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsmath.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsnum.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsobj.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsopcode.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsparse.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsprf.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsregexp.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsscan.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsscope.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsscript.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsstr.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsutil.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsxdrapi.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/jsxml.obj
+         .\mozjs___Win32_Debug_JavaScript_Unicode/prmjtime.obj
+         mozjs.vcxproj -> C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\mozjs\.\mozjs___Win32_Debug_JavaScript_Unicode\mozjs.lib
+       FinalizeBuildStatus:
+         Deleting file ".\mozjs___Win32_Debug_JavaScript_Unicode\mozjs.unsuccessfulbuild".
+         Touching ".\mozjs___Win32_Debug_JavaScript_Unicode\mozjs.lastbuildstate".
+     1>Done Building Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\mozjs\mozjs.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:14.84

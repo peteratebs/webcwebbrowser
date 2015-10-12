@@ -1,0 +1,306 @@
+Window
+
+	Base Class
+		none
+
+	Description
+		Object for the viewing window of an HTMLDocument.  This is the root object for all scripts run in a document.  This is also the object to which any custom JavaScript functions defined through the WebC API are bound.
+
+	Properties	
+	
+		closed
+			Type
+				boolean
+			Description
+				Whether the window has been closed.
+			Read-only
+				yes
+						
+		document
+			Type
+				HTMLDocument
+			Description
+				A reference to the object for the document displayed by this window.
+			Read-only
+				yes
+			
+		event
+			Type
+				Event
+			Description
+				The last event received by this window.
+			Read-only
+				yes
+			
+		frameElement
+			Type
+				HTMLFrameElement
+			Description
+				If this window belongs to a <frame> element embedded in another document, this property refers to the frame object.  null if this is a root-level window.
+			Read-only
+				yes
+			
+		history
+			Type
+				History
+			Description
+				The browser history object for this window.
+			Read-only
+				yes
+			
+		length
+			Type
+				integer
+			Description
+				The number of child frames within this window.
+			Read-only
+				yes
+			
+		location
+			Type
+				Location
+			Description
+				The Location object for this window.
+			Read-only
+				yes
+			
+		name
+			Type
+				string
+			Description
+				If this window belongs to a <frame> element embedded in another document, this property is the name of that frame.
+			Read-only
+				no
+			
+		navigator
+			Type
+				Navigator
+			Description
+				The navigator object for this window.
+			Read-only
+				yes
+			
+		offScreenBuffering
+			Type
+				boolean
+			Description
+				Whether this window is using off-screen buffering.  Always set to true.
+			Read-only
+				yes
+			
+		onload
+			Type
+				string or function
+			Description
+				The event handler to use for load events.
+			Read-only
+				no
+			
+		opener
+			Type
+				Window
+			Description
+				The window that opened this one.
+			Read-only
+				yes
+			
+		parent
+			Type
+				Window
+			Description
+				The parent window of this one, if this window belongs to a <frame> element embedded in another document.  null otherwise
+			Read-only
+				yes
+			
+		screenLeft
+			Type
+				integer
+			Description
+				Screen-relative position, in pixels, of the left edge of the window.
+			Read-only
+				yes
+			
+		screenTop
+			Type
+				integer
+			Description
+				Screen-relative position, in pixels, of the top edge of the window.
+			Read-only
+				yes
+			
+		self
+			Type
+				Window
+			Description
+				Reference to this object.
+			Read-only
+				yes
+			
+		status
+			Type
+				string
+			Description
+				The currently displayed status string.
+			Read-only
+				no
+			
+		top
+			Type
+				Window
+			Description
+				The highest-level parent window of this window.
+			Read-only
+				yes
+			
+		window
+			Type
+				Window
+			Description
+				Reference to this object.
+			Read-only
+				yes
+
+		frames
+			Type
+				Collection
+			Description
+				A collection of all the sub-frames of this window.
+			Read-only
+				yes
+
+		screen
+			Type
+				Object
+			Description
+				A dummy object for web compatiblity.
+			Read-only
+				yes
+
+		(element id or name)
+			Type
+				HTMLElement
+			Description
+				Using window.<name or id> searches the document for an HTMLElement with the given name or id.  This property is null if no such element exists in this document.
+			Read-only
+				yes
+					
+	Methods
+		back
+			Description
+				Navigate back in the browser history.
+			Parameters
+				howFar (default value == 1)
+					How many entries to skip back in the history (1 means go to the previous page).
+			Returns (nothing)
+			
+		blur
+			Description
+				Remove key input focus from this window.
+			Parameters
+				none
+			Returns (nothing)
+
+		clearInterval
+			Description
+				Cancel a previously set interval timer.
+			Parameters
+				id (integer)
+					The identifier returned by setInterval
+			Returns (nothing)
+			
+		clearTimeout
+			Description
+				Cancel a previously set timeout timer.
+			Parameters
+				id (integer)
+					The identifier returned by setTimeout
+			Returns (nothing)
+						
+		focus
+			Description
+				Set the key input focus to this window.
+			Parameters
+				none
+			Returns (nothing)
+			
+		forward
+			Description
+				Navigate forward in the browser history.
+			Parameters
+				howFar (default value == 1)
+					How many entries to skip forward in the history (1 means go to the next page).
+			Returns (nothing)
+			
+		home
+			Description
+				Navigate to the home page for this window.
+			Parameters
+				none
+			Returns (nothing)
+			
+		navigate
+			Description
+				Navigate to the given URL.
+			Parameters
+				url
+					The URL to load
+			Returns (nothing)
+			
+		scroll
+			Description
+				Scroll visible portion of document to the specified coordinates.
+			Parameters
+				xPosition (integer)
+					Position of left edge of the visible rectangle in pixels
+				yPosition (integer)
+					Position of top edge of the visible rectangle in pixels
+			Returns (nothing)
+			
+		scrollBy
+			Description
+				Scroll visible portion of document by the specified amount.
+			Parameters
+				xDelta (integer)
+					Horizontal scroll offset in pixels
+				yDelta (integer)
+					Vertical scroll offset in pixels
+			Returns (nothing)
+			
+		scrollTo
+			Description
+				Scroll visible portion of document to the specified coordinates.
+			Parameters
+				xPosition (integer)
+					Position of left edge of the visible rectangle in pixels
+				yPosition (integer)
+					Position of top edge of the visible rectangle in pixels
+			Returns (nothing)
+			
+		setInterval
+			Description
+				Sets a function to be called periodically when a certain time period has elapsed.
+			Parameters
+				onInterval (string or function)
+					JavaScript code to called at the specified interval
+				msecs (integer)
+					Length of interval in milliseconds
+			Returns (integer)
+				id that can be used to cancel the interval
+			
+		setTimeout
+			Description
+				Sets a function to be called once when a certain time period has elapsed.
+			Parameters
+				onTimeout (string or function)
+					JavaScript code to called at the specified time
+				msecs (integer)
+					Length of timeout in milliseconds
+			Returns (integer)
+				id that can be used to cancel the interval
+			
+		stop
+			Description
+				Stop a page load currently in progress.
+			Parameters
+				none
+			Returns (nothing)

@@ -1,0 +1,21 @@
+HTMLFlowElement
+
+	Base Class
+		HTMLElement
+
+	Description
+		Object type for all HTML flow container tags (e.g. <div>, <p>, <span>, <i>, <h1>, etc)
+
+	Properties	
+	
+		align
+			Type
+				string
+			Description
+				The text alignment within this element ("left", "center", "right", or "justify")
+			Read-only
+				no
+	
+	Methods
+
+		none

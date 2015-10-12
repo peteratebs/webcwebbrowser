@@ -1,0 +1,82 @@
+﻿Build started 4/4/2013 9:56:48 AM.
+     1>Project "C:\dev\webc\WebC\project\msvc\rtplatform_win32\rtplatform_win32.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\..\..\rtpport\win32 /I..\..\..\..\..\rtpcore /I..\..\..\ixml\v1.2\inc /I..\..\..\..\..\Rtip6.0\protocol /I..\..\..\..\..\Rtip6.0\vfile /I..\..\..\..\..\Rtip6.0\rtip /I..\..\..\..\WebC\lib\openssl\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D RTP_MEM_RESTRAIN=0 /D RTP_MEM_DEBUG_PRINTF /D _CRT_SECURE_NO_WARNINGS /D POLMSP3=1 /D INCLUDE_RTIP=1 /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\rtplatform_win32___Win32_Debug_JavaScript_Unicode/" /Fd".\rtplatform_win32___Win32_Debug_JavaScript_Unicode/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\..\..\rtpcore\rtpdebug.c ..\..\..\..\..\rtpcore\rtpdutil.c ..\..\..\..\..\rtpcore\rtpmemdb.c ..\..\..\..\..\rtpcore\rtpprint.c ..\..\..\..\..\rtpcore\rtpssl.c ..\..\..\..\..\rtpcore\rtpstdup.c ..\..\..\..\..\rtpcore\rtputil.c ..\..\..\..\..\rtpport\rtip\rtipconfig.c ..\..\..\..\..\rtpport\rtip\rtpnet.c ..\..\..\..\..\rtpport\win32\rtpfile.c ..\..\..\..\..\rtpport\win32\rtpmem.c
+         rtpdebug.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+         rtpdutil.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+         rtpmemdb.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+         rtpprint.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+         rtpssl.c
+         rtpstdup.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+         rtputil.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtpcore\rtputil.c(149): warning C4133: '=' : incompatible types - from 'unsigned long *' to 'unsigned char *'
+         rtipconfig.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+         rtpnet.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtpport\rtip\rtpnet.c(210): warning C4013: 'populate_ram_disk' undefined; assuming extern returning int
+         rtpfile.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+         rtpmem.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtpport\win32\rtpmem.c(65): warning C4013: 'malloc' undefined; assuming extern returning int
+     1>c:\dev\rtpport\win32\rtpmem.c(86): warning C4013: 'calloc' undefined; assuming extern returning int
+     1>c:\dev\rtpport\win32\rtpmem.c(86): warning C4047: '=' : 'void *' differs in levels of indirection from 'int'
+     1>c:\dev\rtpport\win32\rtpmem.c(103): warning C4013: 'realloc' undefined; assuming extern returning int
+     1>c:\dev\rtpport\win32\rtpmem.c(117): warning C4013: 'free' undefined; assuming extern returning int
+         Generating Code...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1151,5): warning MSB8012: TargetPath(C:\dev\webc\WebC\project\msvc\rtplatform_win32\.\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.lib) does not match the Library's OutputFile property value (C:\dev\webc\WebC\project\msvc\rtplatform_win32\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform_win32.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1153,5): warning MSB8012: TargetName(rtplatform) does not match the Library's OutputFile property value (rtplatform_win32). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform_win32.lib" /NOLOGO .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpchar.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpdebug.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpdutil.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpmemdb.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpprint.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtprand.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpscnv.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpssl.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpstdup.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpstr.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtputil.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpwchar.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpwcs.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpdate.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpirq.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpkern.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpsignl.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpterm.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpthrd.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtptime.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtipconfig.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpnet.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpfile.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpmem.obj
+         rtplatform_win32.vcxproj -> C:\dev\webc\WebC\project\msvc\rtplatform_win32\.\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.lib
+       FinalizeBuildStatus:
+         Deleting file ".\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.unsuccessfulbuild".
+         Touching ".\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.lastbuildstate".
+     1>Done Building Project "C:\dev\webc\WebC\project\msvc\rtplatform_win32\rtplatform_win32.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.98

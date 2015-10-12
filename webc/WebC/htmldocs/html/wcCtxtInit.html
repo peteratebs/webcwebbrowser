@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcCtxtInit</A></H2></TD><TD><H2>(wcCtx* Ctx,  wcBROW browser,  wcDOC doc)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Initialize a webC context for use. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Initialize a webC context for use. This function must be called by any routines that were not passed a context pointer and
+wish to use the "wc" API. The routine must also call wcCtxtRelease before it returns.
+
+<P>See the void TestDomApi(wcBROW browser, wcDOC doc)
+
+<P>Note: It is usually unnecessary to call wcCtxtInit because most Event handlers, those that were hooked with wcElSetEventHandler,
+don't need to call wcCtxtInit because they are passed an initialized context block which is automatically released when the user's
+handler returns.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Returns:</B><DD>  nothing
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcCtxtRelease.html">wcCtxtRelease</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

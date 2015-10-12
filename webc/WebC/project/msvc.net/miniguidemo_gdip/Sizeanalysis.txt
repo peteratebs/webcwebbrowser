@@ -1,0 +1,15 @@
+
+
+
+Version2.63 Compiled with Microsoft 'C' optimized for size:
+
+These are webC rom requirements compiled with Microsoft 'C' optimized for size..
+
+1. The complete demo -  Code = 954000, rdata = 360000
+2. (1), but disable Unicode,big5, korean charsets, and use only .bmp bitmaps -  Code == 687000  rdata ==  154000
+3. (2) but disable javscript -  Code == 302000  rdata ==  116000
+4. (3) but disable demo application and display a simple screen - Code == 284000  rdata ==   97000
+
+For very rom constrained features like frames and style sheets may be eliminated to reduce footprint further.
+
+

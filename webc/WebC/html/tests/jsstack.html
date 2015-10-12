@@ -1,0 +1,15 @@
+<script>
+
+function bad (x)
+{
+	document.write("called bad " + x + " times<br>");
+	x++;
+	eval("bad(" + x + ")");
+	return x;
+}
+
+var f = bad(1);
+
+</script>
+
+

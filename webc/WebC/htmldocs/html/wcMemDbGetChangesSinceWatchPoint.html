@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>RTPMemBlockHeader* <A HREF="#DOC.DOCU">wcMemDbGetChangesSinceWatchPoint</A></H2></TD><TD><H2>(RTPMemBlockHeader* DbWatchPoint)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Returns a list of changes to the heap since the watchpoint was established. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Returns a list of changes to the heap since the watchpoint was established.<!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A>. The returned list must be freed by calling wcMemDbReleaseReport.<br>
+
+<P><i><b>Note:</b> Note: RTP_TRACK_LOCAL_MEMORY must be enabled in rtplatform/include/rtpmem.h for the function to operate properly, if it is not enabled the function simply return.<br>	</i>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>RTPMemBlockHeader</B> -  *PrevWatchPoint - Retrieve changes since this watch point was established by a call to <!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A>.
+<BR><DT><B>Returns:</B><DD>  RTPMemBlockHeader * - A list of report records.
+<PRE>
+The following RTPMemBlockHeader structure fields may be used
+struct __rtp_mem_block_header  *next;       // pointer to next record in the list.
+long	                        size;       // Net sum of bytes allocated and free from this location. If < 0, more bytes were freed than allocated since the WatchPoint was established.
+long                            seq;        // Net sum of allocation and frees of memory from this location. If < 0, more free calls than allocation calls were made.
+const char                     *file;      // File being reported on.
+long                            line;      // Line number.
+const char                   *comment;     // Contains a pointer to a string describing the allocation, or zero if no comment was passed when the memory was allocated.
+<br>
+<i>Note: To free the report memory you must pass it to <!1><A HREF="wcMemDbReleaseReport.html">wcMemDbReleaseReport</A>. </i>
+</PRE>
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> <!1><A HREF="wcMemDbInstallPeakUsageCallback.html">wcMemDbInstallPeakUsageCallback</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A> <!1><A HREF="wcMemDbReleaseReport.html">wcMemDbReleaseReport</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetChangesSinceWatchPoint.html">wcMemDbGetChangesSinceWatchPoint</A> <!1><A HREF="wcPrintMemStats.html">wcPrintMemStats</A> <!1><A HREF="wcPrintMemChangeReport.html">wcPrintMemChangeReport</A> <!1><A HREF="wcPrintMemDetailReport.html">wcPrintMemDetailReport</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

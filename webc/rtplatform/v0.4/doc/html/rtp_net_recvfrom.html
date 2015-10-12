@@ -1,0 +1,98 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2>long <A HREF="#DOC.DOCU">rtp_net_recvfrom</A></H2><H2>( RTP_HANDLE sockHandle,<BR>&nbsp;  unsigned char* buffer,   long size,<BR>&nbsp;  unsigned char* ipAddr,   int* port,<BR>&nbsp;  int* type )</H2><BLOCKQUOTE>Receive a datagram. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This function is used to receive data over a connectionless 
+socket (UDP).  The socket must be a connectionless (UDP) 
+socket; behavior is undefined if sockHandle is not a valid 
+connectionless (UDP) socket.<br><br>
+
+<P>If the socket is in blocking mode, it returns after “size“ 
+unsigned chars (bytes) have been received or a graceful close 
+causing a return of 0.  If no data is available and the socket 
+is in blocking mode, rtp_net_recvfrom blocks on the read 
+signal until any data is available.  If no data is available 
+and the socket is in non-blocking mode, rtp_net_recvfrom 
+returns immediately with a -2.  rtp_net_read_select may be 
+called prior to calling rtp_net_recvfrom to determine when 
+data is available.  If the datagram is smaller than the “size” 
+of unsigned chars (bytes), then only the number of unsigned 
+chars in the datagram must be read into the buffer, and the 
+function must return.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>sockHandle</B> -   The socket handle to receive over. 
+<BR><B>buffer</B> -   Location to store the data received. 
+<BR><B>size</B> -   The number of unsigned chars (bytes) to receive. 
+<BR><B>ipAddr</B> -   (optional) Location to store the returned IP address. 
+<BR><B>port</B> -   (optional) Location to store the returned port in host byte order. 
+<BR><B>type</B> -   (optional) Location to store the returned type of IP address:<br>
+<pre>
+|		4   Indicates an IPv4 address.
+|		6   Indicates an IPv6 address.
+</pre> <BR><DT><B>Returns:</B><DD>  The number of unsigned chars (bytes) received if 
+successful, -1 on error, -2 if a non-fatal error occurred.  
+A non-fatal error includes a socket that is set for 
+non-blocking mode and the native datagram receive operation 
+returns immediately with an error indicating that it would 
+block or that the operation is in progress.  If the 
+application making use of rtp_net_recvfrom is using 
+non-blocking sockets, it is advised that the return value 
+is checked for -2 and continues, using rtp_net_read_select 
+to determine if the rtp_net_recv should be tried again 
+before making other RTPlatform Socket API calls on this socket.  
+For debugging purposes; if the cause of the error is obtainable 
+at the native TCP/IP layer, turn on RTP_DEBUG in 
+rtpdebug.h to display the native error value.
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>

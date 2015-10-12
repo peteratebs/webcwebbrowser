@@ -1,0 +1,69 @@
+<html>
+<head>
+<script>
+
+var maxwindow=1;
+var numwindows=5;
+var newmax=2;
+// var windownumber = 1;
+function clicked(windownumber)
+{
+    myid = "app"+windownumber;
+    document.getElementById(myid).style.zIndex=newmax;
+    newmax+=1;
+}
+
+function Doit()
+{
+}
+</script>
+</head>
+<body onload="Doit()";>
+
+<iframe id="app1" src ="mock1.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:1;"></iframe>
+<iframe id="app2" src ="mock2.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app3" src ="mock3.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app4" src ="mock4.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+<iframe id="app5" src ="mock5.html" width="320px" height="240px" style="position:absolute; left:0px; top:0px; z-index:0;"></iframe>
+
+<button type="button" onclick="clicked('1')" style="position:absolute; left:0px; top:200px; width:60px; height:40px; z-index:10000">one</button>
+<button type="button" onclick="clicked('2')" style="position:absolute; left:62px; top:200px; width:60px; height:40px; z-index:10000">two</button>
+<button type="button" style="position:absolute; left:124px; top:200px; width:60px; height:40px; z-index:10000">three</button>
+<button type="button" style="position:absolute; left:186px; top:200px; width:60px; height:40px; z-index:10000">four</button>
+<button type="button" style="position:absolute; left:248px; top:200px; width:60px; height:40px; z-index:10000">five</button>
+
+</body>
+</html>
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>TSD UI Framework exp: 0.2</title>
+<META HTTP-Equiv="OnKey0x28" content="javascript:location.href='exit.html';">
+</head>
+
+<BODY bgcolor="#000000">
+
+<div style="text-align: center; width: 100%;background-color:white;color: black">Page one</div></A>
+
+<A HREF="price_check.html"><span style="background-color:green;padding:0px;border-width:0px;margin: 0px">image</span></A>
+<span style="yellow;color:white">Price Check</span>
+
+<P><A HREF="send_msg.html"><span style="background-color:green;padding:0px;border-width:0px;margin: 0px">image</span></A>
+<span style="color:white">Send Message</span>
+
+<P><A HREF="page_super.html"><span style="background-color:green;padding:0px;border-width:0px;margin: 0px">image</span></A>
+<span style="color:white">Page Supervisor</span>
+
+<P><A HREF="app5.html"><span style="background-color:green;padding:0px;border-width:0px;margin: 0px">image</span></A>
+<span style="color:white">Application 5</span>
+
+<P>
+<A HREF="logout.html"><span style="background-color: white; color: black; width:78px; text-align: center">LOGOUT</span></A>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<A HREF="info.html"><span style="background-color: white; color: black; width:78px; text-align: center">INFO</span></A>
+
+
+</BODY>
+
+</HTML>

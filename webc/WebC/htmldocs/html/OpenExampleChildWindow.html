@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   int <A HREF="#DOC.DOCU">OpenExampleChildWindow</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Responsible for opening the window context used by example below. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>This source code provided in webcapiexample.c implements a simple drag and drop interface that drags test buttons from a pallet that when dropped into a target div are cloned and inserted into the target div.
+<PRE>
+
+<P>//
+// Source code for OpenExampleChildWindow
+//
+
+<P>static int OpenExampleChildWindow(void)
+{
+	struct HTMLBrowserWindowConfig WindowConfig;
+	// Create a child window in background, leave BUTTON_CONSOLE_HEIGHT pixels exposed of the parent window.
+	rtp_memset(&childwindowCtx, 0, sizeof(WindowConfig));
+	WindowConfig.top   = 0;
+	WindowConfig.left  = 0;
+	WindowConfig.width = WEBC_SCREEN_WIDTH;
+	WindowConfig.height= CHILD_WINDOW_HEIGHT;
+	WindowConfig.BorderThickness = EXAMPLEBORDERWIDTH;
+	WindowConfig.BorderColor = webc_GetDefaultColor(WEBC_DEFAULT_TEXT_COLOR);
+	WindowConfig.SetBodyBackGroundColor = 1;
+	WindowConfig.BackGroundColor = webc_GetDefaultColor(WEBC_DEFAULT_BACKGROUND_COLOR);
+	WindowConfig.BorderStyle = 0;  // or one of BS_RAISED,BS_LOWERED,BS_RIDGE,BS_GROOVE
+	WindowConfig.WindowFlags = WF_DISABLESCROLLBARS|WF_STARTINBG;   // WF_RESIZABLE,WF_DISABLESCROLLBARS,WF_MODAL,WF_SAVEUNDER,WF_SPRITE,WF_STARTINBG
+
+<P>	return (<!1><A HREF="wcWinCreateEx.html">wcWinCreateEx</A>(	&childwindowCtx,
+		"Example",		// char *_windowname
+		0, // wcEventCallback BodyCallback
+		0, // char *_defaultUrl
+		0, // char *_defaultContent,
+		&WindowConfig // struct HTMLBrowserWindowConfig *pWindowConfig
+	) < 0);
+}
+
+<P>	</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

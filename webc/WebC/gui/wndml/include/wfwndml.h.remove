@@ -1,0 +1,57 @@
+/*
+|  WFGUI.H - 
+| 
+|  EBSnet - 
+| 
+|  Copyright EBS Inc. , 2004
+|  All rights reserved.
+|  This code may not be redistributed in source or linkable object form
+|  without the consent of its author.
+*/ 
+
+#ifndef __WFWINDML_H__
+#define __WFWINDML_H__
+
+#include "webc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#if 0
+void* WindML_CreateFont (
+		HTMLGraphicsContext** ctx,
+		const WEBC_CHAR* familyName,
+		const WEBC_CHAR* genericName,
+		WEBC_UINT16 pointSize,
+		WEBC_UINT16 attrib,
+		int familyIndex
+	);
+
+void* WindML_GetDefaultFont (
+		HTMLGraphicsContext** ctx
+	);
+
+void WindML_DestroyFont (
+		HTMLGraphicsContext** ctx,
+		void* font
+	);
+
+int WindML_NumFontFamilies (
+		HTMLGraphicsContext** ctx
+	);
+	
+const WEBC_CHAR** WindML_GetFontFamilyNames (
+		HTMLGraphicsContext** ctx
+	);
+
+const WEBC_CHAR** WindML_GetFontFamilyGenericNames (
+		HTMLGraphicsContext** ctx
+	);
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __WFWINDML_H__ */

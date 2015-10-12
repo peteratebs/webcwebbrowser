@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>HELEMENT_HANDLE webc_DocFindElement</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>HELEMENT_HANDLE <A HREF="#DOC.DOCU">webc_DocFindElement</A></H2><H2>(HDOC_HANDLE doc,  char* id,<BR>&nbsp; char* name,<BR>&nbsp; HTMLElementType type,<BR>&nbsp; long index)</H2><BLOCKQUOTE>Search for an element by id, name, type, and/or index </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Does a depth-first search of the document tree for an element
+matching all of the search criteria
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>doc</B> - 		The handle of the document to search
+<BR><B>id</B> -       The ID of the element to search for (WEBC_NULL to match any id)
+<BR><B>name</B> - 	The NAME of the element to search for (WEBC_NULL to match any name)
+<BR><B>type</B> -     The TYPE of element to search for (HTML_ELEMENT_ANY to match any type)
+<BR><B>index</B> -    The index of the element to find (HTML_INDEX_LAST for the last
+element in the document)
+<BR><DT><B>Returns:</B><DD>  The handle of the Nth element with the specified id, name, and/or type,
+where N is the above specified index; WEBC_NULL if not found.
+<BR><DT><B>See Also:</B><DD>HDOC_HANDLE, HELEMENT_HANDLE<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

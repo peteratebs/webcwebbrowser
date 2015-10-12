@@ -1,0 +1,97 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2>int <A HREF="#DOC.DOCU">rtp_net_bind</A></H2><H2>( RTP_HANDLE sockHandle,   unsigned char* ipAddr,<BR>&nbsp;  int port,   int type )</H2><BLOCKQUOTE>Bind a socket handle to a local port number and optionally  an IP address. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This function should be called on a socket before 
+calling rtp_net_listen/rtp_net_accept (if the socket is 
+stream-type), or rtp_net_recvfrom (if the socket is 
+datagram-type).  The behavior of this function is undefined 
+if sockHandle is not a valid socket handle.  If the IP 
+address is not passed in, the default (typically INADDR_ANY) 
+is used.  If the default IP address is used, packets sent 
+to any of the devices interfaces are accepted.  If 
+rtp_net_bind is called with 0 for its port number, the 
+native TCP/IP stack should assign a unique port number.  If 
+the port specified is already in use by another socket 
+handle, this function must return -1.<br><br>
+
+<P>Server applications will call rtp_net_bind() to establish a 
+“well known port” for clients to call on.  rtp_net_bind 
+does not establish any connections itself.<br><br>
+
+<P>For datagram-type sockets, in order to receive broadcast and 
+multicast packets, the socket handle should be bound to the 
+defualt (INADDR_ANY) IP address or to the broadcast or the 
+specific multicast address.<br><br>
+
+<P>It is not necessary to call rtp_net_bind if 
+rtp_net_connect or rtp_net_sendto is to be called.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>sockHandle</B> -   Socket handle to bind to. 
+<BR><B>ipAddr</B> -   The optional IP address to be attached to. 
+<BR><B>port</B> -   Port (in host byte order) to be attached to. 
+<BR><B>type</B> -   Type of IP address:<br>
+<pre>
+|		4   Indicates an IPv4 address.
+|		6   Indicates an IPv6 address.
+</pre> <BR><DT><B>Returns:</B><DD>  0 if successful, -1 on failure, -2 if a non-fatal 
+error occurred.  A non-fatal error includes a socket that the 
+reuse address option has not been set and the socket has 
+already been bound to the same IP address indicated in this 
+call, indicating that this additional bind call is not needed. 
+For debugging purposes; if the cause of the error is obtainable 
+at the native TCP/IP layer, turn on RTP_DEBUG in 
+rtpdebug.h to display the native error value.
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>

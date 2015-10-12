@@ -1,0 +1,108 @@
+﻿Build started 10/1/2012 8:11:53 AM.
+     1>Project "C:\dev\webc\WebC\project\msvc.net\AppBuilder\webcdemo_gdip.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug JavaScript Unicode\webcdemo_gdip.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\include\protocol /I..\..\..\include\minigui /I..\..\..\include\jscript /I..\..\..\include\imgdecode /I..\..\..\include\imgconvert /I..\..\..\include\htmldom /I..\..\..\include\htmldisplay /I..\..\..\include\browser /I..\..\..\gui\windows\include /I..\..\msvc6.0\webcdemo_peg_win32 /I..\..\..\lib\mozilla /I..\..\..\..\rtplatform\v0.4\include\ms32 /I..\..\..\..\rtplatform\v0.4\include /I..\..\..\ixml\v1.2\inc /I..\..\..\gui\framebuffer\FB_Fonts /I..\..\..\gui\framebuffer\include /I..\..\..\include\webcapi /I..\..\..\include\util /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D WEBC_SUPPORT_JSCRIPT=1 /D WEBC_SUPPORT_UNICODE=1 /D WEBC_DEBUG /D _WEBC_ /D __WEBC__ /D _CRTDBG_MAP_ALLOC /D GDIFRAMEBUFFER=1 /D UNICODE /D _UNICODE /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm /EHsc /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug JavaScript Unicode\\" /Fd"Debug JavaScript Unicode\vc100.pdb" /FR"Debug JavaScript Unicode\\" /Gd /TP /wd4996 /analyze- /errorReport:prompt webcdemo_gdip.cpp
+         webcdemo_gdip.cpp
+     1>c:\dev\webc\webc\project\msvc.net\appbuilder\webcdemo_gdip.cpp(18): warning C4005: '_CRTDBG_MAP_ALLOC' : macro redefinition
+                 command-line arguments :  see previous definition of '_CRTDBG_MAP_ALLOC'
+     1>c:\dev\webc\webc\project\msvc.net\appbuilder\webcdemo_gdip.cpp(24): warning C4005: 'UNICODE' : macro redefinition
+                 command-line arguments :  see previous definition of 'UNICODE'
+     1>c:\dev\webc\webc\project\msvc.net\appbuilder\webcdemo_gdip.cpp(99): warning C4101: 'screenRect' : unreferenced local variable
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug JavaScript Unicode\webcdemo_gdip.exe" /INCREMENTAL /NOLOGO libcpmtd.lib libcmtd.lib ws2_32.lib gdiplus.lib ..\..\..\lib\openssl\openssl32.lib oldnames.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB /MANIFEST /ManifestFile:"Debug JavaScript Unicode\webcdemo_gdip.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"Debug JavaScript Unicode\webcdemo_gdip.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"Debug JavaScript Unicode\webcdemo_gdip.lib" /MACHINE:X86 "Debug JavaScript Unicode\webcdemo_gdip.res"
+         "Debug JavaScript Unicode\webcdemo_gdip.exe.embed.manifest.res"
+         "Debug JavaScript Unicode\FrameBufferDriver.obj"
+         "Debug JavaScript Unicode\WindowsBitMapEventing.obj"
+         "Debug JavaScript Unicode\WindowsBitMapFrameBuffer.obj"
+         "Debug JavaScript Unicode\webcdemo_gdip.obj"
+         "Debug JavaScript Unicode\webcgdip.obj"
+         "Debug JavaScript Unicode\wfgdip.obj"
+         "Debug JavaScript Unicode\attr.obj"
+         "Debug JavaScript Unicode\document.obj"
+         "Debug JavaScript Unicode\element.obj"
+         "Debug JavaScript Unicode\ixml.obj"
+         "Debug JavaScript Unicode\ixmlmembuf.obj"
+         "Debug JavaScript Unicode\ixmlparser.obj"
+         "Debug JavaScript Unicode\namedNodeMap.obj"
+         "Debug JavaScript Unicode\node.obj"
+         "Debug JavaScript Unicode\nodeList.obj"
+         "Debug JavaScript Unicode\FBAbstraction.obj"
+         "Debug JavaScript Unicode\FBAbstractionFonts.obj"
+         "Debug JavaScript Unicode\FBAbstractWindowManager.obj"
+         "Debug JavaScript Unicode\FBEventsandUtils.obj"
+         "Debug JavaScript Unicode\FBGraphicsContext.obj"
+         "Debug JavaScript Unicode\Filters.obj"
+         "Debug JavaScript Unicode\ArialBold10B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialBold14B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialBold20B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialBold6B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialBold9B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialItalic10B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialItalic6B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialItalic9B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialRegular10B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialRegular14B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialRegular20B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialRegular6B0020E007e.obj"
+         "Debug JavaScript Unicode\ArialRegular9B0020E007e.obj"
+         "Debug JavaScript Unicode\CourierBold10B0020E007e.obj"
+         "Debug JavaScript Unicode\CourierBold14B0020E007e.obj"
+         "Debug JavaScript Unicode\CourierBold20B0020E007e.obj"
+         "Debug JavaScript Unicode\CourierRegular10B0020E007e.obj"
+         "Debug JavaScript Unicode\CourierRegular14B0020E007e.obj"
+         "Debug JavaScript Unicode\CourierRegular20B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold10B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold11B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold12B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold13B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold14B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold15B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold16B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold17B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold18B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold20B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold22B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaBold24B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular10B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular11B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular12B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular13B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular14B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular15B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular16B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular17B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular18B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular20B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular22B0020E007e.obj"
+         "Debug JavaScript Unicode\TahomaRegular24B0020E007e.obj"
+         C:\dev\webc\WebC\project\msvc.net\fdlibm\fdlibm___Win32_Debug_JavaScript_Unicode\fdlibm.lib
+         C:\dev\webc\WebC\project\msvc.net\libjpeg\libjpeg___Win32_Debug_JavaScript_Unicode\libjpeg.lib
+         C:\dev\webc\WebC\project\msvc.net\libmng\libmng___Win32_Debug_JavaScript_Unicode\libmng.lib
+         C:\dev\webc\WebC\project\msvc.net\libpng\libpng___Win32_Debug_JavaScript_Unicode\libpng.lib
+         C:\dev\webc\WebC\project\msvc.net\mozjs\mozjs___Win32_Debug_JavaScript_Unicode\mozjs.lib
+         C:\dev\webc\WebC\project\msvc.net\rtplatform_win32\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform_win32.lib
+         C:\dev\webc\WebC\project\msvc.net\webc\webc___Win32_Debug_JavaScript_Unicode\webc.lib
+         C:\dev\webc\WebC\project\msvc.net\zlib\zlib___Win32_Debug_JavaScript_Unicode\zlib.lib
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug JavaScript Unicode\webcdemo_gdip.exe.embed.manifest" /manifest "Debug JavaScript Unicode\webcdemo_gdip.exe.intermediate.manifest"
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         webcdemo_gdip.vcxproj -> C:\dev\webc\WebC\project\msvc.net\AppBuilder\Debug JavaScript Unicode\webcdemo_gdip.exe
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\bscmake.exe /nologo /o"Debug JavaScript Unicode\webcdemo_gdip.bsc" "Debug JavaScript Unicode\FrameBufferDriver.sbr" "Debug JavaScript Unicode\WindowsBitMapEventing.sbr" "Debug JavaScript Unicode\WindowsBitMapFrameBuffer.sbr" "Debug JavaScript Unicode\webcdemo_gdip.sbr" "Debug JavaScript Unicode\webcgdip.sbr" "Debug JavaScript Unicode\wfgdip.sbr" "Debug JavaScript Unicode\attr.sbr" "Debug JavaScript Unicode\document.sbr" "Debug JavaScript Unicode\element.sbr" "Debug JavaScript Unicode\ixml.sbr" "Debug JavaScript Unicode\ixmlmembuf.sbr" "Debug JavaScript Unicode\ixmlparser.sbr" "Debug JavaScript Unicode\namedNodeMap.sbr" "Debug JavaScript Unicode\node.sbr" "Debug JavaScript Unicode\nodeList.sbr" "Debug JavaScript Unicode\FBAbstraction.sbr" "Debug JavaScript Unicode\FBAbstractionFonts.sbr" "Debug JavaScript Unicode\FBAbstractWindowManager.sbr" "Debug JavaScript Unicode\FBEventsandUtils.sbr" "Debug JavaScript Unicode\FBGraphicsContext.sbr" "Debug JavaScript Unicode\Filters.sbr" "Debug JavaScript Unicode\ArialBold10B0020E007e.sbr" "Debug JavaScript Unicode\ArialBold14B0020E007e.sbr" "Debug JavaScript Unicode\ArialBold20B0020E007e.sbr" "Debug JavaScript Unicode\ArialBold6B0020E007e.sbr" "Debug JavaScript Unicode\ArialBold9B0020E007e.sbr" "Debug JavaScript Unicode\ArialItalic10B0020E007e.sbr" "Debug JavaScript Unicode\ArialItalic6B0020E007e.sbr" "Debug JavaScript Unicode\ArialItalic9B0020E007e.sbr" "Debug JavaScript Unicode\ArialRegular10B0020E007e.sbr" "Debug JavaScript Unicode\ArialRegular14B0020E007e.sbr" "Debug JavaScript Unicode\ArialRegular20B0020E007e.sbr" "Debug JavaScript Unicode\ArialRegular6B0020E007e.sbr" "Debug JavaScript Unicode\ArialRegular9B0020E007e.sbr" "Debug JavaScript Unicode\CourierBold10B0020E007e.sbr" "Debug JavaScript Unicode\CourierBold14B0020E007e.sbr" "Debug JavaScript Unicode\CourierBold20B0020E007e.sbr" "Debug JavaScript Unicode\CourierRegular10B0020E007e.sbr" "Debug JavaScript Unicode\CourierRegular14B0020E007e.sbr" "Debug JavaScript Unicode\CourierRegular20B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold10B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold11B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold12B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold13B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold14B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold15B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold16B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold17B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold18B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold20B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold22B0020E007e.sbr" "Debug JavaScript Unicode\TahomaBold24B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular10B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular11B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular12B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular13B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular14B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular15B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular16B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular17B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular18B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular20B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular22B0020E007e.sbr" "Debug JavaScript Unicode\TahomaRegular24B0020E007e.sbr"
+       FinalizeBuildStatus:
+         Deleting file "Debug JavaScript Unicode\webcdemo_gdip.unsuccessfulbuild".
+         Touching "Debug JavaScript Unicode\webcdemo_gdip.lastbuildstate".
+     1>Done Building Project "C:\dev\webc\WebC\project\msvc.net\AppBuilder\webcdemo_gdip.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.43

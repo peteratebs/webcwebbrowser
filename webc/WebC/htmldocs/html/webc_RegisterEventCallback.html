@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>int <A HREF="#DOC.DOCU">webc_RegisterEventCallback</A></H2></TD><TD><H2>(HTMLEventCallback cb,<BR>&nbsp; char* argName)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>webC extension to assign a 'C' custom named event handler accessable from html source code. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+After this function is called, whenever an HTML tag loaded into WebC specifies its 'eventhandler' attribute (a WebC
+HTML extension) as the name passed in, all events that happen to that tag will be passed on to the C function specified as
+cb.
+<br><PRE>
+Example:
+
+<P>static HTMLEventStatus MyEvHandler (HBROWSER_HANDLE hbrowser,HDOC_HANDLE hdoc, HELEMENT_HANDLE helem, HTMLEvent* event,	char* param);
+// This line of code registers a function named MyEvHandler to  be called for all html content with the attribute eventhandler="MyNamedEvent",
+webc_RegisterEventCallback( MyEvHandler, "MyNamedEvent");
+
+<P>// An example of the content that would create an object with this default handler:
+&lt;div eventhandler="MyNamedEvent"&gt;Hello&lt;/div&gt;.
+
+<P>// This function will be called as the default event handler for the above object.
+static HTMLEventStatus MyEvHandler (HBROWSER_HANDLE hbrowser,HDOC_HANDLE hdoc, HELEMENT_HANDLE helem, HTMLEvent* event,	char* param)
+{
+wcCtx Ctx;
+wcEL El;
+
+<P>	// Example: Set up a context for calling wcXX API calls from a named default handler.
+	El = (wcEL) element;
+	wcCtxtInit(&Ctx, (wcBROW) hbrowser, (wcDOC) hdoc);
+	// Do some work
+
+<P>	// Free the context
+	wcCtxtRelease(&Ctx);
+	return HTML_EVENT_STATUS_CONTINUE; // or HTML_EVENT_STATUS_DONE,HTML_EVENT_STATUS_HALT,HTML_EVENT_STATUS_ERROR
+
+<P></PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>cb</B> -        The event handler callback.
+<BR><B>name</B> -      The name of this event handler
+<BR><DT><B>Returns:</B><DD>  0 if the callback was successfully registered; -1 otherwise
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A>,  <!1><A HREF="webc_BrowserSetTagEventHandler.html">webc_BrowserSetTagEventHandler</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

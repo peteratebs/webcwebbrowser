@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>int webc_ElementSetValueASCII</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>int <A HREF="#DOC.DOCU">webc_ElementSetValueASCII</A></H2><H2>(HELEMENT_HANDLE element,<BR>&nbsp; const char* _value,<BR>&nbsp; HTML_BOOL refresh)</H2><BLOCKQUOTE>(Deprecated) Set the current value for an input widget </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+For text entry widgets (HTML_EDIT_STR_ELEMENT, HTML_EDITBOX_ELEMENT),
+this function sets the current text in the widget.  For boolean-type
+widgets (HTML_CHECKBOX_ELEMENT, HTML_RADIO_BUTTON_ELEMENT), this
+function will set the value string that will be returned by
+<!1><A HREF="webc_ElementGetChecked.html">webc_ElementGetChecked</A> if the element's status is 'checked'.
+To set the currently selected item in combo boxes (HTML_SELECT_ELEMENT),
+use <!1><A HREF="webc_ElementSetSelected.html">webc_ElementSetSelected</A>.
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>element</B> -  The element whose value to get
+<BR><B>value</B> -    The string to set the element's value to
+<BR><B>refresh</B> -  If WEBC_TRUE, then redraw this element
+<BR><DT><B>See Also:</B><DD>HELEMENT_HANDLE, VALUE, webc_ElementGetValue, <!1><A HREF="webc_ElementGetChecked.html">webc_ElementGetChecked</A>,
+<!1><A HREF="webc_ElementSetChecked.html">webc_ElementSetChecked</A>, <!1><A HREF="webc_ElementSetSelected.html">webc_ElementSetSelected</A>, webc_ElementRefresh<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

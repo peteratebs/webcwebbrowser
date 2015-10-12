@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExCalculator</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>This example demonstrates mixing html and css source with 'C' source code to implement a simple functional calculator in 40 lines of CSS and HTML and < 100 lines of C. <ul> <li>Demonstrate using <!1><A HREF="wcDocEnumerate.html">wcDocEnumerate</A> to access elements in an html document. </ul> </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>This source code provided in webcapiexample.c provides examples for creating create elements and display them with customized styles.
+<br> Note: childwindowCtx has already been initialized to a valid window context by <!1><A HREF="OpenExampleChildWindow.html">OpenExampleChildWindow</A>.
+<PRE>
+// ===================================================================
+// Declare an array that holds the html source code for our calculator
+    static char *CalcHtmlSource = "\
+    &lt;html&gt;\
+    &lt;head&gt;\
+    &lt;style&gt;\
+    .table\
+    {\
+    font-family: \"arial bold\", arial;\
+    font-size:8px;\
+    color:grey;\
+    left:20px;\
+    top:0px;\
+    width:300px;\
+    height:120px;\
+    position:absolute;\
+    border:1px solid black;\
+    }\
+    td\
+    {\
+    background-color:orange;\
+    width:40px;\
+    text-align:center;\
+    border:2px solid white;\
+    padding:2px;\
+    }\
+    \
+    th\
+    {\
+    background-color:lightblue;\
+    color:steelgrey;\
+    border:1px solid grey;\
+    text-align:right;\
+    font-size:14px;\
+    }\
+     &lt;/style&gt;\
+    \
+    &lt;/head&gt;\
+    &lt;body id=\"ComposeWindow\"  style=\"overflow:hidden\"&gt;\
+    &lt;table class=\"CalculatorTable\"&gt;\
+    &lt;tr&gt;&lt;th colspan=4&gt;|&lt;/th&gt;&lt;/tr&gt;\
+    &lt;tr&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;+&lt;/td&gt;&lt;/tr&gt;\
+    &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;\
+    &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;=&lt;/td&gt;&lt;/tr&gt;\
+    &lt;tr&gt;&lt;td colspan=2&gt;0&lt;/td&gt;&lt;td colspan=2&gt;Clr&lt;/td&gt;&lt;/tr&gt;\
+    &lt;/table&gt;&lt;/body&gt;&lt;/html&gt;";
+    </body></html>
+
+<P>
+static void ExCalculator(void)
+{
+	// Clear the window content and load the HTML and CSS calculator source in
+	wcDocClear(&childwindowCtx, wcFALSE);
+	if (wcDocOpen(&childwindowCtx)==0)
+	{
+		wcDocWriteHtml(&childwindowCtx, CalcHtmlSource, rtp_strlen(CalcHtmlSource),  wcTRUE);
+		wcDocClose(&childwindowCtx);
+	}
+	// Start the app by enumerating through all the elements and setting event handlers.
+	wcDocEnumerate(&childwindowCtx,CalcEnumeratorFunction, 0, 0);
+	wcWinBringToTop(&childwindowCtx);
+}
+
+<P>static HTMLEventStatus CalcButtonCb(wcCtx* Ctx,wcEL element,HTMLEvent* event,char* param); // Button handler that implements the calculator
+// For brevity use static variable to hold a few values but we could allocate them and use private dtaa pointers.
+static wcEL CalcWindow; // Window where the digits are displayed
+static char CalcStringVal[32];
+static int CalcStringCount;
+static int LastOperand;
+static char LastOperator;
+
+<P>// This callback is called for ever element in the document
+static wcBOOL CalcEnumeratorFunction(wcCtx* Ctx, wcEL El, int UserIntParm, void *UserVoidParm)
+{
+	if (wcElGetType(El) == HTML_TABLE_CELL_ELEMENT)
+	{ // Read the inner HTML, '|' means it is our text window all other table cell element get the same event handler.
+	 	char *p = <!1><A HREF="wcElGetInnerHtml.html">wcElGetInnerHtml</A>(Ctx, El);
+		if (p)
+		{
+			if (rtp_strcmp(p, "|")==0) // '|' means it is our text window where we should places results.
+				CalcWindow = El;
+			else
+			{
+				<!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A>(El, CalcButtonCb); // Set an event handler
+				<!1><A HREF="wcPushData.html">wcPushData</A>(Ctx, El, (void *) *p);		// Store the keyvalue in private data so we don't have to get html source each time
+			}
+		}
+	}
+	return wcFALSE; // Keep enumerating
+}
+
+<P>
+static HTMLEventStatus CalcButtonCb(wcCtx* Ctx,wcEL element,HTMLEvent* event,char* param)
+{
+int initialExample = currentExample;
+static int ClearTextBox = 0;
+	if (!element)
+		return HTML_EVENT_STATUS_CONTINUE;
+	if (event->type == HTML_EVENT_MOUSEDOWN){ // Animate keypresses with a simple color change
+		  <!1><A HREF="wcElSetStyleColorNamed.html">wcElSetStyleColorNamed</A>(element, CSS_PROPERTY_BACKGROUND_COLOR, "Maroon", wcTRUE);
+	}
+	else if (event->type == HTML_EVENT_MOUSEUP){
+		  <!1><A HREF="wcElSetStyleColorNamed.html">wcElSetStyleColorNamed</A>(element, CSS_PROPERTY_BACKGROUND_COLOR, "orange", wcTRUE);
+	}
+	else if (event->type == HTML_EVENT_CLICK)
+	{
+		char KeyVal = (char) <!1><A HREF="wcGetData.html">wcGetData</A>( Ctx, element);
+		if (KeyVal == 'C')	{ // Clear
+			LastOperator = 0;LastOperand = 0;ClearTextBox = 1;
+		}
+		if (ClearTextBox) { // Clear the text. Workaround ! putting nothing in the cells causes a resize, so display an invisible character in the background color.
+			char Buffer[64];
+			CalcStringCount=0;
+			CalcStringVal[CalcStringCount]=0;
+			rtp_sprintf(Buffer, "&lt;div style=\"color:lightblue;\"&gt;x&lt;div&gt;");
+			<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(CalcWindow, Buffer);
+			ClearTextBox=0;
+		}
+		if (KeyVal == '+' || KeyVal == '-')	{ // Save the current operand and the operator, clear to start a new operand
+			LastOperand = rtp_atol(CalcStringVal);
+			ClearTextBox = 1; // Clear
+			LastOperator = KeyVal;
+		}
+		else if (KeyVal == '=')	{ // Calculate and update.
+			long Answer;
+			if (LastOperator == '+') Answer = LastOperand +  rtp_atol(CalcStringVal);
+			else if  (LastOperator == '-') Answer = LastOperand -  rtp_atol(CalcStringVal);
+			else Answer = 0;
+			LastOperand = Answer;
+			rtp_sprintf(CalcStringVal, "%d", Answer);
+			CalcStringCount = rtp_strlen(CalcStringVal);
+			<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(CalcWindow, CalcStringVal);
+		}	else if (KeyVal == 'C')	;
+		else{ // A digit was pressed. update the string which acts as our key accumulator
+			CalcStringVal[CalcStringCount++] = KeyVal;
+			CalcStringVal[CalcStringCount]=0;
+			<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(CalcWindow, CalcStringVal);
+		}
+	}
+	return HTML_EVENT_STATUS_CONTINUE;
+}
+
+<P>	</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

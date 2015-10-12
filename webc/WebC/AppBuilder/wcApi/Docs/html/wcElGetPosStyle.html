@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>wcBOOL wcElGetPosStyle</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>wcBOOL <A HREF="#DOC.DOCU">wcElGetPosStyle</A></H2><H2>(wcEL element,  int* top,  int* left,<BR>&nbsp; int* width,  int* height)</H2><BLOCKQUOTE>Get the style positioning values of an element. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Get the current position of an element from its CSS or HTML positioning. Fails if the element has not
+been positioned.
+Note: wcElGetPosStyle can only obtain the coordinates of elements that were manually sized and positioned
+with CSS or HTML attributes. The routine can be used in screen constructors on elements that have been positioned but not yet drawn.
+After an is drawn, whether manually positioned or not, coordinates may be obtained by calling wcElGetPosWin.
+Note: top, left height and width are returned as zero if they have not been set.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcEL</B> -           		Element     -   The element.
+<BR><B>int</B> - *          		top      	-   top goes here. If NULL no result is returned for top.
+<BR><B>int</B> - *          		left      	-   left goes here. If NULL no result is returned for left.
+<BR><B>int</B> - *          		height     	-   height goes here. If NULL no result is returned for height.
+<BR><B>int</B> - *          		width     	-   width goes here. If NULL no result is returned for width.
+<BR><DT><B>Returns:</B><DD>  wcTRUE if the argument is valid.
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcElGetPosStyle.html">wcElGetPosStyle</A>,wcElSetPosStyle<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

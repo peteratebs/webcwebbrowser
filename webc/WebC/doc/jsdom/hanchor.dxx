@@ -1,0 +1,57 @@
+HTMLAnchorElement
+
+	Base Class
+		HTMLElement
+
+	Description
+		Object for <a> tag in an HTML document.
+
+	Properties	
+	
+		href
+			Type
+				string
+			Description
+				The target URL of this anchor.
+			Read-only
+				no
+
+		name
+			Type
+				string
+			Description
+				The name of this anchor.
+			Read-only
+				no
+
+		tabIndex
+			Type
+				integer
+			Description
+				The index in the document tab order of this anchor.  -1 indicates this anchor can not be tabbed to.
+			Read-only
+				no
+
+		target
+			Type
+				string
+			Description
+				The name of the frame which should load the URL specified by this anchor.
+			Read-only
+				no
+	
+	Methods
+
+		blur
+			Description
+				Remove key input focus from this element.
+			Parameters
+				none
+			Returns (nothing)
+
+		focus
+			Description
+				Set the key input focus to this element.
+			Parameters
+				none
+			Returns (nothing)

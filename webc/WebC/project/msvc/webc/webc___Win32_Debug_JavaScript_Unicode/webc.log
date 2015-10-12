@@ -1,0 +1,22 @@
+﻿Build started 1/13/2015 8:25:21 AM.
+     1>Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\webc\webc.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\webc___Win32_Debug_JavaScript_Unicode\webc.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         All outputs are up-to-date.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       Lib:
+         All outputs are up-to-date.
+         webc.vcxproj -> C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\webc\.\webc___Win32_Debug_JavaScript_Unicode\webc.lib
+       BscMake:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file ".\webc___Win32_Debug_JavaScript_Unicode\webc.unsuccessfulbuild".
+         Touching ".\webc___Win32_Debug_JavaScript_Unicode\webc.lastbuildstate".
+     1>Done Building Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\webc\webc.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.23

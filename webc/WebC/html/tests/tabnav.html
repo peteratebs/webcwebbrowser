@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+ <TITLE>WebC Tab Navigation Test</TITLE>
+</HEAD>
+
+<form method="GET" action="form.htm" target="Links">
+What do you think of this form? <input name=opinion size=20>
+<input type=hidden name=context value=hidden_input>
+<br>Password: <input type=password name=passwd size=8>
+<br>Text Area:
+<br><textarea name=area cols=50 rows=4>Default Text</textarea>
+<br>Check box: <input type=checkbox name=mycheckbox value=selected>
+<br>Radio 1: 
+<br><input type=radio name=choice1 value=a>A
+<br><input type=radio name=choice1 value=b checked>B
+<br>Radio 2: 
+<br><input type=radio name=choice2 value=c>C
+<br><input type=radio name=choice2 value=d checked>D
+<br>What flavor do you like?
+<SELECT NAME="flavor">
+<OPTION value="vanilla">Vanilla
+<OPTION selected value="strawberry">Strawberry
+<OPTION value="RumRasin">Rum and Raisin
+<OPTION value="PeachAndOrange" >Peach and Orange
+</SELECT>
+<SELECT name=select> 
+	<OPTION selected>All</OPTION> 
+	<OPTION>Titles</OPTION> 
+	<OPTION>My Movies</OPTION> 
+	<OPTION>People</OPTION> 
+	<OPTION>Characters</OPTION> 
+	<OPTION>Quotes</OPTION> <OPTION>Bios</OPTION> 
+	<OPTION>Plots</OPTION>
+</SELECT>
+<br>Submit internally: <input type=submit name=recipient value=internal>
+<br>Submit to world: <input type=submit name=recipient value=world>
+<br>Submit with image map: <input type=image name=Search src="images/search.gif" width=60 height=10>
+<br>Reset Form: <input type=reset>
+</form>
+
+</HTML>

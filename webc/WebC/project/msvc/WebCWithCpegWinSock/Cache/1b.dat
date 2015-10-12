@@ -1,0 +1,9 @@
+var todaysquote=
+"Here's what customers are saying about Rtfs..<br><br> &quot;" +
+"What really impresses me is how low the CPU and Memory usage is. " +
+"Actually I was totally flabbergasted  by the numbers (in the positive sense of the word). While running the benchmark on the embedded target, " +
+"the CPU usage was only 3.5% and the memory usage only 1.8%. These numbers were measured while constantly writing large files to the CF card (streaming).&quot;";
+
+function quoteoftheday() {
+document.writeln(todaysquote);
+}

@@ -1,0 +1,82 @@
+jhtml_doc_write
+jhtml_element_resolve(style)
+jstyle_getProperty CSSPropertyType= 74
+jstyle_getProperty CSSPropertyType= 74
+jhtml_element_resolve(style)
+jstyle_getProperty CSSPropertyType= 74
+jstyle_getProperty CSSPropertyType= 74
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 74
+jstyle_setProperty CSSPropertyType= 74
+jhtml_body_getProperty 9002322
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 74
+jhtml_doc_load
+jhtml_doc_getElementsByTagName img
+jhtml_element_detachEvent
+jhtml_element_detachEvent
+jhtml_element_attachEvent
+jhtml_element_attachEvent
+jhtml_element_attachEvent
+jhtml_doc_CreateElement
+jhtml_element_setProperty 9093618
+jhtml_element_appendChild
+jhtml_element_detachEvent
+jhtml_element_detachEvent
+jhtml_doc_resolve  f
+jhtml_doc_resolve jhtml_collection_New(images)
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 41
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 41
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 41
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 41
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 33
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 33
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 67
+jstyle_setProperty CSSPropertyType= 76
+jstyle_setProperty CSSPropertyType= 67
+jstyle_setProperty CSSPropertyType= 76
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 76
+jstyle_setProperty CSSPropertyType= 41
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 41
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 72
+jstyle_setProperty CSSPropertyType= 72
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 41
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 33
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 42
+jstyle_setProperty CSSPropertyType= 72
+jhtml_element_resolve(style)
+jstyle_setProperty CSSPropertyType= 42
+jstyle_setProperty CSSPropertyType= 72
+jhtml_element_setProperty innerHTML
+    innerHTML = <img style="position:absolute; left:0px; top:0px;" src="http://mt1.google.com/vt/lyrs=m@119&hl=en&x=3&y=6&z=4&s=Galileo">
+jstyle_setProperty CSSPropertyType= 33
+jhtml_doc_CreateElement
+jhtml_element_setProperty 9093618
+jhtml_element_appendChild
+jstyle_setProperty CSSPropertyType= 74
+jstyle_setProperty CSSPropertyType= 74
+jhtml_body_getProperty 9002322
+jstyle_setProperty CSSPropertyType= 74
+jhtml_doc_load
+jhtml_doc_write
+jhtml_doc_write
+jhtml_doc_write
+jhtml_doc_write
+jhtml_doc_write
+jhtml_doc_write
+jhtml_doc_write
+jhtml_doc_write
+jhtml_doc_write

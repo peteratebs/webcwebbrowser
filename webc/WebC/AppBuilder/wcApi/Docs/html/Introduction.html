@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> Introduction</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2> <A HREF="#DOC.DOCU">Introduction</A></H2></H2><A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>webCApi Interface
+
+<P>The webC API provides a C/C++ level interface to webC. All API's start with the letters "wc", followed by the
+type of object it works on, including "wcEl", "wcDoc", "wcSys", "wcDom", "wcWin". Subsequant characters describe the function, examples are
+wcElSetEventHandler, wcDocEnumerate, and wcWinCreateEx.
+
+<P>
+The API provides these features and more:
+
+<P>Windowing system with support for create, move, load content or dynamically create content, z-order, modal dialogue support, save under, destroy,
+<ul>
+<li>            Context management</li>
+<ul>
+<li>                All API cals require a user context, these are created on entry to an event handler and is destroyed on exit.</li>
+<li>                The user context helps manage heap space used to pass information between the webC core, typically ASCII representations of strings</li>
+that are stored internally as unicode.
+</ul>
+<li>            Windowing API</li>
+<ul>
+<li>                Dynamicaly Create, modify, insert, and delete elements in a document.</li>
+<li>                Save under and modal support simplify dialog box coding.</li>
+</ul>
+<li>            Support for complex composite application objects.</li>
+<ul>
+<li>                Dynamicaly push and pop user local data to elements, documents or windows.</li>
+<li>                Dynamicaly push and pop user local event handlers to elements or documents.</li>
+</ul>
+<li>            Element and DOM support.</li>
+<ul>
+<li>                Create, insert, append remove, delete elements in a document.
+<li>                Attach and release event handlers and private data sets.
+<li>                Get and set styles and other attributes.
+</ul>
+<li>            Search and document enumeration support.</li>
+<ul>
+<li>                Top down dom search with XML search strings.</li>
+<li>                Simplified document enumeration support with user supplied callbacks.</li>
+</ul>
+<li>            Sytem level utilities to help application development.</li>
+<ul>
+<li>                A new timer callback model simplifies including user timer callback functions that are not associated with a document or element.</li>
+</ul>
+</ul>
+
+<P>Please review the manual pages for more details on the API.
+
+<P>A sample application wcapiexamples.cpp is provided with documented code fragments that demonstrate how to use the API. Documentation for the
+example code in this documentation set.</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

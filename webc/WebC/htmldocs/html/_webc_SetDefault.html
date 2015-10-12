@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">_webc_SetDefault</A></H2></TD><TD><H2>(WebcDefaultIndex varIndex,  void* value)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>_webc_SetDefault(INDEX, VALUE) may be called to change any of the default values at run time. You should not call _webc_SetDefault directly, instead call the macro webc_SetDefault(), which castes the second argument to void *. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>Call this function to change default values. Affected elements will be drawn using these defaults if no style or other HTML attribute overrides the setting.
+<PRE>
+		Note: Before using webc_SetDefault() to modify a default value you should consult the source code for webc_RestoreDefaults to verify that you are passing the correct data type.
+
+<P>	 	Examples:
+		WEBC_CHAR TahomaName[] = {'T','a','h','o','m','a',0}; // Works for unicode or non unicode strings
+		  webc_SetDefault(WEBC_DEFAULT_BODY_FONT_FAMILY, TahomaName);
+		  webc_SetDefault(WEBC_DEFAULT_BODY_FONT_SIZE, CSS_FONT_SIZE_LARGE);
+
+<P>		  webc_SetDefault(WEBC_DEFAULT_SLIDER_WIDTH, 10);
+		  webc_SetDefault(WEBC_DEFAULT_SLIDER_HILITE_COLOR, HTML_RGBAToColor(255,0,0,0));
+		  webc_SetDefault(WEBC_DEFAULT_SLIDER_SHADOW_COLOR, HTML_RGBAToColor(0,255,0,0));
+		  webc_SetDefault(WEBC_DEFAULT_SLIDER_FRAME_SHADOW_COLOR, HTML_RGBAToColor(128,0,0,0));
+		  webc_SetDefault(WEBC_DEFAULT_SLIDER_FRAME_HILITE_COLOR, HTML_RGBAToColor(0,128,0,0));
+
+<P>		</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

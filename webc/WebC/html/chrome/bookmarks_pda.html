@@ -1,0 +1,157 @@
+<html>
+<head>
+<style>
+div {
+	font-family: arial;
+	font-size: 10px;
+}
+
+#rootdiv div {
+	padding-left: 32px;
+}
+
+input {
+	background-color: #cccccc;
+	font-famiy: arial;
+	font-size: 11px;
+	color: black;
+	border: outset 1px #999999;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: black;
+}
+</style>
+
+<script>
+
+function LoadBookmark(bmAnchor)
+{
+	var frame = window.top.document.getElementById("contentFrame");	
+	
+	if (frame)
+	{
+		window.top.HideBookmarks();
+		frame.document.load(bmAnchor.href);
+	}
+	
+	return false;
+}
+
+function RecolorBookmarks()
+{
+	var rootDiv = document.getElementById('rootDiv');
+	if (rootDiv)
+	{
+		var currentDiv = rootDiv.firstChild;
+		var i = 0;
+		
+		while (currentDiv)
+		{
+			if (i==0)
+			{
+				currentDiv.style.backgroundColor = '#EFF7FF';
+			}
+			else
+			{
+				currentDiv.style.backgroundColor = '#ffffff';
+			}
+			currentDiv = currentDiv.nextSibling;
+			i = 1 - i;
+		}
+	}
+}
+
+function AddBookmark(name,url)
+{
+	var rootDiv = document.getElementById('rootDiv');
+	if (rootDiv)
+	{
+		rootDiv.innerHTML = rootDiv.innerHTML + '<div>' +
+				'<img src="close_default.png" align=right onmousedown="RemoveBookmark(this.parentElement);">' +
+				'<img src="document.png" align=absbottom>' +
+			    '<a href="' + url + '" onclick="return LoadBookmark(this);">' +
+			     name + ' (' + url + ')</a></div>\n';
+		                     
+		var addButton = document.getElementById('addButton');
+		if (addButton)
+		{
+			//addButton.style.display = 'none';
+		}
+		
+		RecolorBookmarks();
+	}
+}
+
+function RemoveBookmark(toRemove)
+{
+	var rootDiv = document.getElementById('rootDiv');
+	if (rootDiv)
+	{
+		var newBookmarks = '';
+		var currentDiv = rootDiv.firstChild;
+		
+		while (currentDiv)
+		{
+			if (currentDiv != toRemove)
+			{
+				newBookmarks = newBookmarks + currentDiv.outerHTML;
+			}
+			currentDiv = currentDiv.nextSibling;
+		}
+		
+		window.suspendDraw();
+		window.setTimeout("window.resumeDraw(); RecolorBookmarks();", 0);
+		rootDiv.innerHTML = newBookmarks;
+	}
+}
+
+
+</script>
+</head>
+<body onload='		
+	var frame = window.top.document.getElementById("contentFrame");
+	var bmFrame = window.top.document.getElementById("bookmarksFrame");
+	if (frame && bmFrame)
+	{
+		frame.style.visibility = "hide";
+		bmFrame.style.visibility = "show";
+	}	
+
+	var rootDiv = document.getElementById("rootDiv");
+	if (rootDiv)
+	{
+		rootDiv.innerHTML = ReadFile("bm_saved.html");
+		RecolorBookmarks();
+	}	
+	'><script>
+var urlBar = window.top.document.getElementById("urlBar");
+var documentTitle = window.top.document.getElementById("documentTitle");
+if (urlBar)
+{
+	document.write("<input id='addButton' style='float:right' " +
+	               "onclick='AddBookmark(\"" + documentTitle.value + "\",\"" + urlBar.value + 
+	               "\")' type=button value='Bookmark current page'>");
+}
+</script>
+
+
+<!-- pre-load images -->
+<img src='document.png' style='display: none;'>
+<img src='close_default.png' style='display: none;'>
+<img src='close_over.png' style='display: none;'>
+	
+
+<div style='height: 32px; font-size: 16px; padding: 2px'><img style='margin-right:8px;' align=middle width=32 height=32 src='bookmarks_large.png'><b>Bookmarks</b></div>
+<input id='numBookmarks' type=hidden value='6'>
+<div id='rootDiv' style='padding: 0px;'>
+</div>
+
+</body>
+</html>

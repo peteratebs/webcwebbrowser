@@ -1,0 +1,310 @@
+<H1> Display and Visiblity tests </H1>
+
+<H2> Simple SPAN Display </H2>
+
+<table>
+ <tr>
+  <td>Display: </td>
+  <td><input type=button value=Block onclick='window.displaySpan.style.display="block";'>
+      <input type=button value=Inline onclick='window.displaySpan.style.display="inline";'>
+      <input type=button value=None onclick='window.displaySpan.style.display="none";'></td>
+ </tr>
+ <tr>
+  <td>Visiblity: </td>
+  <td><input type=button value=Hide onclick='window.displaySpan.style.visibility="hidden";'>
+      <input type=button value=Show onclick='window.displaySpan.style.visibility="visible";'>
+      <input type=button value=Inherit onclick='window.displaySpan.style.visibility="inherit";'></td>
+ </tr>
+</table>
+
+<BR>
+before the span...
+<SPAN id=displaySpan onmouseover='this.style.color="#ff0000";' onmouseout='this.style.color="#000000";'>
+Some text.
+</SPAN>
+...after the span
+<BR>
+<BR>
+
+<H2> Complex SPAN Display </H2>
+
+<H3> SPAN Display </H3>
+<table>
+ <tr>
+  <td>Display: </td>
+  <td><input type=button value=Block onclick='window.displaySpan2.style.display="block";'>
+      <input type=button value=Inline onclick='window.displaySpan2.style.display="inline";'>
+      <input type=button value=None onclick='window.displaySpan2.style.display="none";'></td>
+ </tr>
+ <tr>
+  <td>Visiblity: </td>
+  <td><input type=button value=Hide onclick='window.displaySpan2.style.visibility="hidden";'>
+      <input type=button value=Show onclick='window.displaySpan2.style.visibility="visible";'>
+      <input type=button value=Inherit onclick='window.displaySpan2.style.visibility="inherit";'></td>
+ </tr>
+</table>
+
+<H3> IMG Display </H3>
+<table>
+ <tr>
+  <td>Display: </td>
+  <td><input type=button value=Block onclick='window.imgInSpan.style.display="block";'>
+      <input type=button value=Inline onclick='window.imgInSpan.style.display="inline";'>
+      <input type=button value=None onclick='window.imgInSpan.style.display="none";'></td>
+ </tr>
+ <tr>
+  <td>Visiblity: </td>
+  <td><input type=button value=Hide onclick='window.imgInSpan.style.visibility="hidden";'>
+      <input type=button value=Show onclick='window.imgInSpan.style.visibility="visible";'>
+      <input type=button value=Inherit onclick='window.imgInSpan.style.visibility="inherit";'></td>
+ </tr>
+</table>
+
+<BR>
+<BR>
+before the span...
+<SPAN id=displaySpan2 onmouseover='this.style.color="#ff0000";' onmouseout='this.style.color="#000000";'>
+This image: <img id=imgInSpan src=images/boston.jpeg> is inside the span.
+</SPAN>
+...after the span
+<BR>
+<BR>
+
+
+<H2> DIV Display </H2>
+<table>
+ <tr>
+  <td>Display: </td>
+  <td><input type=button value=Block onclick='window.displayDiv1.style.display="block";'>
+      <input type=button value=Inline onclick='window.displayDiv1.style.display="inline";'>
+      <input type=button value=None onclick='window.displayDiv1.style.display="none";'></td>
+ </tr>
+ <tr>
+  <td>Visiblity: </td>
+  <td><input type=button value=Hide onclick='window.displayDiv1.style.visibility="hidden";'>
+      <input type=button value=Show onclick='window.displayDiv1.style.visibility="visible";'>
+      <input type=button value=Inherit onclick='window.displayDiv1.style.visibility="inherit";'></td>
+ </tr>
+</table>
+
+<BR>
+before the div...
+<DIV id=displayDiv1 onmouseover='this.style.color="#ff0000";' onmouseout='this.style.color="#000000";'>
+Some text.
+</DIV>
+...after the div
+
+
+<H2> TABLE Display </H2>
+<table>
+ <tr>
+  <td>Display: </td>
+  <td><input type=button value=Block onclick='window.displayTable.style.display="block";'>
+      <input type=button value=Inline onclick='window.displayTable.style.display="inline";'>
+      <input type=button value=None onclick='window.displayTable.style.display="none";'></td>
+ </tr>
+ <tr>
+  <td>Visiblity: </td>
+  <td><input type=button value=Hide onclick='window.displayTable.style.visibility="hidden";'>
+      <input type=button value=Show onclick='window.displayTable.style.visibility="visible";'>
+      <input type=button value=Inherit onclick='window.displayTable.style.visibility="inherit";'></td>
+ </tr>
+</table>
+
+<BR>
+before the table...
+<TABLE id=displayTable border=2 cellspacing=6>
+<tr><td>Inside the table.</td></tr>
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.spanInTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.spanInTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.spanInTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.spanInTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.spanInTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.spanInTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	a SPAN: before... <span id=spanInTable>inside the span</span> ...after<br><br></td></tr>
+
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.buttonInTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.buttonInTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.buttonInTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.buttonInTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.buttonInTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.buttonInTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	a BUTTON: before... <input type=button value="Press Me" id=buttonInTable> ...after<br><br></td></tr>
+
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.textInTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.textInTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.textInTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.textInTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.textInTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.textInTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	a TEXT INPUT: before... <input type=text value="Edit Me" id=textInTable> ...after<br><br></td></tr>
+
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.radioInTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.radioInTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.radioInTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.radioInTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.radioInTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.radioInTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	a RADIO INPUT: before... 
+	<input type=radio value="one" id=radioInTable>
+	...after<br><br></td></tr>
+
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.checkInTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.checkInTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.checkInTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.checkInTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.checkInTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.checkInTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	a CHECKBOX INPUT: before... <input type=checkbox value="Edit Me" id=checkInTable> ...after<br><br></td></tr>
+
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.passInTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.passInTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.passInTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.passInTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.passInTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.passInTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	a PASSWORD INPUT: before... <input type=password value="Edit Me" id=passInTable> ...after<br><br></td></tr>
+
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.taInTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.taInTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.taInTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.taInTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.taInTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.taInTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	a TEXTAREA: before... <textarea id=taInTable>edit me</textarea> ...after<br><br></td></tr>
+
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.sel1InTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.sel1InTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.sel1InTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.sel1InTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.sel1InTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.sel1InTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	a SELECT (size=1): before... 
+		<select id=sel1InTable>
+			<option>One</option>
+			<option>Two</option>
+			<option>Three</option>
+			<option>Four</option>
+			<option>Five</option>
+			<option>Six</option>
+			<option>Seven</option>
+		</select>			
+	 ...after<br><br></td></tr>
+
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.sel2InTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.sel2InTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.sel2InTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.sel2InTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.sel2InTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.sel2InTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	a SELECT (size>1): before...
+ 		<select id=sel2InTable size=4>
+			<option>One</option>
+			<option>Two</option>
+			<option>Three</option>
+			<option>Four</option>
+			<option>Five</option>
+			<option>Six</option>
+			<option>Seven</option>
+		</select>			
+ ...after<br><br></td></tr>
+
+
+<tr><td>
+	<table border=1>
+	 <tr>
+	  <td>Display: 
+	      <input type=button value=Block onclick='window.iframeInTable.style.display="block";'>
+	      <input type=button value=Inline onclick='window.iframeInTable.style.display="inline";'>
+	      <input type=button value=None onclick='window.iframeInTable.style.display="none";'></td>
+	  <td>Visiblity:
+	      <input type=button value=Hide onclick='window.iframeInTable.style.visibility="hidden";'>
+	      <input type=button value=Show onclick='window.iframeInTable.style.visibility="visible";'>
+	      <input type=button value=Inherit onclick='window.iframeInTable.style.visibility="inherit";'></td>
+	 </tr>
+	</table>
+	an IFRAME: before...
+ 		<iframe id=iframeInTable src='abgcolor.html' width=200px height=70px>
+ 			sorry, iframes not supported!
+		</iframe>			
+ ...after<br><br></td></tr>
+</TABLE>
+
+</DIV>
+...after the table
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>

@@ -1,0 +1,66 @@
+BODY {
+	font-family: Arial;
+	font-size: 10pt;
+}
+
+.divLevel0 {
+	display: none;
+	padding-left: 32px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #aef;
+}
+
+.divLevel1 {
+	display: none;
+	padding-left: 32px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #dff;
+}
+
+.divLevel2 {
+	display: none;
+	padding-left: 32px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #dfd;
+}
+
+SPAN.nameClass {
+	font-weight: bold;
+}
+
+SPAN.countClass {
+}
+
+SPAN.averageClass {
+}
+
+SPAN.timeClass {
+}
+
+SPAN.percentClass {
+}
+
+SPAN.otherClass {
+	font-style: italic;
+}
+
+SPAN.otherTime {
+}
+
+SPAN.otherPercent {
+}
+
+DIV.line0 {
+	background-color: #aef;	
+}
+
+DIV.line1 {
+	background-color: #dff;	
+}
+
+DIV.line2 {
+	background-color: #dfd;	
+}

@@ -1,0 +1,101 @@
+<html>
+<head>
+<style>
+input {
+	outline-style: none;
+}
+
+.statusBarDiv img {
+	margin-right: 2px;
+}
+</style>
+
+</head>
+
+<body nobackground eventhandler='chromeLoadHandler2' onload='
+		window.resumeDraw();
+		window.invalidate();
+		window.draw();
+
+		var frame = document.getElementById("contentFrame");
+		if (frame)
+		{
+			var defaultUrl = getDefaultUrl();
+
+			var urlBar = document.getElementById("urlBar");
+			if (urlBar)
+			{
+				urlBar.value = defaultUrl;
+			}
+
+			frame.src = defaultUrl;
+
+			var docTitle = document.getElementById("documentTitle");
+			if (docTitle)
+			{
+				docTitle.value = frame.document.title;
+			}
+		}
+	'>
+
+
+<input type='hidden' id='documentTitle' value='untitled document'>
+
+<!-- BEGIN Content Frames -->
+<div style='
+		position: absolute;
+		top: 0px;
+		height: 10px;
+		left: 0px;
+		right: 0px;
+		'><form action='javascript://' onsubmit='
+				var frame = document.getElementById("contentFrame");
+				var urlBar = document.getElementById("urlBar");
+
+				if (frame && urlBar)
+				{
+					frame.document.load(urlBar.value);
+				}
+				return false;'><input id='urlBar' type=text maxlength=256 size=100 style='
+				width: 100%;
+				height: 10px;
+				border: 1px solid black;
+				margin: 0px;
+				padding: 0px;
+				font-family: arial;
+				font-size: 6pt;
+				color: black;
+				background-color: white'><input type=submit style='display: none;'></form></div>
+
+<!-- Content frame with autoscroll see below for no scroll
+<iframe quarantine name='targetFrame' id='contentFrame' src='' scrolling='auto' style='
+		position: absolute;
+		top: 10px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		border-style: none;'>
+		visibility: visible;'>
+	Turn on iframes!
+</iframe>
+-->
+
+<iframe quarantine name='targetFrame' id='contentFrame' src='' scrolling='auto' style='
+		position: absolute;
+		top: 10px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		border-style: none;'>
+		visibility: visible;'>
+	Turn on iframes!
+</iframe>
+
+<!-- END Content Frames -->
+
+<!-- BEGIN Status Bar -->
+
+<!-- END Navigation Toolbar -->
+
+</body>
+</html>

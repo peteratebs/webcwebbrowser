@@ -1,0 +1,53 @@
+The WebC API (organized by web standard)
+
+This chapter covers features supported by the WebC API that were not covered in the Introduction to WebC chapter.  Such features are organized by the web standard with which they are associated.
+
+===============================================================================
+ CSS
+===============================================================================
+
+Setting an element style
+
+CSS style properties may be set for an individual HTML Element using webc_ElementSetStyle.
+
+(INSERT API FUNCTION BOX HERE)
+
+Example:
+
+(INSERT CODE EXAMPLE HERE)
+
+===============================================================================
+ HTML
+===============================================================================
+Property Accessors/Modifiers
+Quarantined Frames
+DOM functions	
+
+===============================================================================
+ HTTP
+===============================================================================
+Authentication
+Cookies
+Caching
+Offline Cache		
+
+===============================================================================
+ JavaScript
+===============================================================================
+Custom JavaScript functions
+	Overview
+	Creating
+	Retrieving function argument values
+	How to pass string data back to a script
+	How to pass an HTMLElement reference back to a script
+	How to pass an HTMLDocument reference back to a script
+
+===============================================================================
+ Unicode
+===============================================================================
+Character encoding support
+
+===============================================================================
+ URL
+===============================================================================
+URL Macros	

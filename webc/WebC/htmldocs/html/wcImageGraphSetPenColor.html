@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcImageGraphSetPenColor</A></H2></TD><TD><H2>(wcEL ImageElement,<BR>&nbsp; HTMLColor color)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Set the color for subsequent draw operations. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Sets the 32 bit color for subsequent draw operations.
+<PRE>
+ The bit positions in the color parameter are:
+ 0-7	Blue
+ 8-15	Green
+ 15-23  Red
+ 24-31	Alpha
+ <i>note: The current release does not support Alpah channel for wcImageGraph operation.</i>
+ </PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcEL</B> -  ImageElement 	- An image element that is the background canvas for our draw operations.
+<BR><B>HTMLColor</B> -  color  	- The  bit color ARGB color value to draw in. You may also used named colors by calling <!1><A HREF="wcImageGraphNameToColor.html">wcImageGraphNameToColor</A>.
+<BR><DT><B>Returns:</B><DD>  nothing
+<BR><DT><B>See Also:</B><DD><!1><A HREF="ExGraphics.html">ExGraphics</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

@@ -1,0 +1,26 @@
+className
+
+	Base Class
+		baseClassName
+
+	Description
+		description
+
+	Properties	
+	
+		propName
+			Type
+			Description
+			Read-only
+				yesno
+	
+	Methods
+
+		methodName
+			Description
+			Parameters
+				param1
+					description
+			Returns (type)
+				description
+

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExSoftKeyPad</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>This example demonstrates initializing and using the built in soft keypad. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>This source code provided in webcapiexample.c provides demonstrates enabling the soft keypad so a keyboard pops up when the user clicks into a control requiring keyboard input.
+This example also demonstrates using a document event handler to perfrom application cleanup, in this case disabling the keyboard.
+<br> Note: childwindowCtx has already been initialized to a valid window context by <!1><A HREF="OpenExampleChildWindow.html">OpenExampleChildWindow</A>.
+<PRE>
+// Document event handler to disable the keyboard when the applet is unloaded.
+static HTMLEventStatus ExSoftKeyPadDocb(wcCtx* Ctx,wcEL element,HTMLEvent* event,char* param)
+{
+	if (event->type == HTML_EVENT_UNLOAD)
+	{
+		wcSoftKeyDisable();						// Disable the soft keyboard
+		wcDocPopEventHandler(&childwindowCtx);	// Disable the event handler
+	}
+    return (HTML_EVENT_STATUS_CONTINUE);
+}
+
+<P>// Soft Keypad example.
+static void ExSoftKeyPad(void)
+{
+	// Clear the window content
+	wcDocClear(&childwindowCtx, wcFALSE);
+	UPDATECONSOLETEXT("Soft keyboard installed click on an edit control to pop it up.");
+	wcEL BackGroundChatter=wcNewStyledDiv(&childwindowCtx, 0, wcTRUE,  0, 0, CHILD_CANVAS_HEIGHT, MAIN_CANVAS_WIDTH,RESIZEFRAMEZ-1, 0, "white",0, 0);
+	wcElSetInnerHtml(BackGroundChatter, "Soft keypad pops up when you click. Press enter or escape on the keypad to dismiss it. &lt;input type=text value=\"Click Here\"&gt;");
+	// Enable the soft keypad driver
+	wcSoftKeyEnable(childwindowCtx.hbrowser);
+	// Set up a handler to disable the keyboard when the applet is unloaded.
+	wcDocSetEventHandler(&childwindowCtx,ExSoftKeyPadDocb);
+	wcWinBringToTop(&childwindowCtx);
+}
+
+<P>
+	</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

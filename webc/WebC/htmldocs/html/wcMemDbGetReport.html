@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>RTPMemBlockHeader* <A HREF="#DOC.DOCU">wcMemDbGetReport</A></H2></TD><TD><H2>(long startSequence,<BR>&nbsp; long endSequence,<BR>&nbsp; MemDbReportSummaryType ReportType,<BR>&nbsp; MemDbReportSortType SortBy)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Returns a linked list of report records detailing memory usage. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>The caller supplies parameters that instruct wcMemDbGetReport how data is to be summarized and sorted. The data that is returned is a linked list of records that may be analysed or
+displayed. The returned list must be freed by calling wcMemDbReleaseReport.<br>
+Note: RTP_TRACK_LOCAL_MEMORY must be enabled in rtplatform/include/rtpmem.h for the function to operate properly, if it is not enabled the function simply return.
+<br><br><i>
+<b>Note:</b> The function <!1><A HREF="wcPrintMemDetailReport.html">wcPrintMemDetailReport</A>, calls wcMemDbGetReport to retrieve a report and then prints the records and frees them. If you have a console you may be able to use <!1><A HREF="wcPrintMemDetailReport.html">wcPrintMemDetailReport</A>, if not,
+you may want to review its source code.</i>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>long</B> -   startSequence -  You may use the MallocSequence field returned from <!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> to select the first record to process, pass zero to start at the first allocation.
+<BR><B>long</B> -   endSequence -   You may use the MallocSequence field returned from <!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> to select the last record to process, pass zero to end at the last allocation.
+<BR><B>MemDbReportSummaryType</B> -  ReportType - Choose a report type from the list below
+<PRE>
+&nbsp;&nbsp;DbSummarizeByFile // Return a list of records containing file name and total memory allocations outstanding for the file.
+&nbsp;&nbsp;DbSummarizeByLine // Return a list of records containing file name:line number and total memory allocations outstanding at that location the file.
+&nbsp;&nbsp;DbSummarizeNone   // Return a record of every outstanding allocation in the range.
+</PRE>
+<BR><B>MemDbReportSortType</B> -  SortBy - Choose a sort type from the list below
+<PRE>
+&nbsp;&nbsp;SortNone		// Do not sort the records, best method for DbSummarizeNone report type.
+&nbsp;&nbsp;SortBySize		// Sort the descending order by size.
+&nbsp;&nbsp;SortByFile		// Sort in ascending order by file name followed by line if DbSummarizeByLine is specified.
+</PRE>
+<BR><DT><B>Returns:</B><DD>  RTPMemBlockHeader * - A list of report records.
+<PRE>
+The following RTPMemBlockHeader structure fields may be used
+struct __rtp_mem_block_header  *next;       // pointer to next record in the order specified by the SortBy argument
+long	                        size;       // Sum of bytes for the report type in bytes. If ReportType==DbSummarizeNone contains the bytes allocated from a single call.
+long                            seq;        // Number of calls summarized in this rrecord or the internal sequence number if ReportType==DbSummarizeNone
+const char                     *file;      // File being reported on.
+long                            line;      // Line number if ReportType==DbSummarizeNone or ReportType==DbSummarizeByLine
+const char                   *comment;     // If if ReportType==DbSummarizeNone or ReportType==DbSummarizeByLine contains a pointer to a string describing the allocation, or zero if no comment was passed when the memory was allocated.
+<br>
+<i>Note: To free the report memory you must pass it to <!1><A HREF="wcMemDbReleaseReport.html">wcMemDbReleaseReport</A>. </i>
+</PRE>
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> <!1><A HREF="wcMemDbInstallPeakUsageCallback.html">wcMemDbInstallPeakUsageCallback</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A> <!1><A HREF="wcMemDbReleaseReport.html">wcMemDbReleaseReport</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetChangesSinceWatchPoint.html">wcMemDbGetChangesSinceWatchPoint</A> <!1><A HREF="wcPrintMemStats.html">wcPrintMemStats</A> <!1><A HREF="wcPrintMemChangeReport.html">wcPrintMemChangeReport</A> <!1><A HREF="wcPrintMemDetailReport.html">wcPrintMemDetailReport</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

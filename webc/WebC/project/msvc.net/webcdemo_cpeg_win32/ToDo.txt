@@ -1,0 +1,9 @@
+
+
+- Figure out why the browser doesn't draw on startup - only after mouse move events.
+
+- Add windowing functions
+
+- Figure out why the test suite crashes (in bitmaps)
+
+- misc drawing problems 

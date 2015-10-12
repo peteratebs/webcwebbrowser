@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>void webc_JScriptDefineFunction</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>void <A HREF="#DOC.DOCU">webc_JScriptDefineFunction</A></H2><H2>(HDOC_HANDLE doc,<BR>&nbsp; const char* name,<BR>&nbsp; JSNative func,  int argc)</H2><BLOCKQUOTE>Call a native C function from Javascript </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This function allows a native C function to be called by javascript.
+This function must have this signature:
+JSBool someName(JSContext *cx, JSObject *obj, uintN argc, jsval *argv, jsval *rval);
+When the function executes, cx will be the JSContext that is associated with the
+executing script.  obj is the global object that can access all other objects
+in running scripts.  argc is the number of arguments passed into the function.
+argv is an array of jsvalues that contain the parameters passed into the function.
+rval should be set by the user and will be the return value.  The function should
+return JS_TRUE.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>doc</B> -  any created document
+<BR><B>name</B> -  the name that the javascript interpretor will recognize.
+<BR><B>func</B> -  the native function that will be called.
+<BR><B>argc</B> -  parameter count<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

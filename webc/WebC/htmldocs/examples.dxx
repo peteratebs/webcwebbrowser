@@ -1,0 +1,38 @@
+/*****************************************************************************/
+// Examples
+/**
+ @name Introduction
+ @memo  This section provides examples of how to accomplish real word tasks. Click for on overview for more information about the example framework, click on individual examples to view webC example code fragments.
+ @doc The examples are provided in the subdirectory source/webcapiexamples.
+ */
+/*****************************************************************************/
+
+/** @name Example 1.
+   	@memo Start an application windows using preformatted content.
+     */
+   	//@{
+  		    //@Include: example1.cpp
+   	//@}
+
+/** @name Example 2.
+   	@memo Start an application window with programatically generated text content.
+     */
+   	//@{
+  		    //@Include: example1.cpp
+   	//@}
+
+/** @name Example 3.
+   	@memo Start an application window with dynamically generated HTML.
+     */
+   	//@{
+  		    //@Include: example1.cpp
+   	//@}
+
+/** @name Example 4.
+   	@memo  Applet demonstrates dragging and element over a screen area.
+     */
+   	//@{
+  		    //@Include: example1.cpp
+   	//@}
+
+// @memo Hello from examples.xxx

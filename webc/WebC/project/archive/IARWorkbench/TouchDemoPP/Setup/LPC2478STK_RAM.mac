@@ -1,0 +1,55 @@
+/*********************************************************************
+*  
+*   IAR PowerPac
+*
+*   (c) Copyright IAR Systems 2008.  All rights reserved.
+*
+**********************************************************************
+----------------------------------------------------------------------
+File    : RAM.mac
+Purpose : Setup file for LPC2xxx and IAR CSpy
+          Feel free to modify this file acc. to your target system.
+--------  END-OF-HEADER  ---------------------------------------------
+*/
+
+/*********************************************************************
+*
+*       Init()
+*
+* Function description
+*   Map user flash into vector area.
+*
+* Notes
+*   (1) iRAM is mapped to addr. 0 after execution of the bootloader.
+*       Since we may have halted the boot loader, this may be necessary.
+*/
+Init() {
+  __message "RAM.mac: Remap interrupt vectors from RAM to addr 0x00"; 
+  __writeMemory32(0x02, 0xE01FC040, "Memory");
+  __writeMemory32(0x00, 0xFFE10C00, "Memory");  // Disable LCD hardware cursor
+  __writeMemory32(0x00, 0xFFE10018, "Memory");  // Disable LCD contoller
+}
+
+/*********************************************************************
+*
+*       execUserPreload()
+*
+* Function description
+*   Called once after the target application is downloaded.
+*/
+execUserPreload() {
+  Init();
+}
+
+/*********************************************************************
+*
+*       execUserReset()
+*
+* Function description
+*   Called each time the reset command is issued. 
+*/
+execUserReset() {
+  Init();
+}
+
+/******	EOF *********************************************************/

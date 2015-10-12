@@ -1,0 +1,53 @@
+﻿Build started 12/29/2014 4:48:32 PM.
+     1>Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\libpng\libpng.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\libpng___Win32_Debug_JavaScript_Unicode\libpng.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\lib\zlib /I..\..\..\..\..\rtpport\win32 /I..\..\..\..\..\rtpcore /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\libpng___Win32_Debug_JavaScript_Unicode/" /Fd".\libpng___Win32_Debug_JavaScript_Unicode/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\libpng\png.c ..\..\..\lib\libpng\pngerror.c ..\..\..\lib\libpng\pnggccrd.c ..\..\..\lib\libpng\pngget.c ..\..\..\lib\libpng\pngmem.c ..\..\..\lib\libpng\pngpread.c ..\..\..\lib\libpng\pngread.c ..\..\..\lib\libpng\pngrio.c ..\..\..\lib\libpng\pngrtran.c ..\..\..\lib\libpng\pngrutil.c ..\..\..\lib\libpng\pngset.c ..\..\..\lib\libpng\pngtest.c ..\..\..\lib\libpng\pngtrans.c ..\..\..\lib\libpng\pngvcrd.c ..\..\..\lib\libpng\pngwio.c ..\..\..\lib\libpng\pngwrite.c ..\..\..\lib\libpng\pngwtran.c ..\..\..\lib\libpng\pngwutil.c
+         png.c
+         pngerror.c
+         pnggccrd.c
+         pngget.c
+         pngmem.c
+         pngpread.c
+         pngread.c
+         pngrio.c
+         pngrtran.c
+         pngrutil.c
+         pngset.c
+         pngtest.c
+         pngtrans.c
+         pngvcrd.c
+         pngwio.c
+         pngwrite.c
+         pngwtran.c
+         pngwutil.c
+         Generating Code...
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\libpng___Win32_Debug_JavaScript_Unicode\libpng.lib" /NOLOGO .\libpng___Win32_Debug_JavaScript_Unicode/png.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngerror.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pnggccrd.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngget.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngmem.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngpread.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngread.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngrio.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngrtran.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngrutil.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngset.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngtest.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngtrans.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngvcrd.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngwio.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngwrite.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngwtran.obj
+         .\libpng___Win32_Debug_JavaScript_Unicode/pngwutil.obj
+         libpng.vcxproj -> C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\libpng\.\libpng___Win32_Debug_JavaScript_Unicode\libpng.lib
+       FinalizeBuildStatus:
+         Deleting file ".\libpng___Win32_Debug_JavaScript_Unicode\libpng.unsuccessfulbuild".
+         Touching ".\libpng___Win32_Debug_JavaScript_Unicode\libpng.lastbuildstate".
+     1>Done Building Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\libpng\libpng.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.84

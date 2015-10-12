@@ -1,0 +1,90 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2>int <A HREF="#DOC.DOCU">rtp_file_open</A></H2><H2>( RTP_HANDLE*  fdPtr,   const char*  name,<BR>&nbsp;  unsigned short flag,   unsigned short mode )</H2><BLOCKQUOTE>Opens a file using the supplied name. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Opens a file using the flag and mode settings, and sets 
+the file descriptor.  The number of files available at any one 
+time is dependant on the native File System.  When use of the 
+file handle is completed, rtp_file_close() should be called.  
+Default mode is RTP_FILE_O_RDONLY if flag is 0.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>fdPtr</B> -   Pointer to an RTP_HANDLE to store the file descriptor. 
+<BR><B>name</B> -   The name of the file to open. 
+<BR><B>flag</B> -   For the flag argument:<br>
+<pre>
+|		RTP_FILE_O_APPEND   All writes will be appended to the file.
+|		RTP_FILE_O_RDONLY   Open a file for reading only.
+|		RTP_FILE_O_WRONLY   Open a file for writing only.
+|		RTP_FILE_O_RDWR     Open a file for reading and writing.
+|		RTP_FILE_O_CREAT    Create a file if it does not exist.
+|		RTP_FILE_O_TRUNC    Truncate a file to 0 bytes after opening.
+|		RTP_FILE_O_EXCL     If creating a file, fail if it already exists
+|		RTP_FILE_O_BINARY   Create the file in binary mode.
+|		RTP_FILE_O_TEXT     Create the file in text mode.
+|		Note:               If neither the RTP_FILE_O_BINARY, or the 
+|		                    RTP_FILE_O_TEXT are used, the default behavior 
+|		                    is to open the file in text mode.
+</pre> 
+<BR><B>mode</B> -   For the mode argument:<br>
+<pre>
+|		RTP_FILE_S_IWRITE   Create a file with write permissions.
+|		RTP_FILE_S_IREAD    Create a file with read permissions.
+</pre> <BR><DT><B>Returns:</B><DD>  0 if successful, -1 on failure, -2 if a non-fatal
+error occurred.  If a -1 or -2 is returned the value of *fdPtr
+is undefined.  For debugging purposes; if the cause of the
+error is obtainable at the native File System layer, turn on
+RTP_DEBUG in rtpdebug.h to display the native error
+value.
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>

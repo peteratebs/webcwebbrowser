@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>wcEL <A HREF="#DOC.DOCU">wcNewStyledTableCell</A></H2></TD><TD><H2>(wcCtx* Ctx,  wcEL TableEl,  ..)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Constructor function for an "table cell" element with common styles applied to it. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Creates an table cell element and customize it with CSS based on the the values original in the function arguments. If requested the new element is also inserted into the parent table.
+If you can't conveniently completely style the element your needs with this constructor function you can modify the returned element handle by calling  wcElSetStyle or one of its derivatives.
+
+<P>
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcCtx</B> - *  Ctx        The current wc context.
+<BR><B>wcEL</B> -  TableEl		If TabletEl is non zero the cell is inserted into the tabe.
+<BR><B>..</B> - 					Still needs design work
+<BR><B>char</B> -  *style		Additional styles to apply or zero for none. Any style string may be provided for example" "visibilty:hidden;border-color:black;border-style:solid;border-thickness:2px;"
+<BR><DT><B>Returns:</B><DD>  wcEl the new element or zero if an error is detected or the element can't be created.
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcElNew.html">wcElNew</A>, <!1><A HREF="wcElSetStyle.html">wcElSetStyle</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

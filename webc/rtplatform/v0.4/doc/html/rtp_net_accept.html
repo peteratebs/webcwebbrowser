@@ -1,0 +1,110 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2>int <A HREF="#DOC.DOCU">rtp_net_accept</A></H2><H2>( RTP_HANDLE*  connectSock,<BR>&nbsp;  RTP_HANDLE serverSock,<BR>&nbsp;  unsigned char*  ipAddr,   int*  port,<BR>&nbsp;  int*  type )</H2><BLOCKQUOTE>Accept a stream-type (TCP) connection on a bound and  listening socket. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This function can block waiting for a remote host to 
+connect to the port/IP address to which serverSock is bound.  
+If a connection is successfully established, it must set 
+connectSock to the socket for the new connection (serverSock 
+continues to listen on its port/IP address), and returns 0.  
+In the event of a successful connection, ipAddr, port, and type 
+should also be set to the port and IP address of the remote 
+host that is connected.  If no connection can be established or 
+an error occurs, the values of the arguments are undefined.  
+The ipAddr must have enough room to store the worst case 
+scenario (If IPv6 is enbled, a 16 byte or unsigned char 
+array containing 16 elements must be used).<br><br>
+
+<P>rtp_net_accept returns a new socket handle to be used for 
+the connection but the original socket handle is still allocated 
+and needs to be closed when no more rtp_net_accept on the 
+original socket will be done.  The socket handle returned by 
+rtp_net_accept also needs to be closed when it is no longer 
+needed.<br><br>
+
+<P>The behavior of this function is undefined in the following cases:    
+<PRE>
+|		- serverSock is not a valid, stream-type socket.
+|		- rtp_net_bind was never called on serverSock.
+|		- rtp_net_listen was never called on serverSock.
+	</PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>connectSock</B> -   Location to store the socket handle 
+of the new connection. 
+<BR><B>serverSock</B> -   The socket handle to accept the 
+connection on. 
+<BR><B>ipAddr</B> -   Location to store the IP address in 
+host byte order. 
+<BR><B>port</B> -   Location to store the port in host 
+byte order. 
+<BR><B>type</B> -   Location to store the type of IP address:<br>
+<pre>
+|		4   Indicates an IPv4 address.
+|		6   Indicates an IPv6 address.
+</pre> <BR><DT><B>Returns:</B><DD>  0 if successful, -1 on failure, -2 if a non-fatal 
+error occurred.  A non-fatal error includes a socket that is 
+set for non-blocking mode and the native accept call returns 
+immediately with an error indicating that it would block or 
+that the operation is in progress.  If the application making 
+use of rtp_net_accept is using non-blocking sockets, it is 
+advised that the return value is checked for -2 and continues, 
+using rtp_net_read/write_select to determine if the connection 
+has been established before making other RTPlatform Socket API 
+calls on this socket.  If the sockets are blocking, the 
+rtp_net_accept will wait infinitely for a connection.  For 
+debugging purposes; if the cause of the error is obtainable at 
+the native TCP/IP layer, turn on RTP_DEBUG in rtpdebug.h 
+to display the native error value.
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>

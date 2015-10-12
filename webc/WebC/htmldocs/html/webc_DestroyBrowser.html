@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">webc_DestroyBrowser</A></H2></TD><TD><H2>(HBROWSER_HANDLE browser,  int status)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>(Deprecated for most uses) - Close an HTML Browser window and free all its resources </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Call this to manually close an HTML Browser.  DO NOT JUST CALL delete!
+<br><i>
+Deprecated for most uses, use wcWinClose() instead. Called by wcWinclose().
+</i>
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>browser</B> -   The handle of the HTML Browser to close
+<BR><B>status</B> -    If webc_BrowserExecute has been called on this browser,
+then this parameter will determine the return value of
+webc_BrowserExecute.  This is useful for simple dialog boxes
+which ask the user to choose between several choices.
+(see How to use an HTML Browser as a dialog box)
+<BR><DT><B>See Also:</B><DD><!1><A HREF="webc_CreateBrowser.html">webc_CreateBrowser</A>, webc_BrowserExecute<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

@@ -1,0 +1,11 @@
+/* Courier NewBold11B0020E007e.h */
+/* Automatically Created from Courier NewBold11B0020E007e */
+
+#ifndef __Courier NewBold11B0020E007e_H__
+#define __Courier NewBold11B0020E007e_H__
+
+#define Courier NewBold11B0020E007e_SIZE 10717
+
+extern unsigned char Courier NewBold11B0020E007e_file[];
+
+#endif

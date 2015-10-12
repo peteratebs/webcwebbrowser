@@ -1,0 +1,821 @@
+﻿Build started 4/4/2013 9:56:56 AM.
+     1>Project "C:\dev\webc\WebC\project\msvc\WebCWithEmglRtip\webcdemo_gdip.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug JavaScript Unicode\webcdemo_gdip.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\include\protocol /I..\..\..\include\minigui /I..\..\..\include\jscript /I..\..\..\include\imgdecode /I..\..\..\include\imgconvert /I..\..\..\include\htmldom /I..\..\..\include\htmldisplay /I..\..\..\include\browser /I..\..\..\gui\windows\include /I..\..\..\lib\mozilla /I..\..\..\..\..\rtpport\rtip /I..\..\..\..\..\rtpport\win32 /I..\..\..\..\..\rtpcore /I..\..\..\ixml\v1.2\inc /I..\..\..\include\webcapi /I..\..\..\include\util /I..\..\..\..\..\rtip6.0\webpage /I..\..\..\..\..\rtip6.0\protocol /I..\..\..\..\..\rtip6.0\rtip /I..\..\..\..\..\Rtip6.0\drivers /I..\..\..\..\..\rtip6.0\vfile /I\winpcap\WpdPack\Include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D WEBC_SUPPORT_JSCRIPT=1 /D WEBC_SUPPORT_UNICODE=1 /D HEREHERE /D WEBC_DEBUG /D _WEBC_ /D __WEBC__ /D _CRTDBG_MAP_ALLOC /D GDIFRAMEBUFFER=1 /D UNICODE /D _UNICODE /D POLMSP3 /D INCLUDE_RTIP=1 /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm /EHsc /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug JavaScript Unicode\\" /Fd"Debug JavaScript Unicode\vc100.pdb" /FR"Debug JavaScript Unicode\\" /Gd /TC /wd4996 /analyze- /errorReport:prompt ..\..\..\..\..\EMGL\Controls\BasicDialog.c ..\..\..\..\..\EMGL\Controls\ButtonControl.c ..\..\..\..\..\EMGL\Controls\CheckBoxObject.c ..\..\..\..\..\EMGL\Controls\ConsoleObject.c ..\..\..\..\..\EMGL\Controls\DivObject.c ..\..\..\..\..\EMGL\Controls\ImageMapControl.c ..\..\..\..\..\EMGL\Controls\MenuObject.c ..\..\..\..\..\EMGL\Controls\ScrollPanel.c ..\..\..\..\..\EMGL\Controls\ScrollbarControl.c ..\..\..\..\..\EMGL\Controls\SoftKeyControl.c ..\..\..\..\..\EMGL\Controls\StandardComponents.c ..\..\..\..\..\EMGL\Controls\TextBoxControl.c ..\..\..\..\..\EMGL\Controls\TextEditControl.c ..\..\..\..\..\EMGL\Controls\TextObject.c ..\..\..\..\..\EMGL\Controls\WindowObject.c ..\..\..\..\..\EMGL\Examples\ButtonExample.c ..\..\..\..\..\EMGL\Examples\ExampleCalc.c ..\..\..\..\..\EMGL\Examples\ExampleDesigner.c ..\..\..\..\..\EMGL\Examples\ExampleDiags.c ..\..\..\..\..\EMGL\Examples\ExampleFramework.c ..\..\..\..\..\EMGL\Examples\ExampleGraphics.c ..\..\..\..\..\EMGL\Examples\Examples.c ..\..\..\..\..\EMGL\Examples\ExamplesDisplayManager.c ..\..\..\..\..\EMGL\Examples\ExamplesGraphObj.c ..\..\..\..\..\EMGL\Examples\ImageMapExample.c ..\..\..\..\..\EMGL\Examples\IntroductoryText.c ..\..\..\..\..\EMGL\Examples\MenuExample.c ..\..\..\..\..\EMGL\Examples\MenuOfExample.c ..\..\..\..\..\EMGL\Examples\ScopeExample.c ..\..\..\..\..\EMGL\Examples\ScrollPanelExample.c ..\..\..\..\..\EMGL\Examples\ScrollbarExample.c ..\..\..\..\..\EMGL\Examples\SoftKeyBoardExample.c ..\..\..\..\..\EMGL\Examples\SourceViewer.c ..\..\..\..\..\EMGL\Examples\SpeedometerExample.c ..\..\..\..\..\EMGL\Examples\TextExamples.c ..\..\..\..\..\EMGL\Examples\VectorGraphics.c ..\..\..\..\..\EMGL\Examples\WindowExample.c ..\..\..\..\..\EMGL\SimulatorWin32\WindowsBitMapConfig.c ..\..\..\..\..\EMGL\source\DisplayObject.c ..\..\..\..\..\EMGL\source\DisplayObjectGraphObj.c ..\..\..\..\..\EMGL\source\FBBitmaps.c ..\..\..\..\..\EMGL\source\SystemObject.c ..\..\..\..\..\EMGL\source\TreeObject.c ..\..\..\..\..\EMGL\source\bmpdecode.c ..\..\..\..\..\EMGL\source\bmpload.c ..\..\..\..\..\EMGL\source\egbfbgradients.c ..\..\..\..\..\EMGL\source\egbfbmain.c ..\..\..\..\..\EMGL\source\egbffonts.c ..\..\..\..\..\EMGL\source\egblgraphnametocolor.c ..\..\..\..\..\EMGL\source\egblinegraphics.c ..\..\..\..\..\EMGL\source\egfboptimizations.c ..\..\..\..\..\EMGL\source\eglstylesheets.c ..\..\..\..\..\EMGL\source\filestream.c ..\..\..\..\..\EMGL\source\rectclass.c ..\..\..\..\..\EMGL\webCInterface\WebcEmglInit.c ..\..\..\..\..\EMGL\webCInterface\webcFontTable.c ..\..\..\..\..\Rtip6.0\apps\callback.c ..\..\..\..\..\Rtip6.0\apps\virttbl.c ..\..\..\..\..\Rtip6.0\drivers\loop.c ..\..\..\..\..\Rtip6.0\drivers\winpcap.c ..\..\..\..\..\Rtip6.0\drivers\winpcapi.c ..\..\..\..\..\Rtip6.0\protocol\base64.c ..\..\..\..\..\Rtip6.0\protocol\netutil.c ..\..\..\..\..\Rtip6.0\protocol\protdata.c ..\..\..\..\..\Rtip6.0\protocol\rtipprot.c ..\..\..\..\..\Rtip6.0\protocol\servers.c ..\..\..\..\..\Rtip6.0\protocol\webapi.c ..\..\..\..\..\Rtip6.0\protocol\webcons.c ..\..\..\..\..\Rtip6.0\protocol\webdata.c ..\..\..\..\..\Rtip6.0\protocol\webproc.c ..\..\..\..\..\Rtip6.0\rtip\arp.c ..\..\..\..\..\Rtip6.0\rtip\arpdb.c ..\..\..\..\..\Rtip6.0\rtip\avltree.c ..\..\..\..\..\Rtip6.0\rtip\bootp.c ..\..\..\..\..\Rtip6.0\rtip\checksum.c ..\..\..\..\..\Rtip6.0\rtip\confdata.c ..\..\..\..\..\Rtip6.0\rtip\dcu.c ..\..\..\..\..\Rtip6.0\rtip\debug.c ..\..\..\..\..\Rtip6.0\rtip\defcb.c ..\..\..\..\..\Rtip6.0\rtip\dns.c ..\..\..\..\..\Rtip6.0\rtip\exchange.c ..\..\..\..\..\Rtip6.0\rtip\frag.c ..\..\..\..\..\Rtip6.0\rtip\icmp.c ..\..\..\..\..\Rtip6.0\rtip\iface.c ..\..\..\..\..\Rtip6.0\rtip\igmp.c ..\..\..\..\..\Rtip6.0\rtip\igmpapi.c ..\..\..\..\..\Rtip6.0\rtip\igmpdata.c ..\..\..\..\..\Rtip6.0\rtip\ip.c ..\..\..\..\..\Rtip6.0\rtip\ipaddrs.c ..\..\..\..\..\Rtip6.0\rtip\ipipsec.c ..\..\..\..\..\Rtip6.0\rtip\ipoption.c ..\..\..\..\..\Rtip6.0\rtip\iputil.c ..\..\..\..\..\Rtip6.0\rtip\kstask.c ..\..\..\..\..\Rtip6.0\rtip\mcast.c ..\..\..\..\..\Rtip6.0\rtip\name2ip.c ..\..\..\..\..\Rtip6.0\rtip\os.c ..\..\..\..\..\Rtip6.0\rtip\oslist.c ..\..\..\..\..\Rtip6.0\rtip\osport.c ..\..\..\..\..\Rtip6.0\rtip\ostask.c ..\..\..\..\..\Rtip6.0\rtip\ostime.c ..\..\..\..\..\Rtip6.0\rtip\pathmtu.c ..\..\..\..\..\Rtip6.0\rtip\pcvid.c ..\..\..\..\..\Rtip6.0\rtip\ping.c ..\..\..\..\..\Rtip6.0\rtip\pollos.c ..\..\..\..\..\Rtip6.0\rtip\rarp.c ..\..\..\..\..\Rtip6.0\rtip\register.c ..\..\..\..\..\Rtip6.0\rtip\route.c ..\..\..\..\..\Rtip6.0\rtip\routedis.c ..\..\..\..\..\Rtip6.0\rtip\routedisdat.c ..\..\..\..\..\Rtip6.0\rtip\rtipapi.c ..\..\..\..\..\Rtip6.0\rtip\rtipcons.c ..\..\..\..\..\Rtip6.0\rtip\rtipdata.c ..\..\..\..\..\Rtip6.0\rtip\rtipport.c ..\..\..\..\..\Rtip6.0\rtip\slhc.c ..\..\..\..\..\Rtip6.0\rtip\socket.c ..\..\..\..\..\Rtip6.0\rtip\sockv4v6.c ..\..\..\..\..\Rtip6.0\rtip\taskdata.c ..\..\..\..\..\Rtip6.0\rtip\tasks.c ..\..\..\..\..\Rtip6.0\rtip\tcp.c ..\..\..\..\..\Rtip6.0\rtip\tcpapi.c ..\..\..\..\..\Rtip6.0\rtip\tcpin.c ..\..\..\..\..\Rtip6.0\rtip\tcpout.c ..\..\..\..\..\Rtip6.0\rtip\tcpque.c ..\..\..\..\..\Rtip6.0\rtip\tcpuser.c ..\..\..\..\..\Rtip6.0\rtip\terminal.c ..\..\..\..\..\Rtip6.0\rtip\tools.c ..\..\..\..\..\Rtip6.0\rtip\udp.c ..\..\..\..\..\Rtip6.0\rtip\udpapi.c ..\..\..\..\..\Rtip6.0\rtip\vssldata.c ..\..\..\..\..\Rtip6.0\rtip\vssocket.c ..\..\..\..\..\Rtip6.0\rtip\vt100c.c ..\..\..\..\..\Rtip6.0\vfile\memfile.c ..\..\..\..\..\Rtip6.0\vfile\vfdata.c ..\..\..\..\..\Rtip6.0\vfile\vfdos.c ..\..\..\..\..\Rtip6.0\vfile\vfile.c ..\..\..\..\..\Rtip6.0\vfile\vfutil.c ..\..\..\..\..\Rtip6.0\webpage\back\httpgetf.c ..\..\..\..\..\Rtip6.0\webpage\httppstf.c ..\..\..\ixml\v1.2\src\attr.c ..\..\..\ixml\v1.2\src\document.c ..\..\..\ixml\v1.2\src\element.c ..\..\..\ixml\v1.2\src\ixml.c ..\..\..\ixml\v1.2\src\ixmlmembuf.c ..\..\..\ixml\v1.2\src\ixmlparser.c ..\..\..\ixml\v1.2\src\namedNodeMap.c ..\..\..\ixml\v1.2\src\node.c ..\..\..\ixml\v1.2\src\nodeList.c
+         nodeList.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\webc\webc\ixml\v1.2\src\nodelist.c(43): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\nodelist.c(96): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\nodelist.c(104): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\nodelist.c(122): warning C4002: too many actual parameters for macro 'rtp_malloc'
+         node.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(43): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(246): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(529): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(551): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(592): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(862): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(864): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(891): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(893): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(921): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(923): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(980): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(981): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(1015): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(1016): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(1072): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(1211): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(1311): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(1351): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(1455): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(1525): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\node.c(1557): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+         namedNodeMap.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\webc\webc\ixml\v1.2\src\namednodemap.c(49): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\namednodemap.c(76): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\namednodemap.c(214): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\namednodemap.c(232): warning C4002: too many actual parameters for macro 'rtp_malloc'
+         ixmlparser.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(314): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(445): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(491): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(595): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1323): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1363): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1391): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1577): warning C4047: '==' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1622): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1639): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1678): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1697): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1726): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(1937): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(2110): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(2157): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlparser.c(2183): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+         ixmlmembuf.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlmembuf.c(103): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlmembuf.c(139): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlmembuf.c(182): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+     1>c:\dev\webc\webc\ixml\v1.2\src\ixmlmembuf.c(212): warning C4047: '!=' : 'int' differs in levels of indirection from 'void *'
+         ixml.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+         element.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+         document.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\webc\webc\ixml\v1.2\src\document.c(160): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\document.c(233): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\document.c(304): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\document.c(379): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\webc\webc\ixml\v1.2\src\document.c(543): warning C4002: too many actual parameters for macro 'rtp_malloc'
+         attr.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 command-line arguments :  see previous definition of 'INCLUDE_RTIP'
+         httppstf.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         httpgetf.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         vfutil.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         vfile.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\vfile\vfile.c(415): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\rtip6.0\vfile\vfile.c(646): error C2065: 'puser' : undeclared identifier
+     1>c:\dev\rtip6.0\vfile\vfile.c(646): warning C4047: '=' : 'int' differs in levels of indirection from 'PSYSTEM_USER'
+     1>c:\dev\rtip6.0\vfile\vfile.c(647): error C2065: 'puser' : undeclared identifier
+     1>c:\dev\rtip6.0\vfile\vfile.c(647): error C2223: left of '->mfcwd' must point to struct/union
+     1>c:\dev\rtip6.0\vfile\vfile.c(651): error C2065: 'puser' : undeclared identifier
+     1>c:\dev\rtip6.0\vfile\vfile.c(651): error C2223: left of '->mfcwd' must point to struct/union
+     1>c:\dev\rtip6.0\vfile\vfile.c(652): error C2065: 'puser' : undeclared identifier
+     1>c:\dev\rtip6.0\vfile\vfile.c(652): error C2223: left of '->mfcwd' must point to struct/union
+     1>c:\dev\rtip6.0\vfile\vfile.c(654): error C2065: 'puser' : undeclared identifier
+     1>c:\dev\rtip6.0\vfile\vfile.c(654): error C2223: left of '->mfcwd' must point to struct/union
+     1>c:\dev\rtip6.0\vfile\vfile.c(654): error C2198: 'strcpy' : too few arguments for call
+     1>c:\dev\rtip6.0\vfile\vfile.c(655): error C2065: 'puser' : undeclared identifier
+     1>c:\dev\rtip6.0\vfile\vfile.c(655): error C2223: left of '->mfcwd' must point to struct/union
+     1>c:\dev\rtip6.0\vfile\vfile.c(655): error C2198: 'xn_rtip_debug_error' : too few arguments for call
+     1>c:\dev\rtip6.0\vfile\vfile.c(658): error C2065: 'puser' : undeclared identifier
+     1>c:\dev\rtip6.0\vfile\vfile.c(658): error C2223: left of '->mfcwd' must point to struct/union
+     1>c:\dev\rtip6.0\vfile\vfile.c(661): error C2065: 'puser' : undeclared identifier
+     1>c:\dev\rtip6.0\vfile\vfile.c(661): error C2223: left of '->mfcwd' must point to struct/union
+         vfdos.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\vfile\vfdos.c(403): warning C4244: '=' : conversion from '__time64_t' to 'RTP_UINT32', possible loss of data
+     1>c:\dev\rtip6.0\vfile\vfdos.c(404): warning C4244: '=' : conversion from '__time64_t' to 'RTP_UINT32', possible loss of data
+     1>c:\dev\rtip6.0\vfile\vfdos.c(539): warning C4244: '=' : conversion from '__time64_t' to 'RTP_UINT32', possible loss of data
+     1>c:\dev\rtip6.0\vfile\vfdos.c(540): warning C4244: '=' : conversion from '__time64_t' to 'RTP_UINT32', possible loss of data
+         vfdata.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         memfile.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         vt100c.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         vssocket.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         vssldata.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         udpapi.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         Generating Code...
+         Compiling...
+         udp.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\rtip\udp.c(394): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\udp.c(394): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\udp.c(397): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\udp.c(397): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+         tools.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         terminal.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         tcpuser.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(268): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(268): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(269): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(269): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(272): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(272): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1069): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1069): warning C4024: '_rtp_sig_semaphore_wait_timed' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1473): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1473): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1500): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1500): warning C4024: '_rtp_sig_semaphore_wait_timed' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1775): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1775): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1813): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1813): warning C4024: '_rtp_sig_semaphore_wait_timed' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1939): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(1939): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(2012): warning C4013: 'RtipCheckIfLoopBack' undefined; assuming extern returning int
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(2078): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(2078): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(2214): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(2214): warning C4024: '_rtp_sig_semaphore_wait_timed' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(2559): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(2559): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(2582): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\tcpuser.c(2582): warning C4024: '_rtp_sig_semaphore_wait_timed' : different types for formal and actual parameter 1
+         tcpque.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         tcpout.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         tcpin.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         tcpapi.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         tcp.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         tasks.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         taskdata.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         sockv4v6.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         socket.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\rtip\socket.c(3791): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\socket.c(3791): warning C4024: '_rtp_sig_semaphore_clear' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\socket.c(3813): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\socket.c(3813): warning C4024: '_rtp_sig_semaphore_wait_timed' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\socket.c(6141): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\rtip6.0\rtip\socket.c(6176): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\rtip6.0\rtip\socket.c(6276): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\rtip6.0\rtip\socket.c(6284): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\rtip6.0\rtip\socket.c(6297): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\rtip6.0\rtip\socket.c(6299): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\rtip6.0\rtip\socket.c(6306): warning C4002: too many actual parameters for macro 'rtp_malloc'
+     1>c:\dev\rtip6.0\rtip\socket.c(6316): warning C4002: too many actual parameters for macro 'rtp_malloc'
+         slhc.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         rtipport.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         rtipdata.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         rtipcons.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\rtip\rtipcons.c(685): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipcons.c(685): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtipcons.c(685): error C2513: '/*global*/ ' : no variable declared before '='
+         rtipapi.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(142): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(142): warning C4024: '_rtp_sig_semaphore_wait_timed' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(154): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(154): warning C4024: '_rtp_sig_semaphore_signal' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5935): error C2065: 'glbc_tools_data' : undeclared identifier
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5935): error C2224: left of '.bad_errno_string' must have struct/union type
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5935): error C2198: 'strstr' : too few arguments for call
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5942): error C2065: 'glbc_tools_data' : undeclared identifier
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5942): error C2224: left of '.bad_errno_string' must have struct/union type
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5942): error C2065: 'glbc_tools_data' : undeclared identifier
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5942): error C2224: left of '.bad_errno_string' must have struct/union type
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5942): error C2198: 'strlen' : too few arguments for call
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5951): error C2065: 'glbc_tools_data' : undeclared identifier
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5951): error C2224: left of '.bad_errno_string' must have struct/union type
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5952): error C2065: 'glbc_tools_data' : undeclared identifier
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5952): error C2224: left of '.bad_errno_string' must have struct/union type
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5952): error C2198: 'memcpy' : too few arguments for call
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5956): error C2065: 'glbc_tools_data' : undeclared identifier
+     1>c:\dev\rtip6.0\rtip\rtipapi.c(5956): error C2224: left of '.bad_errno_string' must have struct/union type
+         routedisdat.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         routedis.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         Generating Code...
+         Compiling...
+         route.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         register.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         rarp.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\rtip\rarp.c(98): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\rarp.c(98): warning C4024: '_rtp_sig_semaphore_wait_timed' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\rarp.c(98): warning C4308: negative integral constant converted to unsigned type
+         pollos.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\rtip\pollos.c(524): warning C4013: 'pollos_task_run' undefined; assuming extern returning int
+         ping.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         pcvid.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         pathmtu.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         ostime.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         ostask.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         osport.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\rtip\osport.c(843): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\osport.c(843): warning C4024: '_rtp_sig_semaphore_signal' : different types for formal and actual parameter 1
+         oslist.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         os.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+     1>c:\dev\rtip6.0\rtip\os.c(184): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\os.c(184): warning C4024: '_rtp_sig_semaphore_signal' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\os.c(206): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\os.c(206): warning C4024: '_rtp_sig_semaphore_signal' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\os.c(264): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\os.c(264): warning C4024: '_rtp_sig_semaphore_signal' : different types for formal and actual parameter 1
+     1>c:\dev\rtip6.0\rtip\os.c(323): warning C4047: 'function' : 'RTP_SEMAPHORE' differs in levels of indirection from 'P_POLLOS_SIGNAL'
+     1>c:\dev\rtip6.0\rtip\os.c(323): warning C4024: '_rtp_sig_semaphore_signal' : different types for formal and actual parameter 1
+         name2ip.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         mcast.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         kstask.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         iputil.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         ipoption.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         ipipsec.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         ipaddrs.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         ip.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration
+         Generating Code...
+         Compiling...
+         igmpdata.c
+     1>c:\dev\rtpport\win32\rtpport.h(29): warning C4005: 'INCLUDE_RTIP' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(136) : see previous definition of 'INCLUDE_RTIP'
+     1>c:\dev\rtip6.0\vfile\vfconf.h(106): warning C4005: 'INCLUDE_DOS_FS' : macro redefinition
+                 c:\dev\rtip6.0\rtip\xnconf.h(381) : see previous definition of 'INCLUDE_DOS_FS'
+     1>c:\dev\rtip6.0\rtip\malloc.h(93): warning C4005: 'NETUTIL_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(33) : see previous definition of 'NETUTIL_MALLOC'
+     1>c:\dev\rtip6.0\rtip\malloc.h(94): warning C4005: 'VF_MALLOC' : macro redefinition
+                 c:\dev\rtip6.0\protocol\rtipprot.h(34) : see previous definition of 'VF_MALLOC'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2061: syntax error : identifier 'glbc_tools_data'
+     1>c:\dev\rtip6.0\rtip\rtipext.h(491): error C2059: syntax error : ';'
+     1>c:\dev\rtip6.0\rtip\rtip.h(1970): warning C4028: formal parameter 1 different from declaration

@@ -1,0 +1,726 @@
+Introduction to WebC	
+
+===============================================================================
+ API Conventions
+===============================================================================
+
+String Conventions
+
+All WebC API functions that return a string value allocate a copy of the string passed into the function.  This string must be freed using webc_FreeString, webc_FreeUCString, or webc_FreeASCIIString.  Likewise, all API functions that take a string value make their own internal copy, so that the string passed in need not persist after the function returns.  
+
+All functions that return or take strings as arguments assume that the strings are null-terminated arrays of type WEBC_CHAR (which is 8-bit or 16-bit depending on whether WEBC_SUPPORT_UNICODE is non-zero), unless the function name contains the sequence "UC" or "ASCII", in which case a 16-bit character type ("UC") or 8-bit character type ("ASCII") is assumed.
+
+
+===============================================================================
+ Browsers, Documents, Elements
+===============================================================================
+
+Overview		
+
+An application which uses WebC does so within four scopes.  The first is the global scope; at this level, the API is initialized using webc_Init, and shut down using webc_Exit.  Also at this level, the application can register custom event handler functions which can be bound to individual elements when a document is loaded (through the custom HTML tag attribute "eventhandler").  All operations performed at the global scope affect all the other scopes.  For example, an event handler registered globally may be accessed by any document loaded by any Browser object.
+
+The next (second) scope is that of the Browser object.  Each Browser (referred to by the HBROWSER_HANDLE) has its own independent load queue, input processing, and graphics output device.  The purpose of the Browser is to load, display, and control interaction with a single HTML Document.  This document is referred to as the "root document" of the Browser.  The root document may, if it is displaying content containing <frame> or <iframe> elements, have one or more child Document objects as well.  
+
+The Document constitutes the third scope for the WebC API.  At this scope, a document may be opened, written to, searched for HTML Elements (the objects representing individual tags in a document), and assigned a URL from which to load its content.  The Document should be thought of as the viewing window for an HTML document file, rather than representative of the actual document file itself.  Thus the Document object persists even though its source URL may be changed many times during its lifetime (each time loading a new HTML document file for display/interaction).  
+
+The fourth scope is that of individual Elements.  An Element, as noted above, represents a single tag within an HTML document.  In the Element scope, the HTML properties of an individual tag may be retrieved and set.  
+
+The scope heirarchy may best be thought of as a tree, where the higher levels exhibit a "one-to-many" relationship to the lower levels:
+
+(INSERT DIAGRAM HERE)
+
+Therefore, many Browser objects may exist at the global scope (which is singular by definition), many Documents may exist at the Browser and Document scopes (where each Document has a parent Browser, and some also have a parent Document), and many Elements may exist at the Document level (each Element having a single parent Document).
+
+Example of Initializing the API and Creating a Browser
+
+(INSERT CODE EXAMPLE HERE)
+
+Description of Private Data Pointers
+
+The WebC API allows the application to store a single pointer at each scope level (except the global scope), for some application-specific purpose.  This is called the private data pointer.  Seperate private data pointers may be assigned, for example, to each Document object as a ways of storing per-document custom information.  The private data pointer is treated as opaque inside WebC; it only has meaning to the application which sets its value.  
+
+An example of how this is useful is the case where an application developer wishes to extend WebC's built in HTML support by defining a custom attribute for a certain tag type:
+
+(INSERT CODE EXAMPLE HERE)
+
+
+===============================================================================
+ Runtime Model
+===============================================================================
+
+Unless specifically noted, no webc API function will perform any URL loading or graphics rendering.  For instance, calling webc_ElementSetSrc on the Element associated with an <img> tag will queue the new image URL for loading, but will NOT perform any network or local I/O necessary to load it; neither will it update the image's visual representation on the display.  This allows many queued URL loads and screen updates to happen simultaneously.  
+
+The function webc_BrowserProcessLoadQueueAll loads all queued URL's for a single browser.  During the URL load, display updates are automatically triggered by the following events:
+	
+	- Image load completion (redraws the HTML elements that use that image)
+	- Load completion of an HTML document AND all style sheets it links to (redraws the document window)
+	
+To prevent these automatic display updates, a browser's drawing be locked prior to calling webc_BrowserProcessLoadQueueAll by calling webc_BrowserSuspendDraw.  After the webc_BrowserProcessLoadQueueAll returns (indicating all queued URL's have been loaded), drawing may be re-enabled by calling webc_BrowserResumeDraw.  Note that webc_BrowserResumeDraw does not actually draw anything; webc_BrowserDraw must be called afterwards to perform the display update.  Note also that calls webc_BrowserSuspendDraw/webc_BrowserResumeDraw may be nested, so that drawing is suspended on a Browser until there have been a number of webc_BrowserResumeDraw calls equal to the number of webc_BrowserSuspendDraw calls. 
+
+WebC is optimized to prevent any unnecessary display rendering; only the regions that need updating are drawn when webc_BrowserDraw is called.  Therefore it is an appropriate use of webc_BrowserDraw to call it whenever there MAY be a region of the display requiring an update.  A complete update of the HTML display window can be forced by first calling webc_BrowserInvalidate to mark the entire window as "dirty", and then calling webc_BrowserDraw to do the re-draw.
+
+User input is passed into WebC for processing through webc_BrowserDispatchEvent.  As noted above, this function does not cause any URL loads or display updates to occur (unless a registered custom event handler is invoked to handle the event, and that event handler function calls a WebC API function that causes a load or display update to happen).  However, webc_BrowserDispatchEvent may cause new URL's to be queued for loading or display regions to be marked for re-draw.  Consequently, after calling webc_BrowserDispatchEvent, the application usually should call webc_BrowserDraw and webc_BrowserProcessLoadQueueAll.
+
+WebC also makes use of timers for certain real-time based functions (for example, timed page re-direction and animated images).  To process these timers, the API function webc_BrowserProcessTimers should be called at regular intervals (every 10 or 20 msecs, at least).  Timer expiration can be thought of as a type of input event, like the mouse or keyboard input events handled by webc_BrowserDispatchEvent.  Therefore, like webc_BrowserDispatchEvent, webc_BrowserProcessTimers may cause changes to the URL queue or display update queue, and so usually should be followed by calls to webc_BrowserDraw and webc_BrowserProcessLoadQueueAll.
+
+
+===============================================================================
+ Processing Input Events
+===============================================================================
+
+This section expands on the topic of WebC's input processing introduced in the previous section, "Runtime Model".
+
+Creating HTMLEvents to Pass to webc_BrowserDispatchEvent
+
+Although there are many types of HTMLEvent processed within WebC, there are relatively few types which must be given to webc_BrowserDispatchEvent in order for correct operation.  These types are:
+
+	HTML_EVENT_KEYDOWN
+	HTML_EVENT_KEYUP
+	HTML_EVENT_MOUSEDOWN
+	HTML_EVENT_MOUSEUP
+	HTML_EVENT_MOUSEMOVE
+	HTML_EVENT_MOUSEOVER
+	HTML_EVENT_MOUSEOUT
+	
+From these basic event types, all other events (such as HTML_EVENT_KEYPRESS, HTML_EVENT_DBLCLICK, and HTML_EVENT_SUBMIT) are generated.  All mouse events require the following fields of the HTMLEvent structure to be set:
+
+	HTMLEvent event;
+
+	event.type = <HTML_EVENT_MOUSEDOWN, HTML_EVENT_MOUSEUP, HTML_EVENT_MOUSEMOVE, HTML_EVENT_MOUSEOVER, or HTML_EVENT_MOUSEOUT>;
+	event.flags = 0;
+	event.data.position.x = <x coordinate of mouse position, in canvas coordinate space>;
+	event.data.position.y = <y coordinate of mouse position, in canvas coordinate space>;
+
+See the section "GUI Integration" for a discussion of the canvas and canvas coordinate space.  For keyboard-related events, the following fields must be set:
+
+	HTMLEvent event;
+	
+	event.type = <HTML_EVENT_KEYDOWN or HTML_EVENT_KEYUP>;
+	event.flags = <some combination of: HTML_EVENT_FLAG_SHIFT_DOWN, HTML_EVENT_FLAG_CTRL_DOWN, and HTML_EVENT_FLAG_ALT_DOWN, bitwise or'ed together>;
+	event.data.key = <key code, described below>;
+	
+The key code parameter of a keyboard event is defined as follows: for all keys that map to human-readable characters (such as "A" and "&"), the key code is the 16-bit Unicode index of that character.  For other keys, such as the arrow keys and function keys, the key code is one of the constant values defined in wgkeys.hpp.
+
+(INSERT SIDEBAR WITH TABLE OF KEY CONSTANTS IN WGKEYS.HPP>
+
+Key maps
+
+In order to make the key event generation process easier for the application developer, WebC provides some utility functions that allow the creation and utilization of a key map.  The key map is initialized with a table of native system keyboard codes mapped to their WGK_... key constant equivalents.  The function webc_TranslateKey may then be used to translate a native system keyboard code to a value that is understandable to WebC.  The key map must be cleaned up using webc_DestroyKeyMap when the application is done using it.  See the following code example for details:
+
+(INSERT CODE EXAMPLE FOR KEY MAPS)
+
+Processing the Input Queue During URL Loads
+
+Because loading content from a remote server using HTTP may take a significant amount of time, WebC provides the ability to maintain interactivity while the load queue is being processed by processing the input queue in between calls to read data off the network.  This ability is provided through a callback function that is initialized as part of the HTMLBrowserConfig structure passed in when the browser is created.  The declaration of this callback function looks like this:
+
+	int (**processInputQueue) (
+			void* fn,
+			WEBC_BOOL block, 
+			WEBC_INT32* exitCode);
+
+Note that this member of the HTMLBrowserConfig struct is a pointer to a pointer to a function.  The first argument to this function is actually the pointer to the pointer to the function; this allows additional context information to be implicitly passed into the callback function.  The other function arguments have the following meaning:
+
+	block - If the callback function is called with block set to WEBC_TRUE, it should remove the first event in the input queue (blocking if necessary until one is available), process it and then return either 1, if the browser was not deleted as a result of the event, or -1 if it was.  The callback should behave the same if block is set to WEBC_FALSE, except that if no events are waiting in the input queue when the callback is invoked, it does not block, but returns 0 immediately.
+	exitCode - If the callback returns -1 indicating the browser has exitted/been deleted, then the integer pointed to by exitCode is set to an application-defined exit code.  
+	
+Important points to remember when writing a processInputQueue callback:
+
+	- At most ONLY ONE input event is processed by this function
+	- The return value is 0 if no events processed, 1 if one event processed, -1 if the event processed caused the browser to exit.
+	
+Setting the Input Focus
+
+WebC can not control the system-wide input focus for key events.  However, through the WebC API, the application may set which Document/Element within a browser receives input events by using webc_DocFocus/webc_ElementFocus.  Note that calling webc_DocFocus on a Document is the same as calling webc_ElementFocus on the body Element of that document.  The input focus for a particular Browser may also be set by a script or by processing an input event such as a mouse down event.  
+
+
+===============================================================================
+ Graphics Output
+===============================================================================
+
+Conventions
+
+x coordinates represent pixel distances in the left-to-right direction
+y coordinates represent pixel distances in the top-to-bottom direction
+the notation (<x>, <y>) will be used for locations; for example (234, 93) is the position defined by x=234, y=93.
+the bottom and right values of rectangles are inclusive; in other words, the rectangle defined by left=0, right=0, top=1, bottom=1 is a rectangle 2 pixels high and 2 pixels wide, whose upper-left pixel is at location (0,0)
+the notation (<left>, <top>, <right>, <bottom>) will be used for rectangles; for example (32, 89, 219, 537) is the rectangle whose left=32, top=89, right=219, and bottom=537
+
+The HTMLGraphics Context
+
+WebC's graphics output capabilities are supported through the HTMLGraphicsContext struct.  A pointer to a pointer to one of these structs is passed into webc_CreateBrowser through the HTMLBrowserConfig struct.  This instance of HTMLGraphicsContext serves as the graphics output device for the new browser.  The HTMLGraphicsContext contains many functions which are necessary for correct operation, and some which are optional, that provide extra features or performance optimizations.  The application programmer provides the functions in HTMLGraphicsContext to a Browser instance to be used by that Browser to render HTML content to a graphical device.  The model used by WebC for graphics output is this:
+
+An HTMLGraphicsContext is tied to a rectangular canvas.  There are several catagories of functions that may be used in conjuction with the canvas:
+
+	1. Functions that get information about the state of the canvas
+	2. Functions that alter the state of the canvas
+	3. Functions that create objects such as colors, bitmaps, and fonts, which can then be used in later function calls
+	4. Functions that get information about the objects created by (3)
+	5. Functions that draw to the canvas
+	6. Functions that destroy the objects created by (3)
+	
+Canvas State
+
+The state of the canvas can be broken into the following:
+
+	1. Position and size of the canvas
+	2. Position and size of the clipping rectangle 
+	3. Position and size of the invalid region rectangle
+	4. Whether or not draw commands are being accepted by the canvas
+	
+From WebC's point of view, (1) read-only information, (2) is read/write, and (3) & (4) are write-only.  Here are descriptions of the functions used to get/set canvas state:
+
+	void (*getCanvasRect) (
+		HTMLGraphicsContext** ctx,
+		HTMLRect* rect);			
+
+		Used to get the canvas position and size: rect points to an HTMLRect struct that receives the canvas rectangle.  All graphics output functions will use the same coordinate space as the rectangle returned by this function.  For example, if the rect returned by this function is (50,75,300,520), then a text string drawn to (50,75) will render in the upper-left corner of the canvas.
+		
+	void (*getClipRect) (
+			HTMLGraphicsContext** ctx,
+			HTMLRect* rect);					
+		
+	void (*setClipRect) (
+			HTMLGraphicsContext** ctx,
+			HTMLRect* rect);
+			
+		Used to get/set the clipping rectangle.  This is the rectangle that all drawing commands are clipped to.  All parts of an object that is draw which lie outside the clipping rectangle will not be drawn onto the canvas.  The second argument, rect, is an input to setClipRect and is the output from getClipRect.
+
+	void (*invalidateRect) (
+			HTMLGraphicsContext** ctx,
+			HTMLRect* rect);
+			
+		Used to expand the invalid region.  When invalidateRect is called by WebC, the region specified by rect is added to the existing invalid region.  The invalid region is reset to (0,0,0,0) when endDrawing is called and the beginDrawing/endDrawing nesting is restored to 0 (in other words, an equal number of calls have been made to beginDrawing and endDrawing).  
+		
+	void (*beginDrawing) (
+			HTMLGraphicsContext** ctx);
+		
+		Must be called before a set of drawing functions are called.  
+
+	void (*endDrawing) (
+			HTMLGraphicsContext** ctx);
+			
+		Indicates drawing has finished; Note that beginDrawing and endDrawing may be nested, so that only the outer-most pair of beingDrawing and endDrawing has an actual effect on the state of the canvas.  If double buffering is enabled (this is entirely up to the implementation of HTMLGraphicsContext and is not known or controlled by WebC), then the last call to endDrawing should flush the buffer to the display.  If the double buffering is being used, then only the invalid region (set using invalidateRect) should be copied. 
+	
+	The following is an example of a sequence that might occur within WebC: 
+	
+	HTMLGraphicsContext** ctx;
+	HTMLRect rect;
+	
+	(*ctx)->getCanvasRect(ctx, &rect);  // get the canvas dimensions
+	(*ctx)->invalidate(ctx, &rect);     // invalidate the entire canvas
+	(*ctx)->beginDrawing(ctx);          // indicate we are going to do some drawing
+	(*ctx)->setClipRect(ctx, &rect);    // set the clipping rectangle to the entire canvas	
+	<drawing commands>                  // draw something	
+	(*ctx)->endDrawing(ctx);            // indicate we are done drawing; flush the invalid region to the display
+	
+
+Colors, Fonts, and Bitmaps
+
+Many drawing functions require as inputs one or more colors, fonts, or bitmaps.  A color, font, or bitmaps is seen as an object that is specific to (and perhaps optimized for) a single HTMLGraphicsContext.  The following is a discussion of each type of object, how they are represented by HTMLGraphicsContext, and how they are created and destroyed.
+
+Colors
+
+A color is represented by the type WebColor.  This type is defined as a 32-bit unsigned integer.  This may be more bits than are needed to represent a color depending on the actual graphics display type; for example if the display type is 16-level monochrome, then only 4 bits of WebColor are needed.  WebColor is a native color type; usually it should be the actual data value of a single pixel of a given color on the output device.  This means if the device interprets pixel values as indices into a palette table, for instance, WebColor should be an index into this table.  All WebColor values are treated as opaque by WebC.  
+
+Obtaining a color
+
+WebC obtains a WebColor value for a particular (red, green, blue, alpha) and HTMLGraphicsContext using the following function:
+
+	WebColor (*RGBAToColor) (
+			HTMLGraphicsContext** ctx,
+			HTMLColor rgba,
+			HTMLColor* error);
+
+		rgba is an input parameter that specifies the red, green, blue, and alpha components of the color.  
+		error is a pointer to another HTMLColor value that receives the error in red, green, blue, and alpha between the input values and the actual values of these components for the WebColor returned.
+		
+WebC may also obtain a WebColor by logical value.  For example, it may want to get the system color value for white or light blue.  In this case, the following function is used:
+
+	WebColor (*getColorByIndex) (
+		HTMLGraphicsContext** ctx,
+		int index);
+
+		where index is one of:
+			
+			WGC_BLACK         =  0 
+			WGC_RED           =  1 
+			WGC_GREEN         =  2 
+			WGC_BROWN         =  3 
+			WGC_BLUE          =  4 
+			WGC_MAGENTA       =  5 
+			WGC_CYAN          =  6 
+			WGC_LIGHTGRAY     =  7 
+			WGC_DARKGRAY      =  8 
+			WGC_LIGHTRED      =  9 
+			WGC_LIGHTGREEN    = 10 
+			WGC_YELLOW        = 11 
+			WGC_LIGHTBLUE     = 12 
+			WGC_LIGHTMAGENTA  = 13 
+			WGC_LIGHTCYAN     = 14 
+			WGC_WHITE         = 15 
+			WGC_TRANSPARENT   = 16 
+
+WebC may also retrieve the red, green, blue, and alpha components of a WebColor using:
+
+		HTMLColor (*colorToRGBA) (
+			HTMLGraphicsContext** ctx,
+			WebColor color);
+		
+Colors, unlike fonts and bitmaps, are not destroyed when they are done being used, as they are not typically a pointer to an allocated object, but just an integer value.
+        
+Fonts
+
+A font is a set of visual representations of characters, along with an algorithm for laying out characters one after another to form a visual represention of a text string.  To WebC, a font has the following properties:
+
+	Family name - the name of the family to which this font belongs, for example "Times New Roman" or "Arial"
+	Family type - the general type of font this is; used to substitute fonts if a font is specified that is not installed; for example "Serif", "Monospace" or "Sans-serif"
+	Size        - the height of the character visual representations (also called "glyphs"); specified in points, a unit which WebC interprets as 4/3 of a pixel
+	Weight      - normal or bold; the thickness with which to draw the lines and curves that make up the glyphs
+	Style       - normal or italic
+	
+HTMLGraphicsContext represents a font using a void pointer.  The following functions are used by WebC to create, obtain information about, and destroy fonts:
+
+	void* (*createFont) (
+			HTMLGraphicsContext** ctx,
+			const WEBC_CHAR* familyName,
+			const WEBC_CHAR* genericName,
+			WEBC_UINT16 pointSize,
+			WEBC_UINT16 attrib,
+			int familyIndex);
+			
+		Creates a font suitable for the given HTMLGraphicsContext with the closest match available to the given parameters.  Weight and Style are both passing in via attrib, which is a concatination of the flags WEBC_FONT_WEIGHT_BOLD and WEBC_FONT_STYLE_ITALIC.  The font family may be specified either by name through familyName, by family type through genericName, or by the index of the font family (see getNumFontFamilies, getFontFamilyNames, and getFontFamilyGenericNames).
+	
+	void* (*getDefaultFont) (
+			HTMLGraphicsContext** ctx);
+			
+		returns the default system font used for widgets.  Used to help unify the visual appearance of WebC with that of the environment in which it is running.
+	
+	void (*destroyFont) (
+			HTMLGraphicsContext** ctx,
+			void* font);
+			
+		Frees any resources allocated by createFont or getDefaultFont for the specified font.  Will be called to avoid any memory leaks when WebC is done using the given font.
+
+	int (*getNumFontFamilies) (
+			HTMLGraphicsContext** ctx);		
+		
+	const WEBC_CHAR** (*getFontFamilyNames) (
+			HTMLGraphicsContext** ctx);
+
+	const WEBC_CHAR** (*getFontFamilyGenericNames) (
+			HTMLGraphicsContext** ctx);
+			
+		These three functions are used to access the names and types of the installed fonts.  getFontFamilyNames and getFontFamilyGenericNames return arrays of null-terminated strings of type WEBC_CHAR; getNumFontFamilies returns the size of these arrays.
+
+	DISPLAY_INT (*getTextHeight) (
+			HTMLGraphicsContext** ctx,
+			const WebChar* text, 
+			void* font);
+			
+		Calculates the pixel height of a null-terminated string using a given font.  Note this may be different from the font height.
+	
+	DISPLAY_INT (*getTextWidth) (
+			HTMLGraphicsContext** ctx,
+			const WebChar* text, 
+			void* font);
+
+		Calculates the pixel width of a null-terminated string using a given font.   
+		
+	DISPLAY_INT (*getTextHeightLen) (
+			HTMLGraphicsContext** ctx,
+			const WebChar *text, 
+			void* font, 
+			long textLen);
+
+		Calculates the pixel height of the first n characters of the given string using a given font.  Note this may be different from the font height.
+		
+	DISPLAY_INT (*getTextWidthLen) (
+			HTMLGraphicsContext** ctx,
+			const WebChar *text, 
+			void* font, 
+			long textLen);
+
+		Calculates the pixel width of the first n characters of the given string using a given font.  
+		
+	DISPLAY_INT (*getFontHeight) (
+			HTMLGraphicsContext** ctx,
+			void* font);
+			
+		returns the pixel height of the font.
+	
+	DISPLAY_INT (*getFontBaseline) (		
+			HTMLGraphicsContext** ctx,
+			void* font);
+			
+		returns the pixel height of the font minus any underhang space (used, for example, by lower-case 'g' and 'y')
+
+Bitmaps
+
+Bitmaps are also represented in HTMLGraphicsContext using void pointers.  The following functions are used by WebC to create, obtain information about, and destroy bitmaps.
+
+	void* (*createWebBitmap) (
+			HTMLGraphicsContext** ctx,
+			const WebGraphBitmapInfo* info);
+		
+		Creates a new bitmap according to the info structure.  The content of this struct is as follows:
+
+			DISPLAY_INT          iWidth;                // width in pixels of the bitmap
+			DISPLAY_INT          iHeight;               // height in pixels of the bitmap
+			WEBC_SIZE            iBytesPerRow;          // number of bytes used for each row of pixels in pData
+			WebBitmapPixelFormat pixelFormat;           // the format of pData; one of:
+			                                            //  	WB_PIXEL_FORMAT_RGB_24       - 24bit color, stored red-green-blue
+			                                            //  	WB_PIXEL_FORMAT_INDEX_8      - palette indexed, 8 bits per pixel 
+			                                            //  	WB_PIXEL_FORMAT_MONOCHROME_8 - monochrome, 8 bits per pixel      
+			WEBC_BOOL            bHasTransparentColor;  // whether there is a single-color transparency for this bitmap
+			WEBC_INT16           iTransparentIndex;     // if pixelFormat is WB_PIXEL_FORMAT_INDEX_8 or WB_PIXEL_FORMAT_MONOCHROME_8, and bHasTransparentColor is WEBC_TRUE, this is the index of the transparent value
+			WEBC_UINT8           uTransparentRed;       // if pixelFormat is WB_PIXEL_FORMAT_RGB_24 and bHasTransparentColor is WEBC_TRUE, this is the red componant of the transparent color value
+			WEBC_UINT8           uTransparentGreen;     // if pixelFormat is WB_PIXEL_FORMAT_RGB_24 and bHasTransparentColor is WEBC_TRUE, this is the green componant of the transparent color value
+			WEBC_UINT8           uTransparentBlue;      // if pixelFormat is WB_PIXEL_FORMAT_RGB_24 and bHasTransparentColor is WEBC_TRUE, this is the blue componant of the transparent color value
+			WEBC_UINT32          iPaletteSize;          // if pixelFormat is WB_PIXEL_FORMAT_INDEX_8, this is the size of palette 
+			const WEBC_UINT8*    pPalette;              // if pixelFormat is WB_PIXEL_FORMAT_INDEX_8, this is palette, in the following format: { COLOR-0-RED, COLOR-0-GREEN, COLOR-0-BLUE, COLOR-1-RED, COLOR-1-GREEN, COLOR-1-BLUE, COLOR-2-RED, etc. }
+			const WEBC_UINT8*    pData;                 // the pixel data for this bitmap
+		
+		
+	void (*destroyWebBitmap) (
+			HTMLGraphicsContext** ctx,
+			void* bmp);
+			
+		Destroys a bitmap created by createWebBitmap.  Called by WebC to prevent memory leaks associated with bitmaps.
+
+	void* (*createStretchedBitmap) (
+			HTMLGraphicsContext** ctx,
+			void* src, 
+			DISPLAY_INT w, 
+			DISPLAY_INT h);
+			
+		Creates a new bitmap based on an existing one; the new bitmap has the same content as the one passed in, except the pixels are scaled such that the new bitmap has width w and height h.  This function may use whatever interpolation algorithm is available and appropriate to the display device.
+	
+	void (*destroyStretchedBitmap) (
+			HTMLGraphicsContext** ctx,
+			void* bmp);
+			
+		Destroys a bitmap created by createStretchedBitmap.  Called by WebC to prevent memory leaks associated with bitmaps.		
+			
+	DISPLAY_INT (*getBitmapWidth) (
+			HTMLGraphicsContext** ctx,
+			void* bmp);			
+			
+		Returns the width in pixels of the given bitmap
+
+	DISPLAY_INT (*getBitmapHeight) (
+			HTMLGraphicsContext** ctx,
+			void* bmp);			
+
+		Returns the height in pixels of the given bitmap
+
+Drawing 
+
+The following functions are called by WebC to draw on a canvas:
+
+	void (*drawText) (
+			HTMLGraphicsContext** ctx,
+			DISPLAY_INT x, 
+			DISPLAY_INT y, 
+			const WebChar* text, 
+			WebColor textColor, 
+			WebColor fillColor, 
+			WEBC_BOOL fill, 
+			void* font);
+		
+		Draws the given text using the given font.  text is null-terminated.  (x,y) is the upper-left corner of the rendered text on the canvas.  textColor is the foreground color; if fill is WEBC_TRUE, then the background is drawn in fillColor.  Otherwise the background is transparent.  
+		
+	void (*drawTextLen) (
+			HTMLGraphicsContext** ctx,
+			DISPLAY_INT x, 
+			DISPLAY_INT y, 
+			const WebChar* text, 
+			WebColor textColor, 
+			WebColor fillColor, 
+			WEBC_BOOL fill, 
+			void* font, 
+			long textLen);
+			
+		Same as drawText, except only draws the first textLen characters of text.
+
+	void (*drawBitmap) (
+			HTMLGraphicsContext** ctx,
+			DISPLAY_INT x, 
+			DISPLAY_INT y, 
+			void* bmp);
+			
+		Draw the given bitmap at (x,y), where (x,y) is the position of the upper-left corner of the bitmap on the canvas.
+
+	void (*drawBitmapStretchedToRect) (
+			HTMLGraphicsContext** ctx,
+			HTMLRect* rect, 
+			void* bmp);
+			
+		Draw the given bitmap stretched to fit rect.  If this feature is not supported by the target graphics device, then this function may simply draw a cropped version of bmp to the given rectangle.
+		
+	void (*drawRectangle) (
+			HTMLGraphicsContext** ctx,
+			HTMLRect* rect, 
+			WebColor outlineColor, 
+			WebColor fillColor, 
+			WEBC_BOOL fill);
+			
+		Draws a rectangle with a one pixel border of color outlineColor.  If fill is WEBC_TRUE, the rectangle is also filled in using fillColor.  Otherwise, only the one pixel empty rectangle is drawn.
+        
+Optional HTMLGraphicsContext Functions
+
+The following functions are strictly optional.  They provide a means of optimizing the performance of the HTMLGraphicsContext and enhancing the visual quality of rendered HTML.
+
+	void (*optionalDrawHorizontalLine) (
+			HTMLGraphicsContext** ctx,
+			DISPLAY_INT y, 
+			DISPLAY_INT left, 
+			DISPLAY_INT right, 
+			WebColor color, 
+			DISPLAY_INT thickness);
+			
+		Draws a filled rectangle of the given color.  The dimensions of the rectangle are given by (left, y, right, y + thickness - 1).  This is used to draw rectangles that are wider than they are high.
+		
+	void (*optionalDrawVerticalLine) (
+			HTMLGraphicsContext** ctx,
+			DISPLAY_INT x, 
+			DISPLAY_INT top, 
+			DISPLAY_INT bottom, 
+			WebColor color, 
+			DISPLAY_INT thickness);
+
+		Draws a filled rectangle of the given color.  The dimensions of the rectangle are given by (x, top, x + thicness - 1, bottom).  This is used to draw rectangles that are higher than they are wide.
+		
+	void (*optionalDrawStyledFrame) (
+			HTMLGraphicsContext** ctx,
+			HTMLRect* rect, 
+			WebColor color, 
+			DISPLAY_INT thickness, 
+			CSSBorderStyle style);
+			
+		Draws a rectangular frame in one of the following styles:
+		
+			CSS_BORDER_STYLE_DASHED
+			CSS_BORDER_STYLE_DOTTED
+			CSS_BORDER_STYLE_DOUBLE
+			CSS_BORDER_STYLE_GROOVE
+			CSS_BORDER_STYLE_INSET
+			CSS_BORDER_STYLE_NONE
+			CSS_BORDER_STYLE_OUTSET
+			CSS_BORDER_STYLE_RIDGE
+			CSS_BORDER_STYLE_SOLID					
+			
+		(INSERT DIAGRAM SHOWING HOW THICKNESS EXTENDS INTO THE RECT)
+		
+	void (*optionalDrawBitmapTiled) (
+			HTMLGraphicsContext** ctx,
+			HTMLRect* rect, 
+			DISPLAY_INT patternXOffset, 
+			DISPLAY_INT patternYOffset, 
+			void* bmp);
+			
+		Fill the given rectangle with the bitmap used as a repeating pattern.  The patternXOffset and patternYOffset are interpretted as shown.
+		
+		(INSERT DIAGRAM SHOWING HOW OFFSET IS USED)
+
+===============================================================================
+ Custom Event Handling
+===============================================================================
+
+WebC allows the application programmer to intercept events at various levels to provide custom event handling, in some cases over-riding the default behavior.  The two kinds of events that can be processed using custom handlers are events that happen within the scope of a single HTML Element (such as an input control or a META tag) and those which happen within the scope of an entire Browser.  An application-defined custom event handler takes the form of a callback function, that takes various arguments that define the event and its context, and returns a status value.  While the information passed for an Element-level event and a Browser-level event are different, the return codes are the same.  These codes, along with their interpretation, are as follows:
+
+	HTML_EVENT_STATUS_DONE      - The event was handled in full by the custom handler; default processing should not be done for this event.
+	HTML_EVENT_STATUS_CONTINUE  - Default processing should be performed for this event.
+	HTML_EVENT_STATUS_HALT      - This is returned in the case where a browser or element is destroyed as the result of handling the event.  If WebC receives this code, it will immediately return through the stack without accessing the affected objects or doing any default event processing. 
+
+What follows is a more in-depth discussion of each type of event handling.
+
+Element-level Events
+
+A custom Element-level event handler may be attached to a particular HTML Element in a couple different ways.  First, webc_BrowserSetTagEventHandler may be used to set the default custom event handler for all Elements of a particular type (for example all <DIV> elements) in the context of a given Browser.  Secondarily, a custom event handler may be registered under a certain name using webc_RegisterEventCallback and then bound to an individual element using the eventhandler HTML attribute.  For example:
+
+	(C Code)
+	
+	webc_Init();
+	webc_RegisterEventCallback(myEventHandler, "customHandler");
+	HBROWSER_HANDLE browser = webc_CreateBrowser(...):
+	if (browser != WEBC_NULL)
+	{
+		webc_BrowserLoadUrl(browser, "test.html");
+	}
+	
+	(HTML: test.html)
+	
+	<html>
+		<head>
+			<title>This is just a test</title>
+		</head>
+		<body>
+			<input type=button value="Press Me" eventhandler="customHandler">
+		</body>
+	</html>
+
+In this example, the function myEventHandler is bound to the input button Element in test.html.  All events (for example, HTML_EVENT_CLICK) targetted at that Element will be intercepted by myEventHandler for special processing.
+
+Note that an event handler that is bound using the webc_RegisterEventCallback method will over-ride one that is bound using webc_BrowserSetTagEventHandler.  
+
+The following is a list of all Element-level events:
+
+	event.type = HTML_EVENT_CLICK
+	event.data.position.x = <mouse x position relative to the document upper-left corner>
+	event.data.position.y = <mouse x position relative to the document upper-left corner>
+	
+		Generated when the mouse button has been pressed and released while over the given Element.  
+	
+	event.type = HTML_EVENT_DBLCLICK
+	event.data.position.x = <mouse x position relative to the document upper-left corner>
+	event.data.position.y = <mouse x position relative to the document upper-left corner>
+	
+		Generated when the mouse button has been pressed and released twice quickly while over the given Element.  
+	
+	event.type = HTML_EVENT_KEYDOWN
+	event.data.key = <key code of the pressed key>
+	
+		Generated when a key is pressed down.  Implies this element has the focus.
+	
+	event.type = HTML_EVENT_KEYPRESS
+	event.data.key = <key code of the pressed key>
+
+		Generated when a key is pressed down and released.  Implies this element has the focus.
+	
+	event.type = HTML_EVENT_KEYUP
+	event.data.key = <key code of the pressed key>
+
+		Generated when a key is released.  Implies this element has the focus.
+	
+	event.type = HTML_EVENT_MOUSEDOWN
+	event.data.position.x = <mouse x position relative to the document upper-left corner>
+	event.data.position.y = <mouse x position relative to the document upper-left corner>
+
+		Generated when the mouse button has been pressed while over the given Element.  
+	
+	event.type = HTML_EVENT_MOUSEMOVE
+	event.data.position.x = <mouse x position relative to the document upper-left corner>
+	event.data.position.y = <mouse x position relative to the document upper-left corner>
+
+		Generated when the mouse position changes.  
+	
+	event.type = HTML_EVENT_MOUSEOUT
+	event.data.position.x = <mouse x position relative to the document upper-left corner>
+	event.data.position.y = <mouse x position relative to the document upper-left corner>
+	
+		Generated when the mouse leaves the bounding rectangle of the given Element
+	
+	event.type = HTML_EVENT_MOUSEOVER
+	event.data.position.x = <mouse x position relative to the document upper-left corner>
+	event.data.position.y = <mouse x position relative to the document upper-left corner>
+
+		Generated when the mouse enters the bounding rectangle of the given Element
+	
+	event.type = HTML_EVENT_MOUSEUP
+	event.data.position.x = <mouse x position relative to the document upper-left corner>
+	event.data.position.y = <mouse x position relative to the document upper-left corner>
+
+		Generated when the mouse button has been released while over the given Element.  
+	
+	event.type = HTML_EVENT_FOCUS
+	
+		Generated when the given Element receives the keyboard focus.
+		
+	event.type = HTML_EVENT_UNFOCUS
+
+		Generated when the given Element loses the keyboard focus.
+
+	event.type = HTML_EVENT_LOAD
+	
+		Generated when all resources associated with this Element have been loaded.  Only applies to <BODY> and <FRAMESET>.
+		
+	event.type = HTML_EVENT_UNLOAD
+
+		Generated when this Element is about to be destroyed.  Only applies to <BODY> and <FRAMESET>.
+
+	event.type = HTML_EVENT_SUBMIT
+	
+		Generated when a form is submitted.  Only applies to <FORM> Elements.
+	
+	event.type = HTML_EVENT_CHANGE
+	
+		Generated when the value of this Element changes.  Applies to all form control Elements.
+	
+	event.type = HTML_EVENT_EDIT
+
+		Generated when the value of this Element changes.  Applies to all form control Elements.
+
+	event.type = HTML_EVENT_RESET
+
+		Generated when a form is reset to default values.  Only applies to <FORM> Elements.
+
+	event.type = HTML_EVENT_OBJECT_CREATED
+	
+		Generated when an Element is created.  This will only be received by eventhandlers registered using webc_BrowserSetTagEventHandler.
+	
+	event.type = HTML_EVENT_OBJECT_DESTROYED
+
+		Generated when this Element is about to be destroyed.
+
+	event.type = HTML_EVENT_ATTRIBUTE_PARSED
+	
+		Generated when an unrecognized HTML attribute is parsed.  
+
+Browser-level Events
+
+Browser-level events are those events which happen within the scope of a Browser or Document.  The browser-level event handler function for a Browser is passed in as a member of the HTMLBrowserConfig struct when the Browser is created.  The following is a list of all browser level events:
+
+	event.type = HTML_BROWSER_EVENT_BLANK_DOCUMENT_REQUESTED
+	
+		Generated when a link or form whose target is "_blank" is activated.  The document that will be used to load the new URL is returned in event.out.blankDocument.
+	
+	event.type = HTML_BROWSER_EVENT_DOCUMENT_TITLE_CHANGE
+	event.data.string = <new title>
+	event.hdoc = <handle of document whose title was set/changed>
+		
+		Generated when the title of a document is set/changed
+	
+	event.type = HTML_BROWSER_EVENT_DOCUMENT_URL_CHANGE
+	event.hdoc = <handle of document whose URL changed>
+
+		Generated when the source URL of the given document changes
+
+	event.type = HTML_BROWSER_EVENT_HTTP_NOT_AUTHORIZED
+	event.data.authDomain = <information about the authorization domain>
+
+		Generated when a protected HTTP server reports that authorization is required to access the requested content.
+
+	event.type = HTML_BROWSER_EVENT_HTTP_AUTHORIZATION_REJECTED
+	event.data.authDomain = <information about the authorization domain>
+	
+		Generated when a protected HTTP server reports that the authorization credentials given to it are invalid.
+	
+	event.type = HTML_BROWSER_EVENT_LOAD_DONE
+	
+		Generated when done with processing the load queue.
+	
+	event.type = HTML_BROWSER_EVENT_LOAD_START
+
+		Generated when starting to process the load queue.
+
+	event.type = HTML_BROWSER_EVENT_STATUS_CHANGE
+	event.data.string = <new status>
+		
+		Generated when the status string for the browser changes
+
+       
+===============================================================================
+ Virtual files
+===============================================================================
+
+===============================================================================
+ Running in a multi-threaded environment
+===============================================================================
+        
+===============================================================================
+ Default User Interface Behaviours
+===============================================================================
+
+Simple Tab Navigation
+
+2D Tab Navigation

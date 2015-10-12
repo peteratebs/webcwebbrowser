@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mozjs", "mozjs.vcproj", "{694659E3-AA21-46E1-81A6-5F069140DD51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug JavaScript Unicode|Win32 = Debug JavaScript Unicode|Win32
+		Debug JavaScript|Win32 = Debug JavaScript|Win32
+		Debug Unicode|Win32 = Debug Unicode|Win32
+		Debug|Win32 = Debug|Win32
+		Release JavaScript Unicode|Win32 = Release JavaScript Unicode|Win32
+		Release Unicode|Win32 = Release Unicode|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug JavaScript|Win32.ActiveCfg = Debug JavaScript|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug JavaScript|Win32.Build.0 = Debug JavaScript|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug|Win32.ActiveCfg = Debug|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug|Win32.Build.0 = Debug|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Release|Win32.ActiveCfg = Release|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExDocEventHandling</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>This example demonstrates using document event handlers. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>Document event handlers are actually just element event handlers acting on the body element of a document. The body element is the containing element for all other elements
+so its event handlers provide some additional utility, such as on application screen onload and on unload processing, that other element handlers do not.<br>
+<i>Note: This example demonstrates event behavior and API usage, other examples show real world application of event handlers. </i>
+
+<P><ul>
+<li>Can be used to configure allocate and initialize application screen specific data prior to loading content into the page.</li>
+<li>Can be used to release application screen specific data prior to loading new content or destroying the window.</li>
+<li>Can be used to catch events like clicks that land on the document background.</li>
+<li>Can be used to send events to the application itself and not necessarilly any of its elements.</li>
+<li>Can be used to catch events that were processed by elements in the document but not canceled (bubbled).</li>
+</ul>
+<b>This example demonstrates the following:</b>
+<ul>
+<li>Opening a new window and assigning it a document body event handler.</li>
+<li>Verify using the push/pop stack on a document body event handler.</li>
+<li>Demonstrate the behavior of document event handlers with HTML_EVENT_OBJECT_CREATED, HTML_EVENT_LOAD, and HTML_EVENT_OBJECT_DESTROYED events.</li>
+<li>Demonstrate assigning a document body event handler to an existing document.</li>
+<li>Demonstrate the behavior of document body event handlers with HTML_EVENT_UNLOAD events.</li>
+<li>Verify sending maessage to a document body event handler.</li>
+</ul>
+<PRE>
+
+<P>
+static char *ExEventToAscii(HTMLEventType EventType);
+static char *ExEventPrintBuffer,*ExEventPrintBufferBase;
+
+<P>// Event handler used when we open a new window
+static HTMLEventStatus ExDocWincb(wcCtx* Ctx,wcEL element,HTMLEvent* event,char* param)
+{
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExDocWincb:->%s\n", ExEventToAscii(event->type));
+    return (HTML_EVENT_STATUS_CONTINUE);
+}
+// Event handler used when we call wcDocSetEventHandler
+static HTMLEventStatus ExDocWincbTwo(wcCtx* Ctx,wcEL element,HTMLEvent* event,char* param)
+{
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExDocWincbTwo:->%s\n", ExEventToAscii(event->type));
+    return (HTML_EVENT_STATUS_CONTINUE);
+}
+
+<P>
+static void ExDocEventHandling(void)
+{
+wcCtx Ctx;
+
+<P>	struct HTMLBrowserWindowConfig WindowConfig;
+	// Create window in the foreground with.
+	rtp_memset(&Ctx, 0, sizeof(WindowConfig));
+	WindowConfig.top   = 0;
+	WindowConfig.left  = 0;
+	WindowConfig.width = WEBC_SCREEN_WIDTH;
+	WindowConfig.height= CHILD_WINDOW_HEIGHT;
+	WindowConfig.BorderThickness = EXAMPLEBORDERWIDTH;
+	WindowConfig.BorderColor = webc_GetDefaultColor(WEBC_DEFAULT_TEXT_COLOR);
+	WindowConfig.SetBodyBackGroundColor = 1;
+	WindowConfig.BackGroundColor = webc_GetDefaultColor(WEBC_DEFAULT_BACKGROUND_COLOR);
+	WindowConfig.BorderStyle = 0;  // or one of BS_RAISED,BS_LOWERED,BS_RIDGE,BS_GROOVE
+	WindowConfig.WindowFlags = WF_DISABLESCROLLBARS;   // WF_RESIZABLE,WF_DISABLESCROLLBARS,WF_MODAL,WF_SAVEUNDER,WF_SPRITE,WF_STARTINBG
+
+<P>	// Allocate a buffer for logging results in formated html.
+	ExEventPrintBuffer=ExEventPrintBufferBase = (char *) WEBC_MALLOC(0x8000);
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "&lt;small&gt;&lt;textarea style=\"font-size:small;color:black;height:%dpx;width:%dpx;white-space:no-wrap;\"&gt;", CHILD_CANVAS_HEIGHT, MAIN_CANVAS_WIDTH);
+
+<P>	// print what we events we are expecting, then open the window with some initial content in a url, the event hendler will print what events it processed.
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "%s","ExDocWincb:Expecting:HTML_EVENT_OBJECT_CREATED,HTML_EVENT_LOAD,HTML_EVENT_UNLOAD\n");
+	<!1><A HREF="wcWinCreateEx.html">wcWinCreateEx</A>(&Ctx,
+		"ExDocExample",		// char *_windowname
+		ExDocWincb, // wcEventCallback BodyCallback
+		"webc:///Example/Index.html",  // char *_defaultUrl
+		0, // char *_defaultContent,
+		&WindowConfig // struct HTMLBrowserWindowConfig *pWindowConfig
+	);
+	<!1><A HREF="wcWinClose.html">wcWinClose</A>(&Ctx);
+
+<P>	// Open the window with some initial content in a string
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExDocWincb:Expecting:HTML_EVENT_OBJECT_CREATED,HTML_EVENT_LOAD\n");
+	<!1><A HREF="wcWinCreateEx.html">wcWinCreateEx</A>(&Ctx,
+		"ExDocExample",		// char *_windowname
+		ExDocWincb, // wcEventCallback BodyCallback
+		0, // char *_defaultUrl
+		"Look at the printf console window for results", // char *_defaultContent,
+		&WindowConfig // struct HTMLBrowserWindowConfig *pWindowConfig
+	);
+
+<P>	// Set a new event handler. An HTML_EVENT_OBJECT_CREATED event is automatically sent to the hander.
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer,  "ExDocWincbTwo:Expecting:HTML_EVENT_OBJECT_CREATED\n");
+	<!1><A HREF="wcDocSetEventHandler.html">wcDocSetEventHandler</A>(&Ctx,ExDocWincbTwo);
+
+<P>	// Send a timer event to the new event handler to show that it is attached.
+	HTMLEvent Event;
+	rtp_memset(&Event, 0 ,sizeof(Event));
+	Event.type = HTML_EVENT_TIMER;
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExDocWincbTwo:Expecting:HTML_EVENT_TIMER\n");
+	<!1><A HREF="wcDocTriggerEvent.html">wcDocTriggerEvent</A>(&Ctx, &Event, 0);
+	// Pop the old event handler and send a timer event to be sure that pop worked.
+	<!1><A HREF="wcDocPopEventHandler.html">wcDocPopEventHandler</A>(&Ctx);
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer,"ExDocWincb:Expecting:HTML_EVENT_TIMER\n");
+
+<P>	<!1><A HREF="wcDocTriggerEvent.html">wcDocTriggerEvent</A>(&Ctx, &Event, 0);
+	// Close the document should generate an HTML_EVENT_UNLOAD event to the original handler
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "ExDocWincb:Expecting:HTML_EVENT_UNLOAD\n");
+
+<P>	<!1><A HREF="wcWinClose.html">wcWinClose</A>(&Ctx);
+
+<P>	// Bring the previous window to top.
+	<!1><A HREF="wcWinBringToTop.html">wcWinBringToTop</A>(&childwindowCtx);
+	// Set inner html on the body to report our results.
+	wcEL hBody = <!1><A HREF="wcDocGetBody.html">wcDocGetBody</A>(&childwindowCtx);
+	ExEventPrintBuffer+=rtp_sprintf(ExEventPrintBuffer, "&lt;/textarea&gt;&lt;/small&gt;");
+	<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(hBody, ExEventPrintBufferBase);
+	<!1><A HREF="wcDocRefresh.html">wcDocRefresh</A>(&childwindowCtx); // Make sure it is visible
+	WEBC_FREE(ExEventPrintBufferBase);
+
+<P>}
+
+<P>
+	</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

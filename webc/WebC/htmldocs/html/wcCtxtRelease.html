@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcCtxtRelease</A></H2></TD><TD><H2>(wcCtx* Ctx)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Garbage collect resources associated with a webC context. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Release resources associated with a webC context that was initialized by an earlier call to wctxtInit.
+The resources that accumulate in the context block are mainly string buffers used to return data that has
+been converted from internal unicode form to Ascii.
+
+<P><PRE>
+         Note: It is usually unnecessary to call wcCtxtRelease because most Event handlers, those that were hooked with wcElSetEventHandler,
+         because the event dispatch code automatically calls wcCtxtRelease after the user's callback function returns.
+        handler returns.
+
+<P>        Note: wcCtxtRelease may be called multiple times, even in a routine that was passed a context structure and did not even call wcCtxtInit().
+        Each wcCtxtRelease is called it frees all accumulated return buffers, typically this can wait until an event handler returns but if a handler
+		is performing many many calls to the API in a loop it can force a garbage collect by calling wcCtxtRelease.
+  </PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcCtx</B> - *    		Ctx    		-   The wc context to release.
+<BR><DT><B>Returns:</B><DD>  nothing
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcCtxtInit.html">wcCtxtInit</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

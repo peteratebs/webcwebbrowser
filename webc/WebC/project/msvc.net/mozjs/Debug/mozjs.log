@@ -1,0 +1,103 @@
+﻿Build started 5/31/2011 4:14:10 PM.
+     1>Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\mozjs\mozjs.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\mozjs.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\include\util /I..\..\..\..\..\rtplatform\v0.4\include\ms32 /I..\..\..\..\..\rtplatform\v0.4\include /I..\..\..\..\..\peg\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D WEBC_SUPPORT_JSCRIPT=1 /D _WEBC_ /D __WEBC__ /D WEBC_DEBUG /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\mozilla\jsapi.c ..\..\..\lib\mozilla\jsarena.c ..\..\..\lib\mozilla\jsarray.c ..\..\..\lib\mozilla\jsatom.c ..\..\..\lib\mozilla\jsbool.c ..\..\..\lib\mozilla\jscntxt.c ..\..\..\lib\mozilla\jsdate.c ..\..\..\lib\mozilla\jsdbgapi.c ..\..\..\lib\mozilla\jsdhash.c ..\..\..\lib\mozilla\jsdtoa.c ..\..\..\lib\mozilla\jsemit.c ..\..\..\lib\mozilla\jsexn.c ..\..\..\lib\mozilla\jsfile.c ..\..\..\lib\mozilla\jsfun.c ..\..\..\lib\mozilla\jsgc.c ..\..\..\lib\mozilla\jshash.c ..\..\..\lib\mozilla\jsinterp.c ..\..\..\lib\mozilla\jsinvoke.c ..\..\..\lib\mozilla\jsiter.c ..\..\..\lib\mozilla\jslock.c ..\..\..\lib\mozilla\jslog2.c ..\..\..\lib\mozilla\jslong.c ..\..\..\lib\mozilla\jsmath.c ..\..\..\lib\mozilla\jsnum.c ..\..\..\lib\mozilla\jsobj.c ..\..\..\lib\mozilla\jsopcode.c ..\..\..\lib\mozilla\jsparse.c ..\..\..\lib\mozilla\jsprf.c ..\..\..\lib\mozilla\jsregexp.c ..\..\..\lib\mozilla\jsscan.c ..\..\..\lib\mozilla\jsscope.c ..\..\..\lib\mozilla\jsscript.c ..\..\..\lib\mozilla\jsstr.c ..\..\..\lib\mozilla\jsutil.c ..\..\..\lib\mozilla\jsxdrapi.c ..\..\..\lib\mozilla\jsxml.c ..\..\..\lib\mozilla\prmjtime.c
+         jsapi.c
+         jsarena.c
+         jsarray.c
+         jsatom.c
+         jsbool.c
+         jscntxt.c
+         jsdate.c
+         jsdbgapi.c
+         jsdhash.c
+         jsdtoa.c
+         jsemit.c
+         jsexn.c
+         jsfile.c
+         jsfun.c
+         jsgc.c
+         jshash.c
+         jsinterp.c
+         jsinvoke.c
+         jsiter.c
+         jslock.c
+         Generating Code...
+         Compiling...
+         jslog2.c
+         jslong.c
+         jsmath.c
+         jsnum.c
+         jsobj.c
+         jsopcode.c
+         jsparse.c
+         jsprf.c
+         jsregexp.c
+         jsscan.c
+     1>c:\moto_project\ebs_merge_10_14\webc\lib\mozilla\jsscan.c(311): warning C4101: 'crflag' : unreferenced local variable
+     1>c:\moto_project\ebs_merge_10_14\webc\lib\mozilla\jsscan.c(310): warning C4101: 'i' : unreferenced local variable
+     1>c:\moto_project\ebs_merge_10_14\webc\lib\mozilla\jsscan.c(313): warning C4101: 'ubuf' : unreferenced local variable
+     1>c:\moto_project\ebs_merge_10_14\webc\lib\mozilla\jsscan.c(312): warning C4101: 'cbuf' : unreferenced local variable
+     1>c:\moto_project\ebs_merge_10_14\webc\lib\mozilla\jsscan.c(310): warning C4101: 'j' : unreferenced local variable
+     1>c:\moto_project\ebs_merge_10_14\webc\lib\mozilla\jsscan.c(1248): warning C4244: 'function' : conversion from 'int32' to 'jschar', possible loss of data
+     1>c:\moto_project\ebs_merge_10_14\webc\lib\mozilla\jsscan.c(1770): warning C4244: 'function' : conversion from 'int32' to 'jschar', possible loss of data
+     1>c:\moto_project\ebs_merge_10_14\webc\lib\mozilla\jsscan.c(1782): warning C4244: 'function' : conversion from 'int32' to 'jschar', possible loss of data
+     1>c:\moto_project\ebs_merge_10_14\webc\lib\mozilla\jsscan.c(1797): warning C4244: 'function' : conversion from 'int32' to 'jschar', possible loss of data
+         jsscope.c
+         jsscript.c
+         jsstr.c
+         jsutil.c
+         jsxdrapi.c
+         jsxml.c
+         prmjtime.c
+         Generating Code...
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Debug\mozjs.lib" /NOLOGO .\Debug/jsapi.obj
+         .\Debug/jsarena.obj
+         .\Debug/jsarray.obj
+         .\Debug/jsatom.obj
+         .\Debug/jsbool.obj
+         .\Debug/jscntxt.obj
+         .\Debug/jsdate.obj
+         .\Debug/jsdbgapi.obj
+         .\Debug/jsdhash.obj
+         .\Debug/jsdtoa.obj
+         .\Debug/jsemit.obj
+         .\Debug/jsexn.obj
+         .\Debug/jsfile.obj
+         .\Debug/jsfun.obj
+         .\Debug/jsgc.obj
+         .\Debug/jshash.obj
+         .\Debug/jsinterp.obj
+         .\Debug/jsinvoke.obj
+         .\Debug/jsiter.obj
+         .\Debug/jslock.obj
+         .\Debug/jslog2.obj
+         .\Debug/jslong.obj
+         .\Debug/jsmath.obj
+         .\Debug/jsnum.obj
+         .\Debug/jsobj.obj
+         .\Debug/jsopcode.obj
+         .\Debug/jsparse.obj
+         .\Debug/jsprf.obj
+         .\Debug/jsregexp.obj
+         .\Debug/jsscan.obj
+         .\Debug/jsscope.obj
+         .\Debug/jsscript.obj
+         .\Debug/jsstr.obj
+         .\Debug/jsutil.obj
+         .\Debug/jsxdrapi.obj
+         .\Debug/jsxml.obj
+         .\Debug/prmjtime.obj
+         mozjs.vcxproj -> C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\mozjs\Debug\mozjs.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\mozjs.unsuccessfulbuild".
+         Touching "Debug\mozjs.lastbuildstate".
+     1>Done Building Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\mozjs\mozjs.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:05:51.70

@@ -1,0 +1,231 @@
+HTMLElement
+
+	Base Class
+		Node
+
+	Description
+		Base class for all element objects in an HTML document.
+
+	Properties	
+	
+		clientHeight
+			Type
+				integer
+			Description
+				The height of the client area of this element as rendered within the document (only valid if the element generates a visible rectangle)
+			Read-only
+				yes
+
+		clientLeft
+			Type
+				integer
+			Description
+				The position of the left edge of the client area of this element as rendered within the document (only valid if the element generates a visible rectangle)
+			Read-only
+				yes
+
+		clientTop
+			Type
+				integer
+			Description
+				The position of the top edge of the client area of this element as rendered within the document (only valid if the element generates a visible rectangle)
+			Read-only
+				yes
+
+		clientWidth
+			Type
+				integer
+			Description
+				The width of the client area of this element as rendered within the document (only valid if the element generates a visible rectangle)
+			Read-only
+				yes
+
+		document
+			Type
+				HTMLDocument
+			Description
+				The document that owns this element.
+			Read-only
+				yes
+	
+		id
+			Type
+				string
+			Description
+				The id attribute of this element.
+			Read-only
+				no
+	
+		innerHTML
+			Type
+				string
+			Description
+				The HTML representation of the contents of this element.  For example, the innerHTML of the HTMLElement for the <div> in "<div>This is the inside of a <b>div</b></div>" is "This is the inside of a <b>div</b>".
+			Read-only
+				no
+
+		onchange
+			Type
+				string or function
+			Description
+				The event handler for change events.
+			Read-only
+				no
+	
+		onclick
+			Type
+				string or function
+			Description
+				The event handler for click events.
+			Read-only
+				no
+
+		ondblclick
+			Type
+				string or function
+			Description
+				The event handler for dblclick events.
+			Read-only
+				no
+
+		onfocus
+			Type
+				string or function
+			Description
+				The event handler for focus events.
+			Read-only
+				no
+
+		onkeydown
+			Type
+				string or function
+			Description
+				The event handler for keydown events.
+			Read-only
+				no
+
+		onkeypress
+			Type
+				string or function
+			Description
+				The event handler for keypress events.
+			Read-only
+				no
+
+		onkeyup
+			Type
+				string or function
+			Description
+				The event handler for keyup events.
+			Read-only
+				no
+
+		onload
+			Type
+				string or function
+			Description
+				The event handler for load events.
+			Read-only
+				no
+
+		onmousedown
+			Type
+				string or function
+			Description
+				The event handler for mousedown events.
+			Read-only
+				no
+
+		onmousemove
+			Type
+				string or function
+			Description
+				The event handler for mousemove events.
+			Read-only
+				no
+
+		onmouseout
+			Type
+				string or function
+			Description
+				The event handler for mouseout events.
+			Read-only
+				no
+
+		onmouseover
+			Type
+				string or function
+			Description
+				The event handler for mouseover events.
+			Read-only
+				no
+
+		onmouseup
+			Type
+				string or function
+			Description
+				The event handler for mouseup events.
+			Read-only
+				no
+
+		onsubmit
+			Type
+				string or function
+			Description
+				The event handler for submit events.
+			Read-only
+				no
+
+		onunfocus
+			Type
+				string or function
+			Description
+				The event handler for unfocus events.
+			Read-only
+				no
+
+		onunload
+			Type
+				string or function
+			Description
+				The event handler for unload events.
+			Read-only
+				no
+
+		outerHTML
+			Type
+				string
+			Description
+				The HTML representation of this element and its content.  For example, the innerHTML of the HTMLElement for the <div> in "<div>This is the inside of a <b>div</b></div>" is "<div>This is the inside of a <b>div</b></div>".
+			Read-only
+				no
+				
+		ownerDocument
+			Type
+				HTMLDocument
+			Description
+				The document that owns this element.
+			Read-only
+				yes
+	
+		style
+			Type
+				Style
+			Description
+				The per-element CSS style properties of this element.
+			Read-only
+				yes
+	
+		uniqueId
+			Type
+				string
+			Description
+				The id attribute of this element.
+			Read-only
+				no
+
+
+	Methods
+
+		none
+

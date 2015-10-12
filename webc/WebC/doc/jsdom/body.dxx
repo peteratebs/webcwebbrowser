@@ -1,0 +1,114 @@
+Body
+
+	Base Class
+		HTMLElement
+
+	Description
+		Object for <body> tag in an HTML document.
+
+	Properties	
+	
+		aLink
+			Type
+				string, HTML color
+			Description
+				Color for anchors that represent active links.
+			Read-only
+				no
+	
+		alinkColor
+			Type
+				string, HTML color
+			Description
+				Color for anchors that represent active links (same as aLink).
+			Read-only
+				no
+	
+		background
+			Type
+				string, URL
+			Description
+				Background image URL for this document.
+			Read-only
+				no
+	
+		bgColor
+			Type
+				string, HTML color
+			Description
+				Background color for this document.
+			Read-only
+				no
+	
+		link
+			Type
+				string, HTML color
+			Description
+				Color for anchors that represent links.
+			Read-only
+				no
+	
+		linkColor
+			Type
+				string, HTML color
+			Description
+				Color for anchors that represent links (same as link).
+			Read-only
+				no
+	
+		scrollLeft
+			Type
+				integer
+			Description
+				The horizontal scroll position of this element's document window.
+			Read-only
+				no
+	
+		scrollTop
+			Type
+				integer
+			Description
+				The vertical scroll position of this element's document window.
+			Read-only
+				no
+	
+		text
+			Type
+				string, HTML color
+			Description
+				Default color for text in this document.
+			Read-only
+				no
+	
+		vLink
+			Type
+				string, HTML color
+			Description
+				Color for anchors that represent visited links.
+			Read-only
+				no
+	
+		vlinkColor
+			Type
+				string, HTML color
+			Description
+				Color for anchors that represent visited links (same as vLink).
+			Read-only
+				no
+			
+	
+	Methods
+
+		blur
+			Description
+				Remove key input focus from this element.
+			Parameters
+				none
+			Returns (nothing)
+
+		focus
+			Description
+				Set the key input focus to this element.
+			Parameters
+				none
+			Returns (nothing)

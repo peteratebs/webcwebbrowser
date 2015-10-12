@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>Release notes</title>
+</head>
+
+<style>
+ H1, H2, H3, H4 { color: blue }
+ H1, H2, H3, H4, H5 { font-family: Helvetica;}
+ PRE {  color: black;  margin-left: 2%; }
+ BODY { color: black;  margin-left: 2%; font-family: Verdana; font-size=75%}
+ table{ color: black;  font-family: Verdana; font-size=100%}
+</style>
+
+<body bgcolor="#FFFFFF">
+
+<h1>Release notes for embOS Simulation Version 3.20d for Windows 32bit</h1>
+<font size=-1>
+Updated: 2004-01-29 [AW] V3.20d<br>
+<br>
+</font>
+  <ol>
+  <li><a href=#toolchain>Tool chain used for build</li></a>
+  <li><a href=#features>New features</li></a>
+  <li><a href=#improvements>Improvements</li></a>
+  <li><a href=#pcorr>Program corrections</li></a>
+  <li><a href=#problems>Known problems</li></a>
+  <li><a href=#history>Release history</li></a>
+  <li><a href=#misc>Miscellaneous</li></a>
+  </ol>
+<hr>
+
+<!-------------------------------------------------------------------------->
+<!-- TOOL CHAIN (Compiler) Information                                    -->
+<!-------------------------------------------------------------------------->
+<h2><a name="toolchain">Tool chain used for build</a></h2>
+The following tools have been used:<br>
+
+<pre>
+Compiler:  Visual C++ V6
+Workbench: Visual Studio V6
+</pre>
+Note that embOS Simulation is written in ANSI-"C" and uses Windows 32bit API.<br>
+It does not rely on Microsoft Visual studio and may also be used with other tool chains.<br>
+<br>
+<hr>
+
+<!-------------------------------------------------------------------------->
+<!-- NEW FEATURES                                                         -->
+<!-------------------------------------------------------------------------->
+<h2><a name="features">New features</a></h2>
+
+<h3>Version 3.20</h3>
+<ol>
+  <font color=blue><li>OS_Suspend() / OS_Resume() implemented</li></font><br>
+  New functions to suspend and resume tasks unconditionally.<br>
+
+  <font color=blue><li>Dynamic memory allocation supported by embOS</li></font><br>
+  Thread safe dynamic memory allocation functions implemented.<br>
+</ol>
+
+<hr>
+
+<!-------------------------------------------------------------------------->
+<!-- Improvements                                                         -->
+<!-------------------------------------------------------------------------->
+<h2><a name="improvements">Improvements</a></h2>
+
+<h3>Version 3.20</h3>
+<ol>
+NONE, initial release of embOS Simulation
+</ol>
+
+<hr>
+
+<!-------------------------------------------------------------------------->
+<!-- PROGRAM CORRECTIONS                                                  -->
+<!-------------------------------------------------------------------------->
+<h2><a name="pcorr">Program corrections</a></h2>
+
+<h3>Version 3.20c</h3>
+<ol>
+<font color=blue><li>OS_GetMailTimed() corrected</font><br>
+OS_GetMailTimed () did not retrieve a mail after 256 calls, the waiting task remained suspended.
+Corrected with version 3.20c of embOS.<br>
+This problem exists in all previous embOS versions and is fixed with version 3.20c.
+</ol>
+
+<hr>
+
+<!-------------------------------------------------------------------------->
+<!-- KNOWN PROBLEMS                                                       -->
+<!-------------------------------------------------------------------------->
+<h2><a name="problems">Known problems</a></h2>
+None
+<hr>
+
+<!-------------------------------------------------------------------------->
+<!-- Release history                                                      -->
+<!-------------------------------------------------------------------------->
+<h2><a name="history">Release history</a></h2>
+<table>
+  <tr> <td width=20%>Version</td> <td width=30%>Release date</td>  <td>Short explanation</td> </tr>
+  <tr> <td>V3.20d</td>  <td>29. Jan  2004</td>    <td>Initial version, based on embOS V3.20d</td> </tr>
+</table>
+<hr>
+
+<!-------------------------------------------------------------------------->
+<!-- MISCELLANEOUS                                                        -->
+<!-------------------------------------------------------------------------->
+<h2><a name="misc">Miscellaneous</a></h2>
+  This document was first released with version 3.20d of the software.
+  Software released earlier is documented internally.
+  This information is available at request.
+<hr>
+
+<br>
+Copyright 2004 SEGGER Microcontroller Systeme GmbH. All rights reserved.<br>
+For more information, please visit our website <a href ="http://www.segger.com/">www.segger.com</a> or contact us at <a href ="mailto:info@segger.com">info@segger.com</a><br>
+</font>
+
+</body>
+</html>

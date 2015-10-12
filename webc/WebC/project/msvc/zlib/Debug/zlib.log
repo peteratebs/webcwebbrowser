@@ -1,0 +1,31 @@
+﻿Build started 6/1/2011 6:26:49 AM.
+     1>Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\zlib\zlib.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\zlib.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\..\..\rtplatform\v0.4\include\ms32 /I..\..\..\..\..\rtplatform\v0.4\include /I..\..\..\include\util /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _WEBC_ /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\zlib\inflate.c
+         inflate.c
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Debug\zlib.lib" /NOLOGO .\Debug/adler32.obj
+         .\Debug/compress.obj
+         .\Debug/crc32.obj
+         .\Debug/deflate.obj
+         .\Debug/gzio.obj
+         .\Debug/infblock.obj
+         .\Debug/infcodes.obj
+         .\Debug/inffast.obj
+         .\Debug/inflate.obj
+         .\Debug/inftrees.obj
+         .\Debug/infutil.obj
+         .\Debug/trees.obj
+         .\Debug/uncompr.obj
+         .\Debug/zutil.obj
+         zlib.vcxproj -> C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\zlib\Debug\zlib.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\zlib.unsuccessfulbuild".
+         Touching "Debug\zlib.lastbuildstate".
+     1>Done Building Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\zlib\zlib.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:01:17.56

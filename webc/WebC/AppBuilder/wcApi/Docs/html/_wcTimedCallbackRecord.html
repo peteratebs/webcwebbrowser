@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>typedef struct  _wcTimedCallbackRecord</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>typedef struct  <A HREF="#DOC.DOCU">_wcTimedCallbackRecord</A></H2></H2><BLOCKQUOTE>Wait a number of miliseconds and then call the user callback function. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Wait the specified number of miliseconds and then call the user callback function. The function is
+called outside the context of a browser so it may be used to do things that otherwise will not work in a browser context.
+An example of such an operation is allowing browser Event handler to queue a window close from its timer event handler.
+like close browser instructs the enumerator to continue scanning or stop.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcTimedCallbackfn</B> -  	pfn    		-   User supplied callback function.
+<BR><B>int</B> -  				Delay		-   Milliseconds to delay before calling. If zero called on the next clock.
+<BR><B>int</B> -  				Intparm 	-   Integer (command perhaps) passed to the callback fucntion.
+<BR><B>void</B> - *				VoidParm 	-   Void pointer pass by reference.
+\begin{verbatim}
+The user callback function is of type:
+typedef void (*wcTimedCallbackfn)(int UserIntParm, void *UserVoidParm);
+Examples:
+Use a timed callback function to close a window from inside an elements HTML_EVENT_TIMER handler and Queue a restart.
+Callback function
+void MyAppCallback(int UserIntParm, void *UserVoidParm)
+{
+if (UserIntParm == MYCLOSE)
+{
+<!1><A HREF="wcWinClose.html">wcWinClose</A>((wcCtx 	*)UserVoidParm);
+Queue up a restart of the demo in one second.
+wcTimedCallback(MyCloseCallback, 1000, MYRESTART, (void *) UserVoidParm);
+}
+else if (UserIntParm == MYRESTART)
+{
+RestartMyDemo((wcCtx *)UserVoidParm);
+}
+}
+.. Event handler fragment
+else if (event->type == HTML_EVENT_TIMER)
+{
+pcontrol = (struct flyingwindowcontrol *) <!1><A HREF="wcGetData.html">wcGetData</A>(Ctx, element);
+pcontrol->iteration += 1;
+if (pcontrol->iteration >= FLYINGWINDOWITERATIONS)
+{
+<!1><A HREF="wcPopData.html">wcPopData</A>(Ctx, element);
+rtp_free(pcontrol);
+// Close the window on the next tick
+// Make a private copy of the stack based context to pass to the Global timer handler
+wcCtx* KillCtx;
+KillCtx = (wcCtx*)rtp_malloc(sizeof(*Ctx));
+KillCtx = *Ctx;
+// Tell the global timer to call our close callback routine
+wcTimedCallback(MyAppCallback, 0, MYCLOSE, (void *) KillCtx);
+return (HTML_EVENT_CONTINUE);
+}
+}
+\end{verbatim}
+<BR><DT><B>Returns:</B><DD>  Nothing.
+<BR><DT><B>See Also:</B><DD><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

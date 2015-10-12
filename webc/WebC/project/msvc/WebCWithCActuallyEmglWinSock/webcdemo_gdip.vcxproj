@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug JavaScript Unicode|Win32">
+      <Configuration>Debug JavaScript Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Unicode|Win32">
+      <Configuration>Debug Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release JavaScript Unicode|Win32">
+      <Configuration>Release JavaScript Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Unicode|Win32">
+      <Configuration>Release Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{60E7AAB3-C136-41EF-9364-F3383E43C8F6}</ProjectGuid>
+    <RootNamespace>webcdemo_gdip</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release JavaScript Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release JavaScript Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release JavaScript Unicode|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release JavaScript Unicode|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release JavaScript Unicode|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\include\protocol;..\..\..\include\minigui;..\..\..\include\jscript;..\..\..\include\imgdecode;..\..\..\include\imgconvert;..\..\..\include\htmldom;..\..\..\include\htmldisplay;..\..\..\include\browser;..\..\..\gui\windows\include;..\..\..\lib\mozilla;..\..\..\..\..\rtpport\rtip;..\..\..\..\..\rtpport\win32;..\..\..\..\..\rtpcore;..\..\..\ixml\v1.2\inc;..\..\..\include\webcapi;..\..\..\include\util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;WEBC_SUPPORT_JSCRIPT=1;WEBC_SUPPORT_UNICODE=1;HEREHERE;WEBC_DEBUG;_WEBC_;__WEBC__;_CRTDBG_MAP_ALLOC;GDIFRAMEBUFFER=1;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libcpmtd.lib;libcmtd.lib;ws2_32.lib;gdiplus.lib;..\..\..\lib\openssl\openssl32.lib;oldnames.lib;\winpcap\WpdPack\Lib\packet.lib;\winpcap\WpdPack\Lib\wpcap.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)webcdemo_gdip.exe</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(OutDir)webcdemo_gdip.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>false</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release JavaScript Unicode|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/GL /Os /O2 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\..\..\include\util;..\..\..\include\protocol;..\..\..\include\minigui;..\..\..\include\jscript;..\..\..\include\imgdecode;..\..\..\include\imgconvert;..\..\..\include\htmldom;..\..\..\include\htmldisplay;..\..\..\include\browser;..\..\..\gui\windows\include;..\..\msvc6.0\webcdemo_peg_win32;..\..\..\lib\mozilla;..\..\..\..\..\rtplatform\v0.4\include\ms32;..\..\..\..\..\rtplatform\v0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;WEBC_SUPPORT_JSCRIPT=1;WEBC_SUPPORT_UNICODE=1;__WEBC__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)webcdemo_gdip.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>webc.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\gui\windows\include;..\..\msvc6.0\webcdemo_peg_win32;..\..\..\lib\mozilla;..\..\..\..\..\rtplatform\v0.4\include\ms32;..\..\..\..\..\rtplatform\v0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;WEBC_SUPPORT_JSCRIPT=0;WEBC_SUPPORT_UNICODE=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)webcdemo_gdip.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Unicode|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\include\util;..\..\..\include\protocol;..\..\..\include\minigui;..\..\..\include\jscript;..\..\..\include\imgdecode;..\..\..\include\imgconvert;..\..\..\include\htmldom;..\..\..\include\htmldisplay;..\..\..\include\browser;..\..\..\gui\windows\include;..\..\msvc6.0\webcdemo_peg_win32;..\..\..\lib\mozilla;..\..\..\..\..\rtplatform\v0.4\include\ms32;..\..\..\..\..\rtplatform\v0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;WEBC_SUPPORT_JSCRIPT=0;WEBC_SUPPORT_UNICODE=1;WEBC_DEBUG;_WEBC_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;gdiplus.lib;..\..\..\lib\openssl\openssl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)webcdemo_gdip.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)webcdemo_gdip.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\BasicDialog.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ButtonControl.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\CheckBoxObject.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ConsoleObject.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\DivObject.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ImageMapControl.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\MenuObject.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ScrollbarControl.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ScrollPanel.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\SoftKeyControl.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\StandardComponents.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\TextBoxControl.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\TextEditControl.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\TextObject.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\WindowObject.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\codegen.cpp" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\CommonStubs.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\PalletObjectResources.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\PalletStdControls.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\SchemaValidate.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\SchemaValidateStubs.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug JavaScript Unicode|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\xmlutilities.cpp" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ButtonExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleCalc.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleDiags.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleFramework.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleGraphics.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleIndicators.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\Examples.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExamplesDisplayManager.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExamplesGraphObj.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExamplesUtilities.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ImageMapExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\IntroductoryText.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\MenuExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\MenuOfExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ScopeExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ScrollbarExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ScrollPanelExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\SoftKeyBoardExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\SourceViewer.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\SpeedometerExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\TextExamples.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\VectorGraphics.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\WindowExample.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold6B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold9B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialItalic10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialItalic6B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialItalic9B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular6B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular9B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierBold10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierBold14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierBold20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierRegular10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierRegular14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierRegular20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold11B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold12B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold13B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold15B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold16B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold17B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold18B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold22B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold24B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular10B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular11B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular12B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular13B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular14B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular15B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular16B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular17B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular18B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular20B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular22B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular24B0020E007e.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\EglLogo.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\Keyboard.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\KeyboardDown.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\Oval3DDd0.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\Oval3DDd1.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\speedo.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Patterns\Corners\RadiusCornerImage_10_1.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Patterns\Corners\RadiusCornerImage_10_2.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Patterns\Corners\RadiusCornerImage_20_2.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\Patterns\Corners\RadiusCornerImage_20_4.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\SimulatorWin32\WindowsBitMapConfig.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\SimulatorWin32\WindowsBitMapEventing.cpp" />
+    <ClCompile Include="..\..\..\..\..\EMGL\SimulatorWin32\WindowsBitMapFrameBuffer.cpp" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\bmpdecode.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\bmpload.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\DisplayObject.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\DisplayObjectGraphObj.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egbfbgradients.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egbfbmain.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egbfbroundedcorners.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egbffonts.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egblgraphnametocolor.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egblinegraphics.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egblinegraphicsplusplus.cpp" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egfboptimizations.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\eglstylesheets.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\FBBitmaps.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\filestream.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\rectclass.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\SystemObject.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\source\TreeObject.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\webCInterface\WebcEmglInit.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\webCInterface\webcFontInterface.cpp" />
+    <ClCompile Include="..\..\..\..\..\EMGL\webCInterface\webcFontTable.c" />
+    <ClCompile Include="..\..\..\..\..\EMGL\webCInterface\webcinterface.cpp" />
+    <ClCompile Include="webcdemo_gdip.cpp" />
+    <ClCompile Include="..\..\..\gui\windows\source\webcgdip.cpp" />
+    <ClCompile Include="..\..\..\gui\windows\source\wfgdip.cpp" />
+    <ClCompile Include="..\..\..\ixml\v1.2\src\attr.c" />
+    <ClCompile Include="..\..\..\ixml\v1.2\src\document.c" />
+    <ClCompile Include="..\..\..\ixml\v1.2\src\element.c" />
+    <ClCompile Include="..\..\..\ixml\v1.2\src\ixml.c" />
+    <ClCompile Include="..\..\..\ixml\v1.2\src\ixmlmembuf.c" />
+    <ClCompile Include="..\..\..\ixml\v1.2\src\ixmlparser.c" />
+    <ClCompile Include="..\..\..\ixml\v1.2\src\namedNodeMap.c" />
+    <ClCompile Include="..\..\..\ixml\v1.2\src\node.c" />
+    <ClCompile Include="..\..\..\ixml\v1.2\src\nodeList.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="webcdemo_gdip.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="small.ico" />
+    <None Include="webcdemo_gdip.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="webcdemo_gdip.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\fdlibm\fdlibm.vcxproj">
+      <Project>{e5b51541-0654-4f8e-97fc-e1b70045d9be}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\libjpeg\libjpeg.vcxproj">
+      <Project>{db1862ac-7ea9-4892-b4d4-c85024ebd001}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\libmng\libmng.vcxproj">
+      <Project>{3641c2f9-4338-4224-955b-f162169dc443}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\libpng\libpng.vcxproj">
+      <Project>{6f634536-dbd9-45d1-b328-470024cc9e15}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\mozjs\mozjs.vcxproj">
+      <Project>{694659e3-aa21-46e1-81a6-5f069140dd51}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\rtplatform_winsock\rtplatform_win32.vcxproj">
+      <Project>{923e946b-bc1c-439d-89b3-bf67b87812d3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webc\webc.vcxproj">
+      <Project>{fe989b7c-d610-481c-944f-83815c0bef20}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\zlib\zlib.vcxproj">
+      <Project>{a20432da-f81b-427e-a9a4-fa3167049984}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

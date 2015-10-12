@@ -1,0 +1,45 @@
+Collection
+
+	Base Class
+		none
+
+	Description
+		A collection of objects.  
+
+	Properties	
+	
+		length
+			Type
+				integer
+			Description
+				The number of objects in this collection
+			Read-only
+				yes except for collections of Option objects
+	
+	Methods
+
+		item
+			Description
+				Retrieve an object in the collection by numeric index
+			Parameters
+				n (integer)
+					the index of the object
+			Returns (Object)
+				The n-th object in the collection
+
+		namedItem
+			Description
+				Retrieve an object in the collection by name
+			Parameters
+				name (string)
+					the name of the object
+			Returns (Object)
+				The object in the collection with name, null if no such object exists in this collection.
+
+		toString
+			Description
+				Get string representation of this collection.
+			Parameters
+				none
+			Returns (string)
+				The string representation of this collection.

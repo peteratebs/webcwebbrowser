@@ -1,0 +1,83 @@
+HTMLTableElement
+
+	Base Class
+		HTMLElement
+
+	Description
+		Object type for HTML <table> tag.
+
+	Properties	
+	
+		align
+			Type
+				string
+			Description
+			Read-only
+				no
+
+		background
+			Type
+				string
+			Description
+			Read-only
+				no
+
+		bgColor
+			Type
+				string
+			Description
+			Read-only
+				no
+
+		border
+			Type
+				string
+			Description
+			Read-only
+				no
+
+		cellPadding
+			Type
+				integer
+			Description
+			Read-only
+				no
+
+		cellSpacing			
+			Type
+				integer
+			Description
+			Read-only
+				no
+
+		height
+			Type
+				string
+			Description
+			Read-only
+				no
+
+		width
+			Type
+				string
+			Description
+			Read-only
+				no
+
+	Methods
+
+		insertRow
+			Description
+				Create a new row in the table.
+			Parameters
+				position
+					The index of the row to be inserted (from the top, starting at 0).
+			Returns (nothing)
+
+		deleteRow
+			Description
+				Delete a row from the table.
+			Parameters
+				position
+					The index of the row to be deleted (from the top, starting at 0).
+			Returns (nothing)

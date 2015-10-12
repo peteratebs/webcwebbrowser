@@ -1,0 +1,80 @@
+HTMLFormElement
+
+	Base Class
+		HTMLElement
+
+	Description
+		Object for an HTML <form> tag.
+
+	Properties	
+	
+		(element name or id)
+			Type
+				HTMLElement
+			Description
+				Using form.<name> will try to access the object for an HTMLElement contained within form.elements (see above) with the given name.
+			Read-only
+				yes
+
+		action
+			Type
+				string
+			Description
+				The URL to submit the form to using the specified method.
+			Read-only
+				no
+
+		elements
+			Type
+				Collection
+			Description
+				A collection of all elements that contribute submission values to this form.  
+			Read-only
+
+		length
+			Type
+				integer
+			Description
+				The number of fields in this form.
+			Read-only
+				yes
+
+		method
+			Type
+				string
+			Description
+				Which method to use when submitting the form; either "GET" or "POST".
+			Read-only
+				no
+
+		name
+			Type
+				string
+			Description
+				The name of this form.
+			Read-only
+				no
+
+		target
+			Type
+				string
+			Description
+				The name of the frame which will receive the results of form submission.
+			Read-only
+				no
+
+	Methods
+
+		reset
+			Description
+				Reset all the fields in a form to their original default values.
+			Parameters
+				none
+			Returns (nothing)
+
+		submit
+			Description
+				Submit the form using specified method.
+			Parameters
+				none
+			Returns (nothing)

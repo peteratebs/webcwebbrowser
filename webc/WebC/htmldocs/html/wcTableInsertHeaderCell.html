@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>wcEL <A HREF="#DOC.DOCU">wcTableInsertHeaderCell</A></H2></TD><TD><H2>(wcCtx* Ctx,  wcEL TableRow,<BR>&nbsp; char* color,  char* bgcolor,<BR>&nbsp; char* bgimage,  char* style)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Insert a cell into a table row and then inserts a table header inside of it. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Insert a cell into a table row and then inserts a table header inside of it and returns the table header element.<br>
+<i>
+Note: The element returned is the table header element, not a table cell element.<br>
+Note: wcTableInsertHeaderCell creates a table cell so it will be reported by <!1><A HREF="wcTableGetCell.html">wcTableGetCell</A>.
+</i>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcCtx</B> - *  Ctx        The current wc context.
+<BR><B>wcEL</B> -  TableRow		The table row element returned from <!1><A HREF="wcTableInsertRow.html">wcTableInsertRow</A>
+<BR><B>char</B> -  *color		Named foreground (text) color or zero to use default, see <!1><A HREF="wcElSetStyleColorNamed.html">wcElSetStyleColorNamed</A> for available colors.
+<BR><B>char</B> -  *bgcolor		named background color or zero to use default.
+<BR><B>char</B> -  *bgimage      URL of background image (example: "file://images/mainpagebackground.gif") or , or zero for none.
+<BR><B>char</B> -  *style		Additional styles to apply or zero for none. Any style string may be provided for example" "visibilty:hidden;border-color:black;border-style:solid;border-thickness:2px;"
+<BR><DT><B>Returns:</B><DD>  wcEl the new element or zero if an error is detected or the element can't be created.
+<BR><DT><B>See Also:</B><DD><!1><A HREF="ExCalculatorDynamic.html">ExCalculatorDynamic</A> <!1><A HREF="wcTableInsertRow.html">wcTableInsertRow</A> <!1><A HREF="wcTableInsertCell.html">wcTableInsertCell</A> <!1><A HREF="wcTableInsertHeaderCell.html">wcTableInsertHeaderCell</A> <!1><A HREF="wcTableCellSetWidth.html">wcTableCellSetWidth</A> <!1><A HREF="wcTableCellSetHeight.html">wcTableCellSetHeight</A> <!1><A HREF="wcTableCellSetSpans.html">wcTableCellSetSpans</A> <!1><A HREF="wcTableGetCell.html">wcTableGetCell</A> <!1><A HREF="wcTableGetRow.html">wcTableGetRow</A>
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

@@ -1,0 +1,103 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "webcdemo_gdip", "webcdemo_gdip.vcxproj", "{60E7AAB3-C136-41EF-9364-F3383E43C8F6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "webc", "..\webc\webc.vcxproj", "{FE989B7C-D610-481C-944F-83815C0BEF20}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rtplatform_win32", "..\rtplatform_win32\rtplatform_win32.vcxproj", "{923E946B-BC1C-439D-89B3-BF67B87812D3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mozjs", "..\mozjs\mozjs.vcxproj", "{694659E3-AA21-46E1-81A6-5F069140DD51}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fdlibm", "..\fdlibm\fdlibm.vcxproj", "{E5B51541-0654-4F8E-97FC-E1B70045D9BE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libjpeg", "..\libjpeg\libjpeg.vcxproj", "{DB1862AC-7EA9-4892-B4D4-C85024EBD001}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libmng", "..\libmng\libmng.vcxproj", "{3641C2F9-4338-4224-955B-F162169DC443}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "..\zlib\zlib.vcxproj", "{A20432DA-F81B-427E-A9A4-FA3167049984}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpng", "..\libpng\libpng.vcxproj", "{6F634536-DBD9-45D1-B328-470024CC9E15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug JavaScript Unicode|Win32 = Debug JavaScript Unicode|Win32
+		Debug Unicode|Win32 = Debug Unicode|Win32
+		Release JavaScript Unicode|Win32 = Release JavaScript Unicode|Win32
+		Release Unicode|Win32 = Release Unicode|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60E7AAB3-C136-41EF-9364-F3383E43C8F6}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{60E7AAB3-C136-41EF-9364-F3383E43C8F6}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{60E7AAB3-C136-41EF-9364-F3383E43C8F6}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{60E7AAB3-C136-41EF-9364-F3383E43C8F6}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{60E7AAB3-C136-41EF-9364-F3383E43C8F6}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{60E7AAB3-C136-41EF-9364-F3383E43C8F6}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{60E7AAB3-C136-41EF-9364-F3383E43C8F6}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{60E7AAB3-C136-41EF-9364-F3383E43C8F6}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{FE989B7C-D610-481C-944F-83815C0BEF20}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{FE989B7C-D610-481C-944F-83815C0BEF20}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{FE989B7C-D610-481C-944F-83815C0BEF20}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{FE989B7C-D610-481C-944F-83815C0BEF20}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{FE989B7C-D610-481C-944F-83815C0BEF20}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{FE989B7C-D610-481C-944F-83815C0BEF20}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{FE989B7C-D610-481C-944F-83815C0BEF20}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{FE989B7C-D610-481C-944F-83815C0BEF20}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{923E946B-BC1C-439D-89B3-BF67B87812D3}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{923E946B-BC1C-439D-89B3-BF67B87812D3}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{923E946B-BC1C-439D-89B3-BF67B87812D3}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{923E946B-BC1C-439D-89B3-BF67B87812D3}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{923E946B-BC1C-439D-89B3-BF67B87812D3}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{923E946B-BC1C-439D-89B3-BF67B87812D3}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{923E946B-BC1C-439D-89B3-BF67B87812D3}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{923E946B-BC1C-439D-89B3-BF67B87812D3}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{694659E3-AA21-46E1-81A6-5F069140DD51}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{E5B51541-0654-4F8E-97FC-E1B70045D9BE}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{E5B51541-0654-4F8E-97FC-E1B70045D9BE}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{E5B51541-0654-4F8E-97FC-E1B70045D9BE}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{E5B51541-0654-4F8E-97FC-E1B70045D9BE}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{E5B51541-0654-4F8E-97FC-E1B70045D9BE}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{E5B51541-0654-4F8E-97FC-E1B70045D9BE}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{E5B51541-0654-4F8E-97FC-E1B70045D9BE}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{DB1862AC-7EA9-4892-B4D4-C85024EBD001}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{DB1862AC-7EA9-4892-B4D4-C85024EBD001}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{DB1862AC-7EA9-4892-B4D4-C85024EBD001}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{DB1862AC-7EA9-4892-B4D4-C85024EBD001}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{DB1862AC-7EA9-4892-B4D4-C85024EBD001}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{DB1862AC-7EA9-4892-B4D4-C85024EBD001}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{DB1862AC-7EA9-4892-B4D4-C85024EBD001}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{DB1862AC-7EA9-4892-B4D4-C85024EBD001}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{3641C2F9-4338-4224-955B-F162169DC443}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{3641C2F9-4338-4224-955B-F162169DC443}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{3641C2F9-4338-4224-955B-F162169DC443}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{3641C2F9-4338-4224-955B-F162169DC443}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{3641C2F9-4338-4224-955B-F162169DC443}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{3641C2F9-4338-4224-955B-F162169DC443}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{3641C2F9-4338-4224-955B-F162169DC443}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{3641C2F9-4338-4224-955B-F162169DC443}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{A20432DA-F81B-427E-A9A4-FA3167049984}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{A20432DA-F81B-427E-A9A4-FA3167049984}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{A20432DA-F81B-427E-A9A4-FA3167049984}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{A20432DA-F81B-427E-A9A4-FA3167049984}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{A20432DA-F81B-427E-A9A4-FA3167049984}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{A20432DA-F81B-427E-A9A4-FA3167049984}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{A20432DA-F81B-427E-A9A4-FA3167049984}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{A20432DA-F81B-427E-A9A4-FA3167049984}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{6F634536-DBD9-45D1-B328-470024CC9E15}.Debug JavaScript Unicode|Win32.ActiveCfg = Debug JavaScript Unicode|Win32
+		{6F634536-DBD9-45D1-B328-470024CC9E15}.Debug JavaScript Unicode|Win32.Build.0 = Debug JavaScript Unicode|Win32
+		{6F634536-DBD9-45D1-B328-470024CC9E15}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{6F634536-DBD9-45D1-B328-470024CC9E15}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{6F634536-DBD9-45D1-B328-470024CC9E15}.Release JavaScript Unicode|Win32.ActiveCfg = Release JavaScript Unicode|Win32
+		{6F634536-DBD9-45D1-B328-470024CC9E15}.Release JavaScript Unicode|Win32.Build.0 = Release JavaScript Unicode|Win32
+		{6F634536-DBD9-45D1-B328-470024CC9E15}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{6F634536-DBD9-45D1-B328-470024CC9E15}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

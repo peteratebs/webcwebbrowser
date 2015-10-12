@@ -1,0 +1,33 @@
+The red and green div's should succeed in printing the value '3' for myVar.<br>
+The yellow and blue div's should print the value 'undefined' for myVar.<br><br>
+
+<DIV id=divOne style="background-color: red; width: 300px;"
+	onclick='myVar = 3; window.status = "myVar = " + myVar;'>
+a div
+</DIV>
+
+<DIV id=divTwo style="background-color: green; width: 300px;"
+	onclick='myVar = 3; window.status = "window.myVar = " + window.myVar;'>
+a div
+</DIV>
+
+<DIV id=divThree style="background-color: yellow; width: 300px;"
+	onclick='myVar = 3; window.status = "this.myVar = " + this.myVar;'>
+a div
+</DIV>
+
+<DIV id=divThree style="background-color: blue; width: 300px;"
+	onclick='myVar = 3; window.status = "this.onclick.myVar = " + this.onclick.myVar;'>
+a div
+</DIV>
+
+<br>
+All three of the lines below should show a value of '5' for myVar.<BR><BR>
+
+<SCRIPT>
+    newVar = 5;
+
+    document.writeln("newVar = " + newVar + "<BR>");
+    document.writeln("this.newVar = " + this.newVar + "<BR>");
+    document.writeln("window.newVar = " + window.newVar + "<BR>");    
+</SCRIPT>

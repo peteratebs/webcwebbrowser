@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcJSIntroduction</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Introduction to interfacing with Javascript from 'C' and extending Javascript for your application. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+webC's Javascript support is derived from the Mozilla SpiderMonkey Javascript engine.
+This section documents specific functions that you can use to develop webC applications that use both C and Javascript.
+
+<P>There are many reasons that you might wish to use this aproach:
+
+<P><ul>
+<li> There are many skilled Javascript programmers and an infrastructure of code, tools and other resources.</li>
+<li> Developing apps in interpreted languages with object oriented features, like Javascript, is arguably today's most common development paradigm.</li>
+<li> Use of JSON and other Javascript techniques make interfaces easy to personalize, customize and and update.</li>
+<li> C is easily accesable from Javascript for real time processing, communicating with an RTOS and other system activities.</li>
+<li> Custom methods, objects and classes may be implemented in C that extend Javascript to directly support your device and application.</li>
+<li> These custom resources may be accessed from Javascript code driving your application.</li>
+<li> Javascript source code can come from multiple sources</li>
+<ul>
+<li>From the rom image of your application (rom:\\)</li>
+<li>From a file system (file:\\)</li>
+<li>From the network (http:\\)</li>
+<li>From 'C' arrays that have been dynamically filled with Javascript source code from 'C'.</li>
+or retrieved from file, necode driving your application.</li>
+</ul>
+<li> Server based applications can stay in control and still access remote device resources.</li>
+<li> Standalone applications can use Javascript for some or all of their user interface while keeping performing sytem task in C.</li>
+</ul>
+<PRE>
+For more information beyond what is in this section you should also consult the following resources.
+<ul>
+<li>Useful references are also available from mozilla.org.</li>
+<ul>
+<li><A HREF="https://developer.mozilla.org/en/SpiderMonkey">SpiderMonkey main page.</A></li>
+<li><A HREF="https://developer.mozilla.org/En/SpiderMonkey/JSAPI_User_Guide">JSAPI_User_Guide.</A></li>
+<li><A HREF="https://developer.mozilla.org/en/SpiderMonkey/JSAPI_Reference">JSAPI_Reference.</A></li>
+<li><A HREF="https://developer.mozilla.org/En/SpiderMonkey/JSAPI_Phrasebook">JSAPI_Phrasebook - Howto for typical things you might want to do.</A></li>
+<li><A HREF="https://developer.mozilla.org/En/SpiderMonkey/Internals">Internals - How it works.</A></li>
+</ul>
+<li>You may also wish to study webC source modules for examples of C and Javascript working in concert.</li>
+<ul>
+<li>C++ source for webC's optional Chrome browser web browser console in <b>webc/source/browser/Chromebrowser.cpp</b></li>
+<li>Javascript source for webC's optional Chrome browser web browser console in <b>webc/html/chrome/chrome.html, et al.</li>
+<li>webC's DOM interface for Javascript. Multiple files in the webC source <b>webc/source/jscript/*.cpp</b></li>
+</ul>
+</ul>
+</PRE>
+</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

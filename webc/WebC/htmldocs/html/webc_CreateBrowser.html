@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>HBROWSER_HANDLE <A HREF="#DOC.DOCU">webc_CreateBrowser</A></H2></TD><TD><H2>(struct HTMLBrowserConfig* config,<BR>&nbsp; WEBC_BOOL CreateWindow,<BR>&nbsp; char* _windowname,<BR>&nbsp; char* _home)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>(Deprecated for most uses) - Create a new HTML Browser window </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Allocates resources for and displays a new web browser window with
+the specified home page document.
+<br><i>
+Deprecated for most uses, use wcWinCreateEx() instead. Called by wcWinCreateEx(), webc_CreateBrowser() .
+</i>
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>config</B> -   The initial configuration of the new browser window
+<BR><B>CreateWindow</B> -  If true call the GUI manager or frame buffer driver to create a new window.
+<BR><B>windowname</B> -   Name of the window if one is being created.
+<BR><B>home</B> -     URL of the initial page to load in this window.  The browser
+will also return to this page when its 'Home' button (if it
+is configured to have one) is pressed, or when
+<!1><A HREF="webc_BrowserHome.html">webc_BrowserHome</A> is called.
+<BR><DT><B>Returns:</B><DD>  A handle to the newly created HTML Browser if successful, WEBC_NULL otherwise
+<BR><DT><B>See Also:</B><DD><!1><A HREF="webc_DestroyBrowser.html">webc_DestroyBrowser</A>, HTMLBrowserConfig<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

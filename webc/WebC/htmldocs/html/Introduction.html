@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">Introduction</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>This section provides an overview of configuring webC and introduces the native webC Application Programmer's Interface. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE><ul>
+<li>        Configuring webC.</li>
+<ul>
+<li>webC's feature set and some of its appearance may be changed by editing constants in include/util/webcfg.h.</li>
+<li>Default setting for webC display  elements are controlled by a default table maintained in source code file source/util/webcdefault.cpp. </li>
+<li>Consult the appendices for more details on configuring webC.</li>
+</ul>
+</ul>
+
+<P><ul>
+<li>Application development with webC.</li>
+<ul>
+<li>Applications may use Javascript or a combination of Javascript and C or they may be developed in pure C with Javascript disabled.</li>
+<li>Two groups of API calls are available to C programmers.</li>
+<li>The "wc", provides a C interface to many of webC's C++ methods and maintains a context mimicing Javascript in some ways and providing an application development framework.</li>
+<li>The "webc_" API is a lower level interface providing additional access to webC's C++ methods. If an API feature is not available through the "wc" interface it may be avaiable through the "webc_" interface. </li>
+<li>This section contains an overview on both the "wc" and "webc_" API's.</li>
+<li>Later sections contains details on each of the interfaces and example code.</li>
+</ul>
+</ul>
+
+<P><ul>
+<li>Using the "wc" interface.</li>
+<ul>
+<li>The "wc" API provides a C application development framework for webC. The style of the wc interface should be familiar to Javascript programmers. All function names start with the letters "wc", followed by the
+type of object the function works on, including "wcEl", "wcDoc", "wcSys", "wcDom", "wcWin". Subsequant characters in the function name describe the functionality.</li>
+<li>Examples include:</li>
+<ul>
+<li>wcElSetEventHandler() - Assign an event handler to a specific element.</li>
+<li>wcDocEnumerate() -  Call a user prescribed function once for each element in a document.</li>
+<li>wcWinCreateEx() - Create and position a new window, optionally load initial content and attach event handlers.</li>
+</ul>
+
+<P>
+<li>The "wc" API provides these features:</li>
+
+<P><ul>
+<li>            Context management</li>
+<ul>
+<li>                All API cals require a user context, these are created on entry to an event handler and is destroyed on exit.</li>
+<li>                The user context helps manage heap space used to pass information between the webC core, typically ASCII representations of strings that are stored internally as unicode.</li>
+</ul>
+<li>            Windowing API</li>
+<ul>
+<li>                Windowing system with support for create, move, save under, destroy. </li>
+<li>                Load content from file rom or http or dynamically create content.</li>
+<li>                Supports z-order. </li>
+<li>                Supports modal dialogues. </li>
+<li>                Dynamicaly Create, modify, insert, and delete elements in a document.</li>
+<li>                Save under and modal support simplify dialog box coding.</li>
+</ul>
+<li>            Support for complex composite application objects.</li>
+<ul>
+<li>                Dynamicaly push and pop user local data to elements, documents or windows.</li>
+<li>                Dynamicaly push and pop user local event handlers to elements or documents.</li>
+</ul>
+<li>            Element and DOM support.</li>
+<ul>
+<li>                Create, insert, append remove, delete elements in a document.</li>
+<li>                Attach and release event handlers and private data sets.</li>
+<li>                Get and set styles and other attributes.</li>
+</ul>
+<li>            Search and document enumeration support.</li>
+<ul>
+<li>                Top down dom search with XML search strings.</li>
+<li>                Simplified document enumeration support with user supplied callbacks.</li>
+</ul>
+<li>            Metatag API</li>
+<ul>
+<li>                Mechanism for calling 'C' subroutines when web pages containing specific metatags are loaded.</li>
+<li>                Supports native application and device code that is callable from web pages and thus controlled from the server side.</li>
+</ul>
+<li>            Sytem level utilities to help application development.</li>
+<ul>
+<li>                A new timer callback model simplifies including user timer callback functions that are not associated with a document or element.</li>
+</ul>
+<li>        Please review the manual pages for more details on the API.</li>
+<li>        A sample application wcapiexamples.cpp is provided with documented code fragments that demonstrate how to use the API. Documentation for the example code in this documentation set.</li>
+</ul>
+</ul>
+</ul>
+
+<P><ul>
+<li>Using the "webc_" interface.</li>
+<ul>
+<li>The "wc" API provides a C application development framework for webC. The style of the wc interface should be familiar to Javascript programmers. All function names start with the letters "wc", followed by the
+type of object the function works on, including "wcEl", "wcDoc", "wcSys", "wcDom", "wcWin". Subsequant characters in the function name describe the functionality.</li>
+<li>Examples include:</li>
+<ul>
+<li>wcElSetEventHandler() - Assign an event handler to a specific element.</li>
+<li>wcDocEnumerate() -  Call a user prescribed function once for each element in a document.</li>
+<li>wcWinCreateEx() - Create and position a new window, optionally load initial content and attach event handlers.</li>
+</ul>
+
+<P>
+<li>The "wc" API provides these features:</li>
+
+<P><ul>
+<li>            Context management</li>
+<ul>
+<li>                All API cals require a user context, these are created on entry to an event handler and is destroyed on exit.</li>
+<li>                The user context helps manage heap space used to pass information between the webC core, typically ASCII representations of strings that are stored internally as unicode.</li>
+</ul>
+<li>            Windowing API</li>
+<ul>
+<li>                Windowing system with support for create, move, save under, destroy. </li>
+<li>                Load content from file rom or http or dynamically create content.</li>
+<li>                Supports z-order. </li>
+<li>                Supports modal dialogues. </li>
+<li>                Dynamicaly Create, modify, insert, and delete elements in a document.</li>
+<li>                Save under and modal support simplify dialog box coding.</li>
+</ul>
+<li>            Support for complex composite application objects.</li>
+<ul>
+<li>                Dynamicaly push and pop user local data to elements, documents or windows.</li>
+<li>                Dynamicaly push and pop user local event handlers to elements or documents.</li>
+</ul>
+<li>            Element and DOM support.</li>
+<ul>
+<li>                Create, insert, append remove, delete elements in a document.</li>
+<li>                Attach and release event handlers and private data sets.</li>
+<li>                Get and set styles and other attributes.</li>
+</ul>
+<li>            Search and document enumeration support.</li>
+<ul>
+<li>                Top down dom search with XML search strings.</li>
+<li>                Simplified document enumeration support with user supplied callbacks.</li>
+</ul>
+<li>            Metatag API</li>
+<ul>
+<li>                Mechanism for calling 'C' subroutines when web pages containing specific metatags are loaded.</li>
+<li>                Supports native application and device code that is callable from web pages and thus controlled from the server side.</li>
+</ul>
+<li>            Sytem level utilities to help application development.</li>
+<ul>
+<li>                A new timer callback model simplifies including user timer callback functions that are not associated with a document or element.</li>
+</ul>
+<li>        Please review the manual pages for more details on the API.</li>
+<li>        A sample application wcapiexamples.cpp is provided with documented code fragments that demonstrate how to use the API. Documentation for the example code in this documentation set.</li>
+</ul>
+</ul>
+</ul>
+
+<P></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<IMG ALT="oooo >>>> footer <<< oooo " BORDER=0 SRC=footer.gif>
+</BODY>
+</HTML>

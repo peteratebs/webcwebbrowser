@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="xml">
+      <UniqueIdentifier>{267cf119-1d72-4a3e-b5ac-7869ffd1f6dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl">
+      <UniqueIdentifier>{a704c595-9d45-4061-b895-a8f8a3a15092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\controls">
+      <UniqueIdentifier>{eb7aa47f-6479-4040-a057-2d645ace4523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\examples">
+      <UniqueIdentifier>{f4771d7a-8730-466e-9ede-9405b15dec25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\images">
+      <UniqueIdentifier>{064b04f6-f566-4151-b033-6900434ba7bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\source">
+      <UniqueIdentifier>{aa47c71d-fb1d-4485-86f0-20d3da4bc3b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\webcinterface">
+      <UniqueIdentifier>{25f177ee-c940-43f8-8dd0-d18db77ef3f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\SimualtorWin32">
+      <UniqueIdentifier>{269bcec7-9fdc-4dce-bb81-c14c4ef253e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\xmltools">
+      <UniqueIdentifier>{da079773-5eb2-4e53-b0b6-150460840cce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\xmltools\output">
+      <UniqueIdentifier>{04d87728-4a77-4f93-b2ae-5a0091d44308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\source\fonts">
+      <UniqueIdentifier>{4941a987-49b5-41aa-bd13-8fdbb681259b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emgl\patterns">
+      <UniqueIdentifier>{c2607804-ad68-4ddf-be97-cac1f331dccf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="webcdemo_gdip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\windows\source\webcgdip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\windows\source\wfgdip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ixml\v1.2\src\attr.c">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ixml\v1.2\src\document.c">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ixml\v1.2\src\element.c">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ixml\v1.2\src\ixml.c">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ixml\v1.2\src\ixmlmembuf.c">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ixml\v1.2\src\ixmlparser.c">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ixml\v1.2\src\namedNodeMap.c">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ixml\v1.2\src\node.c">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ixml\v1.2\src\nodeList.c">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ButtonControl.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\CheckBoxObject.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\DivObject.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ImageMapControl.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ScrollbarControl.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\StandardComponents.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\TextBoxControl.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\TextEditControl.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\VectorGraphics.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ButtonExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExamplesDisplayManager.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExamplesGraphObj.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExamplesUtilities.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ImageMapExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\IntroductoryText.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\MenuOfExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ScopeExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ScrollbarExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\SpeedometerExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\TextExamples.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\Oval3DDd1.c">
+      <Filter>emgl\images</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\EglLogo.c">
+      <Filter>emgl\images</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\Keyboard.c">
+      <Filter>emgl\images</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\KeyboardDown.c">
+      <Filter>emgl\images</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\Oval3DDd0.c">
+      <Filter>emgl\images</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Images\speedo.c">
+      <Filter>emgl\images</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\webCInterface\webcinterface.cpp">
+      <Filter>emgl\webcinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\rectclass.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\bmpdecode.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\bmpload.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\DisplayObject.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\DisplayObjectGraphObj.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egbfbgradients.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egbfbmain.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egbffonts.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egblgraphnametocolor.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egblinegraphics.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egblinegraphicsplusplus.cpp">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\eglstylesheets.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\FBBitmaps.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\filestream.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\SimulatorWin32\WindowsBitMapFrameBuffer.cpp">
+      <Filter>emgl\SimualtorWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\SimulatorWin32\WindowsBitMapEventing.cpp">
+      <Filter>emgl\SimualtorWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\webCInterface\webcFontInterface.cpp">
+      <Filter>emgl\webcinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold6B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold9B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold10B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold14B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialBold20B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialItalic6B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialItalic9B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialItalic10B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular6B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular9B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular10B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular14B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\ArialRegular20B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierBold10B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierBold14B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierBold20B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierRegular10B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierRegular14B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\CourierRegular20B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold10B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold11B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold12B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold13B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold14B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold15B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold16B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold17B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold18B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold20B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold22B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaBold24B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular10B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular11B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular12B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular13B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular14B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular15B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular16B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular17B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular18B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular20B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular22B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\fonts\TahomaRegular24B0020E007e.c">
+      <Filter>emgl\source\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\webCInterface\WebcEmglInit.c">
+      <Filter>emgl\webcinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\webCInterface\webcFontTable.c">
+      <Filter>emgl\webcinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\codegen.cpp">
+      <Filter>emgl\xmltools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\xmlutilities.cpp">
+      <Filter>emgl\xmltools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\CommonStubs.c">
+      <Filter>emgl\xmltools\output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\SchemaValidateStubs.c">
+      <Filter>emgl\xmltools\output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\PalletStdControls.c">
+      <Filter>emgl\xmltools\output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\SchemaValidate.c">
+      <Filter>emgl\xmltools\output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Designer\CodeGenOutput\PalletObjectResources.c">
+      <Filter>emgl\xmltools\output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\MenuObject.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\TreeObject.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\MenuExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egfboptimizations.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\WindowExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\WindowObject.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ConsoleObject.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleGraphics.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\SimulatorWin32\WindowsBitMapConfig.c">
+      <Filter>emgl\SimualtorWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleCalc.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\BasicDialog.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleFramework.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\ScrollPanel.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ScrollPanelExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\TextObject.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleDiags.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\Examples.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\SystemObject.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\SourceViewer.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\SoftKeyBoardExample.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Controls\SoftKeyControl.c">
+      <Filter>emgl\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\source\egbfbroundedcorners.c">
+      <Filter>emgl\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Examples\ExampleIndicators.c">
+      <Filter>emgl\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Patterns\Corners\RadiusCornerImage_10_1.c">
+      <Filter>emgl\patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Patterns\Corners\RadiusCornerImage_10_2.c">
+      <Filter>emgl\patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Patterns\Corners\RadiusCornerImage_20_2.c">
+      <Filter>emgl\patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\EMGL\Patterns\Corners\RadiusCornerImage_20_4.c">
+      <Filter>emgl\patterns</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="webcdemo_gdip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="webcdemo_gdip.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="webcdemo_gdip.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

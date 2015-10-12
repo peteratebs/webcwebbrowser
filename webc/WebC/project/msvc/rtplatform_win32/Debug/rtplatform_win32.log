@@ -1,0 +1,33 @@
+﻿Build started 5/31/2011 8:15:56 PM.
+     1>Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\rtplatform_win32\rtplatform_win32.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\rtplatform_win32.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Debug\rtplatform_win32.lib" /NOLOGO .\Debug/rtpchar.obj
+         .\Debug/rtpdate.obj
+         .\Debug/rtpdebug.obj
+         .\Debug/rtpdobj.obj
+         .\Debug/rtpdutil.obj
+         .\Debug/rtpfile.obj
+         .\Debug/rtpmem.obj
+         .\Debug/rtpmemdb.obj
+         .\Debug/rtpnet.obj
+         .\Debug/rtprand.obj
+         .\Debug/rtpstdup.obj
+         .\Debug/rtpstr.obj
+         .\Debug/rtpthrd.obj
+         .\Debug/rtptime.obj
+         .\Debug/rtpwchar.obj
+         .\Debug/rtpwcs.obj
+         .\Debug/rtpwscnv.obj
+         rtplatform_win32.vcxproj -> C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\rtplatform_win32\Debug\rtplatform_win32.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\rtplatform_win32.unsuccessfulbuild".
+         Touching "Debug\rtplatform_win32.lastbuildstate".
+     1>Done Building Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\rtplatform_win32\rtplatform_win32.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.56

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcElSetStyleColorRgba</A></H2></TD><TD><H2>(wcEL element,  CSSPropertyType Prop,<BR>&nbsp; int r,  int g,  int b,  int a,<BR>&nbsp; wcBOOL refresh)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Set the color and alpha blend value of an element using CSS. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Formats a string and passes it to wcElSetStyle() to set the color a color of an element using CSS.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcEL</B> - 	Element     -   The element.
+<BR><B>Prop</B> -     Which color property to set.
+<BR><B>int</B> -           		r (0-255).
+<BR><B>int</B> -           		g (0-255).
+<BR><B>int</B> -           		b (0-255).
+<BR><B>int</B> -           		a (0-100) Alpha channel value. 0 is fully opaque, 100 is fully transparent
+<BR><B>refresh</B> -       		Redraw the element immediately if wcTRUE.
+<PRE>
+<br>These are the most common properties that you might set.<br>
+CSS_PROPERTY_COLOR - The text color
+CSS_PROPERTY_BACKGROUND_COLOR - The background
+<br>These properties may also be set.<br>
+CSS_PROPERTY_ALINK_COLOR,CSS_PROPERTY_VLINK_COLOR,CSS_PROPERTY_LINK_COLOR,CSS_PROPERTY_OUTLINE_COLOR,CSS_PROPERTY_BORDER_BOTTOM_COLOR,CSS_PROPERTY_BORDER_COLOR
+CSS_PROPERTY_BORDER_LEFT_COLOR,CSS_PROPERTY_BORDER_RIGHT_COLOR,CSS_PROPERTY_BORDER_TOP_COLOR
+</PRE>
+<BR><DT><B>Returns:</B><DD>  nothing.
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcElSetStylePos.html">wcElSetStylePos</A>,,<!1><A HREF="wcElSetStyleColorHtml.html">wcElSetStyleColorHtml</A>, <!1><A HREF="wcElSetStyleColorNamed.html">wcElSetStyleColorNamed</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

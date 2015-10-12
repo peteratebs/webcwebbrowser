@@ -1,0 +1,16 @@
+﻿Build started 6/1/2011 11:58:11 AM.
+     1>Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\webcdemo_peg_win32\webcdemo_peg_win32.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Debug\webcdemo_peg_win32.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\include\util /I..\..\..\include\protocol /I..\..\..\include\minigui /I..\..\..\include\jscript /I..\..\..\include\imgdecode /I..\..\..\include\imgconvert /I..\..\..\include\htmldom /I..\..\..\include\htmldisplay /I..\..\..\include\browser /I..\..\..\gui\windows\include /I..\..\..\..\..\rtplatform\v0.4\include\ms32 /I..\..\..\..\..\rtplatform\v0.4\include /I..\..\..\..\..\peg\include /I..\..\..\..\..\peg\include\scrndrv /I..\..\..\gui\peg\include /I..\..\..\lib\mozilla /ZI /nologo /W3 /WX- /Od /Oy- /D WEBC_SUPPORT_JSCRIPT=0 /D _DEBUG /D WEBC_DEBUG /D RTP_TRACK_LOCAL_MEMORY /D WIN32 /D _WINDOWS /D __WEBC__ /D _LIB /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt windemo.cpp
+         windemo.cpp
+     1>c:\moto_project\ebs_merge_10_14\webc\project\msvc.net\webcdemo_peg_win32\windemo.cpp(81): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(188) : see declaration of 'strncpy'
+     1>c:\moto_project\ebs_merge_10_14\webc\project\msvc.net\webcdemo_peg_win32\windemo.cpp(104): error C2065: 'HEREHERE' : undeclared identifier
+     1>c:\moto_project\ebs_merge_10_14\webc\project\msvc.net\webcdemo_peg_win32\windemo.cpp(104): error C2143: syntax error : missing ';' before '}'
+     1>Done Building Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\webcdemo_peg_win32\webcdemo_peg_win32.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:01:03.97

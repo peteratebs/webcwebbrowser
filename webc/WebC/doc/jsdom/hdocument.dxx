@@ -1,0 +1,252 @@
+HTMLDocument
+
+	Base Class
+		none
+
+	Description
+		Object for an HTML document.
+
+	Properties	
+	
+		all
+			Type
+				Collection
+			Description
+				A collection of all HTMLElement objects in this document.
+			Read-only
+				yes
+
+		aLink
+		alinkColor
+		background
+		bgColor
+		link
+		linkColor
+		onclick
+		ondblclick
+		onkeydown
+		onkeypress
+		onkeyup
+		onmousedown
+		onmousemove
+		onmouseout
+		onmouseover
+		onmouseup
+		onfocus
+		onunfocus
+		onload
+		onunload
+		onsubmit
+		onchange
+			Shortcuts: document.<property> maps to document.body.<property>
+
+		anchors
+			Type
+				Collection
+			Description
+				A collection of all HTMLAnchorElement objects in this document.
+			Read-only
+				yes
+
+		body
+			Type 
+				Body
+			Description
+				The <body> element of this document.
+			Read-only
+				yes
+
+		clientHeight
+			Type
+				integer
+			Description
+				The height of the client area of the window that this document is displayed within.
+			Read-only
+				yes
+
+		clientWidth
+			Type
+				integer
+			Description
+				The width of the client area of the window that this document is displayed within.
+			Read-only
+				yes
+
+		cookie
+			Type
+				string
+			Description
+				The cookie string sent when requesting this document.
+			Read-only
+				no, appends the existing cookie string if set.
+
+		documentElement
+			Type
+				HTMLDocument
+			Description
+				The highest-level parent document of this document.
+			Read-only
+				yes
+				
+		fgColor
+			Type
+				string
+			Description
+				The default text color for this document.
+			Read-only
+				no
+
+		forms
+			Type
+				Collection
+			Description
+				A collection of all HTMLFormElement objects in this document.
+			Read-only
+				yes
+				
+		images
+			Type
+				Collection
+			Description
+				A collection of all Image objects in this document.
+			Read-only
+				yes
+
+		links
+			Type
+				Collection
+			Description
+				A collection of all HTMLAnchorElement objects in this document that represent links.
+			Read-only
+				yes
+
+		location
+			Type
+				Location
+			Description
+				The Location object for this document (see Location).
+			Read-only
+				no (setting this property to a string sets the source URL for this document)
+
+		parentWindow
+			Type
+				Window
+			Description
+				The parent window of this document.
+			Read-only
+				yes
+
+		protocol
+			Type
+				string
+			Description
+				The transfer protocol of the current URL.
+			Read-only
+				yes
+
+		referrer
+			Type
+				string
+			Description
+				The URL of the document that referred to this one (the last page in the document history).
+			Read-only
+				yes
+
+		title
+			Type
+				string
+			Description
+				The title of this document.
+			Read-only
+				no
+
+		uniqueId
+			Type
+				string
+			Description
+				Utility function: returns a globally unique identifier string.  The value of this property is different each time it is read.
+			Read-only
+				yes
+
+		URL
+			Type
+				string
+			Description
+				The URL of the page currently being displayed.
+			Read-only
+				yes
+
+		(element name)
+			Type
+				HTMLElement
+			Description
+				Using document.<name> searches the document for an HTMLElement with the given name.  This property is null if no such element exists in this document.
+			Read-only
+				yes
+
+	
+	Methods
+
+		close
+			Description
+				Close the document to writing.
+			Parameters
+				none
+			Returns (none)
+
+		getElementsByName
+			Description
+				Retrieve the collection of HTMLElements in this document with the given name.
+			Parameters
+				name (string)
+					The name of the HTMLElements in the returned collection.
+			Returns (Collection)
+				A collection of all HTMLElements in this document with name.
+
+		getElementById
+			Description
+				Get the first HTMLElement in this document with the given id.
+			Parameters
+				id (string)
+					The id to search for.
+			Returns (HTMLElement)
+				The first HTMLElement with id, null if none present.
+
+		getElementByID
+			Description
+				Same as getElementById.
+			Parameters
+				Same as getElementById.
+			Returns (HTMLElement)
+				Same as getElementById.
+
+		load
+			Description
+				Set the source URL of this document and queue the load.  Setting the document URL with this method will always reload the given page, even if it is the page currently being displayed.
+			Parameters
+				url (string)
+					The URL of the new page to load.
+			Returns (nothing)
+
+		open
+			Description
+				Open the document for writing.
+			Parameters
+				none
+			Returns (nothing)
+
+		write
+			Description
+				Write HTML content into the document.
+			Parameters
+				content (string)
+					The HTML source to insert at the end of the document.
+			Returns (nothing)
+
+		writeln
+			Description
+				Write HTML content into the document followed by a new line.
+			Parameters
+				content (string)
+					The HTML source to insert at the end of the document.  A new line character is automatically inserted after content.
+			Returns (nothing)

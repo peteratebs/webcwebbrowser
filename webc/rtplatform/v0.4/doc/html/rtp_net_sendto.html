@@ -1,0 +1,84 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2>long <A HREF="#DOC.DOCU">rtp_net_sendto</A></H2><H2>( RTP_HANDLE sockHandle,<BR>&nbsp;  const unsigned char*  buffer,   long size,<BR>&nbsp;  unsigned char*  ipAddr,   int port,<BR>&nbsp;  int type )</H2><BLOCKQUOTE>Send a datagram. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This function is used to send data over a connectionless 
+socket (UDP).  The socket must be a connectionless (UDP) 
+socket; behavior is undefined if sockHandle is not a valid 
+connectionless (UDP) socket.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>sockHandle</B> -   The socket handle to send over. 
+<BR><B>buffer</B> -   Pointer to the data to be sent. 
+<BR><B>size</B> -   The number of unsigned chars (bytes) to send. 
+<BR><B>ipAddr</B> -   The IP address in host byte order to send to. 
+<BR><B>port</B> -   The port in host byte order to send to. 
+<BR><B>type</B> -   The type of IP address to send to:<br>
+<pre>
+|		4   Indicates an IPv4 address.
+|		6   Indicates an IPv6 address.
+</pre> <BR><DT><B>Returns:</B><DD>  The number of unsigned chars (bytes) sent if successful, 
+-1 on error, -2 if a non-fatal error occurred.  A non-fatal 
+error includes a socket that is set for non-blocking mode and 
+the native sendto operation returns immediately with an error 
+indicating that it would block or that the operation is in 
+progress.  If the application making use of rtp_net_sendto is 
+using non-blocking sockets, it is advised that the return value 
+is checked for -2 and continues, using rtp_net_write_select to 
+determine if the sendto operation has been completed before 
+making other RTPlatform Socket API calls on this socket.  For 
+debugging purposes; if the cause of the error is obtainable at 
+the native TCP/IP layer, turn on RTP_DEBUG in rtpdebug.h 
+to display the native error value.
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>

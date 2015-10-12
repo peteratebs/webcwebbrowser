@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2> <A HREF="#DOC.DOCU">Appendix A</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>webC compile time configuration constants.</BLOCKQUOTE>
+
+<TABLE>
+<TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Compile time configuration"></A>
+<A HREF=AppendixA.html><B>Compile time configuration</B></A></TD><TD><BR>
+<I>Modify constants in the file include/util/webcfg.h to change the feature set of webC.<br> The preprocessor constants listed below may be changed to chagne the feature set and behavior of webC.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_UNICODE"></A>
+<A HREF=WEBC_SUPPORT_UNICODE.html><B>WEBC_SUPPORT_UNICODE</B></A></TD><TD><BR>
+<I>Set to 1 to enable Unicode support, set to zero to disable. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_JSCRIPT"></A>
+<A HREF=WEBC_SUPPORT_JSCRIPT.html><B>WEBC_SUPPORT_JSCRIPT</B></A></TD><TD><BR>
+<I>Set to 1 to enable Javascript support, set to zero to disable. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_DEBUG"></A>
+<A HREF=WEBC_DEBUG.html><B>WEBC_DEBUG</B></A></TD><TD><BR>
+<I>Define WEBC_DEBUG to enable extra debug code and asserts when errant behavior is suspect. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_SMALL_SCREEN"></A>
+<A HREF=WEBC_SUPPORT_SMALL_SCREEN.html><B>WEBC_SUPPORT_SMALL_SCREEN</B></A></TD><TD><BR>
+<I>Set to 1 to for a reduced screen device. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SCREEN_WIDTH"></A>
+<A HREF=AppendixA.html><B>WEBC_SCREEN_WIDTH</B></A></TD><TD><BR>
+<I>Set to your target's screen width in pixels. For example for a QVGA display the value is 320.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SCREEN_HEIGHT"></A>
+<A HREF=AppendixA.html><B>WEBC_SCREEN_HEIGHT</B></A></TD><TD><BR>
+<I>Set to your target's screen height in pixels. For example for a QVGA display the value is 240.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_TOUCHSCREEN"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_TOUCHSCREEN</B></A></TD><TD><BR>
+<I>Set to 1 to enable a softkeyboard popup when a text box or text area is touched</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_STR_FOCUS_SELECT"></A>
+<A HREF=WEBC_CFG_STR_FOCUS_SELECT.html><B>WEBC_CFG_STR_FOCUS_SELECT</B></A></TD><TD><BR>
+<I>Set to 1 to select all when a text edit gets focus. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_STR_CURSOR_WIDTH"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_STR_CURSOR_WIDTH</B></A></TD><TD><BR>
+<I>Set the width in pixels of the textbox and editstring cursor.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_ENABLE_CHROME"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_ENABLE_CHROME</B></A></TD><TD><BR>
+<I>Set to 1 to include code needed to support the Chrome C and Javascript based web browser console.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_HTTP"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_HTTP</B></A></TD><TD><BR>
+<I>Set to 1 to include support for the http: url. If enabled rtpnet.c in the rtplatform layer must be ported.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_HTTPS"></A>
+<A HREF=WEBC_SUPPORT_HTTPS.html><B>WEBC_SUPPORT_HTTPS</B></A></TD><TD><BR>
+<I>Set to 1 to include support for the https: url. A working reference is available for windows. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_FILE"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_FILE</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for FILE: protocol. If enebled you must port rtpfile.c in the rtplatform layer to your file system.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_INTERNAL"></A>
+<A HREF=WEBC_SUPPORT_INTERNAL.html><B>WEBC_SUPPORT_INTERNAL</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for WEBC: built in "rom" file protocol. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_LOCAL"></A>
+<A HREF=WEBC_SUPPORT_LOCAL.html><B>WEBC_SUPPORT_LOCAL</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for LOCAL: protocol </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_ERROR_PAGE_REDIRECT"></A>
+<A HREF=WEBC_SUPPORT_ERROR_PAGE_REDIRECT.html><B>WEBC_SUPPORT_ERROR_PAGE_REDIRECT</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for redirecting the URL when a URL load error occurs. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_SHIFTJIS"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_SHIFTJIS</B></A></TD><TD><BR>
+<I>Set to 1 to support Japanese encoding. WEBC_SUPPORT_UNICODE must be enabled, translation table adds to the rom footprint.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_UTF8"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_UTF8</B></A></TD><TD><BR>
+<I>Set to 1 to support Unicode 8-bit transitional format. WEBC_SUPPORT_UNICODE must be enabled, translation table adds to the rom footprint.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_EUC_KR"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_EUC_KR</B></A></TD><TD><BR>
+<I>Set to 1 to support Korean encoding. WEBC_SUPPORT_UNICODE must be enabled, translation table adds to the rom footprint.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_EUC_JP"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_EUC_JP</B></A></TD><TD><BR>
+<I>Set to 1 to support Japanese encoding. WEBC_SUPPORT_UNICODE must be enabled, translation table adds to the rom footprint.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_GB2312"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_GB2312</B></A></TD><TD><BR>
+<I>Set to 1 to support simplified Chinese (GB) encoding. WEBC_SUPPORT_UNICODE must be enabled, translation table adds to the rom footprint.BUGBUG</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_MAX_FONT_FAMILIES"></A>
+<A HREF=WEBC_CFG_MAX_FONT_FAMILIES.html><B>WEBC_CFG_MAX_FONT_FAMILIES</B></A></TD><TD><BR>
+<I>Set to the number of font families included in the build. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_HTTP_BUFFER_SIZE"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_HTTP_BUFFER_SIZE</B></A></TD><TD><BR>
+<I>Set the buffer size for HTTP (TCP-IP) GET data tranfers. Each open HTTP connection allocates a buffer of this size and recieves data in this size chunks and passes the data to the parser. The default value is small, 1024 bytes and if it is increased it cmay improve performance.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_FILE_POST_BUFFER_SIZE"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_FILE_POST_BUFFER_SIZE</B></A></TD><TD><BR>
+<I>Set the buffer size for data being posted from a file. File post operations allocate a buffer of this size to retrieve data from a file and post to an HTTP server. A post operation allocates a buffer of this size and sends data in this size chunks. The default value is small, 1024 bytes and if it is increased it may improve performance.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_BITMAP_BUFFER_SIZE"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_BITMAP_BUFFER_SIZE</B></A></TD><TD><BR>
+<I>Set the buffer size for image loads. Image loads allocate a buffer of this size to retrieve data from the content source, FILE: HTTP: WEC: etc. Each concurrently loading image allocates a buffer of this size and recieves data in this size chunks and passes it to the image decoder. The default value is small, 1024 bytes and if it is increased it may improve performance.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_MAX_STREAMS"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_MAX_STREAMS</B></A></TD><TD><BR>
+<I>Set the maximum number of simultaneous http gets to process. webC will perform WEBC_CFG_MAX_STREAMS simultaneous get operations when retrieving content over http. When WEBC_CFG_MAX_STREAMS are currently active and a new URL is detected in the data stream then webC waits for another strem to complete before processing the url. The default value is small, 4, if it is increased it may improve performance for http based applications.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_META_TABLE_SIZE"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_META_TABLE_SIZE</B></A></TD><TD><BR>
+<I>Set the maximum number user metatag callbacks. If set to zero excludes metatag user callbacks, otherwise determines the maximum number of metatag callback handlers that may be assigned.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_USER_EVENTS"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_USER_EVENTS</B></A></TD><TD><BR>
+<I>Set to 1 to enable custom named event handlers, 0 otherwise. Named event handlers are a webC legacy HTML extension that allows assigning a named event handler to one or more elements. There are newer ways to assign 'C' event handlers to elements but this method has advantages of simplicty and ease of interoperability between Javascript and 'C' with minimal complexity.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_MAX_EVENT_HANDLERS"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_MAX_EVENT_HANDLERS</B></A></TD><TD><BR>
+<I>Sets the maximum number of seperate named user event handlers that may be installed.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_URL_MACROS"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_URL_MACROS</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for url macros. URL macros are a webC legacy extension allowing calls to 'C' to perform macro replacement on a section of a url string.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_MAX_ELEMENT_DEPTH"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_MAX_ELEMENT_DEPTH</B></A></TD><TD><BR>
+<I>Sets the maximum depth that HTML tags may be nested.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_MAX_FRAME_DEPTH"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_MAX_FRAME_DEPTH</B></A></TD><TD><BR>
+<I>Sets the maximum depth that frames may be nested.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_DBLCLICK_TIME"></A>
+<A HREF=AppendixA.html><B>WEBC_DBLCLICK_TIME</B></A></TD><TD><BR>
+<I>Sets the maximum timespan in msecs, within which, if two clicks occur in this time a double click event is generated. Double click events are avaiable for the javascript ondblclick handler and for applications that wish to implement 'C' double click handlers to process HTML_EVENT_DBLCLICK events.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_GIFS"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_GIFS</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for .GIF image decode and display, 0 otherwise.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_JPGS"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_JPGS</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for .JPG image decode and display, 0 otherwise. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_PNG"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_PNG</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for .PNG image decode and display, 0 otherwise. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_MNG"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_MNG</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for .MNG image decode and display, 0 otherwise. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_BMP"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_BMP</B></A></TD><TD><BR>
+<I>Set to 1 to enable support for .BMP image decode and display, 0 otherwise. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_CACHE"></A>
+<A HREF=WEBC_SUPPORT_CACHE.html><B>WEBC_SUPPORT_CACHE</B></A></TD><TD><BR>
+<I>Set to 1 to support caching content to the local file system, 0 otherwise. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_COOKIES"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_COOKIES</B></A></TD><TD><BR>
+<I>Set to 1 to support cookies, 0 otherwise. Enable support for cookies, document.cookie under Javascript and the native webC cookie API functions with 'C'. Note that cookies are stored in memory only, there is mo mechanism currently to write them to disk.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_OFFLINE_BROWSING"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_OFFLINE_BROWSING</B></A></TD><TD><BR>
+<I>Set to 1 to enable the offline content cache. Enable support for storing content along with the content's URL to be reviewable at a later time when the device is not connected.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_EVENT_QUEUE_SIZE"></A>
+<A HREF=WEBC_CFG_EVENT_QUEUE_SIZE.html><B>WEBC_CFG_EVENT_QUEUE_SIZE</B></A></TD><TD><BR>
+<I>Configure the size of HTMLEvent queue. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_EVENT_MAX_RECURSE_DEPTH"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_EVENT_MAX_RECURSE_DEPTH</B></A></TD><TD><BR>
+<I>Max recursion depth for HTMLElement::Event. This is the maximum number of depth that the actions of an element's Event handler can recurse. Making API calls and sending messages to an Element from its own event handler can cause a certain amount of recursion to occur, this is a guard against excessive recursion. In debug mode an assert is generated if the limit is reached. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_HISTORY_SIZE"></A>
+<A HREF=AppendixA.html><B>WEBC_CFG_HISTORY_SIZE</B></A></TD><TD><BR>
+<I>Number of URLs stored in browser history stack. This is the number of URLs that are stored in the history stack for PREV and NEXT support. This feature is included mainly to support hypertext browsing but the history feature can be usefull in applications with hierarchical page format as well. If history is not needed for your application you may reduce this	value to 1. Reducing it to zero is not supported.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_SUPPORT_VERIFY"></A>
+<A HREF=AppendixA.html><B>WEBC_SUPPORT_VERIFY</B></A></TD><TD><BR>
+<I>Set to 0 to use only encryption for https:; 1 for authentication as well. Controls if certs received from the server are verified. Set to 0 to use only encryption; 1 for authentication as well.WEBC_SUPPORT_VERIFY is ignored if HTTPS is not enabled. </I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="HTTPS_CERT_FILE"></A>
+<A HREF=AppendixA.html><B>HTTPS_CERT_FILE</B></A></TD><TD><BR>
+<I>Path to the certificate file if WEBC_SUPPORT_VERIFY if enabled and HTTPS is enable. Points webC at a file that contains valid certificates. WEBC_SUPPORT_FILE must be enabled to support certificate verification.</I>
+</TD></TR><TR><TD VALIGN=TOP>
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="WEBC_CFG_CACHE_PREFIX"></A>
+<A HREF=WEBC_CFG_CACHE_PREFIX.html><B>WEBC_CFG_CACHE_PREFIX</B></A></TD><TD><BR>
+<I>Path prefix to the subdirectory where content will be cached. </I>
+</TD></TR>
+</TABLE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>webC compile time configuration constants.</BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

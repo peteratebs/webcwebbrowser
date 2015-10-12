@@ -1,0 +1,72 @@
+#include "resource.h"
+#include "windows.h"
+
+/*********************************************************************
+*
+*       Icons
+*
+**********************************************************************
+*/
+
+IDI_ICON   ICON   DISCARDABLE   "Simulation.ico"
+
+/*********************************************************************
+*
+*       Menu
+*
+**********************************************************************
+*/
+
+IDC_CONTEXTMENU MENU DISCARDABLE 
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "&About\tF1",                  IDM_ABOUT
+	MENUITEM SEPARATOR
+    MENUITEM "E&xit\tALT-F4",               IDM_EXIT
+  END
+END
+
+/*********************************************************************
+*
+*       Dialog
+*
+**********************************************************************
+*/
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 230, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About embOS Simulation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ICON,IDC_STATIC,10,10,20,20
+    LTEXT           "embOS Simulation",IDC_STATIC,40,10,100,8, SS_NOPREFIX
+    LTEXT           "Compile date",ID_DATE,40,19,100,8, SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003-2004",IDC_STATIC,40,35,130,8
+    LTEXT           "SEGGER Microcontroller Systeme GmbH",IDC_STATIC,40,44,130,8
+    LTEXT           "www.segger.com",IDC_STATIC,40,52,130,8
+    DEFPUSHBUTTON   "OK",IDOK,177,7,45,14,WS_GROUP
+END
+
+/*********************************************************************
+*
+*       Bitmap
+*
+**********************************************************************
+*/
+
+IDB_DEVICE            BITMAP  DISCARDABLE     "Device.bmp"
+
+/*********************************************************************
+*
+*       Accelerators
+*
+**********************************************************************
+*/
+
+IDC_WINMAIN ACCELERATORS MOVEABLE PURE 
+BEGIN
+  VK_F1,  IDM_ABOUT,  VIRTKEY, NOINVERT
+END
+
+/*************************** end of file ****************************/

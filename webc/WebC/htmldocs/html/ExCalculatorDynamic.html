@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExCalculatorDynamic</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>This example demonstrates wcTableApi functions to implement a calculator function similar to <!1><A HREF="ExCalculator.html">ExCalculator</A> using dynamically generated content instead of CSS and HTML. <ul> <li>Demonstrate using <!1><A HREF="wcNewStyledTable.2.html">wcNewStyledTable</A> <!1><A HREF="wcTableInsertRow.html">wcTableInsertRow</A> and <!1><A HREF="wcTableInsertCell.html">wcTableInsertCell</A> to dynamically create a table. </ul> </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>This source code provided in webcapiexample.c provides examples for creating create elements and display them with customized styles.
+<br> Note: childwindowCtx has already been initialized to a valid window context by <!1><A HREF="OpenExampleChildWindow.html">OpenExampleChildWindow</A>.
+<!1><A HREF="ExCalculator.html">ExCalculator</A>
+<PRE>
+
+<P>static char *ButtonFaces[] = {"7","8","9","+", "4","5","6","-", "1","2","3","=","0","Clr",0};
+
+<P>static void ExCalculatorDynamic(void)
+{
+	wcEL r,c;
+	wcEL CalcWindowRow;
+	wcEL CalcTable;
+	// Clear the window content.
+	<!1><A HREF="wcDocClear.html">wcDocClear</A>(&childwindowCtx, wcFALSE);
+	// Create a table to contain the calculator
+	CalcTable = <!1><A HREF="wcNewStyledTable.2.html">wcNewStyledTable</A>(&childwindowCtx, 0, wcTRUE,10, 20, 120, 200, 1,0,0,0,"steelgrey","lightblue",0,"font-size:14px;border-color:grey;");
+	CalcWindowRow = <!1><A HREF="wcTableInsertRow.html">wcTableInsertRow</A>(&childwindowCtx, CalcTable, CSS_TEXT_ALIGN_CENTER, CSS_VERTICAL_ALIGN_MIDDLE, 0, 0, 0, 0);
+
+<P>	// Create a row spanning 4 collumns for holding calculator answers.
+	CalcWindow = <!1><A HREF="wcTableInsertCell.html">wcTableInsertCell</A>(&childwindowCtx,CalcWindowRow,0,0,0, 0);
+	<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(CalcWindow,"0");
+	<!1><A HREF="wcTableCellSetSpans.html">wcTableCellSetSpans</A>(&childwindowCtx,CalcWindow, 4, 1);
+
+<P>	// Create a 4 by 4 array of keys with rows spanning 1 collumn followed by a row with 2 keys each spanning 2 rows.
+	for(int row=0;row<4;row++)
+	{
+		r = <!1><A HREF="wcTableInsertRow.html">wcTableInsertRow</A>(&childwindowCtx, CalcTable, CSS_TEXT_ALIGN_CENTER, CSS_VERTICAL_ALIGN_MIDDLE, 0, 0, 0, 0);
+		for(int col=0;col<4;col++)
+		{
+			if (!ButtonFaces[row*4+col])
+				break;
+			c = <!1><A HREF="wcTableInsertCell.html">wcTableInsertCell</A>(&childwindowCtx,r,0, 0,0, "background-color:orange;width:40px;text-align:center;border:2px solid white;padding:2px;");
+			<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(c,ButtonFaces[row*4+col]);
+			<!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A>(c, CalcButtonCb); // Set an event handler
+			<!1><A HREF="wcPushData.html">wcPushData</A>(&childwindowCtx, c, (void *) *ButtonFaces[row*4+col]);		// Store the keyvalue in private data so we don't have to get html source each time
+			if (row==3)
+				<!1><A HREF="wcTableCellSetSpans.html">wcTableCellSetSpans</A>(&childwindowCtx,c, 2, 1);
+		}
+	}
+
+<P>	// Demonstrate wcTableGetCell by printing the contents of the entries
+	for(int row=0;row<5;row++)
+	{
+		for(int col=0;col<4;col++)
+		{
+			if (!ButtonFaces[row*4+col])
+				break;
+			c=<!1><A HREF="wcTableGetCell.html">wcTableGetCell</A>(&childwindowCtx, CalcTable, row+1, col);
+			if (c)
+				rtp_printf("(%d,%d) --> %s\n", row, col, wcElGetInnerHtml(&childwindowCtx, c);
+		}
+	}
+
+<P>
+   	<!1><A HREF="wcDocRefresh.html">wcDocRefresh</A>(&childwindowCtx);
+	<!1><A HREF="wcWinBringToTop.html">wcWinBringToTop</A>(&childwindowCtx);
+}
+
+<P></PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

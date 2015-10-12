@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>void wcCtxtRelease</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>void <A HREF="#DOC.DOCU">wcCtxtRelease</A></H2><H2>(wcCtx* Ctx)</H2><BLOCKQUOTE>Garbage collect resources associated with a webC context. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Release resources associated with a webC context that was initialized by an earlier call to wctxtInit.
+The resources that accumulate in the context block are mainly string buffers used to return data that has
+been converted from internal unicode form to Ascii.
+
+<P><PRE>
+ Note: wcCtxtRelease may be called multiple times per wcCtxtInit() call. Each time it is called it frees all accumulated buffers.
+ Handlers that retrieve a lot of values from the DOM in one call may want to call wcCtxtRelease() more frequently than once to free
+ accumulated return buffers.
+ </PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcCtx</B> - *    		Ctx    		-   The wc context to release.
+<BR><DT><B>Returns:</B><DD>  nothing
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcCtxtInit.html">wcCtxtInit</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

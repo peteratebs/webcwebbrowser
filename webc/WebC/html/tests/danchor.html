@@ -1,0 +1,31 @@
+<title>DHTML Anchor tests</title>
+
+<A id=theAnchor href="http://www.google.com" target="_top" name="myAnchor" tabindex=0>An anchor to play with</a><br><br>
+
+Moving the mouse over these buttons should focus and unfocus the anchor:<BR>
+<input type=button value="Focus Anchor" onmouseover="window.theAnchor.focus();">
+
+<input type=button value="Blur Anchor" onmouseover="window.theAnchor.blur();"><br><br>
+
+<input type=button value="Get HRef" onclick="window.getHRef.value = window.theAnchor.href;">
+<input type=text id=getHRef size=50><br>
+<input type=button value="Set HRef" onclick="window.theAnchor.href = window.setHRef.value;">
+<input type=text id=setHRef size=50><br><br>
+
+<input type=button value="Get Target" onclick="window.getTarget.value = window.theAnchor.target;">
+<input type=text id=getTarget size=50><br>
+<input type=button value="Set Target" onclick="window.theAnchor.target = window.setTarget.value;">
+<input type=text id=setTarget size=50><br><br>
+
+<input type=button value="Get Tabindex" onclick="window.getTabindex.value = window.theAnchor.tabIndex;">
+<input type=text id=getTabindex size=50><br>
+<input type=button value="Set Tabindex" onclick="window.theAnchor.tabIndex = window.setTabindex.value;">
+<input type=text id=setTabindex size=50><br><br>
+
+<input type=button value="Get Name" onclick="window.getName.value = window.theAnchor.name;">
+<input type=text id=getName size=50><br>
+<input type=button value="Set Name" onclick="window.theAnchor.name = window.setName.value;">
+<input type=text id=setName size=50><br><br>
+
+<input type=button value="Get ID" onclick="window.getID.value = window.theAnchor.id;">
+<input type=text id=getID size=50><br>

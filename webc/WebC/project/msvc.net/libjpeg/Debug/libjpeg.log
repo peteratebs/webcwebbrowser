@@ -1,0 +1,113 @@
+﻿Build started 5/31/2011 12:07:47 PM.
+     1>Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\libjpeg\libjpeg.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\libjpeg.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\lib\libjpeg /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\libjpeg\jcapimin.c ..\..\..\lib\libjpeg\jcapistd.c ..\..\..\lib\libjpeg\jccoefct.c ..\..\..\lib\libjpeg\jccolor.c ..\..\..\lib\libjpeg\jcdctmgr.c ..\..\..\lib\libjpeg\jchuff.c ..\..\..\lib\libjpeg\jcinit.c ..\..\..\lib\libjpeg\jcmainct.c ..\..\..\lib\libjpeg\jcmarker.c ..\..\..\lib\libjpeg\jcmaster.c ..\..\..\lib\libjpeg\jcomapi.c ..\..\..\lib\libjpeg\jcparam.c ..\..\..\lib\libjpeg\jcphuff.c ..\..\..\lib\libjpeg\jcprepct.c ..\..\..\lib\libjpeg\jcsample.c ..\..\..\lib\libjpeg\jctrans.c ..\..\..\lib\libjpeg\jdapimin.c ..\..\..\lib\libjpeg\jdapistd.c ..\..\..\lib\libjpeg\jdatadst.c ..\..\..\lib\libjpeg\jdatasrc.c ..\..\..\lib\libjpeg\jdcoefct.c ..\..\..\lib\libjpeg\jdcolor.c ..\..\..\lib\libjpeg\jddctmgr.c ..\..\..\lib\libjpeg\jdhuff.c ..\..\..\lib\libjpeg\jdinput.c ..\..\..\lib\libjpeg\jdmainct.c ..\..\..\lib\libjpeg\jdmarker.c ..\..\..\lib\libjpeg\jdmaster.c ..\..\..\lib\libjpeg\jdmerge.c ..\..\..\lib\libjpeg\jdphuff.c ..\..\..\lib\libjpeg\jdpostct.c ..\..\..\lib\libjpeg\jdsample.c ..\..\..\lib\libjpeg\jdtrans.c ..\..\..\lib\libjpeg\jerror.c ..\..\..\lib\libjpeg\jfdctflt.c ..\..\..\lib\libjpeg\jfdctfst.c ..\..\..\lib\libjpeg\jfdctint.c ..\..\..\lib\libjpeg\jidctflt.c ..\..\..\lib\libjpeg\jidctfst.c ..\..\..\lib\libjpeg\jidctint.c ..\..\..\lib\libjpeg\jidctred.c ..\..\..\lib\libjpeg\jmemmgr.c ..\..\..\lib\libjpeg\jmemnobs.c ..\..\..\lib\libjpeg\jquant1.c ..\..\..\lib\libjpeg\jquant2.c ..\..\..\lib\libjpeg\jutils.c
+         jcapimin.c
+         jcapistd.c
+         jccoefct.c
+         jccolor.c
+         jcdctmgr.c
+         jchuff.c
+         jcinit.c
+         jcmainct.c
+         jcmarker.c
+         jcmaster.c
+         jcomapi.c
+         jcparam.c
+         jcphuff.c
+         jcprepct.c
+         jcsample.c
+         jctrans.c
+         jdapimin.c
+         jdapistd.c
+         jdatadst.c
+         jdatasrc.c
+         Generating Code...
+         Compiling...
+         jdcoefct.c
+         jdcolor.c
+         jddctmgr.c
+         jdhuff.c
+         jdinput.c
+         jdmainct.c
+         jdmarker.c
+         jdmaster.c
+         jdmerge.c
+         jdphuff.c
+         jdpostct.c
+         jdsample.c
+         jdtrans.c
+         jerror.c
+         jfdctflt.c
+         jfdctfst.c
+         jfdctint.c
+         jidctflt.c
+         jidctfst.c
+         jidctint.c
+         Generating Code...
+         Compiling...
+         jidctred.c
+         jmemmgr.c
+         jmemnobs.c
+         jquant1.c
+         jquant2.c
+         jutils.c
+         Generating Code...
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Debug\libjpeg.lib" /NOLOGO .\Debug/jcapimin.obj
+         .\Debug/jcapistd.obj
+         .\Debug/jccoefct.obj
+         .\Debug/jccolor.obj
+         .\Debug/jcdctmgr.obj
+         .\Debug/jchuff.obj
+         .\Debug/jcinit.obj
+         .\Debug/jcmainct.obj
+         .\Debug/jcmarker.obj
+         .\Debug/jcmaster.obj
+         .\Debug/jcomapi.obj
+         .\Debug/jcparam.obj
+         .\Debug/jcphuff.obj
+         .\Debug/jcprepct.obj
+         .\Debug/jcsample.obj
+         .\Debug/jctrans.obj
+         .\Debug/jdapimin.obj
+         .\Debug/jdapistd.obj
+         .\Debug/jdatadst.obj
+         .\Debug/jdatasrc.obj
+         .\Debug/jdcoefct.obj
+         .\Debug/jdcolor.obj
+         .\Debug/jddctmgr.obj
+         .\Debug/jdhuff.obj
+         .\Debug/jdinput.obj
+         .\Debug/jdmainct.obj
+         .\Debug/jdmarker.obj
+         .\Debug/jdmaster.obj
+         .\Debug/jdmerge.obj
+         .\Debug/jdphuff.obj
+         .\Debug/jdpostct.obj
+         .\Debug/jdsample.obj
+         .\Debug/jdtrans.obj
+         .\Debug/jerror.obj
+         .\Debug/jfdctflt.obj
+         .\Debug/jfdctfst.obj
+         .\Debug/jfdctint.obj
+         .\Debug/jidctflt.obj
+         .\Debug/jidctfst.obj
+         .\Debug/jidctint.obj
+         .\Debug/jidctred.obj
+         .\Debug/jmemmgr.obj
+         .\Debug/jmemnobs.obj
+         .\Debug/jquant1.obj
+         .\Debug/jquant2.obj
+         .\Debug/jutils.obj
+         libjpeg.vcxproj -> C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\libjpeg\Debug\libjpeg.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\libjpeg.unsuccessfulbuild".
+         Touching "Debug\libjpeg.lastbuildstate".
+     1>Done Building Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\libjpeg\libjpeg.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:16.40

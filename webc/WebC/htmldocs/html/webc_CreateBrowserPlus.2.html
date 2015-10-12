@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>HTMLBrowser* webc_CreateBrowserPlus</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>HTMLBrowser* <A HREF="#DOC.DOCU">webc_CreateBrowserPlus</A></H2><H2>(struct HTMLBrowserConfig* config,<BR>&nbsp; WEBC_BOOL CreateWindow,<BR>&nbsp; char* _windowname,<BR>&nbsp; char* _home)</H2><BLOCKQUOTE>Create a new HTML Browser window </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Allocates resources for and displays a new web browser window with
+the specified home page document.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>config</B> -   The initial configuration of the new browser window
+<BR><B>CreateWindow</B> -  If true call the GUI manager or frame buffer driver to create a new window.
+<BR><B>windowname</B> -   Name of the window if one is being created.
+<BR><B>home</B> -     URL of the initial page to load in this window.  The browser
+will also return to this page when its 'Home' button (if it
+is configured to have one) is pressed, or when
+<!1><A HREF="webc_BrowserHome.2.html">webc_BrowserHome</A> is called.
+<BR><DT><B>Returns:</B><DD>  A handle to the newly created HTML Browser if successful, WEBC_NULL otherwise
+<BR><DT><B>See Also:</B><DD><!1><A HREF="webc_DestroyBrowser.2.html">webc_DestroyBrowser</A>, HTMLBrowserConfig<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

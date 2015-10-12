@@ -1,0 +1,3 @@
+xfgrep -f -n converter-\ *.cpp 
+
+Search completed with a total of '3' files processed.

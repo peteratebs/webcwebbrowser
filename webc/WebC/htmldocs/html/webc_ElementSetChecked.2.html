@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>int webc_ElementSetChecked</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>int <A HREF="#DOC.DOCU">webc_ElementSetChecked</A></H2><H2>(HELEMENT_HANDLE element,<BR>&nbsp; HTML_BOOL checked,<BR>&nbsp; HTML_BOOL refresh)</H2><BLOCKQUOTE>Set checked status for checkbox or radio button </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+If the element handle passed to this routine is that of an HTML_CHECKBOX_ELEMENT,
+or an HTML_RADIO_BUTTON_ELEMENT, then the 'checked' status of the element
+will be set according to the boolean 'checked' parameter.  If this function
+is called with a 'checked' value of WEBC_TRUE, then subsequent calls to
+<!1><A HREF="webc_ElementGetChecked.2.html">webc_ElementGetChecked</A> will return the string set as the value for this
+element, via webc_ElementSetValue.  If WEBC_FALSE is passed to this
+routine, then subsequent calls to <!1><A HREF="webc_ElementGetChecked.2.html">webc_ElementGetChecked</A> will return
+WEBC_NULL.
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>element</B> -  The element to set
+<BR><B>checked</B> -  Whether or not the element should be checked
+<BR><B>refresh</B> -  If WEBC_TRUE, then redraw this element
+<BR><DT><B>See Also:</B><DD>HELEMENT_HANDLE, CHECKED, <!1><A HREF="webc_ElementGetChecked.2.html">webc_ElementGetChecked</A>, webc_ElementSetValue, webc_ElementRefresh<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

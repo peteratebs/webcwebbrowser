@@ -1,0 +1,65 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CONSOLE - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WINNT\Profiles\EBS\LOCALS~1\Temp\RSP242.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "..\..\..\..\include" /I "System\Simulation\Win32" /I "inc" /I "GenOSSrc" /I "System\Simulation\embOS" /I "System" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\RTIP_RESTRUCTURE\rtplatform\v0.4\source\embOS_W32\RTPtest\Start\Application\RTPtest.c"
+"D:\RTIP_RESTRUCTURE\rtplatform\v0.4\source\embOS_W32\rtpenv.c"
+"D:\RTIP_RESTRUCTURE\rtplatform\v0.4\source\embOS_W32\rtpirq.c"
+"D:\RTIP_RESTRUCTURE\rtplatform\v0.4\source\embOS_W32\rtpkern.c"
+"D:\RTIP_RESTRUCTURE\rtplatform\v0.4\source\embOS_W32\rtpsignl.c"
+"D:\RTIP_RESTRUCTURE\rtplatform\v0.4\source\embOS_W32\rtpterm.c"
+"D:\RTIP_RESTRUCTURE\rtplatform\v0.4\source\embOS_W32\rtptime.c"
+]
+Creating command line "cl.exe @C:\WINNT\Profiles\EBS\LOCALS~1\Temp\RSP242.tmp" 
+Creating temporary file "C:\WINNT\Profiles\EBS\LOCALS~1\Temp\RSP243.tmp" with contents
+[
+winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wsock32.lib ws2_32.lib libcmtd.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/RTPtest.pdb" /debug /machine:I386 /out:"Debug/RTPtest.exe" /pdbtype:sept 
+.\Debug\OS_Error.obj
+.\Debug\RTPtest.obj
+.\Debug\rtp.obj
+.\Debug\rtpbsearch.obj
+.\Debug\rtpchar.obj
+.\Debug\rtpdllist.obj
+.\Debug\rtpmemdb.obj
+.\Debug\rtpnetsm.obj
+.\Debug\rtprot.obj
+.\Debug\rtpstr.obj
+.\Debug\rtpwchar.obj
+.\Debug\rtpwcs.obj
+.\Debug\rtpwscnv.obj
+.\Debug\rtpenv.obj
+.\Debug\rtpirq.obj
+.\Debug\rtpkern.obj
+.\Debug\rtpsignl.obj
+.\Debug\rtpterm.obj
+.\Debug\rtptime.obj
+.\Debug\Rtosinit.obj
+.\System\Simulation\embOS\embOSDP.lib
+]
+Creating command line "link.exe @C:\WINNT\Profiles\EBS\LOCALS~1\Temp\RSP243.tmp"
+<h3>Output Window</h3>
+Compiling...
+RTPtest.c
+rtpenv.c
+rtpirq.c
+rtpkern.c
+rtpsignl.c
+rtpterm.c
+rtptime.c
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+RTPtest.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

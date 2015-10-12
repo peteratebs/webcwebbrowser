@@ -1,0 +1,184 @@
+<HTML>
+<HEAD>
+ <TITLE> WebC Dynamic HTML Image Tests </TITLE>
+</HEAD>
+
+<BODY>
+
+<!-- ******************************************************************************** -->
+
+<H1> IMG Src </H1>
+
+<H2> Normally aligned/positioned image </H2>
+
+Text above <br>
+Text before 
+<IMG src='images/boston.jpeg' 
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+Text after <br>
+Text below
+
+<H2> Left aligned image </H2>
+
+<IMG src='images/boston.jpeg' align=left
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+A whole lot of text designed to show how formatting will change when the source url of an aligned
+image is modified via the JavaScript DOM.  
+
+<BR clear=all>
+
+<H2> Right aligned image </H2>
+
+<IMG src='images/boston.jpeg' align=right
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+A whole lot of text designed to show how formatting will change when the source url of an aligned
+image is modified via the JavaScript DOM.  
+
+<BR clear=all>
+
+<H2> Relative positioned image </H2>
+
+Text above <br>
+Text before 
+<IMG src='images/boston.jpeg' style='position: relative; left: 30px; top: 10px;'
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+Text after <br>
+Text below
+
+<H2> Absolute positioned image (inside a DIV) </H2>
+
+<DIV style='background-color: #8877ff;'>
+<DIV style='background-color: #9988ff; height: 30px; width: 150px;'></div>
+<BR>The parent div.<BR>
+<IMG src='images/boston.jpeg' style='position: absolute; left: 150px; top: 830px;'
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+<BR>
+<BR>
+</DIV>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+
+<!-- ******************************************************************************** -->
+<HR width=75%>
+
+<H1> IMG Size </H1>
+
+<H2> Normally aligned/positioned image </H2>
+
+(click in the box below to change image size) <BR>
+<DIV style='width: 150px; height: 150px; background-color: #999999;'
+	onclick='var testImg = document.getElementById("testImg1"); testImg.style.width = event.offsetX + "px";
+		testImg.style.height = event.offsetY + "px";'>
+</DIV>
+
+<BR>
+
+Text above <BR>
+Text before 
+<IMG id='testImg1' src='images/boston.jpeg' width=100 height=100
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+Text after <BR>
+Text below
+
+
+<H2> Left aligned image </H2>
+
+(click in the box below to change image size) <BR>
+<DIV style='width: 150px; height: 150px; background-color: #999999;'
+	onclick='var testImg = document.getElementById("testImg2"); testImg.style.width = event.offsetX;
+		testImg.style.height = event.offsetY;'>
+</DIV>
+
+<BR>
+
+<IMG id='testImg2' src='images/boston.jpeg' align=left width=100 height=100
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+A whole lot of text designed to show how formatting will change when the source url of an aligned
+image is modified via the JavaScript DOM.  
+
+<BR clear=all>
+
+<H2> Right aligned image </H2>
+
+<P align=right> (click in the box below to change image size) </P>
+<TABLE align=right>
+ <TR>
+  <TD>
+   <DIV style='width: 150px; height: 150px; background-color: #999999;'
+		onclick='var testImg = document.getElementById("testImg3"); testImg.style.width = 150 - event.offsetX;
+			testImg.style.height = event.offsetY;'>
+   </DIV>
+  </TD>
+ </TR>
+</TABLE>
+<BR clear=right> 
+
+
+<BR>
+
+<IMG id='testImg3' src='images/boston.jpeg' align=right width=100 height=100
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+A whole lot of text designed to show how formatting will change when the source url of an aligned
+image is modified via the JavaScript DOM.  
+
+<BR clear=all>
+
+<H2> Relative positioned image </H2>
+
+(click in the box below to change image size) <BR>
+<DIV style='width: 150px; height: 150px; background-color: #999999;'
+	onclick='var testImg = document.getElementById("testImg4"); testImg.style.width = event.offsetX;
+		testImg.style.height = event.offsetY;'>
+</DIV>
+
+<BR>
+
+Text above <br>
+Text before 
+<IMG id='testImg4' src='images/boston.jpeg' style='position: relative; left: 30px; top: 10px;' width=100 height=100
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+Text after <br>
+Text below
+
+<H2> Absolute positioned image (inside a DIV) </H2>
+
+(click in the box below to change image size) <BR>
+<DIV style='width: 150px; height: 150px; background-color: #999999;'
+	onclick='var testImg = document.getElementById("testImg5"); testImg.style.width = event.offsetX;
+		testImg.style.height = event.offsetY;'>
+</DIV>
+
+<BR>
+
+<DIV style='background-color: #8877ff;'>
+<DIV style='background-color: #9988ff; height: 30px; width: 150px;'></div>
+<BR>The parent div.<BR>
+<IMG id='testImg5' src='images/boston.jpeg' style='position: absolute; left: 150px; top: 30px;' width=100 height=100
+	onmouseover='this.src = "images/boston1.jpeg"' onmouseout='this.src = "images/boston.jpeg"'>
+<BR>
+<BR>
+</DIV>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<!-- ******************************************************************************** -->
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>

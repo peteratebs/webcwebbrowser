@@ -1,0 +1,14 @@
+﻿Build started 7/24/2011 12:07:36 PM.
+     1>Project "C:\ebs\webcwithsoftkeypad\WebC\bin\projects\FontGen\FontGen.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\FontGen.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\..\include\util /I..\..\..\..\include\minigui /I..\..\..\..\include\browser /I..\..\..\..\include\htmldisplay /I..\..\..\..\include\htmldom /I..\..\..\..\include\imgconvert /I..\..\..\..\include\imgdecode /I..\..\..\..\include\jscript /I..\..\..\..\include\protocol /I..\..\..\..\..\rtplatform\v0.4\include /I..\..\..\..\gui\framebuffer\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _CRT_SECURE_NO_WARNINGS /D WEBC_SUPPORT_UNICODE /D WEBC_SUPPORT_JAVASCRIPT=0 /D _CRT_NON_CONFORMING_SWPRINTFS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\FontGen.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt FontGen.cpp
+         FontGen.cpp
+     1>c:\ebs\webcwithsoftkeypad\webc\include\util\webc.h(21): fatal error C1083: Cannot open include file: 'htmlsdk.h': No such file or directory
+     1>Done Building Project "C:\ebs\webcwithsoftkeypad\WebC\bin\projects\FontGen\FontGen.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.22

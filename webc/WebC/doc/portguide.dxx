@@ -1,0 +1,31 @@
+===============================================================================
+Porting Guide
+===============================================================================
+
+===============================================================================
+Overview
+===============================================================================
+
+A complete WebC integration consists of three pieces: 
+
+	1. A port of the relevant RTPlatform modules to the target OS/hardware.  RTPlatform is EBSnet's runtime platform abstraction library.  Parts of RTPlatform are portable, or generic, and just implement shared functions or build on other modules.  These modules do not need to be ported.  Other parts of RTPlatform implement functionality which is specific to the underlying system.  These modules must be ported.  A specific version of RTPlatform must be linked to the WebC library at build time.
+	2. An HTMLGraphicsContext that acts as the interface between WebC and the low-level graphics library.  Unlike RTPlatform, the HTMLGraphicsContext is bound to WebC at runtime, which opens the possibility of having multiple browser instances each outputting to a seperate display device or graphics library.  See the chapter "Introduction to WebC" for a thorough discussion of how the HTMLGraphicsContext works if you need to create a new graphics integration.
+	3. GUI/OS integration using the WebC API.  As the HTMLGraphicsContext is how WebC sends graphical output to the underlying system, that system must also send input and timer events to WebC via the API, and also tell WebC when to redraw, etc.  The chapter "Introduction to WebC", sections "Runtime model" and "Processing Input Events" provide the necessary details if you need to create a new GUI/OS integration.
+
+===============================================================================
+WebC Architecture/Dependencies
+===============================================================================
+
+
+
+===============================================================================
+Using a pre-existing port
+===============================================================================
+
+If the target system is already supported by RTPlatform/WebC, all one must do 
+
+===============================================================================
+Creating a new RTPlatform port
+===============================================================================
+
+The simplest way to determine what functions from RTPlatform (and therefore what modules) must be included to build WebC for a particular target is to build the WebC test application, but exclude all RTPlatform files from the build.  These files are included from the "rtplatform" project and are the only ones whose file names begin with the prefix "rtp".  It is important that the include path still point to the rtplatform/include folder so that the modules that reference RTPlatform will compile.  When the build reaches the link phase, all the necessary functions will show up as unresolved external symbols.  Once the list of necessary functions is known, these functions should be ported by either including the file that contains the function from the rtplatform/source/generic folder or by creating a new copy of the file that contains the function in the rtplatform/source/template folder.  When creating a port to a new target, one should create a new folder inside the rtplatform/source folder with the name of the target.  Once the required modules are copied from the template folder, they can be directly modified to implement the required functionality (see the RTPlatform module or the template files themselves for descriptions of what each function must do).  

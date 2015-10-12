@@ -1,0 +1,2868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source_content">
+      <UniqueIdentifier>{c4702d11-ac38-440e-baca-e76065c23f2b}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="source_content\Auto-generated">
+      <UniqueIdentifier>{6e96d4da-dcc7-48bb-aae7-205534123472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_content\Binary Data">
+      <UniqueIdentifier>{0576c50e-effe-4ab5-95bd-596fc98cd74b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d35de149-003c-4735-8d86-bc0f6248afd8}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\util">
+      <UniqueIdentifier>{1068a391-aa08-4e3d-b4bb-dc786ace3f1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\browser">
+      <UniqueIdentifier>{04708029-7552-4035-9e75-a7104cb363ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\htmldisplay">
+      <UniqueIdentifier>{5bb63575-310b-490f-9d05-95d667d7ffbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\htmldom">
+      <UniqueIdentifier>{678904ab-a137-44e3-a479-965de0bb150b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imgconvert">
+      <UniqueIdentifier>{20382e98-7124-47d9-8551-97dddecf1b3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imgdecode">
+      <UniqueIdentifier>{dd5164af-9609-4fd8-853c-fe2715053910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\jscript">
+      <UniqueIdentifier>{bd4ddcdc-ad89-4572-af1d-caac437e5ab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\minigui">
+      <UniqueIdentifier>{5f29f68b-027d-42e9-af11-d0b00efdcea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\protocol">
+      <UniqueIdentifier>{7ae019bb-c484-4b96-ab2d-0f9c6e454797}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_minigui">
+      <UniqueIdentifier>{4e1e456c-ac9a-43c2-a5a2-928d0d1fb57e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_htmldisplay">
+      <UniqueIdentifier>{807b8272-066c-49d9-8aab-a453f3359d7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_htmldom">
+      <UniqueIdentifier>{2be250fa-2d5a-422b-91cc-90e39814c8f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_imgconvert">
+      <UniqueIdentifier>{71d19ec9-ab12-41e0-a406-2aad98e96c4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_imgdecode">
+      <UniqueIdentifier>{56b3fa1b-f73f-4260-8448-ff22bb7b719b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_jscript">
+      <UniqueIdentifier>{44e7b014-4359-4347-9874-6fe0059d9387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_browser">
+      <UniqueIdentifier>{c9704859-8136-47ce-b84f-0cbc8d956c7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_protocol">
+      <UniqueIdentifier>{7f7b80aa-59c1-4ecd-9048-ff255878c15b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_util">
+      <UniqueIdentifier>{ae5fe80e-6533-4807-b36d-4dbabd52bb31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_webcapi">
+      <UniqueIdentifier>{f32b7139-7e55-449b-8900-9107c04ae539}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source_webcapiexamples">
+      <UniqueIdentifier>{ba5dea2d-c42b-49c9-ac4b-8c83407f6dd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpeggui">
+      <UniqueIdentifier>{947d3e6b-4c6a-4687-a86a-c1ca39030d15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpegfonts">
+      <UniqueIdentifier>{584750ee-0823-4516-a927-6557678be05a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\html\source\alert.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\alert_small.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\archive.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\archive_large.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\archive_selected.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\archives.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\archives_pda.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\back_default.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\back_disable.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\back_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\back_over.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\back_over_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\bookmark_default.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\bookmark_selected.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\bookmarks.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\bookmarks_large.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\bookmarks_pda.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\bottom_border.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\browsericon.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\brushedmetal.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\brushedmetal_side.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\chrome.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\chrome_pda.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\chrome_pda_small.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\close_default.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\close_over.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\disabled_gradiant.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\document.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\EBS_SOFTKEY_CAPITALS.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\EBS_SOFTKEY_NUMBERS.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\EBS_SOFTKEY_SMALLSS.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\EBS_SOFTKEY_SYMBOLS.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\ebslogo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\forward_default.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\forward_disable.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\forward_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\forward_over.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\forward_over_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\home_default.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\home_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\home_over.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\home_over_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\loadChrome.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\loadChrome_pda.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\loadChrome_pda_small.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\mock.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\new_page.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\new_page_over.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\offline.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\offline_disabled.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\offline_toggle.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\online.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\online_disabled.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\online_toggle.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\prompt_small.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\refresh_default.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\refresh_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\refresh_over.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\refresh_over_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\savetoarchive.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\savetoarchive_disabled.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\search_bottom.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\search_left.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\search_left_menu.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\search_right.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\search_top.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\select_gradiant.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\small_back.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\small_forward.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\small_refresh.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\smallGlobe.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\smallGlobe_gray.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\stop_default.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\stop_disable.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\stop_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\stop_over.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\stop_over_halo.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\stripes.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\top_border.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\url_left.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\url_right.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\html\source\welcome.c">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\util\objref.cpp">
+      <Filter>Header Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\webcgb2312.cpp">
+      <Filter>Header Files\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\delement.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\dmanager.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\webcdefault.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\webgraph.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\webgsdk.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wgbmp.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtbutton.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtcheck.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtdrop.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtedbox.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtedstr.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtlist.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtpasswd.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtradio.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtscroll.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\minigui\wtslider.cpp">
+      <Filter>source_minigui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dcontent.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dflow.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dharea.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhbody.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhbutton.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhcheck.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhedbox.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhedit.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhedstr.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhframe.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhframeset.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhhr.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhibutton.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhiframe.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhimg.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhli.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhpasswd.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhradio.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhselect.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhstring.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhtable.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhtd.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\dhtumirror.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\format.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\formatctx.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\keycatch.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\margins.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\tuenum.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\tulist.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldisplay\zdelem.cpp">
+      <Filter>source_htmldisplay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\css.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\haddress.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hanchor.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\harea.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hbase.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hbig.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hblquote.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hbody.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hbold.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hbr.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hbutton.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hcbox.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hcenter.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hchkbox.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hcite.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hcode.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hdd.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hdel.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hdiv.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hdl.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hdstream.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hdt.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hedit.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\helement.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hembed.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hemphsz.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hflow.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hfont.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hform.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hframe.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hframset.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hheading.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hhidden.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hhr.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hibutton.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hiframe.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\himage.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hinput.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hins.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hitalic.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hkbd.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hlabel.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hli.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hlist.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hmap.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hnobr.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hobject.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hoption.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hpara.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hpasswd.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hpre.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hradio.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hreset.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hscript.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hselect.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hsmall.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hspacer.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hspan.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hstrike.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hstring.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hstrong.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hsubmit.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\htable.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\htd.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\html.c">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\htmlbld.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\htmldom.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\htmlfind.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\htr.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\htxtarea.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hundline.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\hXMLHttpRequest.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\textstyle.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\urldesc.cpp">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\xml.c">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\htmldom\xmlutil.c">
+      <Filter>source_htmldom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\24to24.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\24to32.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\24to555.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\24to565.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\24to8.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\24togs.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\32to24.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\8to24.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\8to32.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\8to555.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\8to565.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\8to8.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\8togs.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\gs8togs.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgconvert\imgconv.cpp">
+      <Filter>source_imgconvert</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgdecode\bmpdec.c">
+      <Filter>source_imgdecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgdecode\webbmp.cpp">
+      <Filter>source_imgdecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgdecode\webcbmp.cpp">
+      <Filter>source_imgdecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgdecode\webgif.cpp">
+      <Filter>source_imgdecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgdecode\webimage.cpp">
+      <Filter>source_imgdecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgdecode\webjpeg.cpp">
+      <Filter>source_imgdecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgdecode\webmng.cpp">
+      <Filter>source_imgdecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\imgdecode\webpng.cpp">
+      <Filter>source_imgdecode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jevent.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhanchor.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jharea.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhbody.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhbutton.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhcoll.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhdoc.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhelem.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhflow.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhform.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhframe.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhfrset.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhiframe.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhimg.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhimg_ext.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhinput.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhistory.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhmap.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhoption.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhselect.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhtable.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhtarea.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhtblrow.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhtcell.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhtitle.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhutils.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhXMLHttpRequest.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jhXMLHttpRequestFactory.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jloc.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jnav.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jrule.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jsobjref.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jssheet.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jstyle.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\jwindow.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\wjdialogs.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\wjsbrowser.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\wjscript.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\wjsdebug.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\jscript\wjsdoc.cpp">
+      <Filter>source_jscript</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\browser\bowsertestsuite.cpp">
+      <Filter>source_browser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\browser\chromebowser.cpp">
+      <Filter>source_browser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\browser\dbgtimer.c">
+      <Filter>source_browser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\browser\htmlbrow.cpp">
+      <Filter>source_browser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\browser\htmldiags.cpp">
+      <Filter>source_browser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\browser\htmldoc.cpp">
+      <Filter>source_browser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\browser\largeint.c">
+      <Filter>source_browser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\browser\webc.cpp">
+      <Filter>source_browser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\cookie.c">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\fileext.c">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\filetype.c">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\httpc.c">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\protfile.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\prothssl.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\prothttp.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\protlocal.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\protoffl.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\sramdisk.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\wcfilter.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\wcstream.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\webcbig5.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\webceuckr.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\webcsjis.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\webcsock.c">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\webcutf.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\webload.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\protocol\webvfile.cpp">
+      <Filter>source_protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\buffer.c">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\hashtbl.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\ref.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\refcount.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\SoftKeyPad.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\strbld.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\strtable.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\util.c">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\vector.c">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\wcache.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\wcconst.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\webcfile.c">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\webcLog.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\webcmem.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\webcstr.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\webctmo.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\webfonts.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\webrect.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\util\webstr.cpp">
+      <Filter>source_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcdocapi.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcdomtest.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcelemapi.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcsysapi.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcwinapi.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wccreatelement.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcmetatagapi.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\webcsdk.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\webcsdkelement.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\webcsdkexit.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\webcsdkmisc.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\webcsdkproto.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapiexamples\wcapiexample.cpp">
+      <Filter>source_webcapiexamples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcapphelper.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wclinegraphics.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wceventapi.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wctableapi.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcmemdprint.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcmemdreport.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\wcjsapi.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\webcapi\webcsdkbrowser.cpp">
+      <Filter>source_webcapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\webcc-peg.cpp">
+      <Filter>cpeggui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\wfcpeg.cpp">
+      <Filter>cpeggui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial6.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial6b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial6bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial6i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial7.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial7b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial7bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial7i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial8.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial8b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial8bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial8i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial9.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial9b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial9bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial9i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial10.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial10b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial10bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial10i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial11.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial11b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial11bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial11i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial12.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial12b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial12bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial12i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial13.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial13b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial13bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial13i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial14.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial14b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial14bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial14i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial16.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial16b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial16bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial16i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial18.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial18b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial18bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial18i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial20.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial20b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial20bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial20i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial24.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial24b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial24bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial24i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial30.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial30b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial30bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial30i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial36.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial36b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial36bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Arial36i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\ArialUnicode.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier6.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier6b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier6bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier6i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier7.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier7b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier7bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier7i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier8.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier8b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier8bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier8i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier9.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier9b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier9bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier9i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier10.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier10b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier10bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier10i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier11.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier11b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier11bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier11i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier12.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier12b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier12bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier12i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier13.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier13b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier13bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier13i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier14.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier14b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier14bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier14i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier16.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier16b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier16bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier16i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier18.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier18b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier18bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier18i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier20.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier20b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier20bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier20i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier24.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier24b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier24bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier24i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier30.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier30b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier30bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier30i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier36.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier36b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier36bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Courier36i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times1.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times1b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times1bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times1i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times2.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times2b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times2bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times2i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times3.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times3b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times3bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times3i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times4.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times4b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times4bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times4i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times5.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times5b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times5bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times5i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times6.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times6b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times6bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times6i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times7.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times7b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times7bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times7i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times8.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times8b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times8bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times8i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times9.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times9b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times9bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times9i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times10.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times10b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times10bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times10i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times11.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times11b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times11bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times11i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times12.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times12b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times12bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times12i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times13.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times13b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times13bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times13i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times14.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times14b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times14bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times14i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times16.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times16b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times16bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times16i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times18.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times18b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times18bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times18i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times20.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times20b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times20bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times20i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times24.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times24b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times24bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times24i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times30.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times30b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times30bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times30i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times36.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times36b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times36bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Times36i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana6.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana6b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana6bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana6i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana7.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana7b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana7bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana7i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana8.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana8B.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana8bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana8i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana9.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana9b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana9bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana9i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana10.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana10b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana10bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana10i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana11.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana11b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana11bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana11i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana12.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana12b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana12bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana12i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana13.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana13b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana13bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana13i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana14.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana14b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana14bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana14i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana16.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana16b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana16bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana16i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana18.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana18b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana18bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana18i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana20.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana20b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana20bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana20i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana24.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana24b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana24bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana24i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana30.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana30b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana30bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana30i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana36.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana36b.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana36bi.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\cpeg\source\fonts\Verdana36i.cpp">
+      <Filter>cpegfonts</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\html\include\browsericon.h">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\html\include\ebslogo.h">
+      <Filter>source_content\Auto-generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\buffer.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\css.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\cssborder.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\dbgtimer.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\dllist.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\filetype.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\hashtbl.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\html.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\htmlsdk.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\listener.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\ref.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\refcount.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\strbld.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\strtable.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\template.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\util.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\vector.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\wcache.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\wcconst.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webc.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webcassert.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webcdefault.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webcfg.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webcfile.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webcinline.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webcLog.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webcmem.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webcstr.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webctmo.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webctypes.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webcutf.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webfonts.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webrect.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\webstr.hpp">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\util\xml.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\browser\chromebrowser.hpp">
+      <Filter>Header Files\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\browser\enum.hpp">
+      <Filter>Header Files\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\browser\htmlbrow.hpp">
+      <Filter>Header Files\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\browser\htmldoc.hpp">
+      <Filter>Header Files\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\browser\largeint.h">
+      <Filter>Header Files\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\browser\wcfilter.hpp">
+      <Filter>Header Files\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\browser\wcstream.hpp">
+      <Filter>Header Files\browser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dcontent.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dflow.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dharea.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhbody.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhbutton.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhcheck.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhedbox.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhedit.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhedstr.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhelem.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhframe.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhframeset.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhhr.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhibutton.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhiframe.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhimg.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhli.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhpasswd.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhradio.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhselect.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhstring.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhtable.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhtd.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\dhtumirror.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\format.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\formatctx.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\keycatch.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\margins.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\textunit.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\tuenum.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\tulist.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldisplay\zdelem.hpp">
+      <Filter>Header Files\htmldisplay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\haddress.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hanchor.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\harea.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hbase.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hbig.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hblquote.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hbody.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hbold.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hbr.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hbutton.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hcbox.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hcenter.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hchkbox.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hcite.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hcode.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hdd.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hdel.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hdiv.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hdl.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hdstream.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hdt.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hedit.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\helement.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hemphsz.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\heventce.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hflow.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hfont.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hform.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hframe.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hframset.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hheading.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hhidden.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hhr.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hibutton.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hiframe.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\himage.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hinput.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hins.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hitalic.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hkbd.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hlabel.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hli.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hlist.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hmap.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hnobr.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hoption.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hpara.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hpasswd.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hpre.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hradio.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hreset.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hscript.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hselect.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hsmall.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hspacer.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hspan.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hstrike.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hstring.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hstrong.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hsubmit.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\htable.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\htd.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\htmlbld.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\htmldom.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\htmlfind.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\htr.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\htxtarea.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hundline.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hXMLHttpRequest.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\textstyle.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\urldesc.hpp">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\xmlutil.h">
+      <Filter>Header Files\htmldom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\24to24.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\24to32.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\24to555.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\24to565.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\24to8.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\24togs.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\32to24.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\8to24.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\8to32.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\8to555.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\8to565.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\8to8.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\8togs.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\gs8togs.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgconvert\imgconv.hpp">
+      <Filter>Header Files\imgconvert</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgdecode\bmpdec.h">
+      <Filter>Header Files\imgdecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgdecode\webbmp.hpp">
+      <Filter>Header Files\imgdecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgdecode\webcbmp.hpp">
+      <Filter>Header Files\imgdecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgdecode\webgif.hpp">
+      <Filter>Header Files\imgdecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgdecode\webimage.hpp">
+      <Filter>Header Files\imgdecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgdecode\webjpeg.hpp">
+      <Filter>Header Files\imgdecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgdecode\webload.hpp">
+      <Filter>Header Files\imgdecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgdecode\webmng.hpp">
+      <Filter>Header Files\imgdecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\imgdecode\webpng.hpp">
+      <Filter>Header Files\imgdecode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jevent.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhanchor.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jharea.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhbody.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhbutton.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhcoll.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhdoc.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhelem.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhflow.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhform.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhframe.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhfrset.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhiframe.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhimg.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhinput.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhistory.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhmap.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhoption.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhselect.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhtable.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhtarea.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhtblrow.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhtcell.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhtitle.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhutils.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhXMLHttpRequest.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jhXMLHttpRequestFactory.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jloc.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jnav.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jrule.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jsobjref.hpp">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\jscript\jsParamUtils.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jssheet.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jstyle.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\jwindow.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\wjsbrowser.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\wjscript.hpp">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\wjsdebug.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\jscript\wjsdoc.h">
+      <Filter>Header Files\jscript</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\delement.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\dmanager.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\webgraph.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wgbmp.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wgcolors.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wgkeys.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wgtypes.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtbutton.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtcheck.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtdrop.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtedbox.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtedstr.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtlist.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtpasswd.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtradio.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtscroll.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\minigui\wtslider.hpp">
+      <Filter>Header Files\minigui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\cookie.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\fileext.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\httpc.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\protfile.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\prothssl.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\prothttp.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\protoffl.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\sramdisk.hpp">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\webcbig5.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\webceuckr.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\webcsjis.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\webcsock.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\protocol\webvfile.hpp">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\htmldom\hobject.hpp">
+      <Filter>source_htmldom</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\html\chrome\brushedmetal_side.png">
+      <Filter>source_content\Binary Data</Filter>
+    </None>
+    <None Include="..\..\..\gui\cpeg\source\fonts\fontmods.inc">
+      <Filter>cpegfonts</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\html\Images\alert.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\alert_small.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\archive.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\archive_large.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\archive_selected.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\archives.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\archives_pda.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\back_default.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\back_disable.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\back_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\back_over.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\back_over_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\bookmark_default.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\bookmark_selected.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\bookmarks.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\bookmarks_large.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\bookmarks_pda.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\bottom_border.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\images\browsericon.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\brushedmetal.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\chrome.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\chrome_pda.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\chrome_pda_small.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\close_default.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\close_over.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\disabled_gradiant.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\document.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\EBS_SOFTKEY_CAPITALS.bmp">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\EBS_SOFTKEY_NUMBERS.bmp">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\EBS_SOFTKEY_SMALLSS.bmp">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\EBS_SOFTKEY_SYMBOLS.bmp">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\images\ebslogo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\forward_default.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\forward_disable.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\forward_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\forward_over.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\forward_over_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\home_default.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\home_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\home_over.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\home_over_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\loadChrome.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\loadChrome_pda.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\loadChrome_pda_small.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\mock.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\new_page.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\new_page_over.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\offline.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\offline_disabled.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\offline_toggle.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\online.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\online_disabled.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\online_toggle.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\Images\prompt.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\prompt_small.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\refresh_default.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\refresh_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\refresh_over.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\refresh_over_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\savetoarchive.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\savetoarchive_disabled.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\search_bottom.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\search_left.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\search_left_menu.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\search_right.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\search_top.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\select_gradiant.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\small_back.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\small_forward.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\small_refresh.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\smallGlobe.gif">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\smallGlobe_gray.gif">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\stop_default.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\stop_disable.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\stop_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\stop_over.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\stop_over_halo.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\stripes.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\top_border.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\url_left.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\chrome\url_right.png">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\html\welcome.html">
+      <Filter>source_content\Binary Data</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

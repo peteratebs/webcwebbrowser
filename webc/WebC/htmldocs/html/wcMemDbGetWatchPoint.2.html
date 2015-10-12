@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<IMG ALT="oooo >>>> header <<< oooo " BORDER=0 SRC=header.gif>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>RTPMemBlockHeader* <A HREF="#DOC.DOCU">wcMemDbGetWatchPoint</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Returns a watchpoint list that may be used later to determine changes to the heap since this point. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>To determine how much memory is allocated and release during a specific interval you should first call wcMemDbGetWatchPoint and then at the end of the interval call
+<!1><A HREF="wcMemDbGetChangesSinceWatchPoint.html">wcMemDbGetChangesSinceWatchPoint</A> or <!1><A HREF="wcPrintMemChangeReport.html">wcPrintMemChangeReport</A> to respectively retrieve and display the changes made to the heap during the interval.
+
+<P>When the returned list is no longer needed it must be freed by calling wcMemDbReleaseReport.<br>
+Note: RTP_TRACK_LOCAL_MEMORY must be enabled in rtplatform/include/rtpmem.h for the function to operate properly, if it is not enabled the function simply return.
+</BLOCKQUOTE>
+<DL><DT><DT><B>Returns:</B><DD>  RTPMemBlockHeader * - A watch list made of report records.
+<PRE>
+Example: Print the changes made to the heap by a fictitious function named MyAppletInit().
+{
+RTPMemBlockHeader *myWatch;
+myWatch = wcMemDbGetWatchPoint();
+MyAppletInit();
+wcPrintMemChangeReport(myWatch, wcTRUE); // Print the report, the second argument instructs it to print only locations with outstanding memory allocations.
+wcMemDbReleaseReport(myWatch);
+}
+</PRE>
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> <!1><A HREF="wcMemDbInstallPeakUsageCallback.html">wcMemDbInstallPeakUsageCallback</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetWatchPoint.2.html">wcMemDbGetWatchPoint</A> <!1><A HREF="wcMemDbReleaseReport.html">wcMemDbReleaseReport</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetChangesSinceWatchPoint.html">wcMemDbGetChangesSinceWatchPoint</A> <!1><A HREF="wcPrintMemStats.html">wcPrintMemStats</A> <!1><A HREF="wcPrintMemChangeReport.html">wcPrintMemChangeReport</A> <!1><A HREF="wcPrintMemDetailReport.html">wcPrintMemDetailReport</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<IMG ALT="oooo >>>> footer <<< oooo " BORDER=0 SRC=footer.gif>
+</BODY>
+</HTML>

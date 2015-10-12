@@ -1,0 +1,53 @@
+﻿Build started 5/31/2011 12:08:03 PM.
+     1>Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\libpng\libpng.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\libpng.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\lib\zlib /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\libpng\png.c ..\..\..\lib\libpng\pngerror.c ..\..\..\lib\libpng\pnggccrd.c ..\..\..\lib\libpng\pngget.c ..\..\..\lib\libpng\pngmem.c ..\..\..\lib\libpng\pngpread.c ..\..\..\lib\libpng\pngread.c ..\..\..\lib\libpng\pngrio.c ..\..\..\lib\libpng\pngrtran.c ..\..\..\lib\libpng\pngrutil.c ..\..\..\lib\libpng\pngset.c ..\..\..\lib\libpng\pngtest.c ..\..\..\lib\libpng\pngtrans.c ..\..\..\lib\libpng\pngvcrd.c ..\..\..\lib\libpng\pngwio.c ..\..\..\lib\libpng\pngwrite.c ..\..\..\lib\libpng\pngwtran.c ..\..\..\lib\libpng\pngwutil.c
+         png.c
+         pngerror.c
+         pnggccrd.c
+         pngget.c
+         pngmem.c
+         pngpread.c
+         pngread.c
+         pngrio.c
+         pngrtran.c
+         pngrutil.c
+         pngset.c
+         pngtest.c
+         pngtrans.c
+         pngvcrd.c
+         pngwio.c
+         pngwrite.c
+         pngwtran.c
+         pngwutil.c
+         Generating Code...
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Debug\libpng.lib" /NOLOGO .\Debug/png.obj
+         .\Debug/pngerror.obj
+         .\Debug/pnggccrd.obj
+         .\Debug/pngget.obj
+         .\Debug/pngmem.obj
+         .\Debug/pngpread.obj
+         .\Debug/pngread.obj
+         .\Debug/pngrio.obj
+         .\Debug/pngrtran.obj
+         .\Debug/pngrutil.obj
+         .\Debug/pngset.obj
+         .\Debug/pngtest.obj
+         .\Debug/pngtrans.obj
+         .\Debug/pngvcrd.obj
+         .\Debug/pngwio.obj
+         .\Debug/pngwrite.obj
+         .\Debug/pngwtran.obj
+         .\Debug/pngwutil.obj
+         libpng.vcxproj -> C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\libpng\Debug\libpng.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\libpng.unsuccessfulbuild".
+         Touching "Debug\libpng.lastbuildstate".
+     1>Done Building Project "C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\libpng\libpng.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.57

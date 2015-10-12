@@ -1,0 +1,555 @@
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+c
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+6
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+0
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+b
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+a
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+o
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+F
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+8
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+;
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Charset Change Deleted Stream ======                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+ ------------------------ StartParseLog --------------------------------
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Charset Change Deleted Stream ======                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           ===== (mCompiled.pScript == 0 || mMyObject.Get() == 0) ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (===Script Error None) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+%
+<!-- >>>           =====   Raw Input    ==============                -->
+
+<!-- >>>           =====After Append     ============                -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->
+
+<!-- >>>           =====After Discard Prefix ============                -->
+
+<!-- >>>           =====Running ===Script  ============                -->
+
+<!-- !!!! (====Script ExecuteScript) -->
+
+<!-- !!!! (====Script OK) -->
+
+<!-- >>>           =====Jscript Compiling Source ============                -->

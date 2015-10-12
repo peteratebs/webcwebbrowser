@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1be384ab-8a05-4f53-a718-c879d2944c08}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Fonts">
+      <UniqueIdentifier>{5c8cb792-1d13-430a-8539-09b9bc1b60c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9d4682d6-3986-4df4-8c01-f3db8522efc4}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\gui\peg\source\pwebwin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\webcpeg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\wfpeg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial10.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial10b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial10bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial10i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial11.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial11b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial11bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial11i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial12.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial12b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial12bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial12i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial13.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial13b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial13bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial13i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial14.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial14b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial14bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial14i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial16.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial16b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial16bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial16i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial18.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial18b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial18bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial18i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial20.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial20b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial20bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial20i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial24.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial24b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial24bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial24i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial30.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial30b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial30bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial30i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial36.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial36b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial36bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial36i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial6.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial6b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial6bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial6i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial7.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial7b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial7bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial7i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial8.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial8b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial8bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial8i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial9.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial9b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial9bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Arial9i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\ArialUnicode.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier10.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier10b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier10bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier10i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier11.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier11b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier11bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier11i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier12.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier12b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier12bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier12i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier13.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier13b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier13bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier13i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier14.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier14b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier14bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier14i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier16.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier16b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier16bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier16i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier18.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier18b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier18bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier18i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier20.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier20b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier20bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier20i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier24.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier24b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier24bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier24i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier30.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier30b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier30bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier30i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier36.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier36b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier36bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier36i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier6.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier6b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier6bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier6i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier7.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier7b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier7bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier7i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier8.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier8b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier8bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier8i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier9.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier9b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier9bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Courier9i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES1.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times10.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times10b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times10bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times10i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times11.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times11b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times11bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times11i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times12.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times12b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times12bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times12i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times13.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times13b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times13bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times13i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times14.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times14b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times14bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times14i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times16.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times16b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times16bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times16i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times18.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times18b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times18bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times18i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES1B.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES1BI.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES1I.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES2.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times20.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times20b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times20bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times20i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times24.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times24b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times24bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times24i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES2B.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES2BI.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES2I.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES3.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times30.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times30b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times30bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times30i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times36.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times36b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times36bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times36i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES3B.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES3BI.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES3I.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES4.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES4B.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES4BI.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES4I.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES5.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES5B.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES5BI.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES5I.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES6.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES6B.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES6BI.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES6I.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES7.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES7B.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES7BI.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\TIMES7I.CPP">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times8.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times8b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times8bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times8i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times9.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times9b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times9bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Times9i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana10.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana10b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana10bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana10i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana11.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana11b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana11bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana11i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana12.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana12b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana12bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana12i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana13.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana13b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana13bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana13i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana14.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana14b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana14bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana14i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana16.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana16b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana16bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana16i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana18.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana18b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana18bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana18i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana20.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana20b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana20bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana20i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana24.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana24b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana24bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana24i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana30.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana30b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana30bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana30i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana36.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana36b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana36bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana36i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana6.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana6b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana6bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana6i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana7.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana7b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana7bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana7i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana8.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana8B.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana8bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana8i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana9.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana9b.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana9bi.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gui\peg\source\fonts\Verdana9i.cpp">
+      <Filter>Source Files\Fonts</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

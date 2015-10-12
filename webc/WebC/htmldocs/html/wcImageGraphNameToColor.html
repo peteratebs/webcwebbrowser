@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>HTMLColor <A HREF="#DOC.DOCU">wcImageGraphNameToColor</A></H2></TD><TD><H2>(HtmlColorIndex ColorName)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Convert a color index value to a 32 bit html value that may be used as a color argument to <!1><A HREF="wcImageGraphSetPenColor.html">wcImageGraphSetPenColor</A>. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Convert color names to 32 bit rgb values. The names are the same as those passed in strings to <!1><A HREF="wcElSetStyleColorNamed.html">wcElSetStyleColorNamed</A> except theey are integer constants instead of strings.
+
+<P><PRE>
+
+<P> Example:
+	wcImageGraphSetPenColor(ImageElement, wcImageGraphNameToColor(DarkSlateBlue)); // Set the pen to DarkSlateBlue
+
+<P> These named color values are supported.
+
+<P>AliceBlue,AntiqueWhite,Aqua,Aquamarine,Azure,Beige,Bisque,Black,BlanchedAlmond,Blue,BlueViolet,Brown,BurlyWood,CadetBlue,Chartreuse,Chocolate,Coral,CornflowerBlue,Cornsilk,
+Crimson,Cyan,DarkBlue,DarkCyan,DarkGoldenRod,DarkGray,DarkGreen,DarkKhaki,DarkMagenta,DarkOliveGreen,Darkorange,DarkOrchid,DarkRed,DarkSalmon,DarkSeaGreen,DarkSlateBlue,
+DarkSlateGray,DarkTurquoise,DarkViolet,DeepPink,DeepSkyBlue,DimGray,DodgerBlue,Feldspar,FireBrick,FloralWhite,ForestGreen,Fuchsia,Gainsboro,GhostWhite,Gold,GoldenRod,Gray,
+Green,GreenYellow,HoneyDew,HotPink,IndianRed,Indigo,Ivory,Khaki,Lavender,LavenderBlush,LawnGreen,LemonChiffon,LightBlue,LightCoral,LightCyan,LightGoldenRodYellow,LightGrey,
+LightGreen,LightPink,LightSalmon,LightSeaGreen,LightSkyBlue,LightSlateBlue,LightSlateGray,LightSteelBlue,LightYellow,Lime,LimeGreen,Linen,Magenta,Maroon,MediumAquaMarine,
+MediumBlue,MediumOrchid,MediumPurple,MediumSeaGreen,MediumSlateBlue,MediumSpringGreen,MediumTurquoise,MediumVioletRed,MidnightBlue,MintCream,MistyRose,Moccasin,NavajoWhite,
+Navy,OldLace,Olive,OliveDrab,Orange,OrangeRed,Orchid,PaleGoldenRod,PaleGreen,PaleTurquoise,PaleVioletRed,PapayaWhip,PeachPuff,Peru,Pink,Plum,PowderBlue,Purple,Red,
+RosyBrown,RoyalBlue,SaddleBrown,Salmon,SandyBrown,SeaGreen,SeaShell,Sienna,Silver,SkyBlue,SlateBlue,SlateGray,Snow,SpringGreen,SteelBlue,Tan,Teal,Thistle,Tomato,
+Transparent,Turquoise,Violet,VioletRed,Wheat,White,WhiteSmoke,Yellow,YellowGreen
+
+<P>
+ </PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>HtmlColorIndex</B> -  ColorName 	- The color index to convert to a color value.
+<BR><DT><B>Returns:</B><DD>  The HTML color value
+<BR><DT><B>See Also:</B><DD><!1><A HREF="ExGraphics.html">ExGraphics</A>,<!1><A HREF="wcImageGraphSetPenColor.html">wcImageGraphSetPenColor</A>,<!1><A HREF="wcElSetStyleColorNamed.html">wcElSetStyleColorNamed</A>
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

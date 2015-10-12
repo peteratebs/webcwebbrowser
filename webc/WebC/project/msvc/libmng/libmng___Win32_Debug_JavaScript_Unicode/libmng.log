@@ -1,0 +1,53 @@
+﻿Build started 12/29/2014 4:48:35 PM.
+     1>Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\libmng\libmng.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\libmng___Win32_Debug_JavaScript_Unicode\libmng.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\lib\zlib /I..\..\..\lib\libjpeg /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\libmng___Win32_Debug_JavaScript_Unicode/" /Fd".\libmng___Win32_Debug_JavaScript_Unicode/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\libmng\libmng_callback_xs.c ..\..\..\lib\libmng\libmng_chunk_io.c ..\..\..\lib\libmng\libmng_chunk_prc.c ..\..\..\lib\libmng\libmng_chunk_xs.c ..\..\..\lib\libmng\libmng_cms.c ..\..\..\lib\libmng\libmng_display.c ..\..\..\lib\libmng\libmng_dither.c ..\..\..\lib\libmng\libmng_error.c ..\..\..\lib\libmng\libmng_filter.c ..\..\..\lib\libmng\libmng_hlapi.c ..\..\..\lib\libmng\libmng_jpeg.c ..\..\..\lib\libmng\libmng_object_prc.c ..\..\..\lib\libmng\libmng_pixels.c ..\..\..\lib\libmng\libmng_prop_xs.c ..\..\..\lib\libmng\libmng_read.c ..\..\..\lib\libmng\libmng_trace.c ..\..\..\lib\libmng\libmng_write.c ..\..\..\lib\libmng\libmng_zlib.c
+         libmng_callback_xs.c
+         libmng_chunk_io.c
+         libmng_chunk_prc.c
+         libmng_chunk_xs.c
+         libmng_cms.c
+         libmng_display.c
+         libmng_dither.c
+         libmng_error.c
+         libmng_filter.c
+         libmng_hlapi.c
+         libmng_jpeg.c
+         libmng_object_prc.c
+         libmng_pixels.c
+         libmng_prop_xs.c
+         libmng_read.c
+         libmng_trace.c
+         libmng_write.c
+         libmng_zlib.c
+         Generating Code...
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\libmng___Win32_Debug_JavaScript_Unicode\libmng.lib" /NOLOGO .\libmng___Win32_Debug_JavaScript_Unicode/libmng_callback_xs.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_chunk_io.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_chunk_prc.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_chunk_xs.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_cms.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_display.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_dither.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_error.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_filter.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_hlapi.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_jpeg.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_object_prc.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_pixels.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_prop_xs.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_read.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_trace.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_write.obj
+         .\libmng___Win32_Debug_JavaScript_Unicode/libmng_zlib.obj
+         libmng.vcxproj -> C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\libmng\.\libmng___Win32_Debug_JavaScript_Unicode\libmng.lib
+       FinalizeBuildStatus:
+         Deleting file ".\libmng___Win32_Debug_JavaScript_Unicode\libmng.unsuccessfulbuild".
+         Touching ".\libmng___Win32_Debug_JavaScript_Unicode\libmng.lastbuildstate".
+     1>Done Building Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\libmng\libmng.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.81

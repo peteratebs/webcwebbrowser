@@ -1,0 +1,1123 @@
+<html>
+<head>
+</head>
+<body nobackground eventhandler='chromeLoadHandler' onload='
+		window.suspendDraw();
+		window.location = "chrome.html";
+	'>
+</body>
+</html>
+<html>
+<head>
+<style>
+input {
+	outline-style: none;
+}
+
+.statusBarDiv img {
+	margin-right: 2px;
+}
+</style>
+
+<script>
+
+function HideAlertBar()
+{
+	var alertBar = document.getElementById("alertBar");
+	if (alertBar)
+	{
+		alertBar.style.visibility = 'hidden';
+	}
+}
+
+function HideAuthDialog()
+{
+	var authDialog = document.getElementById("authDialog");
+	if (authDialog)
+	{
+		authDialog.style.visibility = 'hidden';
+	}
+}
+
+function BookmarksActive()
+{
+	var bmFrame = document.getElementById("bookmarksFrame");
+	return (bmFrame && (bmFrame.style.visibility == 'visible' || bmFrame.style.visibility == 'show'));
+}
+
+function EditBookmarks()
+{
+	if (ArchiveActive())
+	{
+		HideArchive();
+	}
+
+	var frame = document.getElementById("contentFrame");
+	var bmFrame = document.getElementById("bookmarksFrame");
+	if (frame && bmFrame)
+	{
+		//frame.style.visibility = 'hide';
+		//bmFrame.style.visibility = 'show';
+		
+		var bmIcon = document.getElementById("bmIcon");
+		if (bmIcon)
+		{
+			bmIcon.src = "bookmark_selected.png";
+		}
+		
+		bmFrame.document.load('webc://bookmarks.html');		
+	}
+}
+
+function HideBookmarks()
+{
+	var frame = document.getElementById("contentFrame");
+	var bmFrame = document.getElementById("bookmarksFrame");
+	if (frame && bmFrame)
+	{
+		frame.style.visibility = 'show';
+		bmFrame.style.visibility = 'hide';
+		
+		var rootDiv = bmFrame.document.getElementById("rootDiv");
+		if (rootDiv)
+		{
+			WriteFile("bm_saved.html", rootDiv.innerHTML);
+		}
+	
+		var bmIcon = document.getElementById("bmIcon");
+		if (bmIcon)
+		{
+			bmIcon.src = "bookmark_default.png";
+		}
+		
+		frame.document.body.focus();
+	}
+}
+
+function CloseCurrentView()
+{
+	if (BookmarksActive())
+	{
+		HideBookmarks();
+	}
+
+	if (ArchiveActive())
+	{
+		HideArchive();
+	}	
+}
+
+function ToggleBookmarks()
+{
+	if (BookmarksActive())
+	{
+		HideBookmarks();
+	}
+	else
+	{
+		EditBookmarks();
+	}
+}
+
+function ArchiveActive()
+{
+	var frame = document.getElementById("archiveFrame");
+	return (frame && (frame.style.visibility == 'visible' || frame.style.visibility == 'show'));	
+}
+
+function HideArchive()
+{
+	var frame = document.getElementById("contentFrame");
+	var archiveFrame = document.getElementById("archiveFrame");
+	if (frame && archiveFrame)
+	{
+		frame.style.visibility = 'show';
+		archiveFrame.style.visibility = 'hide';
+		
+		var rootDiv = archiveFrame.document.getElementById("rootDiv");
+		if (rootDiv)
+		{
+			WriteFile("ap_saved.html", rootDiv.innerHTML);
+		}
+	
+		var iconElement = document.getElementById("viewArchiveIcon");
+		if (iconElement)
+		{
+			iconElement.src = "archive.png";
+		}
+		
+		frame.document.body.focus();
+	}
+}
+
+function ViewArchive()
+{
+	if (BookmarksActive())
+	{
+		HideBookmarks();
+	}
+	
+	var frame = document.getElementById("contentFrame");
+	var archiveFrame = document.getElementById("archiveFrame");
+	if (frame && archiveFrame)
+	{
+		frame.style.visibility = 'hide';
+		archiveFrame.style.visibility = 'show';
+		
+		var iconElement = document.getElementById("viewArchiveIcon");
+		if (iconElement)
+		{
+			iconElement.src = "archive_selected.png";
+		}
+		
+		var rootDiv = archiveFrame.document.getElementById("rootDiv");
+		if (rootDiv)
+		{
+			rootDiv.innerHTML = ReadFile("ap_saved.html");
+			archiveFrame.document.window.UpdateAll();
+		}
+	}
+}
+
+function ToggleArchive()
+{
+	if (ArchiveActive())
+	{
+		HideArchive();
+	}
+	else
+	{
+		ViewArchive();
+	}
+}
+
+function HideToolbars()
+{
+	if (BookmarksActive())
+	{
+		HideBookmarks();
+	}
+
+	if (ArchiveActive())
+	{
+		HideArchive();
+	}	
+
+	HideAuthDialog();
+	HideAlertBar();
+}
+
+function chromeBrowserBack ()
+{
+	var frame = document.getElementById("contentFrame");
+	if (frame)
+	{
+		HideToolbars();
+		frame.document.parentWindow.back();
+	}
+}
+
+function chromeBrowserForward ()
+{
+	var frame = document.getElementById("contentFrame");
+	if (frame)
+	{
+		HideToolbars();
+		frame.document.parentWindow.forward();
+	}
+}
+
+function chromeBrowserRefresh ()
+{
+	var frame = document.getElementById("contentFrame");
+	if (frame)
+	{
+		HideToolbars();
+		if (frame.document)
+		{
+			if (frame.document.parentWindow)
+			{
+				if (frame.document.parentWindow.location)
+				{
+					frame.document.parentWindow.location.reload();
+				}
+			}			
+		}
+	}
+}
+
+function chromeBrowserStop ()
+{
+	var frame = document.getElementById("contentFrame");
+	if (frame)
+	{
+		HideToolbars();
+		frame.document.parentWindow.location.stop();
+	}
+}
+
+function chromeBrowserHome ()
+{
+	var frame = document.getElementById("contentFrame");
+	if (frame)
+	{
+		HideToolbars();
+		var defaultUrl = getDefaultUrl();
+		frame.document.load(defaultUrl);
+	}
+}
+
+function ShowOnlineStatusToggle (iconElement)
+{
+	if (iconElement.src == "online.png")
+	{
+		iconElement.src = "online_toggle.png";
+	}
+	else
+	{
+		if (iconElement.src == "offline.png")
+		{
+			iconElement.src = "offline_toggle.png";
+		}
+	}
+}
+
+function HideOnlineStatusToggle (iconElement)
+{
+	if (iconElement.src == "online_toggle.png")
+	{
+		iconElement.src = "online.png";
+	}
+	else
+	{
+		if (iconElement.src == "offline_toggle.png")
+		{
+			iconElement.src = "offline.png";
+		}
+	}
+}
+
+function ToggleOnlineStatus (iconElement)
+{
+	if (iconElement.src == "online_toggle.png")
+	{
+		iconElement.src = "offline_toggle.png";
+	}
+	else
+	{
+		if (iconElement.src == "offline_toggle.png")
+		{
+			iconElement.src = "online_toggle.png";
+		}
+	}
+
+	if (window.navigator.online)
+	{		
+		window.navigator.online = false;		
+	}
+	else
+	{
+		window.navigator.online = true;
+	}
+}
+
+function SavePageToArchive(iconElement)
+{
+	if (iconElement.src == "savetoarchive.png")
+	{
+		iconElement.src = "savetoarchive_disabled.png";
+		
+		var frame = document.getElementById("contentFrame");
+		if (frame)
+		{	
+			var urlBar = document.getElementById("urlBar");
+			if (urlBar)
+			{
+				var url = urlBar.value;
+				var name = frame.document.title;
+				var archiveIndex = ReadFile("ap_saved.html");
+				if (!archiveIndex)
+				{
+					archiveIndex = "";
+				}
+				
+				if (url && name)
+				{		
+					archiveIndex = archiveIndex + '<div>' +
+							'<img src="close_default.png" align=right onmousedown="RemovePage(this.parentElement);">' +
+							'<img src="document.png" align=absbottom>' +
+						    '<a href="' + url + '" onclick="return LoadArchivedPage(this);">' +
+						     name + ' (' + url + ')</a></div>\n';
+					
+					window.SaveContentForOffline();
+					
+					WriteFile("ap_saved.html", archiveIndex);	
+					
+					if (ArchiveActive())
+					{
+						ViewArchive(); 
+					}
+				}
+			}
+		}
+	}
+}
+
+function DisableOnlineStatusToggle ()
+{
+	var iconElement = document.getElementById("onlineStatusIcon");
+	if (iconElement)
+	{
+		if (iconElement.src == "online.png")
+		{
+			iconElement.src = "online_disabled.png";
+		}
+		else
+		{
+			if (iconElement.src == "offline.png")
+			{
+				iconElement.src = "offline_disabled.png";
+			}
+		}
+	}
+}
+
+function EnableOnlineStatusToggle ()
+{
+	var iconElement = document.getElementById("onlineStatusIcon");
+	if (iconElement)
+	{
+		if (iconElement.src == "online_disabled.png")
+		{
+			iconElement.src = "online.png";
+		}
+		else
+		{
+			if (iconElement.src == "offline_disabled.png")
+			{
+				iconElement.src = "offline.png";
+			}
+		}
+	}
+}
+
+</script>
+</head>
+
+<body nobackground eventhandler='chromeLoadHandler2' onload='
+		window.resumeDraw();
+		window.invalidate();
+		window.draw();
+
+		var frame = document.getElementById("contentFrame");
+		if (frame)
+		{
+			var defaultUrl = getDefaultUrl();
+
+			var urlBar = document.getElementById("urlBar"); 
+			if (urlBar)
+			{
+				urlBar.value = defaultUrl;
+			}
+			
+			frame.src = defaultUrl;
+
+			var docTitle = document.getElementById("documentTitle"); 
+			if (docTitle)
+			{
+				docTitle.value = frame.document.title;
+			}
+		}
+	'>
+
+<!-- Pre-load the alternate images for all buttons here -->
+
+<img src='back_default.png' style='display: none;'>
+<img src='back_halo.png' style='display: none;'>
+<img src='back_over.png' style='display: none;'>
+<img src='back_over_halo.png' style='display: none;'>
+
+<img src='forward_default.png' style='display: none;'>
+<img src='forward_halo.png' style='display: none;'>
+<img src='forward_over.png' style='display: none;'>
+<img src='forward_over_halo.png' style='display: none;'>
+
+<img src='refresh_default.png' style='display: none;'>
+<img src='refresh_halo.png' style='display: none;'>
+<img src='refresh_over.png' style='display: none;'>
+<img src='refresh_over_halo.png' style='display: none;'>
+
+<img src='stop_default.png' style='display: none;'>
+<img src='stop_halo.png' style='display: none;'>
+<img src='stop_over.png' style='display: none;'>
+<img src='stop_over_halo.png' style='display: none;'>
+
+<img src='home_default.png' style='display: none;'>
+<img src='home_halo.png' style='display: none;'>
+<img src='home_over.png' style='display: none;'>
+<img src='home_over_halo.png' style='display: none;'>
+
+<img src='close_over.png' style='display: none;'>
+
+<img src='archive_large.png' style='display: none;'>
+<img src='archive_selected.png' style='display: none;'>
+<img src='bookmarks_large.png' style='display: none;'>
+<img src='offline_disabled.png' style='display: none;'>
+<img src='offline_toggle.png' style='display: none;'>
+<img src='online_disabled.png' style='display: none;'>
+<img src='online_toggle.png' style='display: none;'>
+<img src='savetoarchive.png' style='display: none;'>
+
+<!-- END of pre-loaded images -->
+
+<input type='hidden' id='documentTitle' value='untitled document'>
+
+<img src='top_border.png' style='position: absolute; left: 0; right: 0; top: 0; height: 2;'>
+
+<img src='brushedmetal.png' style='
+		position: absolute;
+		top: 2px;
+		height: 33px;
+		left: 0px;
+		right: 0px;'>	
+
+<img src='brushedmetal.png' style='
+		position: absolute;
+		height: 5px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;'>	
+
+<img src='brushedmetal_side.png' style='
+		position: absolute;
+		top: 35px;
+		bottom: 5px;
+		left: 0px;
+		width: 5px;'>
+
+<img src='brushedmetal_side.png' style='
+		position: absolute;
+		top: 35px;
+		bottom: 5px;
+		right: 0px;
+		width: 5px;'>
+
+<div style='
+		position: absolute;
+		top: 35px;
+		bottom: 5px;
+		left: 5px;
+		right: 5px;
+		border-color: black #808080 #a0a0a0 #808080;
+		border-style: solid;
+		border-width: 1px;
+		'>
+</div>
+
+<!-- BEGIN Content Frames -->
+
+<iframe id='bookmarksFrame' src='' scrolling='auto' style='
+		position: absolute;
+		top: 59px;
+		bottom: 6px;
+		left: 6px;
+		right: 6px;
+		border-style: none;
+		visibility: hidden;'>
+	Turn on iframes!
+</iframe>
+
+<iframe id='archiveFrame' src='webc://archives.html' scrolling='auto' style='
+		position: absolute;
+		top: 59px;
+		bottom: 6px;
+		left: 6px;
+		right: 6px;
+		border-style: none;
+		visibility: hidden;'>
+	Turn on iframes!
+</iframe>
+
+<iframe quarantine name='targetFrame' id='contentFrame' src='' scrolling='auto' style='
+		position: absolute;
+		top: 59px;
+		bottom: 6px;
+		left: 6px;
+		right: 6px;
+		border-style: none;'>
+		visibility: visible;'>
+	Turn on iframes!
+</iframe>
+
+<!-- END Content Frames -->
+
+<!-- BEGIN Status Bar -->
+
+<div id=statusBarDiv style='
+		position: absolute;
+		top: 35px;
+		height: 22px;
+		left: 6px;
+		right: 6px;
+		border-bottom: solid 1px black; 
+		border-top: solid 1px black; 
+		border-right: none; 
+		border-left: none; 
+		background-color: #eeeeee;'><table width=100% border=0 cellpadding=0 cellspacing=1>
+	<tr><td width=0%><img id='saveToArchiveIcon' src='savetoarchive_disabled.png' onclick='SavePageToArchive(this);'></td><td 
+		width=100%><input readonly id='statusBar' disabled style='
+			background-color: #eeeeee; 
+			width: 100%; 
+			height: 18px; 
+			color: #777777; 
+			border: none;'
+			size=256 
+			maxlength=256 
+			value='Status.'></td>
+	    <!--<td width=0%><img src='document.png'></td>-->
+	    <td width=0%><img src='smallGlobe_gray.gif' id='throbber'></td>
+	    	<td width=0%><img id='onlineStatusIcon' src='online.png' onmouseover='ShowOnlineStatusToggle(this);' onmouseout='HideOnlineStatusToggle(this);' onclick='ToggleOnlineStatus(this);'></td>
+	    	<td width=0%><img id='viewArchiveIcon' src='archive.png' onclick='ToggleArchive();'></td>
+		    <td width=0%><img id='bmIcon' src='bookmark_default.png' onclick='ToggleBookmarks();'></td>
+	    <td width=0%><img onclick='CloseCurrentView()' src='close_default.png' id='throbber' onmouseover='this.src="close_over.png";' onmouseout='this.src="close_default.png";'></td>
+	</tr></table>
+</div>		
+
+<!-- END Status Bar -->
+
+<!-- BEGIN Alert Bar -->
+
+<div id=alertBar style='
+		position: absolute;
+		top: 35px;
+		height: 22px;
+		left: 6px;
+		right: 6px;
+		border-bottom: solid 1px black; 
+		border-top: solid 1px black; 
+		border-right: none; 
+		border-left: none; 
+		background-color: #eeeeee;
+		visibility: hidden;'><table width=100% border=0 cellpadding=0 cellspacing=1>
+	<tr>
+	   <td width=0%><img src='alert_small.png'></td>
+	   <td width=100%><input readonly id='alertMessage' disabled style='
+			background-color: #eeeeee; 
+			width: 100%; 
+			height: 18px; 
+			color: black; 
+			border: none;'
+			size=256 
+			maxlength=256 
+			value='Alert!'></td>
+	    <td width=0%><input type=button onclick='HideAlertBar();' style='background-color: #cccccc; font-famiy: arial; font-size: 11px; color: black; border: outset 1px #999999;' value='&nbspOK&nbsp'></td>
+	</tr></table>
+</div>	
+
+<!-- END Alert Bar -->
+
+<!-- BEGIN HTTP Authentication (user/password entry) Bar -->
+
+<div id=authDialog style='
+		position: absolute;
+		top: 35px;		
+		left: 6px;
+		right: 6px;
+		border-bottom: solid 1px black; 
+		border-top: solid 1px black; 
+		border-right: none; 
+		border-left: none; 
+		background-color: #eeeeee;
+		visibility: hidden;'><table width=100% border=0 cellpadding=0 cellspacing=1>
+	<tr>
+	   <td width=0% valign=top><img src='prompt_small.png'></td>
+	   <td width=100% style='font-family: arial; font-size: 8pt;'><b style='font-size: 10pt;'>Authorization Required</b>&nbsp;&nbsp;&nbsp; 
+	   <nobr>User Name: <input id='authUser' type=text style='
+			width: 8em; 
+			color: black; 
+			border-width: 1px;
+			size=256 
+			maxlength=256 
+			value=''>&nbsp;&nbsp;&nbsp;</nobr><span style='color: #eeeeee'>. </span><nobr>Password: <input id='authPass' type=password style='
+			width: 8em; 
+			color: black; 
+			border-width: 1px;
+			size=256 
+			maxlength=256 
+			value=''>&nbsp;&nbsp;&nbsp;</nobr></td>
+	    <td width=0%><input type=button eventhandler='chromeAuthHandler' id='authOkButton' style='background-color: #cccccc; font-famiy: arial; font-size: 11px; color: black; border: outset 1px #999999;' value='&nbspOK&nbsp'></td>
+	    <td width=0%><input type=button onclick='HideAuthDialog();' style='background-color: #cccccc; font-famiy: arial; font-size: 11px; color: black; border: outset 1px #999999;' value='&nbspCancel&nbsp'></td>
+	</tr></table>
+</div>	
+
+<!-- END HTTP Authentication (user/password entry) Bar -->
+
+<!-- BEGIN Navigation Toolbar -->
+
+<div style='
+		position: absolute;
+		top: 2px;
+		height: 30px;
+		left: 5px;
+		right: 5px;
+		padding-top:4px;'><table border=0 cellspacing=0 cellpadding=0 width=100%>
+	<tr>
+	<td width=0%><form action='javascript://' onsubmit='chromeBrowserBack(); return false;'
+		><input hspace=0 vspace=0 type=image src='back_default.png' 
+			onmouseover='if (this.src=="back_halo.png") { this.src="back_over_halo.png"; } else { this.src="back_over.png"; }'
+			onmouseout='if (this.src=="back_over_halo.png") { this.src="back_halo.png"; } else { this.src="back_default.png"; }'
+			onfocus='if (this.src=="back_over.png") { this.src="back_over_halo.png"; } else { this.src="back_halo.png"; }' 
+			onblur='if (this.src=="back_over_halo.png") { this.src="back_over.png"; } else { this.src="back_default.png"; }'></form></td>
+	<td width=0%><form action='javascript://' onsubmit='chromeBrowserForward(); return false;'><input type=image src='forward_default.png' 
+			onmouseover='if (this.src=="forward_halo.png") { this.src="forward_over_halo.png"; } else { this.src="forward_over.png"; }'
+			onmouseout='if (this.src=="forward_over_halo.png") { this.src="forward_halo.png"; } else { this.src="forward_default.png"; }'
+			onfocus='if (this.src=="forward_over.png") { this.src="forward_over_halo.png"; } else { this.src="forward_halo.png"; }' 
+			onblur='if (this.src=="forward_over_halo.png") { this.src="forward_over.png"; } else { this.src="forward_default.png"; }'></form></nobr></td>
+	<td width=0%>
+		<form action='javascript://' onsubmit='chromeBrowserRefresh(); return false;'>
+		<input type=image src='refresh_default.png' 
+			onmouseover='if (this.src=="refresh_halo.png") { this.src="refresh_over_halo.png"; } else { this.src="refresh_over.png"; }'
+			onmouseout='if (this.src=="refresh_over_halo.png") { this.src="refresh_halo.png"; } else { this.src="refresh_default.png"; }'
+			onfocus='if (this.src=="refresh_over.png") { this.src="refresh_over_halo.png"; } else { this.src="refresh_halo.png"; }' 
+			onblur='if (this.src=="refresh_over_halo.png") { this.src="refresh_over.png"; } else { this.src="refresh_default.png"; }'>
+		</form>
+	</td>
+	<td width=0%>
+		<form action='javascript://' onsubmit='chromeBrowserStop(); return false;'>
+		<input type=image src='stop_default.png' 
+			onmouseover='if (this.src=="stop_halo.png") { this.src="stop_over_halo.png"; } else { this.src="stop_over.png"; }'
+			onmouseout='if (this.src=="stop_over_halo.png") { this.src="stop_halo.png"; } else { this.src="stop_default.png"; }'
+			onfocus='if (this.src=="stop_over.png") { this.src="stop_over_halo.png"; } else { this.src="stop_halo.png"; }' 
+			onblur='if (this.src=="stop_over_halo.png") { this.src="stop_over.png"; } else { this.src="stop_default.png"; }'>
+		</form>
+	</td>
+	<td width=0%>
+		<form action='javascript://' onsubmit='chromeBrowserHome(); return false;'>
+		<input type=image src='home_default.png' 
+			onmouseover='if (this.src=="home_halo.png") { this.src="home_over_halo.png"; } else { this.src="home_over.png"; }'
+			onmouseout='if (this.src=="home_over_halo.png") { this.src="home_halo.png"; } else { this.src="home_default.png"; }'
+			onfocus='if (this.src=="home_over.png") { this.src="home_over_halo.png"; } else { this.src="home_halo.png"; }' 
+			onblur='if (this.src=="home_over_halo.png") { this.src="home_over.png"; } else { this.src="home_default.png"; }'>
+		</form>
+	</td>
+	<td width=0%>&nbsp;</td>
+	</form>
+	<td width=75%>
+		<table bgcolor=white border=0 cellspacing=0 cellpadding=0 width=100%>
+		<tr><td rowspan=3><img src='url_left.png'></td>
+		    <td colspan=2><img height=3 width=100% src='search_top.png'></td>
+		    <td rowspan=3><img src='url_right.png'></td></tr>
+		<tr>
+                <td width=0%><img id=documentIcon src='document.png' align=left vspace=0 hspace=0 height=20></td>
+                <td width=100% nowrap
+		><form action='javascript://' onsubmit='
+				var frame = document.getElementById("contentFrame");
+				var urlBar = document.getElementById("urlBar");
+				
+				HideBookmarks();
+				HideAuthDialog();
+				
+				if (frame && urlBar)
+				{
+					frame.document.load(urlBar.value);
+				}
+				return false;'><input id='urlBar' type=text maxlength=256 size=100 style='
+				width: 100%;
+				height: 20px;
+				border-style: none;
+				border-width: 0px;
+				margin: 0px;
+				padding: 3px;
+				font-family: arial;
+				font-size: 10px;
+				color: black;
+				background-color: white'><input type=submit style='display: none;'></form></td></tr>
+		<tr><td colspan=2><img height=2 width=100% src='search_bottom.png'></td></tr></table>
+	<td width=0%>&nbsp</td>
+	<td width=25%>
+
+		<table border=0 cellspacing=0 cellpadding=0 width=100%>
+		<tr><td rowspan=3><img src='search_left.png' width=22 height=22></td>
+		    <td><img height=3 width=100% src='search_top.png'></td>
+		    <td rowspan=3><img src='search_right.png' width=9 height=22></td></tr>
+		<tr><td width=100%><form target="targetFrame" onsubmit='HideBookmarks(); HideAuthDialog();' 
+		                         action="http://www.google.com/search" name=f><input 
+		                   type=hidden name=hl value=en><input maxLength=256 size=256 name=q value="" style='
+				width: 100%;
+				height: 17px;
+				border-style: none;
+				padding: 0px;
+				font-family: arial;
+				font-size: 10px;
+				color: black;
+				background-color: white'><input type=submit value="Google Search" name=btnG style="display:none;"></form></td></tr>
+		<tr><td><img height=2 width=100% src='search_bottom.png'></td></tr></table>
+			
+	</td>
+	</tr></table>
+			
+</div>
+
+<!-- END Navigation Toolbar -->
+
+</body>
+</html>
+
+ar -->
+
+<!-- BEGIN Alert Bar -->
+
+<div id=alertBar style='
+		position: absolute;
+		top: 35px;
+		height: 22px;
+		left: 6px;
+		right: 6px;
+		border-bottom: solid 1px black; 
+		border-top: solid 1px black; 
+		border-right: none; 
+		border-left: none; 
+		background-color: #eeeeee;
+		visibility: hidden;'><table width=100% border=0 cellpadding=0 cellspacing=1>
+	<tr>
+	   <td width=0%><img src='alert_small.png'></td>
+	   <td width=100%><input readonly id='alertMessage' disabled style='
+			background-color: #eeeeee; 
+			width: 100%; 
+			height: 18px; 
+			color: black; 
+			border: none;'
+			size=256 
+			maxlength=256 
+			value='Alert!'></td>
+	    <td width=0%><input type=button onclick='HideAlertBar();' style='background-color: #cccccc; font-famiy: arial; font-size: 11px; color: black; border: outset 1px #999999;' value='&nbspOK&nbsp'></td>
+	</tr></table>
+</div>	
+
+<!-- END Alert Bar -->
+
+<!-- BEGIN HTTP Authentication (user/password entry) Bar -->
+
+<div id=authDialog style='
+		position: absolute;
+		top: 35px;		
+		left: 6px;
+		right: 6px;
+		border-bottom: solid 1px black; 
+		border-top: solid 1px black; 
+		border-right: none; 
+		border-left: none; 
+		background-color: #eeeeee;
+		visibility: hidden;'><table width=100% border=0 cellpadding=0 cellspacing=1>
+	<tr>
+	   <td width=0% valign=top><img src='prompt_small.png'></td>
+	   <td width=100% style='font-family: arial; font-size: 8pt;'><b style='font-size: 10pt;'>Authorization Required</b>&nbsp;&nbsp;&nbsp; 
+	   <nobr>User Name: <input id='authUser' type=text style='
+			width: 8em; 
+			color: black; 
+			border-width: 1px;
+			size=256 
+			maxlength=256 
+			value=''>&nbsp;&nbsp;&nbsp;</nobr><span style='color: #eeeeee'>. </span><nobr>Password: <input id='authPass' type=password style='
+			width: 8em; 
+			color: black; 
+			border-width: 1px;
+			size=256 
+			maxlength=256 
+			value=''>&nbsp;&nbsp;&nbsp;</nobr></td>
+	    <td width=0%><input type=button eventhandler='chromeAuthHandler' id='authOkButton' style='background-color: #cccccc; font-famiy: arial; font-size: 11px; color: black; border: outset 1px #999999;' value='&nbspOK&nbsp'></td>
+	    <td width=0%><input type=button onclick='HideAuthDialog();' style='background-color: #cccccc; font-famiy: arial; font-size: 11px; color: black; border: outset 1px #999999;' value='&nbspCancel&nbsp'></td>
+	</tr></table>
+</div>	
+
+<!-- END HTTP Authentication (user/password entry) Bar -->
+
+<!-- BEGIN Navigation Toolbar -->
+
+<div style='
+		position: absolute;
+		top: 2px;
+		height: 30px;
+		left: 5px;
+		right: 5px;
+		padding-top:4px;'><table border=0 cellspacing=0 cellpadding=0 width=100%>
+	<tr>
+	<td width=0%><form action='javascript://' onsubmit='chromeBrowserBack(); return false;'
+		><input hspace=0 vspace=0 type=image src='back_default.png' 
+			onmouseover='if (this.src=="back_halo.png") { this.src="back_over_halo.png"; } else { this.src="back_over.png"; }'
+			onmouseout='if (this.src=="back_over_halo.png") { this.src="back_halo.png"; } else { this.src="back_default.png"; }'
+			onfocus='if (this.src=="back_over.png") { this.src="back_over_halo.png"; } else { this.src="back_halo.png"; }' 
+			onblur='if (this.src=="back_over_halo.png") { this.src="back_over.png"; } else { this.src="back_default.png"; }'></form></td>
+	<td width=0%><form action='javascript://' onsubmit='chromeBrowserForward(); return false;'><input type=image src='forward_default.png' 
+			onmouseover='if (this.src=="forward_halo.png") { this.src="forward_over_halo.png"; } else { this.src="forward_over.png"; }'
+			onmouseout='if (this.src=="forward_over_halo.png") {<html>
+<head>
+<style>
+div {
+	font-family: arial;
+	font-size: 10px;
+}
+
+#rootdiv div {
+	padding-left: 32px;
+}
+
+input {
+	background-color: #cccccc;
+	font-famiy: arial;
+	font-size: 11px;
+	color: black;
+	border: outset 1px #999999;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+</style>
+
+<script>
+
+function LoadArchivedPage(bmAnchor)
+{
+	var frame = window.top.document.getElementById("contentFrame");	
+	
+	if (frame)
+	{
+		window.top.HideArchive();
+		window.top.EnableOnlineStatusRestore();
+		window.top.navigator.online = false;
+		window.top.DisableOnlineStatusToggle();
+		frame.document.load(bmAnchor.href);
+	}
+	
+	return false;
+}
+
+function RecolorAll()
+{
+	var rootDiv = document.getElementById('rootDiv');
+	if (rootDiv)
+	{
+		var currentDiv = rootDiv.firstChild;
+		var i = 0;
+		
+		while (currentDiv)
+		{
+			if (i==0)
+			{
+				currentDiv.style.backgroundColor = '#EFF7FF';
+			}
+			else
+			{
+				currentDiv.style.backgroundColor = '#ffffff';
+			}
+			currentDiv = currentDiv.nextSibling;
+			i = 1 - i;
+		}
+	}
+}
+
+function UpdateAll()
+{
+	RecolorAll();
+
+	var documentTitle = window.top.document.getElementById("documentTitle");
+	var addButton = document.getElementById("addButton");
+	if (urlBar && addButton)
+	{
+		//addButton.value = "Save \"" + documentTitle.value + "\" to the archive";
+	}	
+}
+
+function AddPage(name,url)
+{
+	var rootDiv = document.getElementById('rootDiv');
+	if (rootDiv)
+	{
+		rootDiv.innerHTML = rootDiv.innerHTML + '<div>' +
+				'<img src="close_default.png" align=right onmousedown="RemovePage(this.parentElement);">' +
+				'<img src="document.png" align=absbottom>' +
+			    '<a href="' + url + '" onclick="return LoadArchivedPage(this);">' +
+			     name + ' (' + url + ')</a></div>\n';
+		                     
+		var addButton = document.getElementById('addButton');
+		if (addButton)
+		{
+			//addButton.style.display = 'none';
+		}
+		
+		RecolorAll();
+		
+		window.top.SaveContentForOffline();
+	}
+}
+
+function AddCurrentPage()
+{
+	var documentTitle = window.top.document.getElementById("documentTitle");
+	var urlBar = window.top.document.getElementById("urlBar");
+	AddPage(documentTitle.value, urlBar.value);
+}
+
+function RemovePage(toRemove)
+{
+	var rootDiv = document.getElementById('rootDiv');
+	if (rootDiv)
+	{
+		var newInner = '';
+		var currentDiv = rootDiv.firstChild;
+		
+		while (currentDiv)
+		{
+			if (currentDiv != toRemove)
+			{
+				newInner = newInner + currentDiv.outerHTML;
+			}
+			currentDiv = currentDiv.nextSibling;
+		}
+		
+		window.suspendDraw();
+		window.setTimeout("window.resumeDraw(); RecolorAll();", 0);
+		rootDiv.innerHTML = newInner;
+	}
+}
+</script>
+</head>
+
+<body>
+
+<!-- pre-load images -->
+<img src='document.png' style='display: none;'>
+<img src='close_default.png' style='display: none;'>
+<img src='close_over.png' style='display: none;'>
+	
+<script>
+var urlBar = window.top.document.getElementById("urlBar");
+var documentTitle = window.top.document.getElementById("documentTitle");
+if (urlBar)
+{
+	document.write("<input id='addButton' style='position: fixed; right: 0px; top: 0px;' onclick='AddCurrentPage()' type=button value='Save current page to the archive'>");
+}
+</script>
+
+<div style='height: 32px; font-size: 16px; padding: 2px'><img style='margin-right:8px;' align=middle width=32 height=32 src='archive_large.png'><b>Archived Pages</b></div>
+<div id='rootDiv' style='padding: 0px;'>
+</div>
+</body>
+</html>
+<input id='addButton' style='position: fixed; right: 0px; top: 0px;' onclick='AddCurrentPage()' type=button value='Save current page to the archive'><html>
+
+<head>
+	<title>Welcome to WebC Web Browser 2.6</title>
+</head>
+
+<body><div style='float: left; padding-left: 10; padding-bottom: 10;'><img src='ebslogo.png'></div>
+<br clear=left>
+
+<center>
+<table width=70% border=0>
+	<tr>
+		<td>
+			<font face="Arial, Sans-serif">
+			<center><table width=100% cellspacing=10 cellpadding=0 border=0>
+			<tr><td width=64><img src='browsericon.png' width=64 height=62></td>
+			<td><font face='arial'><b><font size=6>WebC 2.6</font><br>The Power of Web Standards for Your Embedded Application</b></font>
+			</td>
+			</tr>
+			</table>
+			</center>
+			<br>
+			Welcome to WebC version 2.6, EBS's full-featured embedded HTML browser and GUI development kit.
+			WebC 2.6 offers a unique solution for embedded applications that require a high-quality, dynamic
+			graphical user interface. Join the many companies who have chosen WebC's robust HTML rendering technology
+			as the core of their application. Here are just a few of the applications WebC is used in today:
+
+			<ul>
+			<li> Set-top Boxes
+			<li> Handheld Diagnostic Devices
+			<li> Integrated Hyper-text Manual Readers
+			<li> Internet-enabled Phones
+			<li> Entertainment Kiosks
+			</ul>
+			<br>
+
+			<b> What's new in 2.6 </b>
+			<p>
+			The latest version of EBS's web technology toolkit offers more power, options, and control than ever.  Graphics rendering
+			support is now provided through a simple plug-in interface that allows dynamic binding to a graphics output device at
+			runtime, even to multiple graphics devices simultaneously.  Creating a port to a new graphics library is also much
+			simpler, giving you, the application developer, more options throughout the life cycle of your product to swap in and
+			out graphics libraries and devices without major changes to core WebC.
+
+			<p>
+			The possibilities are now even greater with WebC because version 2.6 supports more advanced features such as the CSS/2
+			element positioning model, and the innerHTML/outerHTML JavaScript DOM properties.
+
+			<p>
+			In addition to greater capabilities, WebC 2.6 also offers greater control over when resources are loaded, when redraws occur,
+			and how user input is handled.
+
+			<p>
+			WebC 2.5 continues to offer support for:
+
+			<small>
+			<ul>
+			<li> HTML 4.01*
+			<li> CSS level 1, partial level 2
+			<li> JavaScript 1.4
+			<li> DOM level 1
+			<li> Partial Internet Explorer DOM
+			<li> HTTP 1.1 (with persistent connections)
+			<li> Inline Frames and Framesets
+			<li> JPEG, PNG, MNG, BMP and GIF images
+			<li> Cookies
+			</ul>
+			</small>
+
+			<br>
+			<b> Take WebC 2.6 out for a spin </b>
+			<p>
+			Feel free to use this full-featured demo version of WebC to see just how capable an embedded browser can be.
+			When you do, we're confident you'll want to contact us to see how we can get WebC in your application.
+			</p>
+			<br>
+			<b> Contact Info </b>
+			<br><br>
+			<table border=0 cellspacing=10>
+			  <tr>
+			    <td valign=top align=right><font face="Arial, Sans-serif"><b>Sales</b></font></td>
+			    <td>EBS Inc.<br>39 Court Street, Groton, MA 01450<br>Phone:978.448.9162<br>email: sales@ebsembeddedsoftware.com<br><br></td>
+			  </tr>
+			 </table>
+
+			 <br>
+			 <br>
+			 Here are a few links to get you started:<br>
+			 <br>
+			 <a href="http://www.ebsembeddedsoftware.com">www.ebsembeddedsoftware.com</a><br>
+			 <a href="http://www.google.com">www.google.com</a><br>
+			 <a href="http://www.amazon.com">www.amazon.com</a><br>
+			 <a href="http://www.mozilla.org/quality/browser_sc.html">Mozilla Browser Test Suite</a><br>
+			 <a href="http://random.yahoo.com/fast/ryl">Surprise Me (random link generator)</a><br>
+			<br>
+			<br>
+
+			<small><small>
+			*Most HTML 4.01 tags supported; please ask for our Web Standards Compliance document when you contact us
+			<br>
+			</font>
+		</td>
+	</tr>
+</table>
+
+</center>
+
+</body>
+</html>

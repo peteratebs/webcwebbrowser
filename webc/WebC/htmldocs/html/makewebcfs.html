@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">makewebcfs</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Compile content from a workstation subdirectory into a form suitable for use with webc's read onnly rom based file system. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+webc has a url type called webc:, which can also be accessed as rom:. This url type acts just like the file: url type except the content is compiled into the webC library as constant data. <br>
+A convenient way to develop applications is to simulate your application on Windows with webC using the Windows file system, populaying a Windows subtree with images, html files , style sheets and javascript source files.<br>
+When you want to use the content on your embedded device you can create a webC rom file system image from the disk content with a single command.<br>
+
+<P>makewebcfs Converts an entire Windows subdirectory and its children into a set of 'C' declarations. These declarations are embedded in header files which you then include into your application code. You then make a call to wcAddFsTree() to add this subtree to the rom file system structure.
+Once a table is added to the webc: file system it may be accessed with the webc: url. (see below for an example).<br>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>-h</B> -  help
+<BR><B>-o</B> - =pathname  (optional) Path to place the output files, (eg.-o="/MycompiledPages") if not specified output files are placed in the current directory.
+<BR><B>-n</B> - =filenamebase (optional) Base of the two output files to produce, "basenamefiletable.h" and "basenamefiledata.h". If not specified webcfiletable.h and webcfiledata.h are created.
+<BR><B>foldernametoconvert</B> -  (required) path to the files to convert.
+<PRE>
+To convert a file system subtree to a webc: subtree you must follow these steps:
+<ul>
+<li>Open a DOS box.</li>
+<li>For convenience change directory (CD) to the location of your project</li>
+<li>Run <!1><A HREF="makewebcfs.html">makewebcfs</A> to create include files you will need.</li>
+<li>Edit one of your aplication files file to include the two header files created by makewebcfs.</li>
+<li>Edit the file and insert a call to <!1><A HREF="wcAddFsTree.html">wcAddFsTree</A>() to insert the subdirectory tree into the webc: file system.</li>
+<ul>
+For example:
+<br>Suppose you have a webc project located at \MyExampleProject and you have been experimenting using content in a Windows subdirectory named \MyContent. You have been accessing it with file: based urls
+but now you want to build the content into your embedded applications rom image and have it be accessible from the webc: file system.<br>
+<ul>
+<li>Open a DOS box.</li>
+<li>type CD \MyExampleProject</li>
+<li>type <!1><A HREF="makewebcfs.html">makewebcfs</A> -n=Examples \MyContent</li>
+<li><i> You could also have typed:</i> <!1><A HREF="makewebcfs.html">makewebcfs</A> -n=Examples -o=\MyExampleProject \MyContent</li>
+<li>Edit your startup file and add these two lines:<br>
+#include "Examplesfiletable.h" <br>
+#include "Examplesfiledata.h" <br>
+</li>
+<li>Add this call to your code <b><!1><A HREF="wcAddFsTree.html">wcAddFsTree</A>(Examples);</b></li>
+</ul>
+To illustrate:
+&nbsp;If you have a subdirectory populated like this on the Windows workstation.
+&nbsp;&nbsp;\MyContent
+&nbsp;&nbsp;&nbsp;&nbsp;File.html
+&nbsp;&nbsp;&nbsp;&nbsp;File.css
+&nbsp;&nbsp;&nbsp;&nbsp;Images
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Image1.gif<br>
+It will be acessible from webc: on the Windows workstation as.
+&nbsp;file:///MyContent/File.html
+&nbsp;file:///MyContent/File.css
+&nbsp;file:///MyContent/Images/Images.gif<br>
+But after successfully executing(<!1><A HREF="makewebcfs.html">makewebcfs</A> -n=Examples \MyContent) the files will be accesible from these webc: urls.
+&nbsp;webc://File.html
+&nbsp;webc://File.css
+&nbsp;webc://Images/Images.gif<br>
+The files are also accesible from these rom: urls.
+&nbsp;rom://File.html
+&nbsp;rom://File.css
+&nbsp;rom://Images/Images.gif<br>
+Note: If you want them to be accessible as:
+&nbsp;webc:/MyContent/File.html
+&nbsp;webc:/MyContent/File.css
+&nbsp;webc:/MyContent/Images/Images.gif
+and.
+&nbsp;rom:/MyContent/File.html
+&nbsp;rom:/MyContent/File.css
+&nbsp;rom:/MyContent/Images/Images.gif
+You must have the the foldernametoconvert argument point to a parent folder that contains just the one folder named MyContent.
+</PRE>
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

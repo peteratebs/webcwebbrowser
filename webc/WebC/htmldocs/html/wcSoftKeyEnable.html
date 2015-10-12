@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcSoftKeyEnable</A></H2></TD><TD><H2>(HBROWSER_HANDLE hBrowser)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Enable webc's soft keyboard. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This function should typically be called from startup code of touchscreen based applications to enable touchscreen support. On touch screen devices clicks on a text edit control pop up a softkeyboard control.
+This behavior must be enabled both at compile time by setting the constant <!1><A HREF="AppendixA.html#DOC.1.20.8">WEBC_SUPPORT_TOUCHSCREEN</A> in webcfg.h and at run time by calling wcSoftKeyEnable.
+This function is typically called once at startup on touchscreen based applications. On the desktop it is used for demonstrating touchscreen support 
+where <!1><A HREF="wcSoftKeyEnable.html">wcSoftKeyEnable</A> enables the keyboard for a demonstration (<!1><A HREF="ExSoftKeyPad.html">ExSoftKeyPad</A>)and then disables it when the example applet finishes. 
+<br><b>
+Note: The softkeypad control is written in C++ using the webC 'C' so it should serve as a valuable example of a fairly complex application written with the webC API.
+The source code for the soft keyboard control resides in source/util/SoftKeyPad.cpp.
+</b><br>
+
+<P>
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>HBROWSER_HANDLE</B> -  hBrowser - An initialized browser handle that popup keyboard window control will create itself in.
+<BR><DT><B>Returns:</B><DD>  Nothing.
+<BR><DT><B>See Also:</B><DD><!1><A HREF="ExSoftKeyPad.html">ExSoftKeyPad</A> <!1><A HREF="wcSoftKeyDisable.html">wcSoftKeyDisable</A> <!1><A HREF="PopUpKeyPad.html">PopUpKeyPad</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

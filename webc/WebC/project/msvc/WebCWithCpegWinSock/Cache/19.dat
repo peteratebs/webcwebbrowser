@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<link rel="top" title="Home" href="http://www.mozilla.org/">
+<link rel="stylesheet" type="text/css" href="../css/print.css"  media="print">
+<link rel="stylesheet" type="text/css" href="../css/base/content.css"  media="all">
+<link rel="stylesheet" type="text/css" href="../css/cavendish/content.css" title="Cavendish" media="screen">
+<link rel="stylesheet" type="text/css" href="../css/base/template.css"  media="screen">
+<link rel="stylesheet" type="text/css" href="../css/cavendish/template.css" title="Cavendish" media="screen">
+<link rel="icon" href="../images/mozilla-16.png" type="image/png">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Browser Standards Compliance QA</title>
+<script src="../__utm.js" type="text/javascript"></script>
+</head>
+<body id="www-mozilla-org" class="deepLevel">
+<div id="container">
+<p class="important">You are currently viewing a snapshot of www.mozilla.org taken on April 21, 2008. Most of this content is
+highly out of date (some pages haven't been updated since the project began in 1998) and exists for historical purposes only.  If
+there are any pages on this archive site that you think should be added back to www.mozilla.org, please <a
+href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Websites&component=www.mozilla.org">file a bug</a>.</p>
+<p class="skipLink"><a href="#mainContent" accesskey="2">Skip to main content</a></p>
+<div id="header">
+<h1><a href="/" title="Return to home page" accesskey="1">Mozilla</a></h1>
+<ul>
+<li id="menu_aboutus"><a href="../about/" title="Getting the most out of your online experience">About</a></li>
+<li id="menu_developers"><a href="../developer/" title="Using Mozilla's products for your own applications">Developers</a></li>
+<li id="menu_store"><a href="http://store.mozilla.org/?r=mozorg1" title="Shop for Mozilla products on CD and other merchandise">Store</a></li>
+<li id="menu_support"><a href="../support/" title="Installation, trouble-shooting, and the knowledge base">Support</a></li>
+<li id="menu_products"><a href="../products/" title="All software Mozilla currently offers">Products</a></li>
+</ul>
+<form id="searchbox_002443141534113389537:ysdmevkkknw" action="http://www.google.com/cse" title="mozilla.org Search">
+<div>
+<label for="q" title="Search mozilla.org's sites">search mozilla:</label>
+<input type="hidden" name="cx" value="002443141534113389537:ysdmevkkknw">
+<input type="hidden" name="cof" value="FORID:0">
+<input type="text" id="q" name="q" accesskey="s" size="30">
+<input type="submit" id="submit" value="Go">
+</div>
+</form>
+</div>
+<hr class="hide">
+<div id="mBody">
+<div id="side">
+
+<ul id="nav">
+<li><a title="Roadmap" href="../roadmap.html"><strong> Roadmap</strong></a></li>
+<li><a title="Projects" href="../projects/"><strong> Projects</strong></a></li>
+<li><a title="For developers" href="../developer/"><strong> Coding</strong></a>
+<ul>
+<li><a title="Module Owners" href="../owners.html"> Module Owners</a></li>
+<li><a title="Hacking" href="../hacking/"> Hacking</a></li>
+<li><a title="Get the Source" href="http://developer.mozilla.org/en/docs/Download_Mozilla_Source_Code"> Get the Source</a></li>
+<li><a title="Building Mozilla" href="http://developer.mozilla.org/en/docs/Build_Documentation"> Build It</a></li>
+</ul>
+</li>
+<li><a title="Testing" href="../quality/"><strong> Testing</strong></a>
+<ul>
+<li><a title="Downloads of mozilla.org software releases" href="../download.html"> Releases</a></li>
+<li><a title="Latest mozilla builds for testers" href="../developer/#builds"> Nightly Builds</a></li>
+<li><a title="For testers to report bugs" href="https://bugzilla.mozilla.org/"> Report A Problem</a></li>
+</ul>
+</li>
+<li><a title="Tools for mozilla developers" href="../tools.html"><strong> Tools</strong></a>
+<ul>
+<li><a title="Bug tracking system for mozilla testers." href="https://bugzilla.mozilla.org/"> Bugzilla</a></li>
+<li><a title="Latest status of mozilla builds" href="http://tinderbox.mozilla.org/showbuilds.cgi?tree=Firefox"> Tinderbox</a></li>
+<li><a title="Latest checkins" href="http://bonsai.mozilla.org/cvsqueryform.cgi"> Bonsai</a></li>
+<li><a title="Source cross reference" href="http://lxr.mozilla.org/seamonkey/"> LXR</a></li>
+</ul>
+</li>
+<li><a title="Frequently Asked Questions." href="../faq.html"><strong> FAQs</strong></a></li>
+</ul>
+
+</div>
+<hr class="hide">
+<div id="mainContent">
+
+
+
+
+
+
+<h1>Browser Standards Compliance QA</h1>
+
+<p class="byline">by Gerardo Kvaternik</p>
+
+<p>The Browser Standards Compliance QA team tests the component areas of the 
+Mozilla browser including HTML/CSS/XML/XHTML layout and rendering, DOM, 
+parsers, JavaScript and Necko (FTP, HTTP, Proxies, Cookies, Cache, URLs).
+The team also tests embedded products in all these areas.</p>
+
+<h2>Testing</h2>
+<p>If you are interested in helping us test, that's great! First, click on the 
+link below under 'Resources' to download the current release. Then, click on 
+one of the links below under 'Available Tests' in the area that you are 
+interested in testing.</p>
+
+<p>During the testing process, the following questions might come up:</p>
+
+<ul>
+  <li><strong>What if I find an error in a test case?</strong>
+    <ul>
+      <li>Please <a href="http://bugzilla.mozilla.org/enter_bug.cgi?product=Documentation&amp;component=Mozilla%20Developer">file 
+      a bug report</a> against the Documentation:Mozilla Developer component.
+      Include the test case name and describe in detail what the error is. The
+      problem will be corrected as quickly as possible.</li>
+    </ul>
+  </li>
+
+  <li><strong>What if I find a bug as a result of running a test case?</strong>
+    <ul>
+      <li>First, you need to read the <a href="bug-writing-guidelines.html">Bug
+      Writing Guidelines</a> to familiarize yourself with the bug process.</li>
+
+      <li>Next, you will need to create a Bugzilla account in order to post
+      new bugs or update existing bugs. Go to the
+      <a href="http://bugzilla.mozilla.org/">Bugzilla</a> page and click on
+      <q>Open a new Bugzilla account</q>. Follow the instructions for
+      creating an account.</li>
+      <li>Finally, you will post a new bug or update an existing bug according
+      to the previously mentioned Bug Writing Guidelines. </li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Available Tests:</h3>
+
+<p>Currently, the testcases available for testing are in the areas listed below.
+Following one of these links will bring you to an index page of the testcases.</p>
+
+<p class="note">If you find a bug, please <strong>first</strong> search
+<a href="http://bugzilla.mozilla.org/">Bugzilla</a> before writing up a new
+bug to avoid duplicates.</p>
+
+<ul>
+  <li><a href="browser/standards/html/">HTML 4.0 Transitional</a></li>
+  <li><a href="browser/standards/css_1/index.html">CSS1</a></li>
+  <li><a href="browser/standards/dom1/tcmatrix/">DOM1 (HTML and CORE)</a></li>
+  <li><a href="browser/standards/xml/">XML</a></li>
+  <li><a href="browser/standards/xhtml/transitional/">XHTML 1.0 Transitional 
+  (HTML)</a></li>
+  
+  <li><a href="browser/standards/xhtml/css1_transitional/">XHTML 1.0 
+  Transitional (CSS1)</a></li>
+  
+  <li><a href="networking/testing/">Networking</a></li>
+</ul>
+
+<h2>Resources</h2>
+<ul>
+  <li><a href="/projects/seamonkey/">Seamonkey</a> project</li>
+  <li>Recommended <a href="/community.html">Newsgroups</a>
+    <ul>
+      <li><a href="news://news.mozilla.org/netscape.public.mozilla.dom">netscape.public.mozilla.dom</a></li>
+      <li><a href="news://news.mozilla.org/netscape.public.mozilla.qa.general">netscape.public.mozilla.qa.general</a></li>
+      <li><a href="news://news.mozilla.org/netscape.public.mozilla.seamonkey">netscape.public.mozilla.seamonkey</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+
+
+<hr class="hide">
+</div>
+</div>
+<div id="footer">
+<ul>
+<li><a href="../sitemap.html">Site Map</a></li>
+<li><a href="../security/">Security Updates</a></li>
+<li><a href="../contact/">Contact Us</a></li>
+<li><a href="../foundation/donate.html">Donate</a></li>
+</ul>
+<p class="copyright">
+Portions of this content are &copy; 1998&#8211;2010 by individual mozilla.org
+contributors; content available under a Creative Commons license | <a
+href="http://www.mozilla.org/foundation/licensing/website-content.html">Details</a>.</p>
+<p>
+<span>Last modified October 19,  2004</span>
+<span><a href="http://bonsai-www.mozilla.org/cvslog.cgi?file=mozilla-org/html/quality/browser_sc.html&amp;rev=&amp;root=/www/">Document History</a></span>
+</p>
+</div>
+</div>
+</body>
+</html>

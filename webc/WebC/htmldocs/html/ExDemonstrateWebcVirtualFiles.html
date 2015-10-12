@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExDemonstrateWebcVirtualFiles</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>This example registers precompiled content with the read only file system layer and loads content from it. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>This source code provided in webcapiexample.c provides examples for registering precompiled content with the read read only file system layer and loading content from it.
+The content was compiled from the webc\ExampleContent subdirectory using <!1><A HREF="makewebcfs.html">makewebcfs</A> which is driven by the script webc\ExampleContent\CompileContent.bat.
+<br> Note: childwindowCtx has already been initialized to a valid window context by <!1><A HREF="OpenExampleChildWindow.html">OpenExampleChildWindow</A>.
+<PRE>
+
+<P>// Include the files we generated with <!1><A HREF="makewebcfs.html">makewebcfs</A>
+#include "ExampleContentfiletable.h"
+
+<P>static void ExDemonstrateWebcVirtualFiles(void)
+{
+
+<P>	UPDATECONSOLETEXT("Installing precompiled sample content into the webC rom file system. The content should be displayed above. Click to navigate the compiled in content.");
+	// ExampleContent was generated with the command ..\bin\makewebcfs -o=..\source\webcapiexamples -n=ExampleContent html
+	// The statement above "#include "ExampleContentfiletable.h" declared the symbol named ExampleContent which we now register with webc:
+	<!1><A HREF="wcAddFsTree.html">wcAddFsTree</A>(ExampleContent);
+	// Now we should be able to access the data
+	<!1><A HREF="wcDocSetUrl.html">wcDocSetUrl</A>(&childwindowCtx, "webc:///Example/Index.html", wcTRUE);
+	<!1><A HREF="wcWinBringToTop.html">wcWinBringToTop</A>(&childwindowCtx);
+}
+	</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

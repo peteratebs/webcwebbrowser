@@ -1,0 +1,160 @@
+<html>
+<head>
+<style>
+div {
+	font-family: arial;
+	font-size: 10px;
+}
+
+#rootdiv div {
+	padding-left: 32px;
+}
+
+input {
+	background-color: #cccccc;
+	font-famiy: arial;
+	font-size: 11px;
+	color: black;
+	border: outset 1px #999999;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+</style>
+
+<script>
+
+function LoadArchivedPage(bmAnchor)
+{
+	var frame = window.top.document.getElementById("contentFrame");	
+	
+	if (frame)
+	{
+		window.top.HideArchive();
+		window.top.EnableOnlineStatusRestore();
+		window.top.navigator.online = false;
+		window.top.DisableOnlineStatusToggle();
+		frame.document.load(bmAnchor.href);
+	}
+	
+	return false;
+}
+
+function RecolorAll()
+{
+	var rootDiv = document.getElementById('rootDiv');
+	if (rootDiv)
+	{
+		var currentDiv = rootDiv.firstChild;
+		var i = 0;
+		
+		while (currentDiv)
+		{
+			if (i==0)
+			{
+				currentDiv.style.backgroundColor = '#EFF7FF';
+			}
+			else
+			{
+				currentDiv.style.backgroundColor = '#ffffff';
+			}
+			currentDiv = currentDiv.nextSibling;
+			i = 1 - i;
+		}
+	}
+}
+
+function UpdateAll()
+{
+	RecolorAll();
+
+	var documentTitle = window.top.document.getElementById("documentTitle");
+	var addButton = document.getElementById("addButton");
+	if (urlBar && addButton)
+	{
+		//addButton.value = "Save \"" + documentTitle.value + "\" to the archive";
+	}	
+}
+
+function AddPage(name,url)
+{
+	var rootDiv = document.getElementById('rootDiv');
+	if (rootDiv)
+	{
+		rootDiv.innerHTML = rootDiv.innerHTML + '<div>' +
+				'<img src="close_default.png" align=right onmousedown="RemovePage(this.parentElement);">' +
+				'<img src="document.png" align=absbottom>' +
+			    '<a href="' + url + '" onclick="return LoadArchivedPage(this);">' +
+			     name + ' (' + url + ')</a></div>\n';
+		                     
+		var addButton = document.getElementById('addButton');
+		if (addButton)
+		{
+			//addButton.style.display = 'none';
+		}
+		
+		RecolorAll();
+		
+		window.top.SaveContentForOffline();
+	}
+}
+
+function AddCurrentPage()
+{
+	var documentTitle = window.top.document.getElementById("documentTitle");
+	var urlBar = window.top.document.getElementById("urlBar");
+	AddPage(documentTitle.value, urlBar.value);
+}
+
+function RemovePage(toRemove)
+{
+	var rootDiv = document.getElementById('rootDiv');
+	if (rootDiv)
+	{
+		var newInner = '';
+		var currentDiv = rootDiv.firstChild;
+		
+		while (currentDiv)
+		{
+			if (currentDiv != toRemove)
+			{
+				newInner = newInner + currentDiv.outerHTML;
+			}
+			currentDiv = currentDiv.nextSibling;
+		}
+		
+		window.suspendDraw();
+		window.setTimeout("window.resumeDraw(); RecolorAll();", 0);
+		rootDiv.innerHTML = newInner;
+	}
+}
+</script>
+</head>
+
+<body><script>
+var urlBar = window.top.document.getElementById("urlBar");
+var documentTitle = window.top.document.getElementById("documentTitle");
+if (urlBar)
+{
+	document.write("<input style='float:right'id='addButton' onclick='AddCurrentPage()' type=button value='Archive current page'>");
+}
+</script>
+
+<!-- pre-load images -->
+<img src='document.png' style='display: none;'>
+<img src='close_default.png' style='display: none;'>
+<img src='close_over.png' style='display: none;'>
+
+<div style='height: 32px; font-size: 16px; padding: 2px'><img style='margin-right:8px;' align=middle width=32 height=32 src='archive_large.png'><b>Archived Pages</b></div>
+<div id='rootDiv' style='padding: 0px;'>
+</div>
+</body>
+</html>

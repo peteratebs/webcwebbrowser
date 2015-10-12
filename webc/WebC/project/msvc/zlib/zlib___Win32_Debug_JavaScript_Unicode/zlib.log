@@ -1,0 +1,59 @@
+﻿Build started 12/29/2014 4:48:33 PM.
+     1>Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\zlib\zlib.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\zlib___Win32_Debug_JavaScript_Unicode\zlib.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\..\..\rtpport\win32 /I..\..\..\..\..\rtpcore /I..\..\..\include\util /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _WEBC_ /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\zlib___Win32_Debug_JavaScript_Unicode/" /Fd".\zlib___Win32_Debug_JavaScript_Unicode/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\zlib\adler32.c ..\..\..\lib\zlib\compress.c ..\..\..\lib\zlib\crc32.c ..\..\..\lib\zlib\deflate.c ..\..\..\lib\zlib\gzio.c ..\..\..\lib\zlib\infblock.c ..\..\..\lib\zlib\infcodes.c ..\..\..\lib\zlib\inffast.c ..\..\..\lib\zlib\inflate.c ..\..\..\lib\zlib\inftrees.c ..\..\..\lib\zlib\infutil.c ..\..\..\lib\zlib\trees.c ..\..\..\lib\zlib\uncompr.c ..\..\..\lib\zlib\zutil.c
+         adler32.c
+         compress.c
+         crc32.c
+         deflate.c
+         gzio.c
+     1>c:\dev\emglandwebc\webc\webc\lib\zlib\gzio.c(118): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\dev\emglandwebc\webc\webc\lib\zlib\gzio.c(166): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+     1>c:\dev\emglandwebc\webc\webc\lib\zlib\gzio.c(211): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+     1>c:\dev\emglandwebc\webc\webc\lib\zlib\gzio.c(545): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'vsprintf'
+     1>c:\dev\emglandwebc\webc\webc\lib\zlib\gzio.c(881): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\dev\emglandwebc\webc\webc\lib\zlib\gzio.c(882): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(110) : see declaration of 'strcat'
+     1>c:\dev\emglandwebc\webc\webc\lib\zlib\gzio.c(883): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(110) : see declaration of 'strcat'
+         infblock.c
+         infcodes.c
+         inffast.c
+         inflate.c
+         inftrees.c
+         infutil.c
+         trees.c
+         uncompr.c
+         zutil.c
+         Generating Code...
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\zlib___Win32_Debug_JavaScript_Unicode\zlib.lib" /NOLOGO .\zlib___Win32_Debug_JavaScript_Unicode/adler32.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/compress.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/crc32.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/deflate.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/gzio.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/infblock.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/infcodes.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/inffast.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/inflate.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/inftrees.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/infutil.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/trees.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/uncompr.obj
+         .\zlib___Win32_Debug_JavaScript_Unicode/zutil.obj
+         zlib.vcxproj -> C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\zlib\.\zlib___Win32_Debug_JavaScript_Unicode\zlib.lib
+       FinalizeBuildStatus:
+         Deleting file ".\zlib___Win32_Debug_JavaScript_Unicode\zlib.unsuccessfulbuild".
+         Touching ".\zlib___Win32_Debug_JavaScript_Unicode\zlib.lastbuildstate".
+     1>Done Building Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\zlib\zlib.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.77

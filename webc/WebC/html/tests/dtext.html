@@ -1,0 +1,689 @@
+<HTML>
+<HEAD>
+ <TITLE> WebC Dynamic HTML Text Tests </TITLE>
+</HEAD>
+
+<BODY>
+
+<!-- ******************************************************************************** -->
+
+<H1> Text Color </H1>
+
+<H2> Text color in SPAN </H2>
+
+before the span...
+<SPAN onmouseover='this.style.color="#ff0000";' onmouseout='this.style.color="#000000";'>
+Some text.
+</SPAN>
+...after the span
+
+
+<H2> Text color in DIV </H2>
+
+<DIV onmouseover='this.style.color="#ff0000";' onmouseout='this.style.color="#000000";'>
+Some text.
+</DIV>
+
+
+<H2> Text color in TD </H2>
+
+<TABLE border=1>
+<TR>
+<TD onmouseover='this.style.color="#ff0000";' onmouseout='this.style.color="#000000";'>
+Some text.
+</TD>
+</TR>
+</TABLE>
+
+
+<H2> Text color in DIV (width set) </H2>
+
+<DIV style='width: 300px; background-color: #5588ff;'
+	onmouseover='this.style.color="#ff0000";' onmouseout='this.style.color="#000000";'>
+Some text.
+</DIV>
+
+<H2> Text color in DIV (relative position) </H2>
+
+before the DIV
+<DIV style='width: 300px; background-color: #ff55ff; position: relative; left: 30px; top: 10px;'
+	onmouseover='this.style.color="#ff0000";' onmouseout='this.style.color="#000000";'>
+Some text.
+</DIV>
+after the DIV
+
+<H2> Text color in nested DIVs (absolute position) </H2>
+
+<DIV style='background-color: #8877ff;'>
+<DIV style='background-color: #9988ff; height: 30px; width: 50px;'></div>
+<BR>The parent div.<BR>
+<DIV style='width: 300px; background-color: #ff8855; position: absolute; left: 50px; top: 30px;'
+	onmouseover='this.style.color="#ff0000";' onmouseout='this.style.color="#000000";'>
+Some text.
+</DIV>
+<BR>
+<BR>
+</DIV>
+
+<BR>
+
+<!-- ******************************************************************************** -->
+<HR width=75%>
+
+<H1> Font Size </H1>
+
+<H2> Font size in SPAN </H2>
+
+before the span...
+<SPAN onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</SPAN>
+...after the span
+
+
+<H2> Font size in DIV </H2>
+
+<DIV onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</DIV>
+
+
+<H2> Font size in TD </H2>
+
+<TABLE border=1>
+<TR>
+<TD onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border=1 align=left>
+<TR>
+<TD onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</TD>
+</TR>
+</TABLE> A left-aligned table <BR clear=left>
+
+<BR>
+<TABLE border=1 align=right>
+<TR>
+<TD onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</TD>
+</TR>
+</TABLE> A right-aligned table <BR clear=right>
+
+
+<H2> Font size in nested TABLEs </H2>
+
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+
+<BR>
+<TABLE border=1 align=left><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE> A left-aligned table <BR clear=left>
+
+<BR>
+<TABLE border=1 align=right><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE> A right-aligned table <BR clear=right>
+
+<H2> Font size in DIV (width set) </H2>
+
+<DIV style='width: 300px; background-color: #5588ff;'
+	onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</DIV>
+
+
+<H2> Font size in DIV (width and height set) </H2>
+
+<DIV style='width: 300px; height: 70px; background-color: #55ff88;'
+	onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</DIV>
+
+<H2> Font size in DIV (relative position) </H2>
+
+before the DIV
+<DIV style='width: 300px; background-color: #ff55ff; position: relative; left: 30px; top: 10px;'
+	onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</DIV>
+after the DIV
+
+<H2> Font size in nested DIVs (absolute position) </H2>
+
+<DIV style='background-color: #8877ff;'>
+<DIV style='background-color: #9988ff; height: 30px; width: 50px;'></div>
+<BR>The parent div.<BR>
+<DIV style='width: 300px; background-color: #ff8855; position: absolute; left: 50px; top: 30px;'
+	onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+Some text.
+</DIV>
+<BR>
+<BR>
+</DIV>
+
+
+<H2> Font size in adjacent TDs (no widths specified) </H2>
+
+<TABLE border=1 width=80% align=center>
+ <TR>
+  <TD onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+   Some Text
+  </TD>
+  <TD style="font-size: x-large;">
+   Some Text
+  </TD>
+ </TR>
+ <TR>
+  <TD onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'>
+   Some Text
+  </TD>
+  <TD style="font-size: small;">
+   Some Text
+  </TD>
+ </TR>
+</TABLE>
+
+
+<H2> Font size in DIVs wrapping around aligned TABLEs </H2>
+
+<TABLE border=1 align=left>
+ <TR>
+  <TD>
+   Left aligned TABLE
+  </TD>
+ </TR>
+</TABLE> 
+<DIV onmouseover='this.style.fontSize="x-large";' onmouseout='this.style.fontSize="small";'> 
+Some 
+<TABLE border=1 align=right>
+ <TR>
+  <TD>
+   Right aligned TABLE
+  </TD>
+ </TR>
+</TABLE> text that is sufficiently long to illustrate that when it is placed between a pair of aligned 
+tables and set to change size when the mouse is rolled over it, will behave correctly with respect 
+to the margins created by the aforementioned aligned tables.
+</DIV>
+<BR clear=all>
+
+<BR>
+
+<!-- ******************************************************************************** -->
+<HR width=75%>
+
+<H1> Font Style </H1>
+
+<H2> Font style in SPAN </H2>
+
+before the span...
+<SPAN onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</SPAN>
+...after the span
+
+
+<H2> Font style in DIV </H2>
+
+<DIV onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</DIV>
+
+
+<H2> Font style in TD </H2>
+
+<TABLE border=1>
+<TR>
+<TD onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border=1 align=left>
+<TR>
+<TD onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</TD>
+</TR>
+</TABLE>A left-aligned table <BR clear=left>
+
+<BR>
+<TABLE border=1 align=right>
+<TR>
+<TD onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</TD>
+</TR>
+</TABLE>A right-aligned table <BR clear=right>
+
+
+<H2> Font style in nested TABLEs </H2>
+
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+
+<BR>
+<TABLE border=1 align=left><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>A left-aligned table <BR clear=left>
+
+<BR>
+<TABLE border=1 align=right><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>A right-aligned table <BR clear=right>
+
+
+<H2> Font style in DIV (width set) </H2>
+
+<DIV style='width: 300px; background-color: #5588ff;'
+	onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</DIV>
+
+
+<H2> Font style in DIV (width and height set) </H2>
+
+<DIV style='width: 300px; height: 70px; background-color: #55ff88;'
+	onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</DIV>
+
+
+<H2> Font style in DIV (relative position) </H2>
+
+before the DIV
+<DIV style='width: 300px; background-color: #ff55ff; position: relative; left: 30px; top: 10px;'
+	onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</DIV>
+after the DIV
+
+<H2> Font style in nested DIVs (absolute position) </H2>
+
+<DIV style='background-color: #8877ff;'>
+<DIV style='background-color: #9988ff; height: 30px; width: 50px;'></div>
+<BR>The parent div.<BR>
+<DIV style='width: 300px; background-color: #ff8855; position: absolute; left: 50px; top: 30px;'
+	onmouseover='this.style.fontStyle="italic";' onmouseout='this.style.fontStyle="normal";'>
+Some text.
+</DIV>
+<BR>
+<BR>
+</DIV>
+
+
+<BR>
+
+<!-- ******************************************************************************** -->
+<HR width=75%>
+
+<H1> Font Weight </H1>
+
+<H2> Font weight in SPAN </H2>
+
+before the span...
+<SPAN onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</SPAN>
+...after the span
+
+
+<H2> Font weight in DIV </H2>
+
+<DIV onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</DIV>
+
+
+<H2> Font weight in TD </H2>
+
+<TABLE border=1>
+<TR>
+<TD onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border=1 align=left>
+<TR>
+<TD onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</TD>
+</TR>
+</TABLE>A left-aligned table <BR clear=left>
+
+<BR>
+<TABLE border=1 align=right>
+<TR>
+<TD onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</TD>
+</TR>
+</TABLE>A right-aligned table <BR clear=right>
+
+
+<H2> Font weight in nested TABLEs </H2>
+
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+
+<BR>
+<TABLE border=1 align=left><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>A left-aligned table <BR clear=left>
+
+<BR>
+<TABLE border=1 align=right><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>A right-aligned table <BR clear=right>
+
+
+<H2> Font weight in DIV (width set) </H2>
+
+<DIV style='width: 300px; background-color: #5588ff;'
+	onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</DIV>
+
+
+<H2> Font weight in DIV (width and height set) </H2>
+
+<DIV style='width: 300px; height: 70px; background-color: #55ff88;'
+	onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</DIV>
+
+
+<H2> Font weight in DIV (relative position) </H2>
+
+before the DIV
+<DIV style='width: 300px; background-color: #ff55ff; position: relative; left: 30px; top: 10px;'
+	onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</DIV>
+after the DIV
+
+<H2> Font weight in nested DIVs (absolute position) </H2>
+
+<DIV style='background-color: #8877ff;'>
+<DIV style='background-color: #9988ff; height: 30px; width: 50px;'></div>
+<BR>The parent div.<BR>
+<DIV style='width: 300px; background-color: #ff8855; position: absolute; left: 50px; top: 30px;'
+	onmouseover='this.style.fontWeight="bold";' onmouseout='this.style.fontWeight="normal";'>
+Some text.
+</DIV>
+<BR>
+<BR>
+</DIV>
+<BR>
+
+
+<!-- ******************************************************************************** -->
+<HR width=75%>
+
+<H1> Font Family </H1>
+
+<H2> Font family in SPAN </H2>
+
+before the span...
+<SPAN onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text. IIIIIIIIII
+</SPAN>
+...after the span
+
+
+<H2> Font family in DIV </H2>
+
+<DIV onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</DIV>
+
+
+<H2> Font family in TD </H2>
+
+<TABLE border=1>
+<TR>
+<TD onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border=1 align=left>
+<TR>
+<TD onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</TD>
+</TR>
+</TABLE>A left-aligned table <BR clear=left>
+
+<BR>
+<TABLE border=1 align=right>
+<TR>
+<TD onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</TD>
+</TR>
+</TABLE>A right-aligned table <BR clear=right>
+
+
+<H2> Font family in nested TABLEs </H2>
+
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+
+<BR>
+<TABLE border=1 align=left><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>A left-aligned table <BR clear=left>
+
+<BR>
+<TABLE border=1 align=right><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR><TD>
+<TABLE border=1><TR>
+<TD onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE>A right-aligned table <BR clear=right>
+
+
+<H2> Font family in DIV (width set) </H2>
+
+<DIV style='width: 300px; background-color: #5588ff;'
+	onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</DIV>
+
+
+<H2> Font family in DIV (width and height set) </H2>
+
+<DIV style='width: 300px; height: 70px; background-color: #55ff88;'
+	onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</DIV>
+
+
+<H2> Font family in DIV (relative position) </H2>
+
+before the DIV
+<DIV style='width: 300px; background-color: #ff55ff; position: relative; left: 30px; top: 10px;'
+	onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</DIV>
+after the DIV
+
+<H2> Font family in nested DIVs (absolute position) </H2>
+
+<DIV style='background-color: #8877ff;'>
+<DIV style='background-color: #9988ff; height: 30px; width: 50px;'></div>
+<BR>The parent div.<BR>
+<DIV style='width: 300px; background-color: #ff8855; position: absolute; left: 50px; top: 30px;'
+	onmouseover='this.style.fontFamily="Courier";' onmouseout='this.style.fontFamily="Times";'>
+Some text.
+</DIV>
+<BR>
+<BR>
+</DIV>
+<BR><HR width=75%>
+
+
+
+<!-- ******************************************************************************** -->
+<H1> Text Decoration </H1>
+
+<H2> Text decoration in SPAN </H2>
+
+before the span...
+<SPAN onmouseover='this.style.textDecoration="underline";' onmouseout='this.style.textDecoration="none";'>
+Some text.
+</SPAN>
+...after the span
+
+
+<H2> Text decoration in DIV </H2>
+
+<DIV onmouseover='this.style.textDecoration="underline";' onmouseout='this.style.textDecoration="none";'>
+Some text.
+</DIV>
+
+
+<H2> Text decoration in TD </H2>
+
+<TABLE border=1>
+<TR>
+<TD onmouseover='this.style.textDecoration="underline";' onmouseout='this.style.textDecoration="none";'>
+Some text.
+</TD>
+</TR>
+</TABLE>
+
+
+<H2> Text decoration in DIV (width set) </H2>
+
+<DIV style='width: 300px; background-color: #5588ff;'
+	onmouseover='this.style.textDecoration="underline";' onmouseout='this.style.textDecoration="none";'>
+Some text.
+</DIV>
+
+<H2> Text decoration in DIV (relative position) </H2>
+
+before the DIV
+<DIV style='width: 300px; background-color: #ff55ff; position: relative; left: 30px; top: 10px;'
+	onmouseover='this.style.textDecoration="underline";' onmouseout='this.style.textDecoration="none";'>
+Some text.
+</DIV>
+after the DIV
+
+<H2> Text decoration in nested DIVs (absolute position) </H2>
+
+<DIV style='background-color: #8877ff;'>
+<DIV style='background-color: #9988ff; height: 30px; width: 50px;'></div>
+<BR>The parent div.<BR>
+<DIV style='width: 300px; background-color: #ff8855; position: absolute; left: 50px; top: 30px;'
+	onmouseover='this.style.textDecoration="underline";' onmouseout='this.style.textDecoration="none";'>
+Some text.
+</DIV>
+<BR>
+<BR>
+</DIV>
+<BR>
+<BR>
+<BR>
+<BR>

@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>static   void <A HREF="#DOC.DOCU">ExPresentationSlideShow</A></H2></TD><TD><H2>(void)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Using pure dynamic HTML from 'C' create elements and display them using varying style changes. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>This source code provided in webcapiexample.c provides examples for creating create elements and display them with customized styles.
+<br> Note: childwindowCtx has already been initialized to a valid window context by <!1><A HREF="OpenExampleChildWindow.html">OpenExampleChildWindow</A>.
+<PRE>
+
+<P>#define TEXTAREATOP		4
+#define TEXTAREALEFT	4
+#define TEXTAREAHEIGHT  80
+#define TEXTAREAWIDTH	200
+#define TEXTAREAZ		0
+
+<P>#define TEXTEDITTOP		100
+#define TEXTEDITLEFT	20
+#define TEXTEDITHEIGHT  24
+#define TEXTEDITWIDTH	200
+#define TEXTEDITZ		0
+#define SLIDESHOWDELAY 2000
+static void ExPresentationSlideShowCB(int Sequence, void *UserVoidParm);
+static void *LastAllocateElementArray;	// Use this to guard against executing a timer for a stale session
+
+<P>
+static void ExPresentationSlideShow(void)
+{
+int width, height;
+	// Clear the window content
+	<!1><A HREF="wcDocClear.html">wcDocClear</A>(&childwindowCtx, wcFALSE);
+	// Create some local storage so we can pass argument between timeout callback handling sequences 100 should be way more than enough
+	wcEL *ElementArray = (wcEL  *) WEBC_MALLOC(sizeof(wcEL) * 100);
+	rtp_memset(ElementArray, 0, sizeof(wcEL) * 10);
+	LastAllocateElementArray=(void *) ElementArray; // Use this as a gaurd against processing stale timers.
+	// Get the Canvas size and insert a transparent div that we will insert and remove elements from we work. Use ElementArray[0] as the handle for it.
+	<!1><A HREF="wcWinGetPos.html">wcWinGetPos</A>(&childwindowCtx,0, 0, &width, &height);
+	ElementArray[0] = \Ref{wcNewStyledDiv(&childwindowCtx, 0, wcTRUE,0, TEXTAREALEFT, height, width,-1, 0, 0, 0, "overflow:hidden;");
+
+<P>
+	\Ref{wcWinBringToTop(&childwindowCtx);
+	// Start the show imediately at sequence 0
+	<!1><A HREF="wcTimedCallback.html">wcTimedCallback</A>(ExPresentationSlideShowCB, 0, 0, (void *)ElementArray);
+
+<P>}
+
+<P>// Tools to remove elements from the outer div and delete them.
+static void DeleteElementFromSlideShow(wcEL *ElementArray, int ElementNumber)
+{
+	<!1><A HREF="wcElRemoveChild.html">wcElRemoveChild</A>(ElementArray[0], ElementArray[ElementNumber]);
+	<!1><A HREF="wcElDelete.html">wcElDelete</A>(ElementArray[ElementNumber]);
+	ElementArray[ElementNumber] = 0;
+}
+static void DeleteAllElementsFromSlideShow(wcEL *ElementArray)
+{
+int ElementNumber;
+	for (ElementNumber=1;ElementArray[ElementNumber]; ElementNumber++)
+		DeleteElementFromSlideShow(ElementArray, ElementNumber);
+}
+static int SubStateNumber; // For executing substates to keep the number of conditions down
+static void ExPresentationSlideShowCB(int Sequence, void *UserVoidParm)
+{
+wcEL *ElementArray = (wcEL  *) UserVoidParm;
+int nextShowDelay = SLIDESHOWDELAY; // Change nextShowDelay to speed up or slow down a particular slide
+
+<P>	// We are called by a system timer that doesn't know about our window so check if the user press left or right an reloaded since the timer was armed.
+	// If we proceeded we would crash because many the elements were cleared from the document.
+	if (Examples[currentExample].ExampleFunction != ExPresentationSlideShow || LastAllocateElementArray!=UserVoidParm)
+	{
+		WEBC_FREE(ElementArray);
+		return;
+	}
+	// Cycle through the sequence numbers showing display features
+	//
+	//
+	switch (Sequence) {
+	default: // Out of tests. just exit
+		WEBC_FREE(ElementArray);
+		return;
+	case 0:  // Dynamically create controls
+		UPDATECONSOLETEXT("Create simple controls");
+		ElementArray[1]=<!1><A HREF="wcNewStyledTextArea.html">wcNewStyledTextArea</A>(&childwindowCtx, ElementArray[0], wcTRUE, TEXTAREATOP, TEXTAREALEFT, TEXTAREAHEIGHT, TEXTAREAWIDTH,TEXTAREAZ, 0, 0,0, 0);
+		ElementArray[2]=<!1><A HREF="wcNewStyledTextEdit.html">wcNewStyledTextEdit</A>(&childwindowCtx, ElementArray[0], wcTRUE, TEXTEDITTOP, TEXTEDITLEFT, TEXTEDITHEIGHT, TEXTEDITWIDTH,TEXTEDITZ, 0, 0,0, 0);
+		<!1><A HREF="wcElSetValue.html">wcElSetValue</A>(ElementArray[1], "Text area content\n goes here. \n  A. Test a.\n  B.Test b.");
+		<!1><A HREF="wcElSetValue.html">wcElSetValue</A>(ElementArray[2], "Text edit content goes here");
+		break;
+	case 1: // Show colors
+		DeleteAllElementsFromSlideShow(ElementArray);
+		UPDATECONSOLETEXT("Show text elements using colors");
+		ElementArray[1]=<!1><A HREF="wcNewStyledTextArea.html">wcNewStyledTextArea</A>(&childwindowCtx, ElementArray[0], wcTRUE, TEXTAREATOP, TEXTAREALEFT, TEXTAREAHEIGHT, TEXTAREAWIDTH,TEXTAREAZ, "Green", "DarkTurquoise", 0, "border-style:none;");
+		ElementArray[2]=<!1><A HREF="wcNewStyledTextEdit.html">wcNewStyledTextEdit</A>(&childwindowCtx, ElementArray[0], wcTRUE, TEXTEDITTOP, TEXTEDITLEFT, TEXTEDITHEIGHT, TEXTEDITWIDTH,TEXTEDITZ, "Black", "LightSalmon",0, "border-style:none;");
+		<!1><A HREF="wcElSetValue.html">wcElSetValue</A>(ElementArray[1], "Text area content\n goes here. \n  A. Test a.\n  B.Test b.");
+		<!1><A HREF="wcElSetValue.html">wcElSetValue</A>(ElementArray[2], "Text edit content goes here");
+		break;
+	case 2: // Show Borders
+		DeleteAllElementsFromSlideShow(ElementArray);
+		UPDATECONSOLETEXT("Show text elements using borders");
+		ElementArray[1]=<!1><A HREF="wcNewStyledTextArea.html">wcNewStyledTextArea</A>(&childwindowCtx, ElementArray[0], wcTRUE, TEXTAREATOP, TEXTAREALEFT, TEXTAREAHEIGHT, TEXTAREAWIDTH,TEXTAREAZ, "Green", "DarkTurquoise", 0, "border-style:solid;border-width:4px;border-color:Aqua;");
+		ElementArray[2]=<!1><A HREF="wcNewStyledTextEdit.html">wcNewStyledTextEdit</A>(&childwindowCtx, ElementArray[0], wcTRUE, TEXTEDITTOP, TEXTEDITLEFT, TEXTEDITHEIGHT, TEXTEDITWIDTH,TEXTEDITZ, "Black", "LightSalmon",0, "border-style:solid;border-width:2px;border-color:Black;");
+		<!1><A HREF="wcElSetValue.html">wcElSetValue</A>(ElementArray[1], "Text area content\n goes here. \n  A. Test a.\n  B.Test b.");
+		<!1><A HREF="wcElSetValue.html">wcElSetValue</A>(ElementArray[2], "Text edit content goes here");
+		break;
+	case 3: // Delete controls
+		UPDATECONSOLETEXT("Remove a control");
+		DeleteElementFromSlideShow(ElementArray, 2);
+		break;
+	case 4:
+		UPDATECONSOLETEXT("Remove another control");
+		DeleteElementFromSlideShow(ElementArray, 1);
+		break;
+	case 5: // Show background images
+		DeleteAllElementsFromSlideShow(ElementArray);
+		UPDATECONSOLETEXT("Divs and table support background images.");
+		ElementArray[1]=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, ElementArray[0], wcTRUE,TEXTAREATOP, TEXTAREALEFT, TEXTAREAHEIGHT, TEXTAREAWIDTH,TEXTAREAZ-1, 0, "DarkSlateBlue", EXBKIMAGE0, "overflow:hidden;");
+		break;
+	case 6: // Draw text with a transparent background over a background image
+		UPDATECONSOLETEXT("Text area backgound image style not supported but use a workaround drawing with a transparent background over a div with a background image.");
+		ElementArray[2]=<!1><A HREF="wcNewStyledTextArea.html">wcNewStyledTextArea</A>(&childwindowCtx, ElementArray[0], wcTRUE, TEXTAREATOP, TEXTAREALEFT, TEXTAREAHEIGHT, TEXTAREAWIDTH,TEXTAREAZ, "Maroon", "Transparent", 0, 0);
+		<!1><A HREF="wcElSetValue.html">wcElSetValue</A>(ElementArray[2], "Text area backgound image style is not supported but there is a workaround using a transparent background over a div with a background image.");
+		break;
+	case 7: // Set up elements to show alpha blending effects on foreground and background
+		DeleteAllElementsFromSlideShow(ElementArray);
+		UPDATECONSOLETEXT("Alpha channel support for foreground colors.");
+		ElementArray[1]=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, ElementArray[0], wcTRUE,TEXTAREATOP, TEXTAREALEFT, TEXTAREAHEIGHT, TEXTAREAWIDTH,TEXTAREAZ-1, "black", "rgba(128,128,128,0)", 0, "overflow:hidden;");
+		<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(ElementArray[1], "Text text &lt;br&gt; text text ..");
+		ElementArray[2]=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, ElementArray[0], wcTRUE,TEXTAREATOP+TEXTAREAHEIGHT/2, TEXTAREALEFT+TEXTAREAWIDTH/2, TEXTAREAHEIGHT, TEXTAREAWIDTH,TEXTAREAZ-1, "rgba(0,0,0,.1)", "rgba(128,128,128,1)", 0, "overflow:hidden;");
+		<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(ElementArray[2], "&lt;big&gt;&lt;b&gt;Text Fading &lt;br&gt;in now !!&lt;/b&gt;"); // Show some context, we'll fade in the next sequence
+		SubStateNumber=0;
+		break;
+	case 8: // Show alpha blending effects on foreground
+		if (SubStateNumber==0)	{ // Vary substate number from 10 to 100 and use it as the alpha value for the Text color
+			SubStateNumber = 10;
+			UPDATECONSOLETEXT("Alpha blending is supported for foreground colors.");
+		}
+		SubStateNumber += 5;
+		if (SubStateNumber&gt;100)	{
+			SubStateNumber=0;
+			<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(ElementArray[2], "&lt;big&gt;&lt;b&gt;Backround&lt;br&gt;fade now !!&lt;/b&gt;"); // Prepare for background fad
+			<!1><A HREF="wcElSetStyleColorRgba.html">wcElSetStyleColorRgba</A>(ElementArray[2],CSS_PROPERTY_COLOR, 0, 0, 0, 0, wcFALSE); // Black text, opaque
+			<!1><A HREF="wcElSetStyleColorRgba.html">wcElSetStyleColorRgba</A>(ElementArray[2],CSS_PROPERTY_BACKGROUND_COLOR, 128, 128, 128, 90, wcTRUE); // Fully opaque background
+		}
+		else {
+			<!1><A HREF="wcElSetStyleColorRgba.html">wcElSetStyleColorRgba</A>(ElementArray[2],CSS_PROPERTY_COLOR, 0, 0, 0, SubStateNumber, wcTRUE);
+			<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(ElementArray[2], "&lt;big&gt;&lt;b&gt;Tex Fading &lt;br&gt;in now !!&lt;/b&gt;"); // Workaround, must change content for new alpha on text to take affect
+			<!1><A HREF="wcTimedCallback.html">wcTimedCallback</A>(ExPresentationSlideShowCB, 200, Sequence, (void *)ElementArray);
+			return;
+		}
+		break;
+	case 9: // Show alpha blending effects on background
+		if (SubStateNumber==0)	{ // Vary substate number from 10 to 100 and use it as the alpha value for the background color
+			SubStateNumber = 10;
+			UPDATECONSOLETEXT("Alpha blending is supported for background colors.");
+		}
+		else
+			SubStateNumber += 10;
+		if (SubStateNumber==100)
+		{
+			SubStateNumber=0;
+			break;
+		}
+
+<P>		<!1><A HREF="wcElSetStyleColorRgba.html">wcElSetStyleColorRgba</A>(ElementArray[2],CSS_PROPERTY_BACKGROUND_COLOR, 128, 128, 128, 100-SubStateNumber, wcTRUE);
+		<!1><A HREF="wcTimedCallback.html">wcTimedCallback</A>(ExPresentationSlideShowCB, 200, Sequence, (void *)ElementArray);
+		return;
+	case 10: // Show fade in special effects using the opacity feature of divs
+		SubStateNumber=0;
+		DeleteAllElementsFromSlideShow(ElementArray);
+		UPDATECONSOLETEXT("Create fade in special effects in a few lines of code");
+		// Create a set of simple messages and images inside divs that we will fade in and out.
+		// Any content that can go in a div (that's anything) can be faded in and out.
+		ElementArray[1]=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, ElementArray[0], wcTRUE,40, 80, 180, 200,TEXTAREAZ-1, 0, 0, EXBKIMAGE0, "overflow:hidden;");
+		ElementArray[2]=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, ElementArray[0], wcTRUE,10, 10,  TEXTAREAHEIGHT*2, TEXTAREAWIDTH,TEXTAREAZ, "RoyalBlue", "Transparent", 0, "overflow:hidden;opacity:0;");
+		<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(ElementArray[2], "&lt;big&gt;&lt;b&gt;Make a &lt;br&gt;Dramatic entrance&lt;br&gt;With little code !!&lt;/b&gt;"); // Show some context, we'll fade in the next sequence
+		ElementArray[3]=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, ElementArray[0], wcTRUE, 0, 120,  100, 100,TEXTAREAZ, "blue", "Feldspar", 0, "overflow:hidden;opacity:0;");
+		<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(ElementArray[3], "&lt;big&gt;&lt;b&gt;Create fade in effects."); // Show some context, we'll fade in the next sequence
+		ElementArray[4]=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, ElementArray[0], wcTRUE, 80, 20,  80, 200,TEXTAREAZ, "Red", "SeaShell", 0, "overflow:hidden;opacity:0;");
+		<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(ElementArray[4], "Fade any element type. &lt;input type=text value=\"Like Buttons\"&gt;"); // Show some context, we'll fade in the next sequence
+		ElementArray[5]=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, ElementArray[0], wcTRUE, 0, 0,  TEXTAREAHEIGHT, 200,TEXTAREAWIDTH, "Blue", "SeaShell", 0, "overflow:hidden;opacity:0;");
+		<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(ElementArray[5], "And Images.&lt;br&gt;&lt;img src=\"webc:ebslogo.png\"&gt;"); // Show some context, we'll fade in the next sequence
+		ElementArray[6]=<!1><A HREF="wcNewStyledDiv.html">wcNewStyledDiv</A>(&childwindowCtx, ElementArray[0], wcTRUE, 30, 60,  160, 200,TEXTAREAWIDTH, "Blue", "SeaShell", 0, "overflow:hidden;opacity:0;");
+		<!1><A HREF="wcElSetInnerHtml.html">wcElSetInnerHtml</A>(ElementArray[6], "&lt;big&gt;&lt;b&gt;Click Left or&lt;br&gt;Right buttons&lt;br&gt;To run other&lt;br&gt;examples.&lt;/b&gt;");
+		break;
+	case 11: // Animate the messages created in the previous state. contains multiple substates.
+		{
+		SubStateNumber += 10;
+		if (SubStateNumber&lt;=100)
+		{ // Fade the first message in from the top left corner
+			<!1><A HREF="wcElSetStyleDim.html">wcElSetStyleDim</A>(ElementArray[2], SubStateNumber*2, SubStateNumber*2, wcTRUE); // Change height and width
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[2], SubStateNumber, wcFALSE);	// Change opacity
+		}
+		else if (SubStateNumber&lt;=200) // Animate the top left
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[3], SubStateNumber-100, wcFALSE);
+		else if (SubStateNumber&lt;=300) // Fade the message out
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[3], 100 - (SubStateNumber-200), wcFALSE);
+		else if (SubStateNumber&lt;=400) // Animate the next message
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[4], SubStateNumber-300, wcFALSE);
+		else if (SubStateNumber&lt;=500) // Fade the message out
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[4], 100 - (SubStateNumber-400), wcFALSE);
+		else if (SubStateNumber&lt;=600) // Animate the next message
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[5], SubStateNumber-500, wcFALSE);
+		else if (SubStateNumber&lt;=700) // Fade the message out
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[5], 100 - (SubStateNumber-600), wcFALSE);
+		else if (SubStateNumber&lt;=800) // Fade the first message out
+		{
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[2], 100 - (SubStateNumber-700), wcFALSE);
+		}
+		else if (SubStateNumber&lt;=900)
+		{ // We are done, go to a mode fading a prompt message in and out
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[6], 100 - (SubStateNumber-800), wcFALSE);
+		}
+		else if (SubStateNumber&lt;=1000)
+		{  // Fade the message in and loop back to fading out
+			<!1><A HREF="wcElSetStyleOpacity.html">wcElSetStyleOpacity</A>(ElementArray[6], SubStateNumber-900, wcFALSE);
+			if (SubStateNumber==1000)
+			{
+				SubStateNumber=810;
+				<!1><A HREF="wcTimedCallback.html">wcTimedCallback</A>(ExPresentationSlideShowCB, 1400, Sequence, (void *)ElementArray);
+				return;
+			}
+		}
+		else
+			break; // done with this sequence
+		if (SubStateNumber&gt;100 && (SubStateNumber%100) == 0) // Pause longer on text fadein finishes for affect
+			<!1><A HREF="wcTimedCallback.html">wcTimedCallback</A>(ExPresentationSlideShowCB, 1400, Sequence, (void *)ElementArray);
+		else
+			<!1><A HREF="wcTimedCallback.html">wcTimedCallback</A>(ExPresentationSlideShowCB, 200, Sequence, (void *)ElementArray);
+		return;	  // Stay in this case and cycle the substate after our timeer expires
+		}
+	}
+	<!1><A HREF="wcTimedCallback.html">wcTimedCallback</A>(ExPresentationSlideShowCB, SLIDESHOWDELAY, ++Sequence, (void *)ElementArray);
+}
+	</PRE></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

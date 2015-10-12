@@ -1,0 +1,85 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2>int <A HREF="#DOC.DOCU">rtp_stdio_fopen</A></H2><H2>( void**  rtpfile,   const char*  fname,<BR>&nbsp;  const char*  mode )</H2><BLOCKQUOTE>Opens a file using the supplied name. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Opens a file using the mode settings, and sets the 
+file information.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>rtpfile</B> -   A pointer to the address of an RTP_FILE to store the file information. 
+<BR><B>fname</B> -   The name of the file to open. 
+<BR><B>mode</B> -   For the mode argument:<br>
+<pre>
+|		"r"     Open a file for reading only                RTP_FILE_O_RDONLY
+|		"r+"    Open a file for reading and writing         RTP_FILE_O_RDWR
+|		"w"     Open a file for writing only                RTP_FILE_O_WRONLY
+|		        Create a file if it does not exist          RTP_FILE_O_CREAT
+|		        Truncate a file to 0 bytes after opening    RTP_FILE_O_TRUNC
+|		"w+"    Open a file for reading and writing         RTP_FILE_O_RDWR
+|		        Create a file if it does not exist          RTP_FILE_O_CREAT
+|		        Truncate a file to 0 bytes after opening    RTP_FILE_O_TRUNC
+|		"a"     All writes will be appended to the file     RTP_FILE_O_APPEND
+|		        Create a file if it does not exist          RTP_FILE_O_CREAT
+|		"a+"    Open a file for reading and writing         RTP_FILE_O_RDWR
+|		        All writes will be appended to the file     RTP_FILE_O_APPEND
+|		        Create a file if it does not exist          RTP_FILE_O_CREAT
+|		"b..."  b prepended to the mode in the open call    
+|		        causes the file to be opened in binary mode RTP_FILE_O_BINARY
+|		"t..."  t prepended to the mode in the open call    
+|		        causes the file to be opened in text mode   RTP_FILE_O_TEXT
+|		Note:   If neither the b or t are prepended, text   
+|		        mode is the default implementation.         
+</pre> <BR><DT><B>Returns:</B><DD>  0 if successful, -1 on failure, and -2 if a non-fatal 
+error occurred.
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>

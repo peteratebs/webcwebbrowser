@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<IMG ALT="oooo >>>> header <<< oooo " BORDER=0 SRC=header.gif>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcPrintMemChangeReport</A></H2></TD><TD><H2>(RTPMemBlockHeader* PrevWatchPoint,<BR>&nbsp; wcBOOL ExcludeNetZeroResults)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Print changes to the heap since the watchpoint was established. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Print changes to the heap since the watchpoint was established by calling <!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A>.
+
+<P><i><b>Note:</b> Note: RTP_TRACK_LOCAL_MEMORY must be enabled in rtplatform/include/rtpmem.h for the function to operate properly, if it is not enabled the function simply return.<br>
+<b>Note:</b> rtplatform's rtp_printf function must be functional to see the output. rtp_printf can be enabled by either mapping it to your system's printf() or by using the version supplied with webC and routing the output to an output port through rtp_term_cputs().</i>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>RTPMemBlockHeader</B> -  *PrevWatchPoint - Print changes since this watch point was established by a call to <!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A>.
+<BR><B>wcBOOL</B> -  ExcludeNetZeroResults - If wcTRUE only print records of locations that a net change.
+<PRE>
+Example: Print the changes made to the heap by a fictitious function named MyAppletInit().
+{
+RTPMemBlockHeader *myWatch;
+myWatch = <!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A>();
+MyAppletInit();
+<!1><A HREF="wcPrintMemChangeReport.2.html">wcPrintMemChangeReport</A>(myWatch, wcTRUE); // Print the report, the second argument instructs it to print only locations with outstanding memory allocations.
+<!1><A HREF="wcMemDbReleaseReport.html">wcMemDbReleaseReport</A>(myWatch);
+}
+<i>Note:</i>
+<ul>
+<li>The first column contains the file name.</li>
+<li>The second column contains line number.</li>
+<li>The third column is the net change in count of allocation or free calls. frees are -1 allocations are plus one, so a negative number means more calls to release that to alloc were made since the watchpoint was established.</li>
+<li>The fourth column is the net change in memory allocated from that location and frees of that memory. Frees are -subtracted, so a negative number means a net release of memory occurred since the watchpoint was established.</li>
+<li>note: If ExcludeNetZeroResults is wcFALSE the fourth column may contain the value zero, indicating that all memory from that location was released. If it is wcTRUE then the fourth column </li>
+<li>will never contain because reporting of net zero allocations (round trips) is suppressed.</li>
+<li>The fifth column is the comment assoiated with the memory when it was allocated or just {} if the location has no label.</li>
+</ul>
+The above call would result in a report looking like the following:
+wtedstr.cpp                    481  1    386      bytes { }
+fbabstractwindowmanager.cpp    881  2    46       bytes {VectorAddNode}
+htmlbrow.cpp                   1011 1    2        bytes {webc_malloc_string_copy}
+htmldoc.cpp                    834  1    2        bytes {webc_malloc_string_copy}
+formatctx.cpp                  97   1   60        bytes {FormatContextFactory}
+...
+Total bytes currently in use 1149957
+Net allocations since watchpoint= 314959
+</PRE>
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcMemDbGetStats.html">wcMemDbGetStats</A> <!1><A HREF="wcMemDbInstallPeakUsageCallback.html">wcMemDbInstallPeakUsageCallback</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetWatchPoint.html">wcMemDbGetWatchPoint</A> <!1><A HREF="wcMemDbReleaseReport.html">wcMemDbReleaseReport</A> <!1><A HREF="wcMemDbGetReport.html">wcMemDbGetReport</A> <!1><A HREF="wcMemDbGetChangesSinceWatchPoint.html">wcMemDbGetChangesSinceWatchPoint</A> <!1><A HREF="wcPrintMemStats.html">wcPrintMemStats</A> <!1><A HREF="wcPrintMemChangeReport.2.html">wcPrintMemChangeReport</A> <!1><A HREF="wcPrintMemDetailReport.html">wcPrintMemDetailReport</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<IMG ALT="oooo >>>> footer <<< oooo " BORDER=0 SRC=footer.gif>
+</BODY>
+</HTML>

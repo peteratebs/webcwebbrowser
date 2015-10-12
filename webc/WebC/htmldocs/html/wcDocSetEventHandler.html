@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>void <A HREF="#DOC.DOCU">wcDocSetEventHandler</A></H2></TD><TD><H2>(wcCtx* Ctx,  wcEventCallback cb)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Assign an event handler to the body element of this document. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Push the previous event handler for the body element on an internal stack and then
+sets a new handler for events targeted at the body.	The previous event handler may be restored later by calling wcDocPopEventHandler.
+<br>
+Note: wcDocSetEventHandler pushes the previous handler onto an internal stack. You must call
+wcDocPopEventHandler at a later time if your application requires you to restore the previous handler when the current algorithm is completed.
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcCtx</B> - *     Ctx     -   The current wc context.
+<BR><B>wcEventCallback</B> -  	cb	 -   Function to call when an event occurs.	(see <!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A>)
+<!1><A HREF="wcDocSetEventHandler.html">wcDocSetEventHandler</A> calls <!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A> to attach the event handler to the documents body element.<br>
+Document event handlers are actually just element event handlers acting on the body element of a document but since the body element is the containing element for all other elements
+its event handlers provide some additional utility over other handlers for other elements.<br>
+<ul>
+<li>Can be used to configure allocate and initialize application screen specific data prior to loading content into the page.</li>
+<li>Can be used to configure release application screen specific data prior to release content from the page (loading new content or destroying the window).</li>
+<li>Can be used to catch events like clicks that land on the document background.</li>
+<li>Can be used to send events to the application itself and not necessarilly any of its elements.</li>
+<li>Can be used to catch events that were processes by elements in the document but not canceled (bubbled).</li>
+</ul>
+The document body event handler is especially useful for these events -
+<ul>
+<li>HTML_EVENT_LOAD                - Called when the document has been loaded with content by a call to <!1><A HREF="wcDocSetUrl.html">wcDocSetUrl</A> or <!1><A HREF="wcDocClose.html">wcDocClose</A> or <!1><A HREF="wcWinCreateEx.html">wcWinCreateEx</A> or a Javascript equivalent.
+<i>Note: Body elements of documents that were created using pure dynamic HTML are never sent an HTML_EVENT_LOAD event notification.</i></li>
+<li>HTML_EVENT_UNLOAD              - Called every time the current content is about to be cleared to prepare for loading another page. Application screen "OnExit" processing should be placed in HTML_EVENT_UNLOAD clauses.</li>
+<li>HTML_EVENT_OBJECT_CREATED      - Called every time the document is cleared . Application screen "OnEntry" processing can be placed in the HTML_EVENT_OBJECT_CREATED clause but remember
+that the document will be empty. If a url is being loaded or <!1><A HREF="wcDocWriteHtml.html">wcDocWriteHtml</A> it is being used HTML_EVENT_LOAD will be triggered when the content is loaded.</li>
+</ul>
+Example: See <!1><A HREF="ExDocEventHandling.html">ExDocEventHandling</A>
+<BR><DT><B>Returns:</B><DD>  Nothing
+<BR><DT><B>See Also:</B><DD><!1><A HREF="wcElSetEventHandler.html">wcElSetEventHandler</A>, <!1><A HREF="wcDocPopEventHandler.html">wcDocPopEventHandler</A>, <!1><A HREF="wcDocTriggerEvent.html">wcDocTriggerEvent</A>, <!1><A HREF="ExDocEventHandling.html">ExDocEventHandling</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

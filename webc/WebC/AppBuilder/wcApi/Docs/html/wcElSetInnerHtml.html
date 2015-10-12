@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>void wcElSetInnerHtml</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>void <A HREF="#DOC.DOCU">wcElSetInnerHtml</A></H2><H2>(wcEL El,  char*  newhtml)</H2><BLOCKQUOTE>Display html source inside a container element. </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+
+<P>Set an HTML element's inner html. Parses the provided Html source code and insert it into the the specified container element.
+The existing contents are freed and replaced with the elements created from the html text representation.
+
+<P><PRE>
+ Examples:
+     wcElSetInnerHtml(Ctx, "<table border=\"1\">\<tr><td>(1,1)</td><td>(1,2)</td></tr></table>");
+ </PRE>
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>wcEL</B> -  		Elw    		-   The containing element.
+<BR><B>char</B> -  		*NewHtml    -   Html source code.
+<BR><DT><B>Returns:</B><DD>  The new element or zero on failure.
+<BR><DT><B>See Also:</B><DD>wcElGetInnerHtml<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://www.linuxsupportline.com/~doc++">DOC++</A>.
+</BODY>
+</HTML>

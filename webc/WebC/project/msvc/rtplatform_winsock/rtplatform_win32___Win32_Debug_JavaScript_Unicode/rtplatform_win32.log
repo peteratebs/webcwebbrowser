@@ -1,0 +1,56 @@
+﻿Build started 12/29/2014 4:48:28 PM.
+     1>Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\rtplatform_winsock\rtplatform_win32.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\..\..\rtpport\win32 /I..\..\..\..\..\rtpcore /I..\..\..\ixml\v1.2\inc /I..\..\..\..\..\Rtip6.0\protocol /I..\..\..\..\..\Rtip6.0\vfile /I..\..\..\..\..\Rtip6.0\rtip /I..\..\..\..\WebC\lib\openssl\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D RTP_MEM_RESTRAIN=0 /D RTP_MEM_DEBUG_PRINTF /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\rtplatform_win32___Win32_Debug_JavaScript_Unicode/" /Fd".\rtplatform_win32___Win32_Debug_JavaScript_Unicode/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\..\..\rtpcore\rtpchar.c ..\..\..\..\..\rtpcore\rtpdebug.c ..\..\..\..\..\rtpcore\rtpdutil.c ..\..\..\..\..\rtpcore\rtpmemdb.c ..\..\..\..\..\rtpcore\rtprand.c ..\..\..\..\..\rtpcore\rtpscnv.c ..\..\..\..\..\rtpcore\rtpssl.c ..\..\..\..\..\rtpcore\rtpstdup.c ..\..\..\..\..\rtpcore\rtpstr.c ..\..\..\..\..\rtpcore\rtpwchar.c ..\..\..\..\..\rtpcore\rtpwcs.c ..\..\..\..\..\rtpport\win32\rtpdate.c ..\..\..\..\..\rtpport\win32\rtpfile.c ..\..\..\..\..\rtpport\win32\rtpmem.c ..\..\..\..\..\rtpport\win32\rtpnet.c ..\..\..\..\..\rtpport\win32\rtptime.c
+         rtpchar.c
+         rtpdebug.c
+         rtpdutil.c
+         rtpmemdb.c
+         rtprand.c
+         rtpscnv.c
+         rtpssl.c
+         rtpstdup.c
+         rtpstr.c
+         rtpwchar.c
+         rtpwcs.c
+         rtpdate.c
+         rtpfile.c
+         rtpmem.c
+     1>c:\dev\emglandwebc\rtpport\win32\rtpmem.c(65): warning C4013: 'malloc' undefined; assuming extern returning int
+     1>c:\dev\emglandwebc\rtpport\win32\rtpmem.c(86): warning C4013: 'calloc' undefined; assuming extern returning int
+     1>c:\dev\emglandwebc\rtpport\win32\rtpmem.c(86): warning C4047: '=' : 'void *' differs in levels of indirection from 'int'
+     1>c:\dev\emglandwebc\rtpport\win32\rtpmem.c(103): warning C4013: 'realloc' undefined; assuming extern returning int
+     1>c:\dev\emglandwebc\rtpport\win32\rtpmem.c(117): warning C4013: 'free' undefined; assuming extern returning int
+         rtpnet.c
+         rtptime.c
+         Generating Code...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1151,5): warning MSB8012: TargetPath(C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\rtplatform_winsock\.\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.lib) does not match the Library's OutputFile property value (C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\rtplatform_winsock\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform_win32.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1153,5): warning MSB8012: TargetName(rtplatform) does not match the Library's OutputFile property value (rtplatform_win32). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform_win32.lib" /NOLOGO .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpchar.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpdebug.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpdutil.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpmemdb.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtprand.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpscnv.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpssl.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpstdup.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpstr.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpwchar.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpwcs.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpdate.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpfile.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpmem.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtpnet.obj
+         .\rtplatform_win32___Win32_Debug_JavaScript_Unicode/rtptime.obj
+         rtplatform_win32.vcxproj -> C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\rtplatform_winsock\.\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.lib
+       FinalizeBuildStatus:
+         Deleting file ".\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.unsuccessfulbuild".
+         Touching ".\rtplatform_win32___Win32_Debug_JavaScript_Unicode\rtplatform.lastbuildstate".
+     1>Done Building Project "C:\dev\EMGLANDWEBC\webc\WebC\project\msvc\rtplatform_winsock\rtplatform_win32.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.72

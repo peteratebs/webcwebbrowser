@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="FontGen">
+</Property><Property Name="Solution File" Value="C:\ebs\webcwithsoftkeypad\WebC\bin\projects\FontGen\FontGen.sln">
+</Property><Property Name="Date" Value="Saturday, July 23, 2011">
+</Property><Property Name="Time" Value="17:06 PM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="FontGen" Source="FontGen.vcproj" Description="Converting project file 'C:\ebs\webcwithsoftkeypad\WebC\bin\projects\FontGen\FontGen.vcproj'.">
+</Event><Event ErrorLevel="1" Project="FontGen" Source="FontGen.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="FontGen" Source="FontGen.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="FontGen" Source="FontGen.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="0" Project="FontGen" Source="FontGen.vcproj" Description="Done converting to new project file 'C:\ebs\webcwithsoftkeypad\WebC\bin\projects\FontGen\FontGen.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="FontGen" Source="FontGen.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="FontGen.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="FontGen.sln" Description="Converted">
+</Event></UpgradeLog>

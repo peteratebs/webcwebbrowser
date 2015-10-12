@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="webcdemo_peg_win32">
+</Property><Property Name="Solution File" Value="C:\Moto_Project\ebs_merge_10_14\WebC\project\msvc.net\webcdemo_peg_win32\webcdemo_peg_win32.sln">
+</Property><Property Name="Date" Value="Tuesday, May 31, 2011">
+</Property><Property Name="Time" Value="11:58:53 AM">
+</Property><Property Name="Log Number" Value="4">
+</Property></Properties><Event ErrorLevel="0" Project="peg" Source="..\..\..\..\..\peg\build\win32\ms60\peg.vcproj" Description="Converting project file 'C:\Moto_Project\peg\build\win32\ms60\peg.vcproj'.">
+</Event><Event ErrorLevel="2" Project="peg" Source="..\..\..\..\..\peg\build\win32\ms60\peg.vcproj" Description="File 'C:\Moto_Project\peg\build\win32\ms60\peg.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="peg" Source="..\..\..\..\..\peg\build\win32\ms60\peg.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="peg" Source="..\..\..\..\..\peg\build\win32\ms60\peg.vcproj" Description="Not Converted">
+</Event></UpgradeLog>

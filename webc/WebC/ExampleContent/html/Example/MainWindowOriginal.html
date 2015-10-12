@@ -1,0 +1,94 @@
+<!--
+File: MainWindow.html
+
+Body id: MainWindow - Used to route load events to MainWinow.cpp
+
+CSS values used to assign a greyscale color motif and positon screen
+ components - .appHeader,#MainWindowHeader2,appButtonLeft,appButtonRight,MainIconLeft,
+MainIconMiddle,MainIconRight.
+
+Associated 'C' code resides in: MainWindow.cpp
+
+Description: Html source code for the main menu page of the html demo.
+
+-->
+
+
+<html>
+<head>
+<meta http-equiv="pragma" content="no-cache"/>
+<link rel="stylesheet" type="text/css" href="AppBuilder.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>webC AppBuilder</title>
+</head>
+<body id="ComposeWindow">
+<div id="root">
+<!-- Pallete area drag elements from here to the storyboard -->
+    <div id="Pallete" style="position:absolute;top:0;left:0;height:240;width:390;background-color:lightgrey;z-index:1;">Me Pallet</div>
+<!-- Control panel put control panel info here
+    <div id="Pallete" style="position:absolute;top:240;left:0;height:320;width:400;background-color:orange;color:pink;z-index:1;">
+    <center><u><b>-Control Panel-</b></u></center>
+    <a href="Inventory"> Click me</a>
+    </div>
+-->
+<!-- Right Side background  -->
+    <div id="RightSidebackground" style="position:absolute;top:0;left:400;height:64;width:320;background-color:purple;z-index:1;"></div>
+<!-- StoryBoard area drag elements into here to the storyboard -->
+    <div id="StoryBoard"         style="position:absolute;top:0;left:400;height:240;width:320;background-color:lightblue;z-index:2;"></div>
+<!-- Demonstration area -->
+    <div id="DemonstrationBoard" style="position:absolute;top:240;left:400;height:240;width:320;background-color:black;color:white;z-index:1;">
+    <center><u><b>-Demonstration Area-</b></u></center>
+    </div>
+
+<!-- Hidden Elements start here. -->
+<div id="FactoryContainer" style="visibility:hidden;"></div>
+<div id="TestSlidingWindow" style="position:absolute;top:0;left:0;height:300;width:80;z-index:2000;background-color:pink;">
+1<br>
+2<br>
+3<br>
+</div>
+
+<div style="visibility:visible;position:absolute;top:100;left:10;height:60;width:60;z-index:2001;border-style:solid;overflow:hidden;">Yo</div>
+<!-- <div id="SlidingWindow" style="visibility:visible;position:absolute;top:60;left:60;height:120;width:60;z-index:2001;border-style:solid;overflow:hidden;">Huh</div> -->
+<div id="SlidingWindow" style="z-index:2001;overflow:hidden;"></div>
+
+<div id="ShadowPallete" style="visibility:hidden;position:absolute;top:0;left:0;height:480;width:640;z-index:2000;">
+</div>
+
+<img style="visibility:visible;" id="TextEditShadow" src="\AppBuilder\Myimage0X0Shadow.PNG">
+<!-- Event Hidden Elements start here. -->
+<div id="EventDialogueBox" style="visibility:hidden;position:absolute;top:310;left:10;height:300;width:320;background-color:lightblue;z-index:2;">
+<table style="border-style:none;font-size:8;position:absolute;top:0px;left:6px;width:300px;height:200px;" border="1">
+<tr>
+  <td style="font-size:8;border-style:none;width:150px;"><input id="EventDialogApply" type="button" value="Apply" ></td>
+  <td style="font-size:8;border-style:none;width:150px;"><input id="EventDialogCancel" type="button" value="Cancel" ></td>
+</tr>
+<tr>
+  <td colspan="2" style="font-size:8;border-style:none;"><input id="EventDialogToStyle" type="button" value="Switch to Style Editor" ></td>
+</tr>
+</table>
+<table id="EventDialogueTable" style="border-style:none;font-size:8;position:absolute;top:50px;left:6px;width:300px;height:200px;" border="1">
+<tr>
+</tr>
+</table>
+</div>
+
+
+<div id="StyleDialogueBox" style="visibility:hidden;position:absolute;top:0;left:0;height:470;width:400;background-color:lightblue;z-index:1;">
+<table style="border-style:none;font-size:8;position:absolute;top:0px;left:6px;width:300px;height:200px;" border="1">
+<tr>
+  <td style="font-size:8;border-style:none;width:150px;"><input id="StyleDialogApply" type="button" value="Apply" ></td>
+  <td style="font-size:8;border-style:none;width:150px;"><input id="StyleDialogCancel" type="button" value="Cancel" ></td>
+</tr>
+<tr>
+  <td colspan="2" style="font-size:8;border-style:none;"><input id="StyleDialogToEvent" type="button" value="Switch to Event Editor" ></td>
+</tr>
+</table>
+<div id="StyleDialogueBoxOuter" style="position:absolute;top:60px;height:400px;width:400px;overflow:hidden;">
+    <div id="StyleDialogueBoxInner" style="position:relative;top:0px;width:400px;">Hello</div>
+</div>
+</div>
+<img style="visibility:hidden;position:absolute;top:0;left:0;z-index:1000;" id="ControlSprite" src="MySprite.PNG">
+</div> <!--  id="root" -->
+</body>
+</html>

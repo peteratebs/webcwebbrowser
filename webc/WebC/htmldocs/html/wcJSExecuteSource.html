@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> webC C and HTML GUI for Embedded Platforms</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.7">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<hl>
+<center><big><b>webC
+<br> C and HTML GUI for Embedded Platforms <br>
+</b></big></center>
+<hl>
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>HSCRIPT_HANDLE <A HREF="#DOC.DOCU">wcJSExecuteSource</A></H2></TD><TD><H2>(wcCtx* Ctx,<BR>&nbsp; const char* _source)</H2></TD></TR></TABLE>
+<BLOCKQUOTE>Call Javascript from native 'C' and execute the provided javascript source code </BLOCKQUOTE>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This function allows a C function to called javascript to compile and execute source code.
+This function returns a handle to a script.
+wcJSDestroyScript() must be called to stop the script and free
+the script resources.
+<PRE>
+<A HREF="https://developer.mozilla.org/En/SpiderMonkey/JSAPI_User_Guide">JSAPI_User_Guide</A>
+</PRE>
+</BLOCKQUOTE>
+<DL><DT><DT><B>Parameters:</B><DD><B>Ctx</B> -  wc context structure referencing any created document
+<BR><B>source</B> -  the Javascript source code to compile and execute
+<BR><DT><B>Returns:</B><DD>  a handle to the script<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+<hl>
+<center><big><b>webC</b></big></center>
+<hl>
+</BODY>
+</HTML>

@@ -1,0 +1,120 @@
+<html>
+<head>
+<title> EBSnet Runtime Platform Library Reference </title>
+</head>
+<body bgcolor=#bbbbbb>
+
+<style>
+HR { visibility: hidden }
+A:visited { color: #a43; }
+A:link { color: #14a; }
+IMG:link { border: none; }
+PRE { background-color: #d9e0e3; font-size: 8pt; }
+
+</style>
+
+<table border=0 cellpadding=5 cellspacing=0 width=800>
+<tr><td>
+<div style='
+	border: 1px solid black; 
+	background-color: white; 
+	background-image: URL("background_small.jpeg"); 
+	background-repeat: repeat-x;'>
+
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td valign=top rowspan=3 width=45><a href='index.html'><img src='sidebar.jpg' border=0></a></td>
+<td colspan=2 height=8>&nbsp;</td>
+</tr>
+<tr>
+<td style='font-family: arial narrow, arial, sans-serif; ' width=747>
+<a href='http://www.ebsnetinc.com/' target='_blank'><img border=0 src='ebsnet.gif' align=right></a>
+
+<H2> <A HREF="#DOC.DOCU">RTPDUTIL</A></H2></H2><BLOCKQUOTE>Date/Timestamp Utilities </BLOCKQUOTE>
+
+<HR>
+<DL>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_get_utc_date"></A>
+<A HREF=rtp_get_utc_date.html><B>rtp_get_utc_date</B></A><DD><I>Retrieve the current system date in UTC. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_utc_to_gmt"></A>
+<A HREF=rtp_date_utc_to_gmt.html><B>rtp_date_utc_to_gmt</B></A><DD><I>Convert a UTC time to GMT. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_to_timestamp"></A>
+<A HREF=rtp_date_to_timestamp.html><B>rtp_date_to_timestamp</B></A><DD><I>Converts an RTP_DATE to an RTP_TIMESTAMP. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_timestamp_to_date"></A>
+<A HREF=rtp_timestamp_to_date.html><B>rtp_timestamp_to_date</B></A><DD><I>Converts an RTP_TIMESTAMP to an RTP_DATE. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_get_timestamp"></A>
+<A HREF=rtp_date_get_timestamp.html><B>rtp_date_get_timestamp</B></A><DD><I>Retrieves the current time. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_print_time"></A>
+<A HREF=rtp_date_print_time.html><B>rtp_date_print_time</B></A><DD><I>Print a date to a string. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_parse_time"></A>
+<A HREF=rtp_date_parse_time.html><B>rtp_date_parse_time</B></A><DD><I>Convert formatted string to an RTP_TIMESTAMP. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_parse_time_uc"></A>
+<A HREF=rtp_date_parse_time_uc.html><B>rtp_date_parse_time_uc</B></A><DD><I>Convert a formatted unicode string to an RTP_TIMESTAMP. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_compare_time"></A>
+<A HREF=rtp_date_compare_time.html><B>rtp_date_compare_time</B></A><DD><I>Compare two valid time stamps. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_set_time_forever"></A>
+<A HREF=rtp_date_set_time_forever.html><B>rtp_date_set_time_forever</B></A><DD><I>Set date to maximum value. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_add_seconds"></A>
+<A HREF=rtp_date_add_seconds.html><B>rtp_date_add_seconds</B></A><DD><I>Add a number of seconds to a date. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_get_seconds_in_year"></A>
+<A HREF=rtp_date_get_seconds_in_year.html><B>rtp_date_get_seconds_in_year</B></A><DD><I>Retrieve the number of seconds in a year. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_time_difference"></A>
+<A HREF=rtp_date_time_difference.html><B>rtp_date_time_difference</B></A><DD><I>Find the difference between two time stamps. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_get_dayofweek"></A>
+<A HREF=rtp_date_get_dayofweek.html><B>rtp_date_get_dayofweek</B></A><DD><I>Find day of the week. </I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="rtp_date_get_seconds_by_date"></A>
+<A HREF=rtp_date_get_seconds_by_date.html><B>rtp_date_get_seconds_by_date</B></A><DD><I>Find the number of seconds elapsed. </I>
+</DL>
+<A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>These functions <b>DO NOT</b> need to be ported. 
+
+<P>Depends on: <!1><A HREF="RTPDATE.html">RTPDATE</A></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I></P><HR>
+</td>
+<td rowspan=2 width=8>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<center><img border=0 src='centerline.gif'></center><br>
+<i>Copyright EBSnet Inc, 1993-2004.<br>All rights reserved.<br>
+This document may not be redistributed in any form without the consent of EBSnet, Inc.</i><br>
+<font size=-1 face=arial><a href='http://www.ebsnetinc.com' target=_blank>www.ebsnetinc.com</a></font>
+</td>
+</tr>
+<tr>
+<td height=8 colspan=2>&nbsp;</td>
+</tr>
+
+</table>
+</div>
+</tr></td></table>
